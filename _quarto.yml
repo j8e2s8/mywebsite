@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "DS은서 만두만두"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - hw1.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
