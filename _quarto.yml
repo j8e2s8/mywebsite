@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "DS은서 만두만두"
+  title: "은서 만두만두"
   navbar:
     left:
       - href: index.qmd

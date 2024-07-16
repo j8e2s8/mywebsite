@@ -1,10 +1,22 @@
 ---
 title: "만두만두"
 jupyter: python3
+toc: false
+about:  
+    id: hero-heading
+    template: jolla
+    image: pexels-inga-sv-3726788.jpg
+    links: 
+      - icon: github
+        text: Github
+        href: https://github.com
 ---
 
 ## 홈페이지 첫 화면입니다!
 
-안녕하세요, 데이터 분석 은서얍!입니다.
+안녕하세요, 데이터 분석 만두만두입니다.
 
 #### 작성
+
+
+
