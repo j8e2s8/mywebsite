@@ -1,14 +1,13 @@
 ---
 title: "project1"
 author: "장일준, 이태현, 정은서, 정아영"
-format: html
 editor: visual
 jupyter: python3
 ---
 
 # 소상공인시장진흥공단_전국 전통시장 현황_2015
 
-```{python}
+```{python} 
 import pandas as pd
 import numpy as np
 
@@ -19,7 +18,7 @@ market2.head()
 
 ## 변수명 바꾸기
 
-```{python}
+```{python} 
 market2 = market2.rename(columns={'시장명' : 'market_name',
                               '시장유형' : 'type',
                               '소재지도로명주소' : 'address_new',
@@ -38,7 +37,7 @@ market2.head()
 
 ## 데이터 정보 알아보기
 
-```{python}
+```{python} 
 market2.info()
 ```
 
@@ -46,7 +45,7 @@ market2.info()
 
 ## 정포수 요약 정보 알아보기
 
-```{python}
+```{python} 
 market2[['market_count']].describe()
 ```
 
@@ -54,7 +53,7 @@ market2[['market_count']].describe()
 
 ## 점포수로 범주화하기
 
-```{python}
+```{python} 
 market2 = market2.assign(market_scale = np.where(market2["market_count"] >= 134, "large", 
                                         np.where(market2["market_count"] >= 50, "medium", "small")))
 market2.head()
@@ -62,7 +61,7 @@ market2.head()
 
 점포수대로 범주화가 잘 되어진 것으로 보인다.
 
-```{python}
+```{python} 
 import matplotlib.pyplot as plt
 plt.clf()
 market2['market_scale'].value_counts().plot.bar(rot=0)
@@ -71,8 +70,7 @@ plt.show()
 
 ## 편의시절(공중화장실, 주차장) 보유 여부에 따라 시장을 범주화하기.
 
-```{python}
-
+```{python}  
 market2['level'] = np.where((market2['public_toilet'] == 'Y') & (market2['parking_lot'] == 'Y'), 'high', 
                    np.where((market2['public_toilet'] == 'N') & (market2['public_toilet'] == 'N') , 'low', 'intermediate'))
 market2.head()
@@ -82,7 +80,7 @@ market2.head()
 
 (공중화장실 Y, 주차장 Y) -\> high (공중화장실 Y, 주차장 N) -\> intermediate (공중화장실 N, 주차장 Y) -\> intermediate (공중화장실 N, 주차장 N) -\> low
 
-```{python}
+```{python} 
 import matplotlib.pyplot as plt
 plt.clf()
 market2['level'].value_counts().plot.bar(rot=0)
@@ -93,7 +91,7 @@ plt.show()
 
 ## 
 
-```{python}
+```{python} 
 plt.clf()
 df = market2.groupby(["type", "market_scale"], as_index = False) \
             .agg(market_count = ("market_scale", "count"))
