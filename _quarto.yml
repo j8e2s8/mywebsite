@@ -12,6 +12,8 @@ website:
         text: hw1
       - href: hw2.qmd
         text: hw2
+      - href: project1.qmd
+        text: project1
 
 format:
   html:
