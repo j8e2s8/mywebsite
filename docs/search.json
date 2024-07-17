@@ -333,14 +333,14 @@
     "href": "posts/hw2/index.html",
     "title": "hw2",
     "section": "",
-    "text": "24.07.16"
+    "text": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
   },
   {
     "objectID": "posts/hw2/index.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
     "href": "posts/hw2/index.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
     "title": "hw2",
-    "section": "자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.",
-    "text": "자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.\n\nimport pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n다른 방법\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
   },
   {
     "objectID": "posts/hw2/index.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
