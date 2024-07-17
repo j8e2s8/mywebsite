@@ -1,6 +1,8 @@
 ---
 title: "hw1"
 author: "정은서"
+date: "2024-07-15"
+categories: [bigdata]
 jupyter: python3
 ---
 
@@ -33,7 +35,7 @@ print("판매량 평균 : ",np.mean(df['판매량']))
 ```{python}
 import pandas as pd
 
-df = pd.read_csv('mpg.csv')
+df = pd.read_csv('../../mpg.csv')
 
 df_copy = df.copy()
 df_copy
@@ -56,7 +58,7 @@ df_copy.head()
 ```{python}
 import pandas as pd
 
-midwest = pd.read_csv('midwest.csv')
+midwest = pd.read_csv('../../midwest.csv')
 midwest.head()
 
 #pd.set_option('display.max_columns', None)

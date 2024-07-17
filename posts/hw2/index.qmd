@@ -1,6 +1,8 @@
 ---
 title: "hw2"
 author: "정은서"
+date: "2024-07-15"
+categories: [bigdata]
 editor: visual
 jupyter: python3
 ---
@@ -8,10 +10,11 @@ jupyter: python3
 24.07.16
 
 ## 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.
+
 ```{python}
 import pandas as pd
 import numpy as np
-df = pd.read_csv('mpg.csv')
+df = pd.read_csv('../../mpg.csv')
 pd.set_option('display.max_columns', None)
 
 df.assign(type = np.where(df['displ']<=4, '4이하', np.where(df['displ']>=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))
@@ -19,43 +22,35 @@ df.assign(type = np.where(df['displ']<=4, '4이하', np.where(df['displ']>=5, '5
 
 4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.
 
-
 #### 다른 방법
+
 ```{python}
 print("4이하인 경우 평균 :",df.query('displ <= 4')['hwy'].mean())
 print("5이상인 경우 평균 :",df.query('displ >=5')['hwy'].mean())
 ```
 
-
-
-
-
 ## 자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. 'audi'와 'toyota' 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.
+
 ```{python}
 df.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query("manufacturer == 'audi' | manufacturer=='toyota'")
 ```
+
 toyota 제조회사가 도시연비 평균이 더 높다.
 
-
 #### 다른 방법
+
 ```{python}
 df.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query("manufacturer in ['audi','toyota']")
 ```
 
-
-
-
-
 ## 'chevrolet', 'ford', 'honda' 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.
+
 ```{python}
 print("세 회사 데이터에 대한 hwy 전체 평균 :",df.query("manufacturer in ['chevrolet','ford','honda']")['hwy'].mean())
 ```
 
+## 'audi'에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. 'audi'에서 생산한 자동차 중 hwy가 1\~5위에 해당하는 자동차의 데이터를 출력하세요.
 
-
-
-
-## 'audi'에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. 'audi'에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.
 ```{python}
 print("="*70, "\n 1. audi 중 hwy가 높은 순의 자동차 모델 \n")
 df.query('manufacturer == "audi"').groupby('model').agg(hwy_mean = ('hwy' , 'mean'))
@@ -63,47 +58,32 @@ print("\n","="*70, "\n 2. audi 중 hwy가 1~5위인 자동차 데이터 \n")
 df.query('manufacturer == "audi"').sort_values('hwy', ascending=False).head(5)
 ```
 
-
-
-
-
 ## mpg 데이터 복사본을 만들고, cty와 hwy를 더한 '합산 연비 변수'를 추가하세요.
+
 ```{python}
 mpg = df.copy()
 mpg= mpg.assign(sum_cty_hwy = mpg['cty']+mpg['hwy'])
 mpg.head()
 ```
 
-
-
-
-
 ## 앞에서 만든 '합산 연비 변수'를 2로 나눠 '평균 연비 변수'를 추가하세요.
+
 ```{python}
 mpg = mpg.assign(avg_cty_hwy = mpg['sum_cty_hwy']/2)
 mpg.head()
 ```
 
-
-
-
-
 ## '평균 연비 변수'가 가장 높은 자동차 3종의 데이터를 출력하세요.
+
 ```{python}
 mpg.sort_values('avg_cty_hwy', ascending=False).head(3)
 ```
 
+## 1\~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.
 
-
-
-
-## 1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.
 ```{python}
 df.assign(sum_cty_hwy = df['cty']+df['hwy']
           , avg_cty_hwy = lambda x: x['sum_cty_hwy']/2) \
     .sort_values('avg_cty_hwy', ascending=False) \
     .head(3)
 ```
-
-
-    
