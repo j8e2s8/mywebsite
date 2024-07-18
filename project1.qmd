@@ -298,7 +298,60 @@ market4['town_city'].value_counts()
 ```
 
 
+https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=359f0000-4129-11ec-a107-3b8bd6a15b10
+관심있는 지역
 
 
+
+## 인구 데이터 groupby
+```{python}
+import pandas as pd
+pop = pd.read_excel('market_pop.xlsx')
+pop.head()
+
+```
+
+
+
+## 지역별 / 연령 범주별 / (해당 인구 수/지역 인구 수*100) 값
+```{python}
+pop_group = pop.groupby('region', as_index = False).agg(age_under_20 = ('age_under_20','min')
+                         , age_2050 = ('age_2050', 'min')
+                         , age_over_60 = ('age_over_60', 'min'))
+pop_group
+```
+
+
+## address_new에서 시/도 값 분리해서 'region' 변수 만들기
+```{python}
+first_tokens=[]
+
+for address in market2['address_new']:
+    first_token = address.split()[0]
+    first_tokens.append(first_token)
+    
+market2['region'] = first_tokens
+market2.head()
+```
+
+
+## 두 데이터셋 조인
+```{python}
+market_pop = pd.merge(market2, pop_group, how='left', on='region')
+market_pop.head()
+```
+
+```{python}
+#market_pop.to_excel(excel_writer='market_join.xlsx')
+```
+
+
+
+```{python}
+
+
+
+
+```
 
 
