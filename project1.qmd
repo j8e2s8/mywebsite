@@ -7,7 +7,17 @@ jupyter: python3
 
 # 소상공인시장진흥공단_전국 전통시장 현황_2015
 
-```{python} 
+예전에는 전통시장을 가면 편의시설이 부족해서 접근성이 떨어졌는데, 요즘에는 편의시설을 개선하려는 노력을 기울이고 있다.
+1. 와이파이 설치   2. 건강한 식재료 (백년초 국수 등 + 지역 특색)  3. 공산품이 아니라 정성이 들어간 음식들  4. 저렴한 가격 + 온누리 상품권 사용가능  5. 쇼핑 후 차 한 잔의 여유를 위한 여가 공간 구비 (카페 등)  6. 1인 가구를 위한 음식
+
+
+상품권 가맹점포 정보
+https://www.sbiz.or.kr/sijangtong/nation/onnuri/onnuriMktList.do?menu_type_a=A&menu_cms=&menu_id=070400#shopPopBtn
+
+
+
+
+```{python}
 import pandas as pd
 import numpy as np
 
@@ -16,9 +26,26 @@ market2 = market.copy()
 market2.head()
 ```
 
+현행 시장법상 시장은 상설시장과 정기시장으로 구분된다.
+
+![상설 시장](상설시장%20이미지.jpg)
+상설 시장 : 시장 개설 요건을 갖추고, 일정한 구역내에서 상시로 거래하는 영업장.
+![정기 시장](정기시장%20이미지.jpg)
+
+정기 시장 : 일정한 지역안에서 정기 또는 계절적으로 개설되는 시장.
+![상설 시장과 5일장이 공존하는 시장](상설%20시장%20+%205일장%20이미지.jpg) 
+상설 시장과 5일장이 공존하는 시장 : 관광형 시장으로 탈바꿈한 시장. 5일 장날이 되면 주민, 관광객 등으로 인상한해를 이룬다.
+
+
+
+데이터상 '시장유형'에 정기시장이 존재하면 '시장개설주기'가 5일장이라고 하는지 알아보고자 함.
+
+https://wowmap.kr/market5 : 5일장 지도 (위치)
+
+
 ## 변수명 바꾸기
 
-```{python} 
+```{python}
 market2 = market2.rename(columns={'시장명' : 'market_name',
                               '시장유형' : 'type',
                               '소재지도로명주소' : 'address_new',
@@ -37,23 +64,94 @@ market2.head()
 
 ## 데이터 정보 알아보기
 
-```{python} 
+```{python}
 market2.info()
 ```
 
 8개가 범주컬럼이고, 2개가 수치 컬럼, 1개가 날짜컬럼임을 알 수 있다. (수치컬럼중 1개는 연도컬럼이라서, 우리가 분석해 볼 수 있는 수치 컬럼은 1개뿐이다.) 그리고 사용가능상품권(certificate)와 개설연도(year)에만 null값이 있다는 것을 알 수 있다.
 
-## 정포수 요약 정보 알아보기
 
-```{python} 
+
+각 컬럼의 범주 알아보기
+```{python}
+market2['market_name'].value_counts()
+```
+이름이 동일한 서로 다른 시장이 존재함.
+
+```{python}
+market2['type'].value_counts()
+```
+시장 유형은 3가지임.
+
+```{python}
+market2['address_new'].value_counts()
+```
+
+
+```{python}
+market2['address_old'].value_counts()
+```
+주소가 동일한 시장이 있음
+
+
+
+```{python}
+market2['open_period'].value_counts()
+```
+정기 시장에 5일, 2일, 6일 있음.
+
+
+
+```{python}
+market2['certificate'].value_counts()
+```
+
+```{python}
+market2['public_toilet'].value_counts()
+```
+
+```{python}
+market2['parking_lot'].value_counts()
+```
+
+```{python}
+market2['year'].value_counts()
+```
+
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+year_group_count = market2.groupby('year').agg(year_count= ('year', 'count'))
+
+plt.clf()
+sns.lineplot(data=year_group_count, x='year', y='year_count')
+plt.show()
+```
+
+```{python}
+market2['data_date'].value_counts()
+```
+
+
+
+
+
+## 점포수 요약 정보 알아보기
+
+```{python}
 market2[['market_count']].describe()
 ```
 
 점포수 위주로 봤을 때, 25%, 75% 기준으로 점포 사이즈를 나누는 것이 합리적으로 보인다. samll : 50개 미만 medium : 50개 이상 134개 미만 large : 134개 이상 3가지의 범주로 나누고자 한다.
 
+
+
+
+
 ## 점포수로 범주화하기
 
-```{python} 
+```{python}
 market2 = market2.assign(market_scale = np.where(market2["market_count"] >= 134, "large", 
                                         np.where(market2["market_count"] >= 50, "medium", "small")))
 market2.head()
@@ -61,7 +159,7 @@ market2.head()
 
 점포수대로 범주화가 잘 되어진 것으로 보인다.
 
-```{python} 
+```{python}
 import matplotlib.pyplot as plt
 plt.clf()
 market2['market_scale'].value_counts().plot.bar(rot=0)
@@ -70,7 +168,7 @@ plt.show()
 
 ## 편의시절(공중화장실, 주차장) 보유 여부에 따라 시장을 범주화하기.
 
-```{python}  
+```{python}
 market2['level'] = np.where((market2['public_toilet'] == 'Y') & (market2['parking_lot'] == 'Y'), 'high', 
                    np.where((market2['public_toilet'] == 'N') & (market2['public_toilet'] == 'N') , 'low', 'intermediate'))
 market2.head()
@@ -80,7 +178,7 @@ market2.head()
 
 (공중화장실 Y, 주차장 Y) -\> high (공중화장실 Y, 주차장 N) -\> intermediate (공중화장실 N, 주차장 Y) -\> intermediate (공중화장실 N, 주차장 N) -\> low
 
-```{python} 
+```{python}
 import matplotlib.pyplot as plt
 plt.clf()
 market2['level'].value_counts().plot.bar(rot=0)
@@ -89,12 +187,119 @@ plt.show()
 
 대다수의 시장이 편의시설이 잘 구비되어 있음을 알 수 있다.
 
-## 
 
-```{python} 
-plt.clf()
-df = market2.groupby(["type", "market_scale"], as_index = False) \
-            .agg(market_count = ("market_scale", "count"))
-df.sort_values('market_count', ascending = False)
-plt.show()
+
+
+
+
+Y의 현황을 파악하기 위해서, N은 null값으로 만들기 -> market3 데이터프레임으로 함.
+N 갯수 알아보기
+```{python}
+market2['public_toilet'].value_counts()
 ```
+
+```{python}
+market2['parking_lot'].value_counts()
+```
+
+온누리 상품권은 사용안하는 곳은 null값이니까 그대로 count 쓰면 쓰는 곳만 세어짐
+공중화장실, 주차장은 Y/N 이므로, Y만 세려면 Y만 세어줘야 함.
+
+```{python}
+market3 = market2.copy()
+import numpy as np
+market3.loc[market3['public_toilet']=='N', 'public_toilet'] = np.nan
+market3['public_toilet'].isna().sum()
+
+market3.loc[market3['parking_lot']=='N', 'parking_lot'] = np.nan
+market3['parking_lot'].isna().sum()
+
+
+pd.set_option('display.max_columns', None)
+group_df = market3.groupby(['type','market_scale']).agg(market_count= ('market_name','count')
+                                                       , certificate_count = ('certificate', 'count')
+                                                       , public_toilet_count = ('public_toilet', 'count')
+                                                       , parking_lot_count = ('parking_lot', 'count'))
+group_df
+
+```
+5일장 중에서 점포수가 많은 시장은 15곳 밖에 안 됨.
+대부분 small에 해당함. 따라서 5일장만 열리는 곳은 소규모로 진행되는 시장임. 
+즉 외부 관광객이 간다기 보다는 지역 현지인들이 이용할 것으로 보임. 라고 생각을 했지, 5일장 블로그 봐보니까 관광지라면 관광객도 갈 법한 점포들도 있었음.
+
+
+
+
+
+```{python}
+group_df = market3.groupby(['type','market_scale','level']).agg(market_count= ('market_name','count')
+                                                       , certificate_count = ('certificate', 'count')
+                                                       , public_toilet_count = ('public_toilet', 'count')
+                                                       , parking_lot_count = ('parking_lot', 'count'))
+group_df['certificate_pct']= round(group_df['certificate_count']/group_df['market_count']*100,1)
+group_df['public_toilet_pct']=round(group_df['public_toilet_count']/group_df['market_count']*100,1)
+group_df['parking_lot_pct']=round(group_df['parking_lot_count']/group_df['market_count']*100,1)
+group_df
+```
+
+
+
+
+
+
+
+비율만 뽑아서 봐보기
+```{python}
+group_df.iloc[:,[0,4,5,6]]
+```
+
+
+
+## 상설+정기 시장의 지역 봐보기
+```{python}
+market2.query('type == "상설+정기"').head()
+```
+
+
+
+
+
+
+
+
+## 시/도 변수 만들기
+```{python}
+first_tokens = []
+i=0
+
+# for loop을 사용하여 각 행의 첫 음절 추출
+for address in market2['address_old']:
+    first_token = market2['address_old'][i].split()[0] +' ' + market2['address_old'][i].split()[1] # 띄어쓰기를 기준으로 나눈 후 첫 번째 토큰을 추출
+    first_tokens.append(first_token)
+    i += 1
+
+# 추출한 첫 음절을 새로운 컬럼으로 추가
+market2['town_city'] = first_tokens
+market2.head()
+```
+
+
+## 지역별로 시장 수 알아보기
+```{python}
+pd.set_option('display.max_rows', None)
+market2['town_city'].value_counts()
+```
+
+
+
+## 관광형 상설+정기 시장이 있는 지역 알아보기
+```{python}
+market4 = market2.query('type == "상설+정기"')
+market4['town_city'].value_counts()
+```
+
+
+
+
+
+
