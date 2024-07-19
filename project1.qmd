@@ -347,11 +347,27 @@ market_pop.head()
 
 
 
+## 노인 인구가 많으면 시장 갯수가 많이 형성되었을 것이다.
+
 ```{python}
-
-
-
-
+import numpy as np
+market_pop['old_up'] = np.where(market_pop['age_over_60'] >= market_pop['age_over_60'].mean(), 1 ,0)
+market_pop['old_down'] = np.where(market_pop['age_over_60'] < market_pop['age_over_60'].mean(), 1 ,0)
+market_pop.head()
 ```
 
 
+```{python}
+market_pop.groupby('level',as_index=False).agg(market_up_count = ('old_up', 'sum')
+                               , market_down_count = ('old_down','sum'))
+```
+```{python}
+market_pop.groupby('market_scale',as_index=False).agg(market_up_count = ('old_up', 'sum')
+                               , market_down_count = ('old_down','sum'))
+```
+
+
+
+
+
+편의시설이 YY 인데 인구 많은데야? 인구 많으면 편의시설 좋아?
