@@ -301,7 +301,7 @@ for col in columns:
 
 subset
 ```
-
+ 
 
 
 ## 각 지역마다 연령층 비율 계산하기
