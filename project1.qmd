@@ -312,15 +312,45 @@ subset['old_ratio'] = round((subset.iloc[:,8]+subset.iloc[:,9]+subset.iloc[:,10]
 subset
 ```
 
+
 ## subset에서 필요한 변수만 남기기
 ```{python}
 subset2 = subset.iloc[:, [0,1,13,14,15]]
-subset2 = subset2.rename(columns = {'행정기관':'region' ,'총 인구수':'total_pop'})
+subset2 = subset2.rename(columns = {'행정기관' : 'region' , '총 인구수' : 'total_pop'})
+```
+
+
+```{python}
+merge1['region'] == '서울특별시  '
+```
+region 컬럼의 값이 '**  ' 공백이 포함되어 있음을 알 수 있다.
+이 상태에서 merge하면 merge가 안됨.
+
+
+
+```{python}
 subset2['region'] = subset2['region'].str.replace('세종특별자치시','세종특별시') 
 subset2['region'] = subset2['region'].str.replace('제주특별자치도','제주도')
+subset2['region'] = subset2['region'].strip()
 subset2
 ```
 
+
+
+
+
+
+
+
+```{python}
+subset2.to_excel(excel_writer = 'subset2.xlsx', index=False)
+```
+
+
+```{python}
+merge1 = pd.read_excel('subset2.xlsx')
+merge1.head()
+```
 
 
 
@@ -337,18 +367,31 @@ market2['region'] = first_tokens
 market2.head()
 ```
 
+```{python}
+market2['region'][0]
+merge1['region'][0]
+len(merge1['region'][0])
+```
+
+
 
 ## market2, subset2 두 데이터셋 조인
 
 ```{python}
-market_pop = pd.merge(market2, subset2, how='left', on='region')
-#market_pop.head()
-market_pop.iloc[0,:]
+market_pop = pd.merge(market2, subset2, how='inner', on='region')
+
+```
+
+
+```{python}
+market_pop.head()
+#market_pop.iloc[0,:]
 ```
 
 ```{python}
 #market_pop.to_excel(excel_writer='market_join.xlsx')
 ```
+
 
 ## 60대 이상인 인구가 많으면 시장 갯수가 많이 형성되었을 것이다.
 
@@ -417,7 +460,7 @@ level_group2
 ## 편의시설이 high 인데 인구 많은데야? 인구 많으면 편의시설 좋아?
 
 ```{python}
-market_pop.query('level == "high"')
+market_pop.query('level == "high"')['region']
 ```
 
 
