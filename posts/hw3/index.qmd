@@ -1,6 +1,8 @@
 ---
 title: "hw3"
 author: "정은서"
+date: "2024-07-22"
+categories: [bigdata]
 editor: visual
 jupyter: python3
 ---
@@ -29,7 +31,7 @@ plt.show()
 midwest = pd.read_csv('../../midwest.csv')
 
 plt.clf()
-sns.scatterplot(data=midwest , x= 'poptotal' , y='popasian'').set(xlim = [0,500000], ylim=[0,10000])
+sns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])
 plt.show()
 ```
 

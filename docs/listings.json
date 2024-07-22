@@ -2,8 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/docs/posts/graph/gragh.html",
-      "/docs/posts/hw3/index.html",
+      "/posts/graph/gragh.html",
+      "/posts/hw3/index.html",
       "/posts/hw1/index.html",
       "/posts/hw2/index.html"
     ]

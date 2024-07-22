@@ -1,7 +1,8 @@
 ---
 title: "gragh"
 author: "정은서"
-format: html
+date: "2024-07-22"
+categories: [bigdata]
 editor: visual
 jupyter: python3
 ---
@@ -59,7 +60,7 @@ plt.show()
 ## sns의 countplot 사용한 막대 그래프
 ```{python}
 plt.clf()
-sns.countplot(data=mpg, x='drv', hue='drv)
+sns.countplot(data=mpg, x='drv', hue='drv')
 plt.show()
 ```
 ```{python}
