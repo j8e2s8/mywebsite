@@ -440,3 +440,22 @@ market_pop.query('level == "high"').groupby('region', as_index=False).agg(market
 ```
 
 편의시설이 잘 되어있는 시장이 많은 주변으로 인구 수가 많이 형성되어있다고 보기 어려움.
+
+
+
+
+
+# 노인 인구 비율 평균 vs 중앙값
+```{python}
+df = market_pop.groupby('region', as_index=False).agg(region_old_ratio = ('old_ratio', 'min'))
+df
+```
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.clf()
+sns.boxplot(data=df , y='region_old_ratio')
+plt.show()
+```
+
