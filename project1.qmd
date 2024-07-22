@@ -7,14 +7,19 @@ jupyter: python3
 
 # 소상공인시장진흥공단_전국 전통시장 현황_2015
 
-예전에는 전통시장을 가면 편의시설이 부족해서 접근성이 떨어졌는데, 요즘에는 편의시설을 개선하려는 노력을 기울이고 있다. 1. 와이파이 설치 2. 건강한 식재료 (백년초 국수 등 + 지역 특색) 3. 공산품이 아니라 정성이 들어간 음식들 4. 저렴한 가격 + 온누리 상품권 사용가능 5. 쇼핑 후 차 한 잔의 여유를 위한 여가 공간 구비 (카페 등) 6. 1인 가구를 위한 음식
+예전에는 전통시장을 가면 편의시설이 부족해서 접근성이 떨어졌는데, 요즘에는 편의시설을 개선하려는 노력을 기울이고 있다.
+
+1.  와이파이 설치 2. 건강한 식재료 (백년초 국수 등 + 지역 특색) 3. 공산품이 아니라 정성이 들어간 음식들 4. 저렴한 가격 + 온누리 상품권 사용가능 5. 쇼핑 후 차 한 잔의 여유를 위한 여가 공간 구비 (카페 등) 6. 1인 가구를 위한 음식
 
 상품권 가맹점포 정보 https://www.sbiz.or.kr/sijangtong/nation/onnuri/onnuriMktList.do?menu_type_a=A&menu_cms=&menu_id=070400#shopPopBtn
 
 데이터 출처 소상공인시장진흥공단_전국 전통시장 현황_2010 : https://www.data.go.kr/data/15102810/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20151231 : https://www.data.go.kr/data/15052836/fileData.do 소상공인시장진흥공단_시장 시설_20210928 : https://www.data.go.kr/data/15090651/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20230725 : https://www.data.go.kr/data/15012894/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20240719 : https://www.data.go.kr/data/15052837/fileData.do?recommendDataYn=Y
 
-소상공인시장진흥공단_시장 서비스 정보_20210928 : https://www.data.go.kr/data/15090612/fileData.do
+소상공인시장진흥공단_시장 서비스 정보_20210928 : https://www.data.go.kr/data/15090612/fileData.do \#
 
+# 
+
+# 
 
 # 데이터 설명
 
@@ -37,6 +42,12 @@ market2.head()
 
 https://wowmap.kr/market5 : 5일장 지도 (위치)
 
+# 
+
+# 
+
+# 
+
 ## 변수명 바꾸기
 
 ```{python}
@@ -55,6 +66,12 @@ market2.head()
 ```
 
 잘 바뀐 것을 알 수 있다.
+
+# 
+
+# 
+
+# 
 
 ## 데이터 정보 알아보기
 
@@ -125,10 +142,13 @@ plt.show()
 market2['data_date'].value_counts()
 ```
 
+# 
 
-#------------------------------
+# 
 
-## 점포수 요약 정보 알아보기
+# 
+
+## 점포수 요약 정보 알아보기 (범주화)
 
 ```{python}
 market2[['store_count']].describe()
@@ -186,7 +206,13 @@ market2['parking_lot'].value_counts()
 
 온누리 상품권은 사용안하는 곳은 null값이니까 그대로 count 쓰면 쓰는 곳만 세어짐 공중화장실, 주차장은 Y/N 이므로, Y만 세려면 Y만 세어줘야 함.
 
-## 범주별 데이텨 현황 알아보기 
+#
+
+#
+
+#
+
+## 범주별 데이텨 현황 알아보기
 
 ```{python}
 market3 = market2.copy()
@@ -209,8 +235,8 @@ group_df
 
 5일장 중에서 점포수가 많은 시장은 15곳 밖에 안 됨. 대부분 small에 해당함. 따라서 5일장만 열리는 곳은 소규모로 진행되는 시장임. 즉 외부 관광객이 간다기 보다는 지역 현지인들이 이용할 것으로 보임. 라고 생각을 했지, 5일장 블로그 봐보니까 관광지라면 관광객도 갈 법한 점포들도 있었음.
 
+## 범주별 데이텨 현황 알아보기
 
-## 범주별 데이텨 현황 알아보기 
 ```{python}
 group_df = market3.groupby(['type','market_scale','level']).agg(market_count= ('market_name','count')
                                                        , certificate_count = ('certificate', 'count')
@@ -222,19 +248,26 @@ group_df['parking_lot_pct']=round(group_df['parking_lot_count']/group_df['market
 group_df
 ```
 
+#
+
+
 비율만 뽑아서 봐보기
 
 ```{python}
 group_df.iloc[:,[0,4,5,6]]
 ```
 
+#
+
+#
+
+#
+
 ## 상설+정기 시장의 지역 봐보기
 
 ```{python}
 market2.query('type == "상설+정기"').head()
 ```
-
-
 
 ## 지역별로 시장 수 알아보기 (삭제할지 보기)
 
@@ -306,7 +339,7 @@ subset2.head()
 subset2['region'] == '서울특별시  '
 ```
 
-region 컬럼의 값이 '  ' 공백이 포함되어 있음을 알 수 있다. 이 상태에서 merge하면 merge가 안됨.
+region 컬럼의 값이 ' ' 공백이 포함되어 있음을 알 수 있다. 이 상태에서 merge하면 merge가 안됨.
 
 ```{python}
 subset2['region'] = subset2['region'].str.replace('세종특별자치시','세종특별시') 
@@ -315,14 +348,11 @@ subset2['region'] = subset2['region'].str.replace('  ','')
 subset2
 ```
 
-
-
 # subset2 데이터 저장하기
+
 ```{python}
 subset2.to_excel(excel_writer = 'subset2.xlsx', index=False)
 ```
-
-
 
 ## market2와 subset 데이터 조인을 위해서 market2의 address_new에서 시/도 값 분리해서 'region' 변수 만들기
 
@@ -337,7 +367,6 @@ market2['region'] = first_tokens
 market2.head()
 ```
 
-
 ## market2, subset2 두 데이터셋 조인 (비율에 대한 새로운 데이터 프레임 만들기)
 
 ```{python}
@@ -345,13 +374,11 @@ market_pop = pd.merge(market2, subset2, how='left', on='region')
 market_pop.head()
 ```
 
-
 ## market2와 subset2 조인한 데이터셋 저장하기 (market_pop)
+
 ```{python}
 market_pop.to_excel(excel_writer='market_pop.xlsx', index=False)
 ```
-
-
 
 ## 60대 이상인 인구가 많으면 시장 갯수가 많이 형성되었을 것이다. (마켓 카운터 갯수 데이터, 지역별 ratio 데이터 병합)
 
@@ -378,8 +405,6 @@ market_pop.groupby('old_up').agg(old_market_count = ('market_name', 'count'))
 
 ※ 지역별 점포수, 지역별 마켓수 따로 데이터 프레임 만들기, 인구 비율 데이터 프레임
 
-
-
 ```{python}
 market_pop.groupby(['region','youth_up']).agg(old_market_count = ('market_name', 'count'))
 ```
@@ -388,9 +413,7 @@ market_pop.groupby(['region','youth_up']).agg(old_market_count = ('market_name',
 market_pop.groupby('youth_up').agg(old_market_count = ('market_name', 'count'))
 ```
 
-0 : 20~50세 인구가 평균보다 작은 곳의 시장 수는 676개 (강원도, 경상남도, 경상북도, 세종특별시, 전라남도, 전라북도, 제주도, 충청남도, 충청북도) 
-1 : 20~50세 인구가 평균보다 큰 곳의 시장 수는 763개 (경기도, 광주광역시, 대구광역시, 대전광역시, 부산광역시, 서울특별시, 울산광역시, 인천광역시) 
-20~50세 인구가 평균보다 큰 곳의 시장 수가 아닌 곳보다 크다.
+0 : 20\~50세 인구가 평균보다 작은 곳의 시장 수는 676개 (강원도, 경상남도, 경상북도, 세종특별시, 전라남도, 전라북도, 제주도, 충청남도, 충청북도) 1 : 20\~50세 인구가 평균보다 큰 곳의 시장 수는 763개 (경기도, 광주광역시, 대구광역시, 대전광역시, 부산광역시, 서울특별시, 울산광역시, 인천광역시) 20\~50세 인구가 평균보다 큰 곳의 시장 수가 아닌 곳보다 크다.
 
 #### 
 
@@ -406,14 +429,14 @@ level_group2 = market_pop.groupby(['youth_up','level'],as_index=False).agg(marke
 level_group2
 ```
 
-20~50세 인구가 평균보다 적은 지역에서의 level별 시장 수 : 501 / 145 / 30 
-20~50세 인구가 평균보다 많은 지역에서의 level별 시장 수 : 329 / 333 / 101
+20\~50세 인구가 평균보다 적은 지역에서의 level별 시장 수 : 501 / 145 / 30 20\~50세 인구가 평균보다 많은 지역에서의 level별 시장 수 : 329 / 333 / 101
 
-젊은 인구가 많은 지역에서 low인 시장이 많다. -> 개선해야 젊은 인구가 많이 간다라고 가도 되나?
+젊은 인구가 많은 지역에서 low인 시장이 많다. -\> 개선해야 젊은 인구가 많이 간다라고 가도 되나?
 
 ## 편의시설이 high 인데 인구 많은데야? 인구 많으면 편의시설 좋아?
 
 ```{python}
 market_pop.query('level == "high"').groupby('region', as_index=False).agg(market_count=('market_name', 'count'),pop = ('total_pop', 'min')).sort_values('pop',ascending=False)
-```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+```
+
 편의시설이 잘 되어있는 시장이 많은 주변으로 인구 수가 많이 형성되어있다고 보기 어려움.
