@@ -206,11 +206,11 @@ market2['parking_lot'].value_counts()
 
 온누리 상품권은 사용안하는 곳은 null값이니까 그대로 count 쓰면 쓰는 곳만 세어짐 공중화장실, 주차장은 Y/N 이므로, Y만 세려면 Y만 세어줘야 함.
 
-#
+# 
 
-#
+# 
 
-#
+# 
 
 ## 범주별 데이텨 현황 알아보기
 
@@ -248,8 +248,7 @@ group_df['parking_lot_pct']=round(group_df['parking_lot_count']/group_df['market
 group_df
 ```
 
-#
-
+# 
 
 비율만 뽑아서 봐보기
 
@@ -257,11 +256,11 @@ group_df
 group_df.iloc[:,[0,4,5,6]]
 ```
 
-#
+# 
 
-#
+# 
 
-#
+# 
 
 ## 상설+정기 시장의 지역 봐보기
 
@@ -441,15 +440,13 @@ market_pop.query('level == "high"').groupby('region', as_index=False).agg(market
 
 편의시설이 잘 되어있는 시장이 많은 주변으로 인구 수가 많이 형성되어있다고 보기 어려움.
 
-
-
-
-
 # 노인 인구 비율 평균 vs 중앙값
+
 ```{python}
 df = market_pop.groupby('region', as_index=False).agg(region_old_ratio = ('old_ratio', 'min'))
 df
 ```
+
 ```{python}
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -458,4 +455,3 @@ plt.clf()
 sns.boxplot(data=df , y='region_old_ratio')
 plt.show()
 ```
-

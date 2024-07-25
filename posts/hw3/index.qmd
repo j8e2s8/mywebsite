@@ -16,6 +16,9 @@ mpg = pd.read_csv('../../mpg.csv')
 mpg.shape
 ```
 
+
+
+
 ```{python}
 import seaborn as sns
 import matplotlib.pyplot as plt

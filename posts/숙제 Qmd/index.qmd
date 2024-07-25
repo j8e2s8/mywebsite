@@ -1,0 +1,61 @@
+---
+title: "hw3"
+author: "정은서"
+editor: visual
+jupyter: python3
+---
+
+# 숙제 Qmd
+
+# 1. 정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2의 pdf를 그릴 것.
+
+```{python}
+def norm(x, mu, sigma):
+    import numpy as np
+    a = 1/(sigma* np.sqrt(2*np.pi))
+    b = np.exp( -(x-mu)**2 / (2*sigma**2))
+    return a*b
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x=np.linspace(-20,20,1000)
+y= norm(x, mu=3, sigma=2)
+
+plt.clf()
+plt.plot(x, y)
+plt.show()
+```
+
+
+
+
+
+
+# ---
+# 2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.
+
+#### X \~ N(2, 3\^2)
+#### 1) P(X<3)
+#### 2) P(2<X<5)
+#### 3) P(X<3 or X>7)
+```{python}
+from scipy.stats import norm
+
+print("1) P(X<3) :",norm.cdf(3, loc=2, scale=3))
+print("2) P(2<X<5) :", norm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3))
+print("3) P(X<3 or X>7) :", norm.cdf(3, loc=2, scale=3) + (1-norm.cdf(7,loc=2,scale=3)))
+```
+
+
+
+
+# ---
+# 3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다.
+# 상위 5%에 해당하는 학생의 점수는?
+
+```{python}
+print("상위 5%에 해당하는 학생의 점수는? ",norm.ppf(0.95, loc=30, scale=2))
+```
+
