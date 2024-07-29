@@ -326,7 +326,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "hw3\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nindex\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
+    "text": "hw3\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html",
@@ -891,14 +891,14 @@
   {
     "objectID": "posts/hw4/index.html",
     "href": "posts/hw4/index.html",
-    "title": "index",
+    "title": "hw4",
     "section": "",
     "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2 = sum((x-x_bar)**2)/(len(x)-1)\nprint(\"s_2 : \",s_2)\n\nk_2 = sum((x-x_bar)**2)/len(x)\nprint(\"k_2 : \",k_2)\n\ns_2 :  1.641466623473874\nk_2 :  1.5593932923001803\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\na=x.var()\n\nimport matplotlib.pyplot as plt\nplt.clf()\nplt.hist(s_2)\nplt.axvline(x=a, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\ny = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\nk_2 = y.var(axis=1, ddof=0)\nb=y.var()\n\nplt.clf()\nplt.hist(k_2)\nplt.axvline(x=b, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다."
   },
   {
     "objectID": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
     "href": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
-    "title": "index",
+    "title": "hw4",
     "section": "",
     "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2 = sum((x-x_bar)**2)/(len(x)-1)\nprint(\"s_2 : \",s_2)\n\nk_2 = sum((x-x_bar)**2)/len(x)\nprint(\"k_2 : \",k_2)\n\ns_2 :  1.641466623473874\nk_2 :  1.5593932923001803\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\na=x.var()\n\nimport matplotlib.pyplot as plt\nplt.clf()\nplt.hist(s_2)\nplt.axvline(x=a, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\ny = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\nk_2 = y.var(axis=1, ddof=0)\nb=y.var()\n\nplt.clf()\nplt.hist(k_2)\nplt.axvline(x=b, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다."
   }
