@@ -1,0 +1,61 @@
+---
+title: "index"
+author: "정은서"
+date: "2024-07-29 "
+categories: [bigdata]
+editor: visual
+jupyter: python3
+---
+
+# 표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.
+
+## 균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.
+
+### 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)
+### 2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.
+```{python}
+from scipy.stats import uniform
+import numpy as np
+x = uniform.rvs(loc=3, scale=4, size=20)
+x_bar = np.mean(x)
+s_2 = sum((x-x_bar)**2)/(len(x)-1)
+print("s_2 : ",s_2)
+
+k_2 = sum((x-x_bar)**2)/len(x)
+print("k_2 : ",k_2)
+```
+```{python}
+np.random.seed(20240729)
+x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
+s_2 = x.var(axis=1, ddof=1)
+a=x.var()
+
+import matplotlib.pyplot as plt
+plt.clf()
+plt.hist(s_2)
+plt.axvline(x=a, color='red')
+plt.show()
+```
+
+
+
+```{python}
+np.random.seed(20240729)
+y = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
+k_2 = y.var(axis=1, ddof=0)
+b=y.var()
+
+plt.clf()
+plt.hist(k_2)
+plt.axvline(x=b, color='red')
+plt.show()
+```
+
+
+
+### 3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!
+분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다.
+그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.
+
+
+

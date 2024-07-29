@@ -1,0 +1,12 @@
+{
+  "hash": "b89cc7b683fb385f7faeaee23cecc221",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: index\nauthor: 정은서\ndate: '2024-07-29 '\ncategories:\n  - bigdata\neditor: visual\n---\n\n# 표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.\n\n## 균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.\n\n### 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)\n### 2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.\n\n::: {#b63b784b .cell execution_count=1}\n``` {.python .cell-code}\nfrom scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2 = sum((x-x_bar)**2)/(len(x)-1)\nprint(\"s_2 : \",s_2)\n\nk_2 = sum((x-x_bar)**2)/len(x)\nprint(\"k_2 : \",k_2)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\ns_2 :  1.641466623473874\nk_2 :  1.5593932923001803\n```\n:::\n:::\n\n\n::: {#7471fd73 .cell execution_count=2}\n``` {.python .cell-code}\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\na=x.var()\n\nimport matplotlib.pyplot as plt\nplt.clf()\nplt.hist(s_2)\nplt.axvline(x=a, color='red')\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-3-output-1.png){width=583 height=411}\n:::\n:::\n\n\n::: {#95211b91 .cell execution_count=3}\n``` {.python .cell-code}\nnp.random.seed(20240729)\ny = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\nk_2 = y.var(axis=1, ddof=0)\nb=y.var()\n\nplt.clf()\nplt.hist(k_2)\nplt.axvline(x=b, color='red')\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-4-output-1.png){width=583 height=411}\n:::\n:::\n\n\n### 3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!\n분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다.\n그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
