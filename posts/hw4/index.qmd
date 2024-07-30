@@ -42,7 +42,7 @@ print("k_2_3 : ",k_2_3)
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
 s_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20))**2).sum(axis=1)/(20 -1)
-population_variance = ((x-x.mean() )**2 ).sum() /(10000*20)
+population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -57,12 +57,13 @@ plt.show()
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
 s_2 = x.var(axis=1, ddof=1)
+population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 plt.clf()
 sns.histplot(s_2, stat='density')
-plt.axvline(x=x.var(), color='red')
+plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
 
@@ -72,12 +73,13 @@ plt.show()
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
 s_2 = np.var(x, axis=1 ,ddof=1)
+population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 plt.clf()
 sns.histplot(s_2, stat='density')
-plt.axvline(x=np.var(x ,ddof=1), color='red')
+plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
 #
@@ -89,7 +91,7 @@ plt.show()
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
 k_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20))**2).sum(axis=1)/20
-population_variance = ((x-x.mean() )**2 ).sum() /(10000*20)
+population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -104,12 +106,13 @@ plt.show()
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
 k_2 = x.var(axis=1, ddof=0)
+population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 plt.clf()
 sns.histplot(k_2, stat='density')
-plt.axvline(x=x.var(), color='red')
+plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
 
@@ -119,12 +122,13 @@ plt.show()
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
 s_2 = np.var(x, axis=1 ,ddof=0)
+population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 plt.clf()
 sns.histplot(s_2, stat='density')
-plt.axvline(x=np.var(x ,ddof=0), color='red')
+plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
 
