@@ -326,7 +326,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "hw3\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
+    "text": "hw3\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 30, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html",
@@ -908,5 +908,47 @@
     "title": "hw4",
     "section": "",
     "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.007655285111685\ns_2_2 :  1.0076552851116847\ns_2_3 :  1.0076552851116847\nk_2_1 :  0.9572725208561007\nk_2_2 :  0.9572725208561005\nk_2_3 :  0.9572725208561005\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20))**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw5/index.html",
+    "href": "posts/hw5/index.html",
+    "title": "hw5",
+    "section": "",
+    "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns\n\n\n\n\n\n\n\nimport numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0\n\n\n\n\n\n\n\n\n\n\n\nmale_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845\n\n\n\n\n\n\nsex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw5/index.html#데이터-불러오기",
+    "href": "posts/hw5/index.html#데이터-불러오기",
+    "title": "hw5",
+    "section": "",
+    "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns"
+  },
+  {
+    "objectID": "posts/hw5/index.html#필요한-데이터만-가져오기",
+    "href": "posts/hw5/index.html#필요한-데이터만-가져오기",
+    "title": "hw5",
+    "section": "",
+    "text": "import numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0"
+  },
+  {
+    "objectID": "posts/hw5/index.html#신뢰구간-구하기",
+    "href": "posts/hw5/index.html#신뢰구간-구하기",
+    "title": "hw5",
+    "section": "",
+    "text": "male_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845"
+  },
+  {
+    "objectID": "posts/hw5/index.html#groupby로-성별별-평균-income-데이터-만들기",
+    "href": "posts/hw5/index.html#groupby로-성별별-평균-income-데이터-만들기",
+    "title": "hw5",
+    "section": "",
+    "text": "sex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571"
+  },
+  {
+    "objectID": "posts/hw5/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
+    "href": "posts/hw5/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
+    "title": "hw5",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
   }
 ]
