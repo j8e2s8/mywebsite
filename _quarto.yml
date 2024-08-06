@@ -12,6 +12,8 @@ website:
         text: Blog
       - href: project1.qmd
         text: project1
+      - href: project2.qmd
+        text: project2
 
 format:
   html:

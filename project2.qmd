@@ -1,0 +1,8 @@
+---
+title: "project2_house price"
+listing:
+  contents: project2
+  sort: "date desc"
+  type: default
+  categories: true
+---
