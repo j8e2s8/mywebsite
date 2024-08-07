@@ -23,7 +23,7 @@ submission = pd.read_csv('../../../lsbigdata-project1/house price/sample_submiss
 
 # 
 
-## 0. 모든 변수 결측치 확인
+## 0. 모든 변수 결측치와 정보 확인
 
 ```{python}
 pd.set_option('display.max_rows',None)
@@ -36,17 +36,79 @@ pd.reset_option('display.max_rows')
 train_df.info()
 ```
 
-'Id' : 수치컬럼에서 제외해야 함. 'MSSubClass' : 수치컬럼으로 되어있는데, 범주컬럼임. 'LotFrontage' : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기. 'Alley' : 1369개 결측치는 골목길이 없다는 것임.
+'Id' : 수치컬럼에서 제외해야 함.  
+'MSSubClass' : 수치컬럼으로 되어있는데, 범주컬럼임.  
+'LotFrontage' : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기.  
+'Alley' : 1369개 결측치는 골목길이 없다는 것임.
+
+
+#
+
+#### 수치컬럼의 분포 확인 함수
+```{python}
+def train_numeric_hist(col):
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = col + "의 분포"
+    plt.title(a)
+    plt.tight_layout()
+    sns.histplot(train_df[col], stat='density')
+    plt.show()
+```
+
+#### 수치컬럼과 y컬럼의 관계 확인 함수
+```{python}
+def train_rel_xy(col):
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = col + "과 SalePrice의 관계"
+    plt.title(a)
+    plt.tight_layout()
+    sns.scatterplot(data=train_df, x=col, y='SalePrice')
+    plt.show()
+```
+
+
+#### 범주컬럼의 빈도 확인 함수
+```{python}
+def train_cat_count(col):
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = col + "의 범주별 빈도 확인"
+    plt.title(a)
+    plt.tight_layout()
+    sns.countplot(train_df[col])
+    plt.show()
+```
+
+
+#### 범주컬럼의 범주별 분포 비교 함수
+```{python}
+def train_cat_hist(col):
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = col + "의 범주별 분포 비교"
+    plt.title(a)
+    plt.tight_layout()
+    cats = train_df[col].unique()
+    for i in range(len(cats)):
+        sns.histplot(train_df[train_df[col]==cats[i]]['SalePrice'], stat='density')
+    plt.show()
+```
+
+
+
 
 # 
 
 ## 1. 'SalePrice' : 판매 가격
 
 ```{python}
-plt.clf()
-sns.histplot(train_df['SalePrice'] , stat='density')
-plt.tight_layout()
-plt.show()
+train_numeric_hist('SalePrice')
 
 print("최소값 :", train_df['SalePrice'].min())
 print("최대값 :", train_df['SalePrice'].max())
@@ -59,12 +121,19 @@ print("최대값 :", train_df['SalePrice'].max())
 ## 2. 'MSSubClass' : 판매 관련 주택 타입 (1층인지, 2층인지, 언제적 집구조인지, 다세대인지 등등) \<- 수치컬럼으로 되어 있지만 범주 컬럼임.
 
 ```{python}
-train_df['MSSubClass'].value_counts().sort_index()
-train_df['MSSubClass'] = train_df['MSSubClass'].astype('object')
+train_df['MSSubClass'] = train_df['MSSubClass'].astype(str)
+train_cat_count('MSSubClass')
+
+train_cat_hist('MSSubClass')
+
 
 plt.clf()
 sns.countplot(data=train_df, x='MSSubClass')
+plt.title('범주별 빈도 확인')
 plt.show()
+
+print(train_df['MSSubClass'].value_counts().sort_index())
+# train_df['MSSubClass'] = train_df['MSSubClass'].astype('object')
 ```
 
 ```         
@@ -103,9 +172,6 @@ train_df[train_df['MSSubClass'] == 60]['YearBuilt'].sort_values()  # 'MSSubClass
 train_df[train_df['MSSubClass'] == 70]['YearBuilt'].sort_values()  # 'MSSubClass'=70은 1872~1945에 지어진 집임
 ```
 
-```{python}
-train_df[train_df['MSSubClass'] == 40]['YearBuilt'].sort_values()   # 4개밖에 없음
-```
 
 ```{python}
 train_df[train_df['MSSubClass'] == 120]['YearBuilt'].sort_values()   # 1976~2009에 지어진 집임.
@@ -116,11 +182,27 @@ train_df[train_df['MSSubClass'] == 120]['YearBuilt'].sort_values()   # 1976~2009
 ## 3. 'MSZoning' : 판매 관련 일반 구역 분류 (수상 거주지인지, 밀도가 높은 거주지인지 등)
 
 ```{python}
-train_df['MSZoning'].value_counts()
-
 plt.clf()
 sns.countplot(data=train_df, x='MSZoning')
+plt.title('범주별 빈도 확인')
 plt.show()
+
+
+plt.clf()
+sns.histplot(train_df[train_df['MSZoning'] == 'RH']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['MSZoning'] == 'FV']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['MSZoning'] == 'C (all)']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['MSZoning'] == 'RL']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['MSZoning'] == 'RM']['SalePrice'], stat='density')
+plt.title('MSZoning 범주별, SalePrice 분포')
+plt.tight_layout()
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.show()
+
+
+
+print(train_df['MSZoning'].value_counts())
 ```
 
 ```         
@@ -141,35 +223,46 @@ plt.show()
 ## 4. 'LotFrontage' : 집과 연결된 거리의 직선 길이 (feet)
 
 ```{python}
-plt.clf()
-sns.histplot(train_df['LotFrontage'], stat='density')
-plt.show()
+train_numeric_hist('LotFrontage')
+
+train_rel_xy('LotFrontage')
 ```
 
-결측치 259개 있음. \<- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기. 이상치 있어보임.
+결측치 259개 있음. \<- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.  
+LotFrontage의 분포를 보면 이상치 있어보임.
+LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.
 
 # 
 
-## 'LotArea' : 부지 크기 (square feet)
+
+## 5. 'LotArea' : 부지 크기 (square feet)
 
 ```{python}
-plt.clf()
-sns.histplot(train_df['LotArea'], stat='density')
-plt.show()
+train_numeric_hist('LotArea')
+
+train_rel_xy('LotArea')
 ```
 
-이상치 있어보임.
+LotArea의 분포를 보면 이상치 있어보임.
+LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.
 
 # 
 
-## 'Street' : 집에 접근 도로 유형 (자갈길인지, 포장길인지)
+## 6. 'Street' : 집에 접근 도로 유형 (자갈길인지, 포장길인지)
 
 ```{python}
-train_df['Street'].value_counts()
-
 plt.clf()
 sns.countplot(data=train_df, x='Street')
 plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['Street']=='Pave']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Street']=='Grvl']['SalePrice'], stat='density')
+plt.title('MSZoning 범주별, SalePrice 분포')
+plt.tight_layout()
+plt.show()
+
+print(train_df['Street'].value_counts())
 ```
 
 ```         
@@ -178,17 +271,26 @@ plt.show()
 ```
 
 자갈길이 6개밖에 안됨.
+포장길에 이상치가 있어보임.
 
 # 
 
-## 'Alley' : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)
+## 7. 'Alley' : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)
 
 ```{python}
-train_df['Alley'].value_counts()
-
 plt.clf()
 sns.countplot(data=train_df, x='Alley')
 plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['Alley']=='Pave']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Alley']=='Grvl']['SalePrice'], stat='density')
+plt.title('MSZoning 범주별, SalePrice 분포')
+plt.tight_layout()
+plt.show()
+
+
+print(train_df['Alley'].value_counts())
 ```
 
 ```         
@@ -198,17 +300,27 @@ plt.show()
 ```
 
 1369 결측치 있음. \<- 이게 다 골목길 없다는 것임.
+범주별 분포가 많이 다름. <- 범주별로 집 가격 차이가 있을 것임.
 
 # 
 
-## 'LotShape' : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)
+## 8. 'LotShape' : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)
 
 ```{python}
-train_df['LotShape'].value_counts()
-
 plt.clf()
 sns.countplot(data=train_df, x='LotShape')
 plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['LotShape']=='Reg']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotShape']=='IR1']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotShape']=='IR2']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotShape']=='IR3']['SalePrice'], stat='density')
+plt.title('LotShape 범주별, SalePrice 분포')
+plt.tight_layout()
+plt.show()
+
+print(train_df['LotShape'].value_counts())
 ```
 
 ```         
@@ -219,17 +331,28 @@ plt.show()
 ```
 
 일반적이지 않은 집이 10개 있음. 이상치에 해당하는 집일 수도...?
+범주별 분포가 크게 다른 것 같진 않음.
+주황색 분포에 이상치가 있어보임.
 
 # 
 
-## 'LandContour' : 집의 평탄 정도
+## 9. 'LandContour' : 집의 평탄 정도
 
 ```{python}
-train_df['LandContour'].value_counts()
-
 plt.clf()
 sns.countplot(data=train_df, x='LandContour')
 plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['LandContour']=='Lvl']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LandContour']=='Bnk']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LandContour']=='HLS']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LandContour']=='Low']['SalePrice'], stat='density')
+plt.title('LotShape 범주별, SalePrice 분포')
+plt.tight_layout()
+plt.show()
+
+print(train_df['LandContour'].value_counts())
 ```
 
 ```         
@@ -240,3 +363,166 @@ plt.show()
 ```
 
 평평한 것에 가까운게 많음.
+범주별 분포 차이가 없어 보임.
+파란색 분포에 이상치가 있어보임.
+
+#
+
+## 10. 'Utilities' : 전기, 가스, 수도, 하수도 사용 가능 여부
+```{python}
+plt.clf()
+sns.countplot(data=train_df, x='Utilities')
+plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['Utilities']=='AllPub']['SalePrice'], stat='density')
+#sns.histplot(train_df[train_df['Utilities']=='NoSewr']['SalePrice'], stat='density')
+#sns.histplot(train_df[train_df['Utilities']=='NoSeWa']['SalePrice'], stat='density')
+#sns.histplot(train_df[train_df['Utilities']=='ELO']['SalePrice'], stat='density')
+plt.title('Utilities 범주별, SalePrice 분포')
+plt.tight_layout()
+plt.show()
+
+print(train_df['Utilities'].value_counts())
+```
+       AllPub	전기, 가스, 물, 하수도 	
+       NoSewr	전기, 가스, 물 (정화조)
+       NoSeWa	전기, 가스
+       ELO		전기
+
+전기, 가스만 사용가능한 집이 1개만 있고, 그 외에는 모두 사용 가능한 집임.
+이상치 존재해 보임.
+
+#
+
+## 11. 'LotConfig' : 부지 배열  (부지 위치가 안쪽인지, 코너인지, 도로가 몇 개인지 등)
+```{python}
+plt.clf()
+sns.countplot(data=train_df, x='LotConfig')
+plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['LotConfig']=='Inside']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotConfig']=='Corner']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotConfig']=='CulDSac']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotConfig']=='FR2']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LotConfig']=='FR3']['SalePrice'], stat='density')
+plt.title('LotConfig 범주별, SalePrice 분포')
+plt.show()
+
+print(train_df['LotConfig'].value_counts())
+```
+       Inside	안쪽 부지
+       Corner	코너 부지
+       CulDSac	출입하는 길이 하나인 곳
+       FR2		도로.강을 향한 면이 2곳
+       FR3		도로.강을 향한 면이 3곳
+범주별로 분포 차이가 없어보임. 
+초록색, 주황색 분포에 이상치가 있어보임.
+
+
+#
+
+## 12. 'LandSlope' : 집 토지 경사  (경사가 약간인지, 심각한지 등)
+```{python}
+plt.clf()
+sns.countplot(data=train_df, x='LandSlope')
+plt.show()
+
+plt.clf()
+sns.histplot(train_df[train_df['LandSlope']=='Gtl']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LandSlope']=='Mod']['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['LandSlope']=='Sev']['SalePrice'], stat='density')
+plt.title('LandSlope 범주별, SalePrice 분포')
+plt.show()
+
+print(train_df['LandSlope'].value_counts())
+```
+       Gtl	약간 경사
+       Mod	보통 경사
+       Sev	심한 경사
+
+경사가 심하면 건축비용이 많이 든다길래 집값에 차이가 있을 줄 알았는데, 범주별로 분포의 차이가 없어보임. 
+파란색 분포에 이상치가 있어보임.
+
+
+#
+
+## 13. 'Neighborhood' : Physical locations within Ames city limits (집 위치)
+```{python}
+plt.clf()
+sns.countplot(data=train_df, x='Neighborhood')
+plt.xticks(rotation = 50)
+plt.show()
+
+
+b = train_df['Neighborhood'].unique()
+
+plt.clf()
+sns.histplot(train_df[train_df['Neighborhood']==b[0]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[1]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[2]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[3]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[4]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[5]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[6]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[7]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[8]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[9]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[11]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[12]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[13]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[14]]['SalePrice'], stat='density')
+plt.title('Neighborhood 범주별, SalePrice 분포')
+plt.show()
+
+print(train_df['Neighborhood'].value_counts().sort_index())
+```
+       Blmngtn	Bloomington Heights
+       Blueste	Bluestem
+       BrDale	Briardale
+       BrkSide	Brookside
+       ClearCr	Clear Creek
+       CollgCr	College Creek
+       Crawfor	Crawford
+       Edwards	Edwards
+       Gilbert	Gilbert
+       IDOTRR	Iowa DOT and Rail Road
+       MeadowV	Meadow Village
+       Mitchel	Mitchell
+       Names	North Ames
+       NoRidge	Northridge
+       NPkVill	Northpark Villa
+       NridgHt	Northridge Heights
+       NWAmes	Northwest Ames
+       OldTown	Old Town
+       SWISU	South & West of Iowa State University
+       Sawyer	Sawyer
+       SawyerW	Sawyer West
+       Somerst	Somerset
+       StoneBr	Stone Brook
+       Timber	Timberland
+       Veenker	Veenker
+분포 차이가 있는 지역이 있는 것 같음. <- 지역마다 집값의 차이가 있다고 볼 수 있음.
+집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.
+빨간색, 파란색 분포에서 이상치가 있어보임.
+보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.
+집 데이터가 가장 많은 지역은 NridgHt임.
+그 다음이 CollgCr
+
+
+```{python}
+plt.clf()
+sns.histplot(train_df[train_df['Neighborhood']==b[0]]['SalePrice'], stat='density')
+sns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='density')
+plt.title('Neighborhood 범주별, SalePrice 분포')
+plt.show()
+```
+집 데이터가 가장 많은 두 지역을 보면 집값 차이가 큼
+
+
+
+
+
+

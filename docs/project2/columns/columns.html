@@ -180,43 +180,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#데이터-불러오기" id="toc-데이터-불러오기" class="nav-link active" data-scroll-target="#데이터-불러오기">데이터 불러오기</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a>
   <ul class="collapse">
-  <li><a href="#모든-변수-결측치-확인" id="toc-모든-변수-결측치-확인" class="nav-link" data-scroll-target="#모든-변수-결측치-확인">0. 모든 변수 결측치 확인</a></li>
+  <li><a href="#모든-변수-결측치와-정보-확인" id="toc-모든-변수-결측치와-정보-확인" class="nav-link" data-scroll-target="#모든-변수-결측치와-정보-확인">0. 모든 변수 결측치와 정보 확인</a></li>
   </ul></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a>
   <ul class="collapse">
   <li><a href="#saleprice-판매-가격" id="toc-saleprice-판매-가격" class="nav-link" data-scroll-target="#saleprice-판매-가격">1. ‘SalePrice’ : 판매 가격</a></li>
   </ul></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a>
   <ul class="collapse">
   <li><a href="#mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임." id="toc-mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임." class="nav-link" data-scroll-target="#mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임.">2. ‘MSSubClass’ : 판매 관련 주택 타입 (1층인지, 2층인지, 언제적 집구조인지, 다세대인지 등등) &lt;- 수치컬럼으로 되어 있지만 범주 컬럼임.</a></li>
   </ul></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a>
   <ul class="collapse">
   <li><a href="#mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등" id="toc-mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등" class="nav-link" data-scroll-target="#mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등">3. ‘MSZoning’ : 판매 관련 일반 구역 분류 (수상 거주지인지, 밀도가 높은 거주지인지 등)</a></li>
   </ul></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"></a>
   <ul class="collapse">
   <li><a href="#lotfrontage-집과-연결된-거리의-직선-길이-feet" id="toc-lotfrontage-집과-연결된-거리의-직선-길이-feet" class="nav-link" data-scroll-target="#lotfrontage-집과-연결된-거리의-직선-길이-feet">4. ‘LotFrontage’ : 집과 연결된 거리의 직선 길이 (feet)</a></li>
   </ul></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"></a>
-  <ul class="collapse">
-  <li><a href="#lotarea-부지-크기-square-feet" id="toc-lotarea-부지-크기-square-feet" class="nav-link" data-scroll-target="#lotarea-부지-크기-square-feet">‘LotArea’ : 부지 크기 (square feet)</a></li>
-  </ul></li>
   <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6"></a>
   <ul class="collapse">
-  <li><a href="#street-집에-접근-도로-유형-자갈길인지-포장길인지" id="toc-street-집에-접근-도로-유형-자갈길인지-포장길인지" class="nav-link" data-scroll-target="#street-집에-접근-도로-유형-자갈길인지-포장길인지">‘Street’ : 집에 접근 도로 유형 (자갈길인지, 포장길인지)</a></li>
+  <li><a href="#lotarea-부지-크기-square-feet" id="toc-lotarea-부지-크기-square-feet" class="nav-link" data-scroll-target="#lotarea-부지-크기-square-feet">5. ‘LotArea’ : 부지 크기 (square feet)</a></li>
   </ul></li>
   <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7"></a>
   <ul class="collapse">
-  <li><a href="#alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" id="toc-alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" class="nav-link" data-scroll-target="#alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지">‘Alley’ : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)</a></li>
+  <li><a href="#street-집에-접근-도로-유형-자갈길인지-포장길인지" id="toc-street-집에-접근-도로-유형-자갈길인지-포장길인지" class="nav-link" data-scroll-target="#street-집에-접근-도로-유형-자갈길인지-포장길인지">6. ‘Street’ : 집에 접근 도로 유형 (자갈길인지, 포장길인지)</a></li>
   </ul></li>
   <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"></a>
   <ul class="collapse">
-  <li><a href="#lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등" id="toc-lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등" class="nav-link" data-scroll-target="#lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등">‘LotShape’ : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)</a></li>
+  <li><a href="#alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" id="toc-alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" class="nav-link" data-scroll-target="#alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지">7. ‘Alley’ : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)</a></li>
   </ul></li>
   <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"></a>
   <ul class="collapse">
-  <li><a href="#landcontour-집의-평탄-정도" id="toc-landcontour-집의-평탄-정도" class="nav-link" data-scroll-target="#landcontour-집의-평탄-정도">‘LandContour’ : 집의 평탄 정도</a></li>
+  <li><a href="#lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등" id="toc-lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등" class="nav-link" data-scroll-target="#lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등">8. ‘LotShape’ : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)</a></li>
+  </ul></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"></a>
+  <ul class="collapse">
+  <li><a href="#landcontour-집의-평탄-정도" id="toc-landcontour-집의-평탄-정도" class="nav-link" data-scroll-target="#landcontour-집의-평탄-정도">9. ‘LandContour’ : 집의 평탄 정도</a></li>
+  </ul></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11"></a>
+  <ul class="collapse">
+  <li><a href="#utilities-전기-가스-수도-하수도-사용-가능-여부" id="toc-utilities-전기-가스-수도-하수도-사용-가능-여부" class="nav-link" data-scroll-target="#utilities-전기-가스-수도-하수도-사용-가능-여부">10. ‘Utilities’ : 전기, 가스, 수도, 하수도 사용 가능 여부</a></li>
+  </ul></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12"></a>
+  <ul class="collapse">
+  <li><a href="#lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등" id="toc-lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등" class="nav-link" data-scroll-target="#lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등">11. ‘LotConfig’ : 부지 배열 (부지 위치가 안쪽인지, 코너인지, 도로가 몇 개인지 등)</a></li>
+  </ul></li>
+  <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13"></a>
+  <ul class="collapse">
+  <li><a href="#landslope-집-토지-경사-경사가-약간인지-심각한지-등" id="toc-landslope-집-토지-경사-경사가-약간인지-심각한지-등" class="nav-link" data-scroll-target="#landslope-집-토지-경사-경사가-약간인지-심각한지-등">12. ‘LandSlope’ : 집 토지 경사 (경사가 약간인지, 심각한지 등)</a></li>
+  </ul></li>
+  <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14"></a>
+  <ul class="collapse">
+  <li><a href="#neighborhood-physical-locations-within-ames-city-limits-집-위치" id="toc-neighborhood-physical-locations-within-ames-city-limits-집-위치" class="nav-link" data-scroll-target="#neighborhood-physical-locations-within-ames-city-limits-집-위치">13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -230,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="데이터-불러오기" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h2>
-<div id="38f596bd" class="cell" data-execution_count="1">
+<div id="7b8bdc32" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -245,15 +262,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section" class="level1">
 <h1></h1>
-<section id="모든-변수-결측치-확인" class="level2">
-<h2 class="anchored" data-anchor-id="모든-변수-결측치-확인">0. 모든 변수 결측치 확인</h2>
-<div id="2f529bbd" class="cell" data-execution_count="2">
+<section id="모든-변수-결측치와-정보-확인" class="level2">
+<h2 class="anchored" data-anchor-id="모든-변수-결측치와-정보-확인">0. 모든 변수 결측치와 정보 확인</h2>
+<div id="970ba9b4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>,<span class="va">None</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nan_df <span class="op">=</span> train_df.isna().<span class="bu">sum</span>()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nan_df[nan_df<span class="op">&gt;</span><span class="dv">0</span>]</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pd.reset_option(<span class="st">'display.max_rows'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6e75de4c" class="cell" data-execution_count="3">
+<div id="433b0587" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>train_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -346,25 +363,86 @@ dtypes: float64(3), int64(35), object(43)
 memory usage: 924.0+ KB</code></pre>
 </div>
 </div>
-<p>‘Id’ : 수치컬럼에서 제외해야 함. ‘MSSubClass’ : 수치컬럼으로 되어있는데, 범주컬럼임. ‘LotFrontage’ : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기. ‘Alley’ : 1369개 결측치는 골목길이 없다는 것임.</p>
+<p>‘Id’ : 수치컬럼에서 제외해야 함.<br>
+‘MSSubClass’ : 수치컬럼으로 되어있는데, 범주컬럼임.<br>
+‘LotFrontage’ : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기.<br>
+‘Alley’ : 1369개 결측치는 골목길이 없다는 것임.</p>
 </section>
 </section>
 <section id="section-1" class="level1">
 <h1></h1>
+<section id="수치컬럼의-분포-확인-함수" class="level4">
+<h4 class="anchored" data-anchor-id="수치컬럼의-분포-확인-함수">수치컬럼의 분포 확인 함수</h4>
+<div id="71116749" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_numeric_hist(col):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> col <span class="op">+</span> <span class="st">"의 분포"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    plt.title(a)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    sns.histplot(train_df[col], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="수치컬럼과-y컬럼의-관계-확인-함수" class="level4">
+<h4 class="anchored" data-anchor-id="수치컬럼과-y컬럼의-관계-확인-함수">수치컬럼과 y컬럼의 관계 확인 함수</h4>
+<div id="2d8391a0" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_rel_xy(col):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> col <span class="op">+</span> <span class="st">"과 SalePrice의 관계"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    plt.title(a)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    sns.scatterplot(data<span class="op">=</span>train_df, x<span class="op">=</span>col, y<span class="op">=</span><span class="st">'SalePrice'</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="범주컬럼의-빈도-확인-함수" class="level4">
+<h4 class="anchored" data-anchor-id="범주컬럼의-빈도-확인-함수">범주컬럼의 빈도 확인 함수</h4>
+<div id="806f06e5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_count(col):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> col <span class="op">+</span> <span class="st">"의 범주별 빈도 확인"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    plt.title(a)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    sns.countplot(train_df[col])</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="범주컬럼의-범주별-분포-비교-함수" class="level4">
+<h4 class="anchored" data-anchor-id="범주컬럼의-범주별-분포-비교-함수">범주컬럼의 범주별 분포 비교 함수</h4>
+<div id="36eadcce" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_hist(col):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> col <span class="op">+</span> <span class="st">"의 범주별 분포 비교"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    plt.title(a)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    cats <span class="op">=</span> train_df[col].unique()</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(cats)):</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        sns.histplot(train_df[train_df[col]<span class="op">==</span>cats[i]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level1">
+<h1></h1>
 <section id="saleprice-판매-가격" class="level2">
 <h2 class="anchored" data-anchor-id="saleprice-판매-가격">1. ‘SalePrice’ : 판매 가격</h2>
-<div id="7799a1d4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[<span class="st">'SalePrice'</span>] , stat<span class="op">=</span><span class="st">'density'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"최소값 :"</span>, train_df[<span class="st">'SalePrice'</span>].<span class="bu">min</span>())</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"최대값 :"</span>, train_df[<span class="st">'SalePrice'</span>].<span class="bu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="018a569f" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>train_numeric_hist(<span class="st">'SalePrice'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"최소값 :"</span>, train_df[<span class="st">'SalePrice'</span>].<span class="bu">min</span>())</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"최대값 :"</span>, train_df[<span class="st">'SalePrice'</span>].<span class="bu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-5-output-1.png" width="662" height="470" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-9-output-1.png" width="661" height="488" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -376,23 +454,63 @@ memory usage: 924.0+ KB</code></pre>
 <p>이상치 있어보임. 100,000~200,000 달러가 제일 많아보임.</p>
 </section>
 </section>
-<section id="section-2" class="level1">
+<section id="section-3" class="level1">
 <h1></h1>
 <section id="mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임." class="level2">
 <h2 class="anchored" data-anchor-id="mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임.">2. ‘MSSubClass’ : 판매 관련 주택 타입 (1층인지, 2층인지, 언제적 집구조인지, 다세대인지 등등) &lt;- 수치컬럼으로 되어 있지만 범주 컬럼임.</h2>
-<div id="0e956ac2" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'MSSubClass'</span>].value_counts().sort_index()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'MSSubClass'</span>] <span class="op">=</span> train_df[<span class="st">'MSSubClass'</span>].astype(<span class="st">'object'</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'MSSubClass'</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3d5822e1" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'MSSubClass'</span>] <span class="op">=</span> train_df[<span class="st">'MSSubClass'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'MSSubClass'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'MSSubClass'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'MSSubClass'</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'범주별 빈도 확인'</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'MSSubClass'</span>].value_counts().sort_index())</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># train_df['MSSubClass'] = train_df['MSSubClass'].astype('object')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-6-output-1.png" width="593" height="429" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-10-output-1.png" width="676" height="488" class="figure-img"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-10-output-2.png" width="671" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-10-output-3.png" width="590" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MSSubClass
+120     87
+160     63
+180     10
+190     30
+20     536
+30      69
+40       4
+45      12
+50     144
+60     299
+70      60
+75      16
+80      58
+85      20
+90      52
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <pre><code>    20  1946년부터 그 이후로 지어진 1층 짜리 최신 집 (1938, 1946~2010년에 지어진 집들임.)
@@ -411,169 +529,87 @@ memory usage: 924.0+ KB</code></pre>
    160  1946년부터 그 이후로 지어진 2층짜리 최신 연립주택 그룹 (집이 모여있음)
    180  연립주택 그룹 + 각 층이 엇갈림 + 현관 계단 집
    190  한 집을 두 집으로 개조해서 쪼갠 집</code></pre>
-<div id="cb8e4b56" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> train_df.columns</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">20</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=20은 1938, 1946~2010에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>1332    1938
-533     1946
-1049    1946
-1123    1947
-607     1948
-        ... 
-507     2009
-987     2009
-644     2009
-412     2009
-378     2010
-Name: YearBuilt, Length: 536, dtype: int64</code></pre>
-</div>
-</div>
-<div id="361fb3db" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">30</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=30은 1885, 1910~1945, 1948에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>106     1885
-1013    1910
-638     1910
-438     1913
-1380    1914
-        ... 
-1337    1941
-393     1941
-241     1945
-68      1945
-836     1948
-Name: YearBuilt, Length: 69, dtype: int64</code></pre>
-</div>
-</div>
-<div id="1970acbd" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">60</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=60은 1946~2009에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>425     1946
-868     1948
-397     1962
-1351    1962
-895     1963
-        ... 
-157     2009
-762     2009
-572     2009
-212     2009
-460     2009
-Name: YearBuilt, Length: 299, dtype: int64</code></pre>
-</div>
-</div>
-<div id="97cb8e6d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">70</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=70은 1872~1945에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>1349    1872
-630     1880
-747     1880
-1132    1880
-991     1882
-716     1890
-1292    1892
-676     1900
-841     1904
-974     1910
-740     1910
-1408    1910
-596     1910
-1234    1911
-1235    1914
-1096    1914
-565     1915
-482     1915
-3       1915
-289     1915
-407     1915
-456     1916
-417     1918
-1263    1919
-1149    1920
-531     1920
-30      1920
-1397    1920
-1382    1920
-181     1920
-329     1920
-365     1920
-1360    1921
-63      1921
-1440    1922
-1012    1923
-807     1923
-671     1925
-314     1925
-458     1925
-840     1925
-217     1925
-519     1926
-508     1928
-1244    1929
-657     1931
-1174    1932
-190     1932
-608     1934
-463     1934
-1168    1935
-461     1936
-1075    1940
-939     1940
-651     1940
-1147    1941
-1457    1941
-467     1942
-1301    1942
-114     1945
-Name: YearBuilt, dtype: int64</code></pre>
-</div>
-</div>
-<div id="e2d23177" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">40</span>][<span class="st">'YearBuilt'</span>].sort_values()   <span class="co"># 4개밖에 없음</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f113d89c" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> train_df.columns</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">20</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=20은 1938, 1946~2010에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>164     1926
-589     1930
-873     1949
-1270    1979
-Name: YearBuilt, dtype: int64</code></pre>
+<pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
 </div>
 </div>
-<div id="e2d6c14c" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">120</span>][<span class="st">'YearBuilt'</span>].sort_values()   <span class="co"># 1976~2009에 지어진 집임.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4f497ca5" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">30</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=30은 1885, 1910~1945, 1948에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>23      1976
-126     1976
-1431    1976
-357     1976
-1421    1977
-        ... 
-350     2007
-1415    2007
-1181    2008
-1228    2008
-819     2009
-Name: YearBuilt, Length: 87, dtype: int64</code></pre>
+<pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
+</div>
+</div>
+<div id="15a1cfbb" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">60</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=60은 1946~2009에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
+</div>
+</div>
+<div id="211403e7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">70</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=70은 1872~1945에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
+</div>
+</div>
+<div id="1842fcd2" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">120</span>][<span class="st">'YearBuilt'</span>].sort_values()   <span class="co"># 1976~2009에 지어진 집임.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="section-3" class="level1">
+<section id="section-4" class="level1">
 <h1></h1>
 <section id="mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등" class="level2">
 <h2 class="anchored" data-anchor-id="mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등">3. ‘MSZoning’ : 판매 관련 일반 구역 분류 (수상 거주지인지, 밀도가 높은 거주지인지 등)</h2>
-<div id="ae4fd360" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'MSZoning'</span>].value_counts()</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'MSZoning'</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="65d1e7ab" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'MSZoning'</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'범주별 빈도 확인'</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'MSZoning'</span>] <span class="op">==</span> <span class="st">'RH'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'MSZoning'</span>] <span class="op">==</span> <span class="st">'FV'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'MSZoning'</span>] <span class="op">==</span> <span class="st">'C (all)'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'MSZoning'</span>] <span class="op">==</span> <span class="st">'RL'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'MSZoning'</span>] <span class="op">==</span> <span class="st">'RM'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'MSZoning 범주별, SalePrice 분포'</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'MSZoning'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-13-output-1.png" width="601" height="432" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-16-output-1.png" width="597" height="449" class="figure-img"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-16-output-2.png" width="662" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MSZoning
+RL         1151
+RM          218
+FV           65
+RH           16
+C (all)      10
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <pre><code>   A    농업
@@ -587,139 +623,506 @@ Name: YearBuilt, Length: 87, dtype: int64</code></pre>
 <p>=&gt; 데이터상 RL, RM, RH, FV, C(all) 만 있음.</p>
 </section>
 </section>
-<section id="section-4" class="level1">
+<section id="section-5" class="level1">
 <h1></h1>
 <section id="lotfrontage-집과-연결된-거리의-직선-길이-feet" class="level2">
 <h2 class="anchored" data-anchor-id="lotfrontage-집과-연결된-거리의-직선-길이-feet">4. ‘LotFrontage’ : 집과 연결된 거리의 직선 길이 (feet)</h2>
-<div id="72588807" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[<span class="st">'LotFrontage'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0340759d" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>train_numeric_hist(<span class="st">'LotFrontage'</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>train_rel_xy(<span class="st">'LotFrontage'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-14-output-1.png" width="606" height="429" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-17-output-1.png" width="686" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-17-output-2.png" width="698" height="488" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>결측치 259개 있음. &lt;- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기. 이상치 있어보임.</p>
-</section>
-</section>
-<section id="section-5" class="level1">
-<h1></h1>
-<section id="lotarea-부지-크기-square-feet" class="level2">
-<h2 class="anchored" data-anchor-id="lotarea-부지-크기-square-feet">‘LotArea’ : 부지 크기 (square feet)</h2>
-<div id="1accee9b" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[<span class="st">'LotArea'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="columns_files/figure-html/cell-15-output-1.png" width="623" height="429" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>이상치 있어보임.</p>
+<p>결측치 259개 있음. &lt;- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.<br>
+LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.</p>
 </section>
 </section>
 <section id="section-6" class="level1">
 <h1></h1>
-<section id="street-집에-접근-도로-유형-자갈길인지-포장길인지" class="level2">
-<h2 class="anchored" data-anchor-id="street-집에-접근-도로-유형-자갈길인지-포장길인지">‘Street’ : 집에 접근 도로 유형 (자갈길인지, 포장길인지)</h2>
-<div id="012ca7fb" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'Street'</span>].value_counts()</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'Street'</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="lotarea-부지-크기-square-feet" class="level2">
+<h2 class="anchored" data-anchor-id="lotarea-부지-크기-square-feet">5. ‘LotArea’ : 부지 크기 (square feet)</h2>
+<div id="c6c9708c" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>train_numeric_hist(<span class="st">'LotArea'</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>train_rel_xy(<span class="st">'LotArea'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-16-output-1.png" width="601" height="429" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-18-output-1.png" width="701" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-18-output-2.png" width="698" height="488" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<pre><code>   Grvl 자갈길 
-   Pave 포장길</code></pre>
-<p>자갈길이 6개밖에 안됨.</p>
+<p>LotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.</p>
 </section>
 </section>
 <section id="section-7" class="level1">
 <h1></h1>
-<section id="alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" class="level2">
-<h2 class="anchored" data-anchor-id="alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지">‘Alley’ : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)</h2>
-<div id="8de99475" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'Alley'</span>].value_counts()</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'Alley'</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="street-집에-접근-도로-유형-자갈길인지-포장길인지" class="level2">
+<h2 class="anchored" data-anchor-id="street-집에-접근-도로-유형-자갈길인지-포장길인지">6. ‘Street’ : 집에 접근 도로 유형 (자갈길인지, 포장길인지)</h2>
+<div id="991ada6f" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'Street'</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Street'</span>]<span class="op">==</span><span class="st">'Pave'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Street'</span>]<span class="op">==</span><span class="st">'Grvl'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'MSZoning 범주별, SalePrice 분포'</span>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'Street'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-17-output-1.png" width="585" height="429" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-19-output-1.png" width="597" height="429" class="figure-img"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-19-output-2.png" width="662" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Street
+Pave    1454
+Grvl       6
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<pre><code>   Grvl 자갈길 
+   Pave 포장길</code></pre>
+<p>자갈길이 6개밖에 안됨. 포장길에 이상치가 있어보임.</p>
+</section>
+</section>
+<section id="section-8" class="level1">
+<h1></h1>
+<section id="alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" class="level2">
+<h2 class="anchored" data-anchor-id="alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지">7. ‘Alley’ : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)</h2>
+<div id="00cec725" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'Alley'</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Alley'</span>]<span class="op">==</span><span class="st">'Pave'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Alley'</span>]<span class="op">==</span><span class="st">'Grvl'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'MSZoning 범주별, SalePrice 분포'</span>)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'Alley'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-20-output-1.png" width="582" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-20-output-2.png" width="662" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alley
+Grvl    50
+Pave    41
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <pre><code>   Grvl 자갈 골목길
    Pave 포장된 골목길
    NA   골목길 없음</code></pre>
-<p>1369 결측치 있음. &lt;- 이게 다 골목길 없다는 것임.</p>
+<p>1369 결측치 있음. &lt;- 이게 다 골목길 없다는 것임. 범주별 분포가 많이 다름. &lt;- 범주별로 집 가격 차이가 있을 것임.</p>
 </section>
 </section>
-<section id="section-8" class="level1">
+<section id="section-9" class="level1">
 <h1></h1>
 <section id="lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등" class="level2">
-<h2 class="anchored" data-anchor-id="lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등">‘LotShape’ : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)</h2>
-<div id="c7436f3f" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'LotShape'</span>].value_counts()</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'LotShape'</span>)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2 class="anchored" data-anchor-id="lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등">8. ‘LotShape’ : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)</h2>
+<div id="00021df5" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'LotShape'</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotShape'</span>]<span class="op">==</span><span class="st">'Reg'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotShape'</span>]<span class="op">==</span><span class="st">'IR1'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotShape'</span>]<span class="op">==</span><span class="st">'IR2'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotShape'</span>]<span class="op">==</span><span class="st">'IR3'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'LotShape 범주별, SalePrice 분포'</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'LotShape'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-18-output-1.png" width="593" height="429" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-21-output-1.png" width="590" height="429" class="figure-img"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-21-output-2.png" width="662" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LotShape
+Reg    925
+IR1    484
+IR2     41
+IR3     10
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <pre><code>   Reg  보통
    IR1  약간 보통이 아님
    IR2  중간 정도 보통이 아님
    IR3  보통이 아님</code></pre>
-<p>일반적이지 않은 집이 10개 있음. 이상치에 해당하는 집일 수도…?</p>
+<p>일반적이지 않은 집이 10개 있음. 이상치에 해당하는 집일 수도…? 범주별 분포가 크게 다른 것 같진 않음. 주황색 분포에 이상치가 있어보임.</p>
 </section>
 </section>
-<section id="section-9" class="level1">
+<section id="section-10" class="level1">
 <h1></h1>
 <section id="landcontour-집의-평탄-정도" class="level2">
-<h2 class="anchored" data-anchor-id="landcontour-집의-평탄-정도">‘LandContour’ : 집의 평탄 정도</h2>
-<div id="09669a58" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'LandContour'</span>].value_counts()</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'LandContour'</span>)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2 class="anchored" data-anchor-id="landcontour-집의-평탄-정도">9. ‘LandContour’ : 집의 평탄 정도</h2>
+<div id="a2ef044a" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'LandContour'</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandContour'</span>]<span class="op">==</span><span class="st">'Lvl'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandContour'</span>]<span class="op">==</span><span class="st">'Bnk'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandContour'</span>]<span class="op">==</span><span class="st">'HLS'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandContour'</span>]<span class="op">==</span><span class="st">'Low'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'LotShape 범주별, SalePrice 분포'</span>)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'LandContour'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="columns_files/figure-html/cell-19-output-1.png" width="601" height="429" class="figure-img"></p>
+<p><img src="columns_files/figure-html/cell-22-output-1.png" width="597" height="429" class="figure-img"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-22-output-2.png" width="662" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LandContour
+Lvl    1311
+Bnk      63
+HLS      50
+Low      36
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <pre><code>   Lvl  평평한 것에 가까움  
    Bnk  기움 - Quick and significant rise from street grade to building
    HLS  비탈 - Significant slope from side to side
    Low 움푹한 곳</code></pre>
-<p>평평한 것에 가까운게 많음.</p>
+<p>평평한 것에 가까운게 많음. 범주별 분포 차이가 없어 보임. 파란색 분포에 이상치가 있어보임.</p>
+</section>
+</section>
+<section id="section-11" class="level1">
+<h1></h1>
+<section id="utilities-전기-가스-수도-하수도-사용-가능-여부" class="level2">
+<h2 class="anchored" data-anchor-id="utilities-전기-가스-수도-하수도-사용-가능-여부">10. ‘Utilities’ : 전기, 가스, 수도, 하수도 사용 가능 여부</h2>
+<div id="97496015" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'Utilities'</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Utilities'</span>]<span class="op">==</span><span class="st">'AllPub'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.histplot(train_df[train_df['Utilities']=='NoSewr']['SalePrice'], stat='density')</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.histplot(train_df[train_df['Utilities']=='NoSeWa']['SalePrice'], stat='density')</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.histplot(train_df[train_df['Utilities']=='ELO']['SalePrice'], stat='density')</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Utilities 범주별, SalePrice 분포'</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'Utilities'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-23-output-1.png" width="597" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-23-output-2.png" width="662" height="469" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Utilities
+AllPub    1459
+NoSeWa       1
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<pre><code>   AllPub   전기, 가스, 물, 하수도  
+   NoSewr   전기, 가스, 물 (정화조)
+   NoSeWa   전기, 가스
+   ELO      전기</code></pre>
+<p>전기, 가스만 사용가능한 집이 1개만 있고, 그 외에는 모두 사용 가능한 집임. 이상치 존재해 보임.</p>
+</section>
+</section>
+<section id="section-12" class="level1">
+<h1></h1>
+<section id="lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등" class="level2">
+<h2 class="anchored" data-anchor-id="lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등">11. ‘LotConfig’ : 부지 배열 (부지 위치가 안쪽인지, 코너인지, 도로가 몇 개인지 등)</h2>
+<div id="5201d179" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'LotConfig'</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotConfig'</span>]<span class="op">==</span><span class="st">'Inside'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotConfig'</span>]<span class="op">==</span><span class="st">'Corner'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotConfig'</span>]<span class="op">==</span><span class="st">'CulDSac'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotConfig'</span>]<span class="op">==</span><span class="st">'FR2'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LotConfig'</span>]<span class="op">==</span><span class="st">'FR3'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'LotConfig 범주별, SalePrice 분포'</span>)</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'LotConfig'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-24-output-1.png" width="597" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-24-output-2.png" width="585" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LotConfig
+Inside     1052
+Corner      263
+CulDSac      94
+FR2          47
+FR3           4
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<pre><code>   Inside   안쪽 부지
+   Corner   코너 부지
+   CulDSac  출입하는 길이 하나인 곳
+   FR2      도로.강을 향한 면이 2곳
+   FR3      도로.강을 향한 면이 3곳</code></pre>
+<p>범주별로 분포 차이가 없어보임. 초록색, 주황색 분포에 이상치가 있어보임.</p>
+</section>
+</section>
+<section id="section-13" class="level1">
+<h1></h1>
+<section id="landslope-집-토지-경사-경사가-약간인지-심각한지-등" class="level2">
+<h2 class="anchored" data-anchor-id="landslope-집-토지-경사-경사가-약간인지-심각한지-등">12. ‘LandSlope’ : 집 토지 경사 (경사가 약간인지, 심각한지 등)</h2>
+<div id="9a7e6ae4" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'LandSlope'</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandSlope'</span>]<span class="op">==</span><span class="st">'Gtl'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandSlope'</span>]<span class="op">==</span><span class="st">'Mod'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'LandSlope'</span>]<span class="op">==</span><span class="st">'Sev'</span>][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'LandSlope 범주별, SalePrice 분포'</span>)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'LandSlope'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-25-output-1.png" width="597" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-25-output-2.png" width="575" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LandSlope
+Gtl    1382
+Mod      65
+Sev      13
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<pre><code>   Gtl  약간 경사
+   Mod  보통 경사
+   Sev  심한 경사</code></pre>
+<p>경사가 심하면 건축비용이 많이 든다길래 집값에 차이가 있을 줄 알았는데, 범주별로 분포의 차이가 없어보임. 파란색 분포에 이상치가 있어보임.</p>
+</section>
+</section>
+<section id="section-14" class="level1">
+<h1></h1>
+<section id="neighborhood-physical-locations-within-ames-city-limits-집-위치" class="level2">
+<h2 class="anchored" data-anchor-id="neighborhood-physical-locations-within-ames-city-limits-집-위치">13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)</h2>
+<div id="eb625462" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>train_df, x<span class="op">=</span><span class="st">'Neighborhood'</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation <span class="op">=</span> <span class="dv">50</span>)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> train_df[<span class="st">'Neighborhood'</span>].unique()</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">0</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">1</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">2</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">3</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">4</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">5</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">6</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">7</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">8</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">9</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">10</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">11</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">12</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">13</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">14</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Neighborhood 범주별, SalePrice 분포'</span>)</span>
+<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_df[<span class="st">'Neighborhood'</span>].value_counts().sort_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-26-output-1.png" width="598" height="471" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-26-output-2.png" width="585" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Neighborhood
+Blmngtn     17
+Blueste      2
+BrDale      16
+BrkSide     58
+ClearCr     28
+CollgCr    150
+Crawfor     51
+Edwards    100
+Gilbert     79
+IDOTRR      37
+MeadowV     17
+Mitchel     49
+NAmes      225
+NPkVill      9
+NWAmes      73
+NoRidge     41
+NridgHt     77
+OldTown    113
+SWISU       25
+Sawyer      74
+SawyerW     59
+Somerst     86
+StoneBr     25
+Timber      38
+Veenker     11
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<pre><code>   Blmngtn  Bloomington Heights
+   Blueste  Bluestem
+   BrDale   Briardale
+   BrkSide  Brookside
+   ClearCr  Clear Creek
+   CollgCr  College Creek
+   Crawfor  Crawford
+   Edwards  Edwards
+   Gilbert  Gilbert
+   IDOTRR   Iowa DOT and Rail Road
+   MeadowV  Meadow Village
+   Mitchel  Mitchell
+   Names    North Ames
+   NoRidge  Northridge
+   NPkVill  Northpark Villa
+   NridgHt  Northridge Heights
+   NWAmes   Northwest Ames
+   OldTown  Old Town
+   SWISU    South &amp; West of Iowa State University
+   Sawyer   Sawyer
+   SawyerW  Sawyer West
+   Somerst  Somerset
+   StoneBr  Stone Brook
+   Timber   Timberland
+   Veenker  Veenker</code></pre>
+<p>분포 차이가 있는 지역이 있는 것 같음. &lt;- 지역마다 집값의 차이가 있다고 볼 수 있음. 집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음. 빨간색, 파란색 분포에서 이상치가 있어보임. 보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음. 집 데이터가 가장 많은 지역은 NridgHt임. 그 다음이 CollgCr</p>
+<div id="90a87bcc" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">0</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">10</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Neighborhood 범주별, SalePrice 분포'</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns_files/figure-html/cell-27-output-1.png" width="585" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>집 데이터가 가장 많은 두 지역을 보면 집값 차이가 큼</p>
 
 
 </section>
