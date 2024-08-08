@@ -16,9 +16,6 @@ mpg = pd.read_csv('../../mpg.csv')
 mpg.shape
 ```
 
-
-
-
 ```{python}
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -48,10 +45,10 @@ plt.show()
 ```
 
 ## 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.
+
 ```{python}
 mpg_group2 = mpg.groupby('category',as_index=False).agg(category_count = ('category', 'count') ).sort_values('category_count' , ascending = False)
 plt.clf()
 sns.barplot(data=mpg_group2, x='category', y='category_count')
 plt.show()
 ```
-

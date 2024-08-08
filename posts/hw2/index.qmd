@@ -53,13 +53,11 @@ print("세 회사 데이터에 대한 hwy 전체 평균 :",df.query("manufacture
 print("="*70, "\n 1. audi 중 hwy가 높은 순의 자동차 모델 \n")
 df.query('manufacturer == "audi"').groupby('model').agg(hwy_mean = ('hwy' , 'mean'))
 ```
+
 ```{python}
 print("\n","="*70, "\n 2. audi 중 hwy가 1~5위인 자동차 데이터 \n")
 df.query('manufacturer == "audi"').sort_values('hwy', ascending=False).head(5)
 ```
-
-
-
 
 ## mpg 데이터 복사본을 만들고, cty와 hwy를 더한 '합산 연비 변수'를 추가하세요.
 

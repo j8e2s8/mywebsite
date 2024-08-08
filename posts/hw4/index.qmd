@@ -12,6 +12,7 @@ jupyter: python3
 ## 균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요. (n으로 구하는 방법, n-1로 구하는 방법)
 
 ### 참고 : 분산을 구하는 함수 3가지
+
 ```{python}
 from scipy.stats import uniform
 import numpy as np
@@ -34,14 +35,16 @@ print("k_2_2 : ",k_2_2)
 print("k_2_3 : ",k_2_3)
 ```
 
-
 ### 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)
+
 ### 2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.
-#### n-1로 표본 분산 구하는 방법1 
+
+#### n-1로 표본 분산 구하는 방법1
+
 ```{python}
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-s_2 = ((x- np.repeat(x.mean(axis=1) ,20).shape(-1,20))**2).sum(axis=1)/(20 -1)
+s_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)
 population_variance = uniform.var(loc=3, scale=4)
 
 import matplotlib.pyplot as plt
@@ -53,6 +56,7 @@ plt.show()
 ```
 
 #### n-1로 표본 분산 구하는 방법2
+
 ```{python}
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
@@ -67,8 +71,8 @@ plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
 
-
 #### n-1로 표본 분산 구하는 방법3
+
 ```{python}
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
@@ -82,11 +86,13 @@ sns.histplot(s_2, stat='density')
 plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
-#
 
-#
+# 
 
-#### n으로 표본 분산 구하는 방법1 
+# 
+
+#### n으로 표본 분산 구하는 방법1
+
 ```{python}
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
@@ -102,6 +108,7 @@ plt.show()
 ```
 
 #### n으로 표본 분산 구하는 방법2
+
 ```{python}
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
@@ -116,8 +123,8 @@ plt.axvline(x=population_variance, color='red')
 plt.show()
 ```
 
-
 #### n으로 표본 분산 구하는 방법3
+
 ```{python}
 np.random.seed(20240729)
 x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
@@ -134,11 +141,8 @@ plt.show()
 
 # 
 
-#
+# 
 
 ### 3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!
-분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다.
-그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.
 
-
-
+분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.
