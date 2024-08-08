@@ -48,6 +48,15 @@ format:
 #    creator: "@kunalkhurana007"
 #    card-style: summary_large_image
 #  navbar:
+#    left:
+#      - href: index.qmd
+#        text: Home
+#      - href: posts/index.qmd
+#        text: homework
+#      - href: project1.qmd
+#        text: project1
+#      - href: project2.qmd
+#        text: project2
 #    right:
 #      - about.qmd
 #      - text: CV

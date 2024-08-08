@@ -104,7 +104,7 @@ def train_cat_hist(col):
 
 #### 범주컬럼의 범주별로 x컬럼과 y컬럼의 관계 확인 함수
 ```{python}
-WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','yellow','olivedrab','forestgreen','mediumseagreen','lightseagreen','deepskyblue','lightslategray','slateblue','mediumorchid']
+WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid']
                               
 def train_cat_rel_xy(col1, col2):  # col1 : 수치, col2:범주
     plt.clf()
@@ -113,14 +113,31 @@ def train_cat_rel_xy(col1, col2):  # col1 : 수치, col2:범주
     a = col1 + "의" + col2 + "범주별 SalePrice와의 관계 비교"
     plt.title(a)
     plt.tight_layout()
-    cats = train_df[col2].value_counts().sort_values().index
+    cats = train_df[col2].value_counts().sort_values(ascending=False).index
     
     for i in range(len(cats)):
-        a = train_df[train_df[col2]==cats][col1,'SalePrice']
-        n = np.random.choice(np.arange(len(WxColourDB)+1),1,replace=False)
-        sns.scatterplot(data=a, x=col1, y='SalePrice', color=n)  # 색 달라져야함
-    plt.show()
+        a = train_df[train_df[col2]==cats[i]][[col1,'SalePrice']]
+        n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)
+        n = n.tolist()[i]
+        sns.scatterplot(data=a, x=col1, y='SalePrice', color=WxColourDB[n])  # 색 달라져야함
+        plt.show()
 ```
+
+
+
+
+```{python}
+n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)
+n.tolist()
+n.tolist()[2]
+
+WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid']
+
+plt.clf()
+sns.scatterplot(data=train_df, x='LotArea', y='SalePrice', color=WxColourDB[12])  # 색 달라져야함
+plt.show()
+```
+
 
 
 
@@ -232,6 +249,32 @@ train_rel_xy('LotFrontage')
 결측치 259개 있음. \<- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.\
 LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.
 
+```{python}
+train_cat_rel_xy('LotFrontage', 'MSZoning') # 범주별로 y값과의 관계를 알아봄.
+```
+
+
+```{python}
+plt.clf()
+sns.scatterplot(data=train_df, x = 'LotFrontage', y='SalePrice', hue='MSZoning')
+plt.show()
+
+```
+
+
+```{python}
+plt.clf()
+sns.scatterplot(data=train_df, x = 'LotFrontage', y='LotArea', size='SalePrice')
+plt.show()
+```
+```{python}
+train_df['MSSubClass'] = train_df['MSSubClass'].astype(str)
+plt.clf()
+sns.scatterplot(data=train_df, x = 'MSSubClass', y='Neighborhood', size='SalePrice')
+plt.show()
+```
+
+
 # 
 
 ## 5. 'LotArea' : 부지 크기 (square feet)
@@ -243,6 +286,13 @@ train_rel_xy('LotArea')
 ```
 
 LotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.
+
+
+```{python}
+train_cat_rel_xy('LotArea', 'MSZoning') # 범주별로 y값과의 관계를 알아봄.
+```
+
+
 
 # 
 
