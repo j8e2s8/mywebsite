@@ -4,7 +4,7 @@ listing:
     contents: 
     - "**/*/**.qmd"  # qmd 파일을 post 해라
     - "**/*/**.ipynb"  # ipynb 파일을 post 해라
-    type: grid
+    type: grid  # 바둑모양으로 파일을 올려줘라
     fields: [image, date, title, subtitle]
     sort: "date desc"
     categories: cloud
