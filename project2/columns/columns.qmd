@@ -36,15 +36,15 @@ pd.reset_option('display.max_rows')
 train_df.info()
 ```
 
-'Id' : 수치컬럼에서 제외해야 함.  
-'MSSubClass' : 수치컬럼으로 되어있는데, 범주컬럼임.  
-'LotFrontage' : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기.  
+'Id' : 수치컬럼에서 제외해야 함.\
+'MSSubClass' : 수치컬럼으로 되어있는데, 범주컬럼임.\
+'LotFrontage' : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기.\
 'Alley' : 1369개 결측치는 골목길이 없다는 것임.
 
-
-#
+# 
 
 #### 수치컬럼의 분포 확인 함수
+
 ```{python}
 def train_numeric_hist(col):
     plt.clf()
@@ -58,6 +58,7 @@ def train_numeric_hist(col):
 ```
 
 #### 수치컬럼과 y컬럼의 관계 확인 함수
+
 ```{python}
 def train_rel_xy(col):
     plt.clf()
@@ -70,8 +71,8 @@ def train_rel_xy(col):
     plt.show()
 ```
 
-
 #### 범주컬럼의 빈도 확인 함수
+
 ```{python}
 def train_cat_count(col):
     plt.clf()
@@ -84,8 +85,8 @@ def train_cat_count(col):
     plt.show()
 ```
 
-
 #### 범주컬럼의 범주별 분포 비교 함수
+
 ```{python}
 def train_cat_hist(col):
     plt.clf()
@@ -99,6 +100,29 @@ def train_cat_hist(col):
         sns.histplot(train_df[train_df[col]==cats[i]]['SalePrice'], stat='density')
     plt.show()
 ```
+
+
+#### 범주컬럼의 범주별로 x컬럼과 y컬럼의 관계 확인 함수
+```{python}
+WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','yellow','olivedrab','forestgreen','mediumseagreen','lightseagreen','deepskyblue','lightslategray','slateblue','mediumorchid']
+                              
+def train_cat_rel_xy(col1, col2):  # col1 : 수치, col2:범주
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = col1 + "의" + col2 + "범주별 SalePrice와의 관계 비교"
+    plt.title(a)
+    plt.tight_layout()
+    cats = train_df[col2].value_counts().sort_values().index
+    
+    for i in range(len(cats)):
+        a = train_df[train_df[col2]==cats][col1,'SalePrice']
+        n = np.random.choice(np.arange(len(WxColourDB)+1),1,replace=False)
+        sns.scatterplot(data=a, x=col1, y='SalePrice', color=n)  # 색 달라져야함
+    plt.show()
+```
+
+
 
 
 
@@ -165,7 +189,6 @@ train_df[train_df['MSSubClass'] == 60]['YearBuilt'].sort_values()  # 'MSSubClass
 train_df[train_df['MSSubClass'] == 70]['YearBuilt'].sort_values()  # 'MSSubClass'=70은 1872~1945에 지어진 집임
 ```
 
-
 ```{python}
 train_df[train_df['MSSubClass'] == 120]['YearBuilt'].sort_values()   # 1976~2009에 지어진 집임.
 ```
@@ -192,8 +215,8 @@ print(train_df['MSZoning'].value_counts())
    RM  중간 밀도 거주지
 ```
 
-=\> 데이터상 RL, RM, RH, FV, C(all) 만 있음.  
-빈도를 확인해보면, 제일 많은게 RL(낮은 밀도 거주지)임.  
+=\> 데이터상 RL, RM, RH, FV, C(all) 만 있음.\
+빈도를 확인해보면, 제일 많은게 RL(낮은 밀도 거주지)임.\
 범주별 분포를 보면, 범주마다 집값이 살짝 다른 것 같음. 보라색 분포에 이상치도 존재하는 것 같다.
 
 # 
@@ -206,12 +229,10 @@ train_numeric_hist('LotFrontage')
 train_rel_xy('LotFrontage')
 ```
 
-결측치 259개 있음. \<- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.  
-LotFrontage의 분포를 보면 이상치 있어보임.
-LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.
+결측치 259개 있음. \<- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.\
+LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.
 
 # 
-
 
 ## 5. 'LotArea' : 부지 크기 (square feet)
 
@@ -221,8 +242,7 @@ train_numeric_hist('LotArea')
 train_rel_xy('LotArea')
 ```
 
-LotArea의 분포를 보면 이상치 있어보임.
-LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.
+LotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.
 
 # 
 
@@ -240,8 +260,7 @@ print(train_df['Street'].value_counts())
    Pave 포장길
 ```
 
-자갈길이 6개밖에 안됨.
-범주별 분포를 보면, 포장길에 이상치가 있어보임.
+자갈길이 6개밖에 안됨. 범주별 분포를 보면, 포장길에 이상치가 있어보임.
 
 # 
 
@@ -260,8 +279,7 @@ print(train_df['Alley'].value_counts())
    NA   골목길 없음
 ```
 
-1369 결측치 있음. \<- 이게 다 골목길 없다는 것임.
-범주별 분포가 많이 다름. <- 범주별로 집 가격 차이가 있을 것임.
+1369 결측치 있음. \<- 이게 다 골목길 없다는 것임. 범주별 분포가 많이 다름. \<- 범주별로 집 가격 차이가 있을 것임.
 
 # 
 
@@ -281,9 +299,9 @@ print(train_df['LotShape'].value_counts())
    IR3  보통이 아님
 ```
 
-일반적이지 않은 집이 10개 있음. 이상치에 해당하는 집일 수도...?  
-범주별 분포가 크게 다른 것 같진 않음. 근데 파란색분포는 살짝 다른 것 같음.  
-주황색 분포에 이상치가 있어보임.  
+일반적이지 않은 집이 10개 있음. 이상치에 해당하는 집일 수도...?\
+범주별 분포가 크게 다른 것 같진 않음. 근데 파란색분포는 살짝 다른 것 같음.\
+주황색 분포에 이상치가 있어보임.
 
 # 
 
@@ -304,13 +322,12 @@ print(train_df['LandContour'].value_counts())
    Low 움푹한 곳
 ```
 
-평평한 것에 가까운게 많음.
-범주별 분포 차이가 없어 보임.
-파란색 분포에 이상치가 있어보임.
+평평한 것에 가까운게 많음. 범주별 분포 차이가 없어 보임. 파란색 분포에 이상치가 있어보임.
 
-#
+# 
 
 ## 10. 'Utilities' : 전기, 가스, 수도, 하수도 사용 가능 여부
+
 ```{python}
 train_cat_count('Utilities')
 
@@ -325,17 +342,20 @@ plt.show()
 
 print(train_df['Utilities'].value_counts())
 ```
-       AllPub	전기, 가스, 물, 하수도 	
-       NoSewr	전기, 가스, 물 (정화조)
-       NoSeWa	전기, 가스
-       ELO		전기
 
-전기, 가스만 사용가능한 집이 1개만 있고, 그 외에는 모두 사용 가능한 집임.
-이상치 존재해 보임.
+```         
+   AllPub   전기, 가스, 물, 하수도  
+   NoSewr   전기, 가스, 물 (정화조)
+   NoSeWa   전기, 가스
+   ELO      전기
+```
 
-#
+전기, 가스만 사용가능한 집이 1개만 있고, 그 외에는 모두 사용 가능한 집임. 이상치 존재해 보임.
 
-## 11. 'LotConfig' : 부지 배열  (부지 위치가 안쪽인지, 코너인지, 도로가 몇 개인지 등)
+# 
+
+## 11. 'LotConfig' : 부지 배열 (부지 위치가 안쪽인지, 코너인지, 도로가 몇 개인지 등)
+
 ```{python}
 train_cat_count('LotConfig')
 
@@ -343,35 +363,40 @@ train_cat_hist('LotConfig')
 
 print(train_df['LotConfig'].value_counts())
 ```
-       Inside	안쪽 부지
-       Corner	코너 부지
-       CulDSac	출입하는 길이 하나인 곳
-       FR2		도로.강을 향한 면이 2곳
-       FR3		도로.강을 향한 면이 3곳
-범주별로 분포 차이가 없어보임. 
-초록색, 주황색 분포에 이상치가 있어보임.
 
+```         
+   Inside   안쪽 부지
+   Corner   코너 부지
+   CulDSac  출입하는 길이 하나인 곳
+   FR2      도로.강을 향한 면이 2곳
+   FR3      도로.강을 향한 면이 3곳
+```
 
-#
+범주별로 분포 차이가 없어보임. 초록색, 주황색 분포에 이상치가 있어보임.
 
-## 12. 'LandSlope' : 집 토지 경사  (경사가 약간인지, 심각한지 등)
+# 
+
+## 12. 'LandSlope' : 집 토지 경사 (경사가 약간인지, 심각한지 등)
+
 ```{python}
 train_cat_count('LandSlope')
 train_cat_hist('LandSlope')
 
 print(train_df['LandSlope'].value_counts())
 ```
-       Gtl	약간 경사
-       Mod	보통 경사
-       Sev	심한 경사
 
-경사가 심하면 건축비용이 많이 든다길래 집값에 차이가 있을 줄 알았는데, 범주별로 분포의 차이가 없어보임. 
-파란색 분포에 이상치가 있어보임.
+```         
+   Gtl  약간 경사
+   Mod  보통 경사
+   Sev  심한 경사
+```
 
+경사가 심하면 건축비용이 많이 든다길래 집값에 차이가 있을 줄 알았는데, 범주별로 분포의 차이가 없어보임. 파란색 분포에 이상치가 있어보임.
 
-#
+# 
 
 ## 13. 'Neighborhood' : Physical locations within Ames city limits (집 위치)
+
 ```{python}
 train_cat_count('Neighborhood')
 train_cat_hist('Neighborhood')
@@ -404,38 +429,39 @@ plt.show()
 
 print(train_df['Neighborhood'].value_counts().sort_index())
 ```
-       Blmngtn	Bloomington Heights
-       Blueste	Bluestem
-       BrDale	Briardale
-       BrkSide	Brookside
-       ClearCr	Clear Creek
-       CollgCr	College Creek
-       Crawfor	Crawford
-       Edwards	Edwards
-       Gilbert	Gilbert
-       IDOTRR	Iowa DOT and Rail Road
-       MeadowV	Meadow Village
-       Mitchel	Mitchell
-       Names	North Ames
-       NoRidge	Northridge
-       NPkVill	Northpark Villa
-       NridgHt	Northridge Heights
-       NWAmes	Northwest Ames
-       OldTown	Old Town
-       SWISU	South & West of Iowa State University
-       Sawyer	Sawyer
-       SawyerW	Sawyer West
-       Somerst	Somerset
-       StoneBr	Stone Brook
-       Timber	Timberland
-       Veenker	Veenker
-분포 차이가 있는 지역이 있는 것 같음. <- 특정 지역은 집값의 차이가 있다고 볼 수 있음.
-집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.
-빨간색, 파란색 분포에서 이상치가 있어보임.
-보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.
-집 데이터가 가장 많은 지역은 NridgHt임.
-그 다음이 CollgCr
 
+```         
+   Blmngtn  Bloomington Heights
+   Blueste  Bluestem
+   BrDale   Briardale
+   BrkSide  Brookside
+   ClearCr  Clear Creek
+   CollgCr  College Creek
+   Crawfor  Crawford
+   Edwards  Edwards
+   Gilbert  Gilbert
+   IDOTRR   Iowa DOT and Rail Road
+   MeadowV  Meadow Village
+   Mitchel  Mitchell
+   Names    North Ames
+   NoRidge  Northridge
+   NPkVill  Northpark Villa
+   NridgHt  Northridge Heights
+   NWAmes   Northwest Ames
+   OldTown  Old Town
+   SWISU    South & West of Iowa State University
+   Sawyer   Sawyer
+   SawyerW  Sawyer West
+   Somerst  Somerset
+   StoneBr  Stone Brook
+   Timber   Timberland
+   Veenker  Veenker
+```
+
+분포 차이가 있는 지역이 있는 것 같음. \<- 특정 지역은 집값의 차이가 있다고 볼 수 있음. 집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.  
+빨간색, 파란색 분포에서 이상치가 있어보임.  
+보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.  
+집 데이터가 가장 많은 지역은 NridgHt임. 그 다음이 CollgCr임.
 
 ```{python}
 plt.clf()
@@ -444,10 +470,5 @@ sns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='densi
 plt.title('Neighborhood 범주별, SalePrice 분포')
 plt.show()
 ```
+
 집 데이터가 가장 많은 두 지역을 보면 집값 차이가 큼
-
-
-
-
-
-
