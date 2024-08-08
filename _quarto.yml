@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: posts   #/index.qmd
+      - href: posts/index.qmd
         text: homework
       - href: project1.qmd
         text: project1
@@ -18,8 +18,8 @@ website:
 format:
   html:
     theme: cosmo
-#    css: styles.css  # 이거를 지우면 render 잘됨.
     toc: true
+#    css: styles.css  # 이거를 지우면 render 잘됨.
 
 
 
@@ -53,7 +53,7 @@ format:
 #      - text: CV
 #        href: Khurana_Kunal_CV.pdf
 #      - text: Posts
-#        menu:
+#        menu:                               # 화살표 누르면 메뉴얼 나오는 애
 #          - text: All posts
 #            href: posts/index.qmd
 #          - text: English

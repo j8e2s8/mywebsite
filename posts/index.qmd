@@ -1,5 +1,5 @@
 ---
-title: "Recent posts"
+title: "Recent posts"   # homework라는 버튼 안에 들어가면 나오는 큰 제목
 listing:
     contents: 
     - "**/*/**.qmd"  # qmd 파일을 post 해라
@@ -16,3 +16,5 @@ title-block-banner: false
 comments: false
 toc: true
 ---
+
+
