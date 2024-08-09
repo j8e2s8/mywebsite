@@ -1,26 +1,4 @@
 ---
-title: "Recent posts"   # homework라는 버튼 안에 들어가면 나오는 큰 제목
-listing:
-    contents: 
-    - "**/*/**.qmd"  # qmd 파일을 post 해라
-    - "**/*/**.ipynb"  # ipynb 파일을 post 해라
-    type: grid  # 행으로 list형태로 나오는 와중에 열으로 바둑모양으로 파일을 올려줘라
-    fields: [image, date, title, subtitle]
-    sort: "date desc"
-    categories: cloud
-    sort-ui: true
-    filter-ui: true
-    page-size: 36     
-page-layout: full
-title-block-banner: false
-comments: false
-toc: true
----
-
-
-```{python}
-"""
----
 title: "myblog"
 listing:
   contents: posts
@@ -28,6 +6,5 @@ listing:
   type: grid  # 여기다가 'grid'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.
   categories: true
 ---
-"""
-```
+
 

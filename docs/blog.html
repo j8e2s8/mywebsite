@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>은서 만두만두 - Recent posts</title>
+<title>은서 만두만두 - myblog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -112,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
@@ -205,23 +171,23 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="bigdata"><span class="quarto-category-count category-cloud-6">bigdata</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="bigdata">bigdata <span class="quarto-category-count">(6)</span></div></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Recent posts</h1>
+<h1 class="title">myblog</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     
   
@@ -233,26 +199,42 @@ window.Quarto = {
 </header>
 
 
-<div id="6298ec0e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">title: "myblog"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">listing:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: posts</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  type: grid  # 여기다가 'grid'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>'\n---\ntitle: "myblog"\nlisting:\n  contents: posts\n  sort: "date desc"\n  type: grid  # 여기다가 \'grid\'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.\n  categories: true\n---\n'</code></pre>
-</div>
-</div>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1723177310091" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
+<a href="./posts/hw6/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+hw6
+</h5>
+<div class="card-text listing-description">
+슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22 년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여 한다고…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+정은서
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1723084102020" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts\숙제 Qmd\index_files\figure-html\cell-2-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Recent posts
+</h5>
+<div class="card-text listing-description">
+
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
@@ -268,34 +250,13 @@ window.Quarto = {
          <option value="listing-date-sort" data-direction="desc">
           Date - Newest
         </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+     </select>…</div><div class="input-group input-group-sm quarto-listing-filter"><span class="input-group-text"><i class="bi bi-search"></i></span><input type="text" class="search form-control" placeholder="Filter"></div></div><div class="list grid quarto-listing-cols-3"><div class="g-col-1" data-index="0" data-listing-file-modified-sort="1723177310091" data-listing-reading-time-sort="1" data-listing-word-count-sort="181"><div class="quarto-grid-item card h-100 card-left"><div class="listing-item-img-placeholder card-img-top" style="height: 150px;"></div><div class="card-body post-contents"></div></div></div><div class="g-col-1" data-index="1" data-listing-file-modified-sort="1723080498329" data-listing-reading-time-sort="1" data-listing-word-count-sort="134"><div class="quarto-grid-item card h-100 card-left"><p class="card-img-top"></p><div class="card-body post-contents"></div></div></div><div class="g-col-1" data-index="2" data-categories="bigdata" data-listing-date-sort="1722265200000" data-listing-file-modified-sort="1723177289767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164"><div class="quarto-grid-item card h-100 card-left"><p class="card-img-top"></p><div class="card-body post-contents"><div class="card-attribution card-text-small end"><div class="listing-date"></div></div></div></div></div><div class="g-col-1" data-index="3" data-categories="bigdata" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1723080815767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="314"><div class="quarto-grid-item card h-100 card-left"><p class="card-img-top"></p><div class="card-body post-contents"><div class="card-attribution card-text-small end"><div class="listing-date"></div></div></div></div></div><div class="g-col-1" data-index="4" data-categories="bigdata" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1723177203529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109"><div class="quarto-grid-item card h-100 card-left"><p class="card-img-top"></p><div class="card-body post-contents"><div class="card-attribution card-text-small end"><div class="listing-date"></div></div></div></div></div><div class="g-col-1" data-index="5" data-categories="bigdata" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1723080597419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="144"><div class="quarto-grid-item card h-100 card-left"><p class="card-img-top"></p><div class="card-body post-contents"><div class="card-attribution card-text-small end"><div class="listing-date"></div></div></div></div></div><div class="g-col-1" data-index="6" data-categories="bigdata" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1721193547381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220"><div class="quarto-grid-item card h-100 card-left"><p class="card-img-top"></p><div class="card-body post-contents"><div class="card-attribution card-text-small end"><div class="listing-date"></div></div></div></div></div><div class="g-col-1" data-index="7" data-categories="bigdata" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1723080549419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="245"><div class="quarto-grid-item card h-100 card-left"><div class="listing-item-img-placeholder card-img-top" style="height: 150px;"></div><div class="card-body post-contents"><div class="card-attribution card-text-small end"><div class="listing-date"></div></div></div></div></div></div><div class="listing-no-matching d-none"></div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1723177310091" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
-<a href="./posts/hw6/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-hw6
-</h5>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
 </div>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1723084102020" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./posts/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts\숙제 Qmd\index_files\figure-html\cell-2-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Recent posts
-</h5>
 </div>
 </div>
 </a>
@@ -308,23 +269,21 @@ Recent posts
 <h5 class="no-anchor card-title listing-title">
 hw3
 </h5>
+<div class="card-text listing-description">
+
+
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+정은서
+</div>
+</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1723177369913" data-listing-reading-time-sort="9" data-listing-word-count-sort="1677">
-<a href="./project2/columns/columns.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="project2\columns\columns_files\figure-html\cell-10-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-house price columns
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="bigdata" data-listing-date-sort="1722265200000" data-listing-file-modified-sort="1723177289767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
+<div class="g-col-1" data-index="3" data-categories="bigdata" data-listing-date-sort="1722265200000" data-listing-file-modified-sort="1723177289767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
 <a href="./posts/hw5/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="posts\hw5\index_files\figure-html\cell-6-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -332,7 +291,18 @@ house price columns
 <h5 class="no-anchor card-title listing-title">
 hw5
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bigdata'); return false;">
+bigdata
+</div>
+</div>
+<div class="card-text listing-description">
+5 rows × 830 columns
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+정은서
+</div>
 <div class="listing-date">
 Jul 30, 2024
 </div>
@@ -341,7 +311,7 @@ Jul 30, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="bigdata" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1723080815767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="314">
+<div class="g-col-1" data-index="4" data-categories="bigdata" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1723080815767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="314">
 <a href="./posts/hw4/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="posts\hw4\index_files\figure-html\cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -349,7 +319,18 @@ Jul 30, 2024
 <h5 class="no-anchor card-title listing-title">
 hw4
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bigdata'); return false;">
+bigdata
+</div>
+</div>
+<div class="card-text listing-description">
+분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+정은서
+</div>
 <div class="listing-date">
 Jul 29, 2024
 </div>
@@ -358,7 +339,7 @@ Jul 29, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="bigdata" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1723177203529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
+<div class="g-col-1" data-index="5" data-categories="bigdata" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1723177203529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
 <a href="./posts/graph/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="posts\graph\index_files\figure-html\cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -366,7 +347,35 @@ Jul 29, 2024
 <h5 class="no-anchor card-title listing-title">
 graph
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bigdata'); return false;">
+bigdata
+</div>
+</div>
+<div class="card-text listing-description">
+
+
+<div id="38d319f5" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-5"></span>
+<span id="cb1-6">mpg <span class="op">=</span> pd.read_csv(<span class="st">'../../mpg.csv'</span>)</span>
+<span id="cb1-7">mpg.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>(234, 11)</code></pre>
+</div>
+</div>
+<section id="sns의-scatterplot-사용한-산점도" class="level3">
+
+<div id="01e0d6df" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">plt.clf…</span><span id="cb3-2"><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span><span class="bu"></span><span class="op"></span><span class="dv"></span><span class="dv"></span><span class="op"></span><span class="dv"></span><span class="dv"></span></span><span id="cb3-3"></span></code></pre></div><div class="cell-output cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div></section><section id="px의-scatter-사용한-산점도" class="level3"><div id="ecff3842" class="cell" data-execution_count="3"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span></span></code></pre></div><div class="cell-output cell-output-display"><div><div id="4d3b34dd-411d-42ed-8405-637cab1fb231" class="plotly-graph-div" style="height:525px; width:100%;"></div><script type="text/javascript"></script></div></div></div></section><section id="groupby-sns의-barplot-사용한-막대-그래프" class="level3"><div id="ba26c7f0" class="cell" data-execution_count="4"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="op"></span><span class="st"></span><span class="op"></span><span class="va"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span><span class="va"></span></span><span id="cb5-2"></span><span id="cb5-3"><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span></span><span id="cb5-4"></span></code></pre></div><div class="cell-output cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div><div id="4b21016a" class="cell" data-execution_count="5"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span><span class="va"></span></span><span id="cb6-2"></span><span id="cb6-3"><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span></span><span id="cb6-4"></span></code></pre></div><div class="cell-output cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div></section>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+정은서
+</div>
 <div class="listing-date">
 Jul 22, 2024
 </div>
@@ -375,7 +384,7 @@ Jul 22, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-categories="bigdata" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1723080597419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="144">
+<div class="g-col-1" data-index="6" data-categories="bigdata" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1723080597419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="144">
 <a href="./posts/hw3/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="posts\hw3\index_files\figure-html\cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -383,7 +392,34 @@ Jul 22, 2024
 <h5 class="no-anchor card-title listing-title">
 hw3
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bigdata'); return false;">
+bigdata
+</div>
+</div>
+<div class="card-text listing-description">
+
+
+<div id="307201bc" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">mpg <span class="op">=</span> pd.read_csv(<span class="st">'../../mpg.csv'</span>)</span>
+<span id="cb1-4">mpg.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>(234, 11)</code></pre>
+</div>
+</div>
+<div id="325e676e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-2"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"></span>
+<span id="cb3-4">plt.clf()</span>
+<span id="cb3-5">sns.scatterplot(data <span class="op">=</span> mpg…<span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span></span><span id="cb3-6"></span></code></pre></div><div class="cell-output cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+정은서
+</div>
 <div class="listing-date">
 Jul 22, 2024
 </div>
@@ -392,7 +428,7 @@ Jul 22, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-categories="bigdata" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1721193547381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220">
+<div class="g-col-1" data-index="7" data-categories="bigdata" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1721193547381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220">
 <a href="./posts/hw1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="posts\hw1\index_files\figure-html\cell-11-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -400,7 +436,18 @@ Jul 22, 2024
 <h5 class="no-anchor card-title listing-title">
 hw1
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bigdata'); return false;">
+bigdata
+</div>
+</div>
+<div class="card-text listing-description">
+234 rows × 11 columns
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+정은서
+</div>
 <div class="listing-date">
 Jul 15, 2024
 </div>
@@ -409,7 +456,7 @@ Jul 15, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-categories="bigdata" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1723080549419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="245">
+<div class="g-col-1" data-index="8" data-categories="bigdata" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1723080549419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="245">
 <a href="./posts/hw2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -417,7 +464,18 @@ Jul 15, 2024
 <h5 class="no-anchor card-title listing-title">
 hw2
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bigdata'); return false;">
+bigdata
+</div>
+</div>
+<div class="card-text listing-description">
+4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+정은서
+</div>
 <div class="listing-date">
 Jul 15, 2024
 </div>

@@ -246,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="데이터-불러오기" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h2>
-<div id="3b22c645" class="cell" data-execution_count="1">
+<div id="55d91dfa" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -263,13 +263,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1></h1>
 <section id="모든-변수-결측치와-정보-확인" class="level2">
 <h2 class="anchored" data-anchor-id="모든-변수-결측치와-정보-확인">0. 모든 변수 결측치와 정보 확인</h2>
-<div id="7ab7854d" class="cell" data-execution_count="2">
+<div id="c1dbd4f8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>,<span class="va">None</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nan_df <span class="op">=</span> train_df.isna().<span class="bu">sum</span>()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nan_df[nan_df<span class="op">&gt;</span><span class="dv">0</span>]</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pd.reset_option(<span class="st">'display.max_rows'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8233247d" class="cell" data-execution_count="3">
+<div id="a25351e6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>train_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -372,7 +372,7 @@ memory usage: 924.0+ KB</code></pre>
 <h1></h1>
 <section id="수치컬럼의-분포-확인-함수" class="level4">
 <h4 class="anchored" data-anchor-id="수치컬럼의-분포-확인-함수">수치컬럼의 분포 확인 함수</h4>
-<div id="04c0888d" class="cell" data-execution_count="4">
+<div id="583089e4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_numeric_hist(col):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
@@ -386,7 +386,7 @@ memory usage: 924.0+ KB</code></pre>
 </section>
 <section id="수치컬럼과-y컬럼의-관계-확인-함수" class="level4">
 <h4 class="anchored" data-anchor-id="수치컬럼과-y컬럼의-관계-확인-함수">수치컬럼과 y컬럼의 관계 확인 함수</h4>
-<div id="ee2d9f22" class="cell" data-execution_count="5">
+<div id="e835ef18" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_rel_xy(col):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
@@ -400,7 +400,7 @@ memory usage: 924.0+ KB</code></pre>
 </section>
 <section id="범주컬럼의-빈도-확인-함수" class="level4">
 <h4 class="anchored" data-anchor-id="범주컬럼의-빈도-확인-함수">범주컬럼의 빈도 확인 함수</h4>
-<div id="e5a1fc77" class="cell" data-execution_count="6">
+<div id="3a56fb3c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_count(col):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
@@ -414,7 +414,7 @@ memory usage: 924.0+ KB</code></pre>
 </section>
 <section id="범주컬럼의-범주별-분포-비교-함수" class="level4">
 <h4 class="anchored" data-anchor-id="범주컬럼의-범주별-분포-비교-함수">범주컬럼의 범주별 분포 비교 함수</h4>
-<div id="2505eef3" class="cell" data-execution_count="7">
+<div id="5d961d96" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_hist(col):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
@@ -430,7 +430,7 @@ memory usage: 924.0+ KB</code></pre>
 </section>
 <section id="범주컬럼의-범주별로-x컬럼과-y컬럼의-관계-확인-함수" class="level4">
 <h4 class="anchored" data-anchor-id="범주컬럼의-범주별로-x컬럼과-y컬럼의-관계-확인-함수">범주컬럼의 범주별로 x컬럼과 y컬럼의 관계 확인 함수</h4>
-<div id="c5eced16" class="cell" data-execution_count="8">
+<div id="137487a4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>WxColourDB <span class="op">=</span> [<span class="st">'black'</span>, <span class="st">'red'</span>, <span class="st">'chocolate'</span>,<span class="st">'darkorange'</span>,<span class="st">'darkgoldenrod'</span>,<span class="st">'olive'</span>,<span class="st">'plum'</span>,<span class="st">'lightslategrey'</span>,<span class="st">'forestgreen'</span>,<span class="st">'gold'</span>,<span class="st">'lightseagreen'</span>,<span class="st">'fuchsia'</span>,<span class="st">'deepskyblue'</span>,<span class="st">'slateblue'</span>,<span class="st">'mediumorchid'</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                              </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_rel_xy(col1, col2):  <span class="co"># col1 : 수치, col2:범주</span></span>
@@ -449,7 +449,7 @@ memory usage: 924.0+ KB</code></pre>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        sns.scatterplot(data<span class="op">=</span>a, x<span class="op">=</span>col1, y<span class="op">=</span><span class="st">'SalePrice'</span>, color<span class="op">=</span>WxColourDB[n])  <span class="co"># 색 달라져야함</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a96dcd33" class="cell" data-execution_count="9">
+<div id="efbb464a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.random.choice(np.arange(<span class="bu">len</span>(WxColourDB)),<span class="bu">len</span>(WxColourDB),replace<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>n.tolist()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>n.tolist()[<span class="dv">2</span>]</span>
@@ -473,7 +473,7 @@ memory usage: 924.0+ KB</code></pre>
 <h1></h1>
 <section id="saleprice-판매-가격" class="level2">
 <h2 class="anchored" data-anchor-id="saleprice-판매-가격">1. ‘SalePrice’ : 판매 가격</h2>
-<div id="e3ec259c" class="cell" data-execution_count="10">
+<div id="918ba66a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>train_numeric_hist(<span class="st">'SalePrice'</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"최소값 :"</span>, train_df[<span class="st">'SalePrice'</span>].<span class="bu">min</span>())</span>
@@ -497,7 +497,7 @@ memory usage: 924.0+ KB</code></pre>
 <h1></h1>
 <section id="mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임." class="level2">
 <h2 class="anchored" data-anchor-id="mssubclass-판매-관련-주택-타입-1층인지-2층인지-언제적-집구조인지-다세대인지-등등---수치컬럼으로-되어-있지만-범주-컬럼임.">2. ‘MSSubClass’ : 판매 관련 주택 타입 (1층인지, 2층인지, 언제적 집구조인지, 다세대인지 등등) &lt;- 수치컬럼으로 되어 있지만 범주 컬럼임.</h2>
-<div id="4df06e06" class="cell" data-execution_count="11">
+<div id="311acfce" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'MSSubClass'</span>] <span class="op">=</span> train_df[<span class="st">'MSSubClass'</span>].astype(<span class="bu">str</span>)  <span class="co"># 범주 컬럼 처리</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'MSSubClass'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -554,32 +554,32 @@ Name: count, dtype: int64</code></pre>
    160  1946년부터 그 이후로 지어진 2층짜리 최신 연립주택 그룹 (집이 모여있음)
    180  연립주택 그룹 + 각 층이 엇갈림 + 현관 계단 집
    190  한 집을 두 집으로 개조해서 쪼갠 집</code></pre>
-<div id="154d91fe" class="cell" data-execution_count="12">
+<div id="0f79d19d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> train_df.columns</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">20</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=20은 1938, 1946~2010에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
 </div>
 </div>
-<div id="87c5c668" class="cell" data-execution_count="13">
+<div id="ebe008ef" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">30</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=30은 1885, 1910~1945, 1948에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
 </div>
 </div>
-<div id="76798fed" class="cell" data-execution_count="14">
+<div id="68ab413b" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">60</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=60은 1946~2009에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
 </div>
 </div>
-<div id="6d6f12a5" class="cell" data-execution_count="15">
+<div id="60270e79" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">70</span>][<span class="st">'YearBuilt'</span>].sort_values()  <span class="co"># 'MSSubClass'=70은 1872~1945에 지어진 집임</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
 </div>
 </div>
-<div id="e3de6ceb" class="cell" data-execution_count="16">
+<div id="97568fde" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>train_df[train_df[<span class="st">'MSSubClass'</span>] <span class="op">==</span> <span class="dv">120</span>][<span class="st">'YearBuilt'</span>].sort_values()   <span class="co"># 1976~2009에 지어진 집임.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>Series([], Name: YearBuilt, dtype: int64)</code></pre>
@@ -591,7 +591,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등" class="level2">
 <h2 class="anchored" data-anchor-id="mszoning-판매-관련-일반-구역-분류-수상-거주지인지-밀도가-높은-거주지인지-등">3. ‘MSZoning’ : 판매 관련 일반 구역 분류 (수상 거주지인지, 밀도가 높은 거주지인지 등)</h2>
-<div id="bf42e6df" class="cell" data-execution_count="17">
+<div id="e7b07269" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'MSZoning'</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'MSZoning'</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -637,7 +637,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="lotfrontage-집과-연결된-거리의-직선-길이-feet" class="level2">
 <h2 class="anchored" data-anchor-id="lotfrontage-집과-연결된-거리의-직선-길이-feet">4. ‘LotFrontage’ : 집과 연결된 거리의 직선 길이 (feet)</h2>
-<div id="282c72f3" class="cell" data-execution_count="18">
+<div id="8ab90fd6" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>train_numeric_hist(<span class="st">'LotFrontage'</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>train_rel_xy(<span class="st">'LotFrontage'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -658,7 +658,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>결측치 259개 있음. &lt;- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.<br>
 LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.</p>
-<div id="dfccc8d4" class="cell" data-execution_count="19">
+<div id="92be3945" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>train_cat_rel_xy(<span class="st">'LotFrontage'</span>, <span class="st">'MSZoning'</span>) <span class="co"># 범주별로 y값과의 관계를 알아봄.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -696,7 +696,7 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 </div>
 </div>
 </div>
-<div id="43e7e12f" class="cell" data-execution_count="20">
+<div id="04201de5" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>train_df, x <span class="op">=</span> <span class="st">'LotFrontage'</span>, y<span class="op">=</span><span class="st">'SalePrice'</span>, hue<span class="op">=</span><span class="st">'MSZoning'</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -708,7 +708,7 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 </div>
 </div>
 </div>
-<div id="fbc8b773" class="cell" data-execution_count="21">
+<div id="440f8973" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>train_df, x <span class="op">=</span> <span class="st">'LotFrontage'</span>, y<span class="op">=</span><span class="st">'LotArea'</span>, size<span class="op">=</span><span class="st">'SalePrice'</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -720,7 +720,7 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 </div>
 </div>
 </div>
-<div id="24e5851c" class="cell" data-execution_count="22">
+<div id="3f1f4fc0" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">'MSSubClass'</span>] <span class="op">=</span> train_df[<span class="st">'MSSubClass'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>train_df, x <span class="op">=</span> <span class="st">'MSSubClass'</span>, y<span class="op">=</span><span class="st">'Neighborhood'</span>, size<span class="op">=</span><span class="st">'SalePrice'</span>)</span>
@@ -739,7 +739,7 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 <h1></h1>
 <section id="lotarea-부지-크기-square-feet" class="level2">
 <h2 class="anchored" data-anchor-id="lotarea-부지-크기-square-feet">5. ‘LotArea’ : 부지 크기 (square feet)</h2>
-<div id="4adc25d8" class="cell" data-execution_count="23">
+<div id="e944b7af" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>train_numeric_hist(<span class="st">'LotArea'</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>train_rel_xy(<span class="st">'LotArea'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -759,7 +759,7 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 </div>
 </div>
 <p>LotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.</p>
-<div id="3bb2dc9a" class="cell" data-execution_count="24">
+<div id="c25570c7" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>train_cat_rel_xy(<span class="st">'LotArea'</span>, <span class="st">'MSZoning'</span>) <span class="co"># 범주별로 y값과의 관계를 알아봄.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -803,7 +803,7 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 <h1></h1>
 <section id="street-집에-접근-도로-유형-자갈길인지-포장길인지" class="level2">
 <h2 class="anchored" data-anchor-id="street-집에-접근-도로-유형-자갈길인지-포장길인지">6. ‘Street’ : 집에 접근 도로 유형 (자갈길인지, 포장길인지)</h2>
-<div id="8e48582d" class="cell" data-execution_count="25">
+<div id="2afb0de1" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'Street'</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'Street'</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -838,7 +838,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지" class="level2">
 <h2 class="anchored" data-anchor-id="alley-집에-접근-골목-유형-자갈-골목길인지-포장-골목길인지">7. ‘Alley’ : 집에 접근 골목 유형 (자갈 골목길인지, 포장 골목길인지)</h2>
-<div id="1abcdbcd" class="cell" data-execution_count="26">
+<div id="47ece6aa" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'Alley'</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'Alley'</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -874,7 +874,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등" class="level2">
 <h2 class="anchored" data-anchor-id="lotshape-일반적인-집-모양-일반적인-모양인지-일반적이지-않은-모양인지-등">8. ‘LotShape’ : 일반적인 집 모양 (일반적인 모양인지, 일반적이지 않은 모양인지 등)</h2>
-<div id="f20c7b98" class="cell" data-execution_count="27">
+<div id="2f95cd84" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'LotShape'</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'LotShape'</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -915,7 +915,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="landcontour-집의-평탄-정도" class="level2">
 <h2 class="anchored" data-anchor-id="landcontour-집의-평탄-정도">9. ‘LandContour’ : 집의 평탄 정도</h2>
-<div id="17fa6b92" class="cell" data-execution_count="28">
+<div id="bf328084" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'LandContour'</span>)</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'LandContour'</span>)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -955,7 +955,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="utilities-전기-가스-수도-하수도-사용-가능-여부" class="level2">
 <h2 class="anchored" data-anchor-id="utilities-전기-가스-수도-하수도-사용-가능-여부">10. ‘Utilities’ : 전기, 가스, 수도, 하수도 사용 가능 여부</h2>
-<div id="87f04f99" class="cell" data-execution_count="29">
+<div id="a4e6420e" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'Utilities'</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
@@ -1000,7 +1000,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등" class="level2">
 <h2 class="anchored" data-anchor-id="lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등">11. ‘LotConfig’ : 부지 배열 (부지 위치가 안쪽인지, 코너인지, 도로가 몇 개인지 등)</h2>
-<div id="71dff219" class="cell" data-execution_count="30">
+<div id="4b5f38db" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'LotConfig'</span>)</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'LotConfig'</span>)</span>
@@ -1042,7 +1042,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="landslope-집-토지-경사-경사가-약간인지-심각한지-등" class="level2">
 <h2 class="anchored" data-anchor-id="landslope-집-토지-경사-경사가-약간인지-심각한지-등">12. ‘LandSlope’ : 집 토지 경사 (경사가 약간인지, 심각한지 등)</h2>
-<div id="b7219525" class="cell" data-execution_count="31">
+<div id="50bd6bcb" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'LandSlope'</span>)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'LandSlope'</span>)</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1079,7 +1079,7 @@ Name: count, dtype: int64</code></pre>
 <h1></h1>
 <section id="neighborhood-physical-locations-within-ames-city-limits-집-위치" class="level2">
 <h2 class="anchored" data-anchor-id="neighborhood-physical-locations-within-ames-city-limits-집-위치">13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)</h2>
-<div id="816a44a6" class="cell" data-execution_count="32">
+<div id="e322db28" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>train_cat_count(<span class="st">'Neighborhood'</span>)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>train_cat_hist(<span class="st">'Neighborhood'</span>)</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
@@ -1197,7 +1197,7 @@ Name: count, dtype: int64</code></pre>
 빨간색, 파란색 분포에서 이상치가 있어보임.<br>
 보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.<br>
 집 데이터가 가장 많은 지역은 NridgHt임. 그 다음이 CollgCr임.</p>
-<div id="804dceec" class="cell" data-execution_count="33">
+<div id="212067f8" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">0</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>b[<span class="dv">10</span>]][<span class="st">'SalePrice'</span>], stat<span class="op">=</span><span class="st">'density'</span>)</span>

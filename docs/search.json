@@ -7,389 +7,67 @@
     "text": "안녕하세요, 데이터 분석 만두만두입니다."
   },
   {
-    "objectID": "index.html#홈페이지-첫-화면입니다",
-    "href": "index.html#홈페이지-첫-화면입니다",
-    "title": "만두만두",
-    "section": "",
-    "text": "안녕하세요, 데이터 분석 만두만두입니다."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "hw1",
-    "section": "",
-    "text": "import pandas as pd\n\ndf = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],\n                   '가격' : [1800, 1500, 3000],\n                   '판매량' : [24,38,13]})\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
-  },
-  {
-    "objectID": "about.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
-    "href": "about.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
-    "title": "hw1",
-    "section": "",
-    "text": "import pandas as pd\n\ndf = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],\n                   '가격' : [1800, 1500, 3000],\n                   '판매량' : [24,38,13]})\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
-  },
-  {
-    "objectID": "about.html#앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.",
-    "href": "about.html#앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.",
-    "title": "hw1",
-    "section": "앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.",
-    "text": "앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.\n\nimport numpy as np\n\n# 가격 평균\nprint(\"가격 평균 : \",np.mean(df['가격']))\n\n#판매량 평균\nprint(\"판매량 평균 : \",np.mean(df['판매량']))\n\n가격 평균 :  2100.0\n판매량 평균 :  25.0"
-  },
-  {
-    "objectID": "about.html#mpg-데이터를-불러와-복사본을-만드세요.",
-    "href": "about.html#mpg-데이터를-불러와-복사본을-만드세요.",
-    "title": "hw1",
-    "section": "mpg 데이터를 불러와 복사본을 만드세요.",
-    "text": "mpg 데이터를 불러와 복사본을 만드세요.\n\nimport pandas as pd\n\ndf = pd.read_csv('mpg.csv')\n\ndf_copy = df.copy()\ndf_copy\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
-  },
-  {
-    "objectID": "about.html#복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
-    "href": "about.html#복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
-    "title": "hw1",
-    "section": "복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.",
-    "text": "복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.\n\ndf_copy=df_copy.rename(columns={'cty' : 'city', 'hwy' : 'highway'})\ndf_copy\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncity\nhighway\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
-  },
-  {
-    "objectID": "about.html#데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.-다음과-같은-결과물이-출력되어야-합니다.",
-    "href": "about.html#데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.-다음과-같은-결과물이-출력되어야-합니다.",
-    "title": "hw1",
-    "section": "데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.",
-    "text": "데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.\n\ndf_copy.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncity\nhighway\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact"
-  },
-  {
-    "objectID": "about.html#midwest.csv를-불러와-데이터의-특징을-파악하세요.",
-    "href": "about.html#midwest.csv를-불러와-데이터의-특징을-파악하세요.",
-    "title": "hw1",
-    "section": "midwest.csv를 불러와 데이터의 특징을 파악하세요.",
-    "text": "midwest.csv를 불러와 데이터의 특징을 파악하세요.\n\nimport pandas as pd\n\nmidwest = pd.read_csv('midwest.csv')\nmidwest.head()\n\n#pd.set_option('display.max_columns', None)\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\npoptotal\npopdensity\npopwhite\npopblack\npopamerindian\npopasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n\n\n5 rows × 28 columns\n\n\n\n\nmidwest.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 437 entries, 0 to 436\nData columns (total 28 columns):\n #   Column                Non-Null Count  Dtype  \n---  ------                --------------  -----  \n 0   PID                   437 non-null    int64  \n 1   county                437 non-null    object \n 2   state                 437 non-null    object \n 3   area                  437 non-null    float64\n 4   poptotal              437 non-null    int64  \n 5   popdensity            437 non-null    float64\n 6   popwhite              437 non-null    int64  \n 7   popblack              437 non-null    int64  \n 8   popamerindian         437 non-null    int64  \n 9   popasian              437 non-null    int64  \n 10  popother              437 non-null    int64  \n 11  percwhite             437 non-null    float64\n 12  percblack             437 non-null    float64\n 13  percamerindan         437 non-null    float64\n 14  percasian             437 non-null    float64\n 15  percother             437 non-null    float64\n 16  popadults             437 non-null    int64  \n 17  perchsd               437 non-null    float64\n 18  percollege            437 non-null    float64\n 19  percprof              437 non-null    float64\n 20  poppovertyknown       437 non-null    int64  \n 21  percpovertyknown      437 non-null    float64\n 22  percbelowpoverty      437 non-null    float64\n 23  percchildbelowpovert  437 non-null    float64\n 24  percadultpoverty      437 non-null    float64\n 25  percelderlypoverty    437 non-null    float64\n 26  inmetro               437 non-null    int64  \n 27  category              437 non-null    object \ndtypes: float64(15), int64(10), object(3)\nmemory usage: 95.7+ KB\n\n\n결측치가 하나도 없는 데이터이다. 범주 컬럼은 3개이고, 그 외에는 다 수치컬럼이다."
-  },
-  {
-    "objectID": "about.html#poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정",
-    "href": "about.html#poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정",
-    "title": "hw1",
-    "section": "poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정",
-    "text": "poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정\n\nmidwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n\n\n5 rows × 28 columns"
-  },
-  {
-    "objectID": "about.html#total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.",
-    "href": "about.html#total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.",
-    "title": "hw1",
-    "section": "total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.",
-    "text": "total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.\n\nmidwest['pct'] = (midwest['asian']/midwest['total'])*100\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\npct\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.376759\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.451722\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.106731\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.486918\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.085675\n\n\n\n\n5 rows × 29 columns\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.clf()\nmidwest['pct'].plot.hist()\nplt.show()"
-  },
-  {
-    "objectID": "about.html#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
-    "href": "about.html#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
-    "title": "hw1",
-    "section": "아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.",
-    "text": "아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.\n\nimport numpy as np\n\nprint( \"아시아 인구 백분율 전체 평균 :\",np.mean(midwest['pct']) )\n\n아시아 인구 백분율 전체 평균 : 0.4872461834357345\n\n\n\nmidwest['size'] = np.where(midwest['pct'] &gt; np.mean(midwest['pct']) , 'large', 'small')\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\npct\nsize\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.376759\nsmall\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.451722\nsmall\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.106731\nsmall\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.486918\nsmall\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.085675\nsmall\n\n\n\n\n5 rows × 30 columns"
-  },
-  {
-    "objectID": "about.html#large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
-    "href": "about.html#large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
-    "title": "hw1",
-    "section": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.",
-    "text": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\nplt.clf()\nmidwest['size'].value_counts().plot.bar(rot=0)\nplt.show()"
-  },
-  {
-    "objectID": "hw1.html",
-    "href": "hw1.html",
-    "title": "hw1",
-    "section": "",
-    "text": "24.07.15"
-  },
-  {
-    "objectID": "hw1.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
-    "href": "hw1.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
-    "title": "hw1",
-    "section": "다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.",
-    "text": "다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.\n\nimport pandas as pd\n\ndf = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],\n                   '가격' : [1800, 1500, 3000],\n                   '판매량' : [24,38,13]})\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
-  },
-  {
-    "objectID": "hw1.html#앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.",
-    "href": "hw1.html#앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.",
-    "title": "hw1",
-    "section": "앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.",
-    "text": "앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.\n\nimport numpy as np\n\n# 가격 평균\nprint(\"가격 평균 : \",np.mean(df['가격']))\n\n#판매량 평균\nprint(\"판매량 평균 : \",np.mean(df['판매량']))\n\n가격 평균 :  2100.0\n판매량 평균 :  25.0"
-  },
-  {
-    "objectID": "hw1.html#mpg-데이터를-불러와-복사본을-만드세요.",
-    "href": "hw1.html#mpg-데이터를-불러와-복사본을-만드세요.",
-    "title": "hw1",
-    "section": "mpg 데이터를 불러와 복사본을 만드세요.",
-    "text": "mpg 데이터를 불러와 복사본을 만드세요.\n\nimport pandas as pd\n\ndf = pd.read_csv('mpg.csv')\n\ndf_copy = df.copy()\ndf_copy\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
-  },
-  {
-    "objectID": "hw1.html#복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
-    "href": "hw1.html#복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
-    "title": "hw1",
-    "section": "복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.",
-    "text": "복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.\n\ndf_copy=df_copy.rename(columns={'cty' : 'city', 'hwy' : 'highway'})\ndf_copy\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncity\nhighway\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
-  },
-  {
-    "objectID": "hw1.html#데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.-다음과-같은-결과물이-출력되어야-합니다.",
-    "href": "hw1.html#데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.-다음과-같은-결과물이-출력되어야-합니다.",
-    "title": "hw1",
-    "section": "데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.",
-    "text": "데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.\n\ndf_copy.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncity\nhighway\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact"
-  },
-  {
-    "objectID": "hw1.html#midwest.csv를-불러와-데이터의-특징을-파악하세요.",
-    "href": "hw1.html#midwest.csv를-불러와-데이터의-특징을-파악하세요.",
-    "title": "hw1",
-    "section": "midwest.csv를 불러와 데이터의 특징을 파악하세요.",
-    "text": "midwest.csv를 불러와 데이터의 특징을 파악하세요.\n\nimport pandas as pd\n\nmidwest = pd.read_csv('midwest.csv')\nmidwest.head()\n\n#pd.set_option('display.max_columns', None)\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\npoptotal\npopdensity\npopwhite\npopblack\npopamerindian\npopasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n\n\n5 rows × 28 columns\n\n\n\n\nmidwest.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 437 entries, 0 to 436\nData columns (total 28 columns):\n #   Column                Non-Null Count  Dtype  \n---  ------                --------------  -----  \n 0   PID                   437 non-null    int64  \n 1   county                437 non-null    object \n 2   state                 437 non-null    object \n 3   area                  437 non-null    float64\n 4   poptotal              437 non-null    int64  \n 5   popdensity            437 non-null    float64\n 6   popwhite              437 non-null    int64  \n 7   popblack              437 non-null    int64  \n 8   popamerindian         437 non-null    int64  \n 9   popasian              437 non-null    int64  \n 10  popother              437 non-null    int64  \n 11  percwhite             437 non-null    float64\n 12  percblack             437 non-null    float64\n 13  percamerindan         437 non-null    float64\n 14  percasian             437 non-null    float64\n 15  percother             437 non-null    float64\n 16  popadults             437 non-null    int64  \n 17  perchsd               437 non-null    float64\n 18  percollege            437 non-null    float64\n 19  percprof              437 non-null    float64\n 20  poppovertyknown       437 non-null    int64  \n 21  percpovertyknown      437 non-null    float64\n 22  percbelowpoverty      437 non-null    float64\n 23  percchildbelowpovert  437 non-null    float64\n 24  percadultpoverty      437 non-null    float64\n 25  percelderlypoverty    437 non-null    float64\n 26  inmetro               437 non-null    int64  \n 27  category              437 non-null    object \ndtypes: float64(15), int64(10), object(3)\nmemory usage: 95.7+ KB\n\n\n결측치가 하나도 없는 데이터이다. 범주 컬럼은 3개이고, 그 외에는 다 수치컬럼이다."
-  },
-  {
-    "objectID": "hw1.html#poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정",
-    "href": "hw1.html#poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정",
-    "title": "hw1",
-    "section": "poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정",
-    "text": "poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정\n\nmidwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n\n\n5 rows × 28 columns"
-  },
-  {
-    "objectID": "hw1.html#total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.",
-    "href": "hw1.html#total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.",
-    "title": "hw1",
-    "section": "total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.",
-    "text": "total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.\n\nmidwest['pct'] = (midwest['asian']/midwest['total'])*100\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\npct\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.376759\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.451722\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.106731\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.486918\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.085675\n\n\n\n\n5 rows × 29 columns\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.clf()\nmidwest['pct'].plot.hist()\nplt.show()"
-  },
-  {
-    "objectID": "hw1.html#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
-    "href": "hw1.html#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
-    "title": "hw1",
-    "section": "아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.",
-    "text": "아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.\n\nimport numpy as np\n\nprint( \"아시아 인구 백분율 전체 평균 :\",np.mean(midwest['pct']) )\n\n아시아 인구 백분율 전체 평균 : 0.4872461834357345\n\n\n\nmidwest['size'] = np.where(midwest['pct'] &gt; np.mean(midwest['pct']) , 'large', 'small')\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\npct\nsize\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.376759\nsmall\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.451722\nsmall\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.106731\nsmall\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.486918\nsmall\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.085675\nsmall\n\n\n\n\n5 rows × 30 columns"
-  },
-  {
-    "objectID": "hw1.html#large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
-    "href": "hw1.html#large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
-    "title": "hw1",
-    "section": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.",
-    "text": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\nplt.clf()\nmidwest['size'].value_counts().plot.bar(rot=0)\nplt.show()"
-  },
-  {
-    "objectID": "hw2.html",
-    "href": "hw2.html",
-    "title": "hw2",
-    "section": "",
-    "text": "24.07.16"
-  },
-  {
-    "objectID": "hw2.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.",
-    "href": "hw2.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.",
-    "title": "hw2",
-    "section": "자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다.",
-    "text": "자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다."
-  },
-  {
-    "objectID": "hw2.html#displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
-    "href": "hw2.html#displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
-    "title": "hw2",
-    "section": "displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.",
-    "text": "displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.\n\nimport pandas as pd\nimport numpy as np\ndf = pd.read_csv('mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n다른 방법\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
-  },
-  {
-    "objectID": "hw2.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.",
-    "href": "hw2.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.",
-    "title": "hw2",
-    "section": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다.",
-    "text": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다."
-  },
-  {
-    "objectID": "hw2.html#audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
-    "href": "hw2.html#audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
-    "title": "hw2",
-    "section": "‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.",
-    "text": "‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer == 'audi' | manufacturer=='toyota'\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412\n\n\n\n\n\n\n\ntoyota 제조회사가 도시연비 평균이 더 높다.\n\n다른 방법\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer in ['audi','toyota']\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412"
-  },
-  {
-    "objectID": "hw2.html#chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.",
-    "href": "hw2.html#chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.",
-    "title": "hw2",
-    "section": "‘chevrolet’, ‘ford’, ‘honda’ 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.",
-    "text": "‘chevrolet’, ‘ford’, ‘honda’ 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.\n\nprint(\"세 회사 데이터에 대한 hwy 전체 평균 :\",df.query(\"manufacturer in ['chevrolet','ford','honda']\")['hwy'].mean())\n\n세 회사 데이터에 대한 hwy 전체 평균 : 22.50943396226415"
-  },
-  {
-    "objectID": "hw2.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.",
-    "href": "hw2.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.",
-    "title": "hw2",
-    "section": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다.",
-    "text": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다."
-  },
-  {
-    "objectID": "hw2.html#audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
-    "href": "hw2.html#audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
-    "title": "hw2",
-    "section": "’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.",
-    "text": "’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.\n\nprint(\"=\"*70, \"\\n 1. audi 중 hwy가 높은 순의 자동차 모델 \\n\")\ndf.query('manufacturer == \"audi\"').groupby('model').agg(hwy_mean = ('hwy' , 'mean'))\nprint(\"\\n\",\"=\"*70, \"\\n 2. audi 중 hwy가 1~5위인 자동차 데이터 \\n\")\ndf.query('manufacturer == \"audi\"').sort_values('hwy', ascending=False).head(5)\n\n====================================================================== \n 1. audi 중 hwy가 높은 순의 자동차 모델 \n\n\n ====================================================================== \n 2. audi 중 hwy가 1~5위인 자동차 데이터 \n\n\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n9\naudi\na4 quattro\n2.0\n2008\n4\nmanual(m6)\n4\n20\n28\np\ncompact"
-  },
-  {
-    "objectID": "hw2.html#mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.",
-    "href": "hw2.html#mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.",
-    "title": "hw2",
-    "section": "mpg 데이터 복사본을 만들고, cty와 hwy를 더한 ’합산 연비 변수’를 추가하세요.",
-    "text": "mpg 데이터 복사본을 만들고, cty와 hwy를 더한 ’합산 연비 변수’를 추가하세요.\n\nmpg = df.copy()\nmpg= mpg.assign(sum_cty_hwy = mpg['cty']+mpg['hwy'])\nmpg.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n47\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n50\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n51\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n51\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n42"
-  },
-  {
-    "objectID": "hw2.html#앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.",
-    "href": "hw2.html#앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.",
-    "title": "hw2",
-    "section": "앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.",
-    "text": "앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.\n\nmpg = mpg.assign(avg_cty_hwy = mpg['sum_cty_hwy']/2)\nmpg.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n47\n23.5\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n50\n25.0\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n51\n25.5\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n51\n25.5\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n42\n21.0"
-  },
-  {
-    "objectID": "hw2.html#평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.",
-    "href": "hw2.html#평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.",
-    "title": "hw2",
-    "section": "’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.",
-    "text": "’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.\n\nmpg.sort_values('avg_cty_hwy', ascending=False).head(3)\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n221\nvolkswagen\nnew beetle\n1.9\n1999\n4\nmanual(m5)\nf\n35\n44\nd\nsubcompact\n79\n39.5\n\n\n212\nvolkswagen\njetta\n1.9\n1999\n4\nmanual(m5)\nf\n33\n44\nd\ncompact\n77\n38.5\n\n\n222\nvolkswagen\nnew beetle\n1.9\n1999\n4\nauto(l4)\nf\n29\n41\nd\nsubcompact\n70\n35.0"
-  },
-  {
-    "objectID": "hw2.html#번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.",
-    "href": "hw2.html#번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.",
-    "title": "hw2",
-    "section": "1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.",
-    "text": "1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.\n\ndf.assign(sum_cty_hwy = df['cty']+df['hwy']\n          , avg_cty_hwy = lambda x: x['sum_cty_hwy']/2) \\\n    .sort_values('avg_cty_hwy', ascending=False) \\\n    .head(3)\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n221\nvolkswagen\nnew beetle\n1.9\n1999\n4\nmanual(m5)\nf\n35\n44\nd\nsubcompact\n79\n39.5\n\n\n212\nvolkswagen\njetta\n1.9\n1999\n4\nmanual(m5)\nf\n33\n44\nd\ncompact\n77\n38.5\n\n\n222\nvolkswagen\nnew beetle\n1.9\n1999\n4\nauto(l4)\nf\n29\n41\nd\nsubcompact\n70\n35.0"
-  },
-  {
-    "objectID": "hw2.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
-    "href": "hw2.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
-    "title": "hw2",
-    "section": "자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.",
-    "text": "자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.\n\nimport pandas as pd\nimport numpy as np\ndf = pd.read_csv('mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n다른 방법\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
-  },
-  {
-    "objectID": "hw2.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
-    "href": "hw2.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
-    "title": "hw2",
-    "section": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. ‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.",
-    "text": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. ‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer == 'audi' | manufacturer=='toyota'\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412\n\n\n\n\n\n\n\ntoyota 제조회사가 도시연비 평균이 더 높다.\n\n다른 방법\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer in ['audi','toyota']\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412"
-  },
-  {
-    "objectID": "hw2.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
-    "href": "hw2.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
-    "title": "hw2",
-    "section": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. ’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.",
-    "text": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. ’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.\n\nprint(\"=\"*70, \"\\n 1. audi 중 hwy가 높은 순의 자동차 모델 \\n\")\ndf.query('manufacturer == \"audi\"').groupby('model').agg(hwy_mean = ('hwy' , 'mean'))\nprint(\"\\n\",\"=\"*70, \"\\n 2. audi 중 hwy가 1~5위인 자동차 데이터 \\n\")\ndf.query('manufacturer == \"audi\"').sort_values('hwy', ascending=False).head(5)\n\n====================================================================== \n 1. audi 중 hwy가 높은 순의 자동차 모델 \n\n\n ====================================================================== \n 2. audi 중 hwy가 1~5위인 자동차 데이터 \n\n\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n9\naudi\na4 quattro\n2.0\n2008\n4\nmanual(m6)\n4\n20\n28\np\ncompact"
-  },
-  {
-    "objectID": "project1.html",
-    "href": "project1.html",
-    "title": "project1",
-    "section": "",
-    "text": "예전에는 전통시장을 가면 편의시설이 부족해서 접근성이 떨어졌는데, 요즘에는 편의시설을 개선하려는 노력을 기울이고 있다.\n\n와이파이 설치 2. 건강한 식재료 (백년초 국수 등 + 지역 특색) 3. 공산품이 아니라 정성이 들어간 음식들 4. 저렴한 가격 + 온누리 상품권 사용가능 5. 쇼핑 후 차 한 잔의 여유를 위한 여가 공간 구비 (카페 등) 6. 1인 가구를 위한 음식\n\n상품권 가맹점포 정보 https://www.sbiz.or.kr/sijangtong/nation/onnuri/onnuriMktList.do?menu_type_a=A&menu_cms=&menu_id=070400#shopPopBtn\n데이터 출처 소상공인시장진흥공단_전국 전통시장 현황_2010 : https://www.data.go.kr/data/15102810/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20151231 : https://www.data.go.kr/data/15052836/fileData.do 소상공인시장진흥공단_시장 시설_20210928 : https://www.data.go.kr/data/15090651/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20230725 : https://www.data.go.kr/data/15012894/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20240719 : https://www.data.go.kr/data/15052837/fileData.do?recommendDataYn=Y\n소상공인시장진흥공단_시장 서비스 정보_20210928 : https://www.data.go.kr/data/15090612/fileData.do #"
-  },
-  {
-    "objectID": "project1.html#변수명-바꾸기",
-    "href": "project1.html#변수명-바꾸기",
-    "title": "project1",
-    "section": "변수명 바꾸기",
-    "text": "변수명 바꾸기\n\nmarket2 = market2.rename(columns={'시장명' : 'market_name',\n                              '시장유형' : 'type',\n                              '소재지도로명주소' : 'address_road',\n                              '시장개설주기' : 'open_period',\n                              '소재지지번주소' : 'address_old',\n                              '점포수' : 'store_count',\n                              '사용가능상품권' : 'certificate',\n                              '공중화장실 보유여부' : 'public_toilet',\n                              '주차장 보유여부' : 'parking_lot',\n                              '개설년도' : 'year' ,\n                              '데이터기준일자' : 'data_date'})\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_road\nopen_period\naddress_old\nstore_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\n\n\n\n\n\n\n\n잘 바뀐 것을 알 수 있다."
-  },
-  {
-    "objectID": "project1.html#데이터-정보-알아보기",
-    "href": "project1.html#데이터-정보-알아보기",
-    "title": "project1",
-    "section": "데이터 정보 알아보기",
-    "text": "데이터 정보 알아보기\n\nmarket2.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1439 entries, 0 to 1438\nData columns (total 11 columns):\n #   Column         Non-Null Count  Dtype         \n---  ------         --------------  -----         \n 0   market_name    1439 non-null   object        \n 1   type           1439 non-null   object        \n 2   address_road   1439 non-null   object        \n 3   open_period    1439 non-null   object        \n 4   address_old    1439 non-null   object        \n 5   store_count    1439 non-null   int64         \n 6   certificate    1159 non-null   object        \n 7   public_toilet  1439 non-null   object        \n 8   parking_lot    1439 non-null   object        \n 9   year           1281 non-null   float64       \n 10  data_date      1439 non-null   datetime64[ns]\ndtypes: datetime64[ns](1), float64(1), int64(1), object(8)\nmemory usage: 123.8+ KB\n\n\n8개가 범주컬럼이고, 2개가 수치 컬럼, 1개가 날짜컬럼임을 알 수 있다. (수치컬럼중 1개는 연도컬럼이라서, 우리가 분석해 볼 수 있는 수치 컬럼은 1개뿐이다.) 그리고 사용가능상품권(certificate)와 개설연도(year)에만 null값이 있다는 것을 알 수 있다.\n각 컬럼의 범주 알아보기\n\nmarket2['market_name'].value_counts()\n\nmarket_name\n중앙시장      16\n동부시장       6\n역전시장       5\n현대시장       4\n강남시장       4\n          ..\n신광시장       1\n장성종합시장     1\n한라종합시장     1\n기계시장       1\n목행시장       1\nName: count, Length: 1367, dtype: int64\n\n\n이름이 동일한 서로 다른 시장이 존재함.\n\nmarket2['type'].value_counts()\n\ntype\n상설       1002\n상설+정기     259\n정기        178\nName: count, dtype: int64\n\n\n시장 유형은 3가지임.\n\nmarket2['address_road'].value_counts().head()\n\naddress_road\n대구광역시 북구 칠성시장로 5길 22    2\n경상북도 예천군 예천읍 시장로 109    2\n서울특별시 중구 청계천로 274       2\n인천광역시 서구 가정로 208        2\n대구광역시 남구 대명동 1157-10    2\nName: count, dtype: int64\n\n\n\nmarket2['address_old'].value_counts().head()\n\naddress_old\n서울 강서구 화곡 370        2\n서울 중구 을지로6가 17번지     2\n대구 수성구 수성동2가 39-4    2\n경기 김포시 양촌읍 414-3     2\n인천 동구 송림동 50         2\nName: count, dtype: int64\n\n\n주소가 동일한 시장이 있음\n\nmarket2['open_period'].value_counts()\n\nopen_period\n상설    1002\n5일     435\n2일       1\n6일       1\nName: count, dtype: int64\n\n\n정기 시장에 5일, 2일, 6일 있음.\n\nmarket2['certificate'].value_counts()\n\ncertificate\n온누리상품권    1159\nName: count, dtype: int64\n\n\n\nmarket2['public_toilet'].value_counts()\n\npublic_toilet\nY    1308\nN     131\nName: count, dtype: int64\n\n\n\nmarket2['parking_lot'].value_counts()\n\nparking_lot\nY    859\nN    580\nName: count, dtype: int64\n\n\n\nmarket2['year'].value_counts().head()\n\nyear\n2005.0    130\n2006.0    104\n2013.0     85\n2009.0     80\n2007.0     78\nName: count, dtype: int64\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nyear_group_count = market2.groupby('year').agg(year_count= ('year', 'count'))\n\nplt.clf()\nsns.lineplot(data=year_group_count, x='year', y='year_count')\nplt.show()\n\n\n\n\n\n\n\n\n\nmarket2['data_date'].value_counts()\n\ndata_date\n2015-12-31    1439\nName: count, dtype: int64"
-  },
-  {
-    "objectID": "project1.html#정포수-요약-정보-알아보기",
-    "href": "project1.html#정포수-요약-정보-알아보기",
-    "title": "project1",
-    "section": "",
-    "text": "market2[['market_count']].describe()\n\n\n\n\n\n\n\n\nmarket_count\n\n\n\n\ncount\n1439.000000\n\n\nmean\n143.907575\n\n\nstd\n298.989963\n\n\nmin\n0.000000\n\n\n25%\n50.000000\n\n\n50%\n80.000000\n\n\n75%\n134.000000\n\n\nmax\n5852.000000\n\n\n\n\n\n\n\n점포수 위주로 봤을 때, 25%, 75% 기준으로 점포 사이즈를 나누는 것이 합리적으로 보인다. samll : 50개 미만 medium : 50개 이상 134개 미만 large : 134개 이상 3가지의 범주로 나누고자 한다."
-  },
-  {
-    "objectID": "project1.html#점포수로-범주화하기",
-    "href": "project1.html#점포수로-범주화하기",
-    "title": "project1",
-    "section": "",
-    "text": "market2 = market2.assign(market_scale = np.where(market2[\"market_count\"] &gt;= 134, \"large\", \n                                        np.where(market2[\"market_count\"] &gt;= 50, \"medium\", \"small\")))\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\n\n\n\n\n\n\n\n점포수대로 범주화가 잘 되어진 것으로 보인다.\n\nimport matplotlib.pyplot as plt\nplt.clf()\nmarket2['market_scale'].value_counts().plot.bar(rot=0)\nplt.show()"
-  },
-  {
-    "objectID": "project1.html#편의시절공중화장실-주차장-보유-여부에-따라-시장을-범주화하기.",
-    "href": "project1.html#편의시절공중화장실-주차장-보유-여부에-따라-시장을-범주화하기.",
-    "title": "project1",
-    "section": "",
-    "text": "market2['level'] = np.where((market2['public_toilet'] == 'Y') & (market2['parking_lot'] == 'Y'), 'high', \n                   np.where((market2['public_toilet'] == 'N') & (market2['public_toilet'] == 'N') , 'low', 'intermediate'))\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n\n\n\n\n\n\n\n편의시절(공중화장실, 주차장) 보유 여부에 따라 시장의 편의성이 얼마나 좋은지 범주화 해보고자 한다.\n(공중화장실 Y, 주차장 Y) -&gt; high (공중화장실 Y, 주차장 N) -&gt; intermediate (공중화장실 N, 주차장 Y) -&gt; intermediate (공중화장실 N, 주차장 N) -&gt; low\n\nimport matplotlib.pyplot as plt\nplt.clf()\nmarket2['level'].value_counts().plot.bar(rot=0)\nplt.show()\n\n\n\n\n\n\n\n\n대다수의 시장이 편의시설이 잘 구비되어 있음을 알 수 있다.\nY의 현황을 파악하기 위해서, N은 null값으로 만들기 -&gt; market3 데이터프레임으로 함. N 갯수 알아보기\n\nmarket2['public_toilet'].value_counts()\n\npublic_toilet\nY    1308\nN     131\nName: count, dtype: int64\n\n\n\nmarket2['parking_lot'].value_counts()\n\nparking_lot\nY    859\nN    580\nName: count, dtype: int64\n\n\n온누리 상품권은 사용안하는 곳은 null값이니까 그대로 count 쓰면 쓰는 곳만 세어짐 공중화장실, 주차장은 Y/N 이므로, Y만 세려면 Y만 세어줘야 함.\n\nmarket3 = market2.copy()\nimport numpy as np\nmarket3.loc[market3['public_toilet']=='N', 'public_toilet'] = np.nan\nmarket3['public_toilet'].isna().sum()\n\nmarket3.loc[market3['parking_lot']=='N', 'parking_lot'] = np.nan\nmarket3['parking_lot'].isna().sum()\n\n\npd.set_option('display.max_columns', None)\ngroup_df = market3.groupby(['type','market_scale']).agg(market_count= ('market_name','count')\n                                                       , certificate_count = ('certificate', 'count')\n                                                       , public_toilet_count = ('public_toilet', 'count')\n                                                       , parking_lot_count = ('parking_lot', 'count'))\ngroup_df\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_count\npublic_toilet_count\nparking_lot_count\n\n\ntype\nmarket_scale\n\n\n\n\n\n\n\n\n상설\nlarge\n281\n256\n259\n182\n\n\nmedium\n532\n459\n444\n247\n\n\nsmall\n189\n127\n180\n103\n\n\n상설+정기\nlarge\n66\n64\n63\n53\n\n\nmedium\n145\n132\n138\n101\n\n\nsmall\n48\n33\n48\n40\n\n\n정기\nlarge\n15\n14\n15\n13\n\n\nmedium\n46\n32\n46\n36\n\n\nsmall\n117\n42\n115\n84\n\n\n\n\n\n\n\n5일장 중에서 점포수가 많은 시장은 15곳 밖에 안 됨. 대부분 small에 해당함. 따라서 5일장만 열리는 곳은 소규모로 진행되는 시장임. 즉 외부 관광객이 간다기 보다는 지역 현지인들이 이용할 것으로 보임. 라고 생각을 했지, 5일장 블로그 봐보니까 관광지라면 관광객도 갈 법한 점포들도 있었음.\n\ngroup_df = market3.groupby(['type','market_scale','level']).agg(market_count= ('market_name','count')\n                                                       , certificate_count = ('certificate', 'count')\n                                                       , public_toilet_count = ('public_toilet', 'count')\n                                                       , parking_lot_count = ('parking_lot', 'count'))\ngroup_df['certificate_pct']= round(group_df['certificate_count']/group_df['market_count']*100,1)\ngroup_df['public_toilet_pct']=round(group_df['public_toilet_count']/group_df['market_count']*100,1)\ngroup_df['parking_lot_pct']=round(group_df['parking_lot_count']/group_df['market_count']*100,1)\ngroup_df\n\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_count\npublic_toilet_count\nparking_lot_count\ncertificate_pct\npublic_toilet_pct\nparking_lot_pct\n\n\ntype\nmarket_scale\nlevel\n\n\n\n\n\n\n\n\n\n\n\n상설\nlarge\nhigh\n175\n159\n175\n175\n90.9\n100.0\n100.0\n\n\nintermediate\n84\n76\n84\n0\n90.5\n100.0\n0.0\n\n\nlow\n22\n21\n0\n7\n95.5\n0.0\n31.8\n\n\nmedium\nhigh\n231\n205\n231\n231\n88.7\n100.0\n100.0\n\n\nintermediate\n213\n180\n213\n0\n84.5\n100.0\n0.0\n\n\nlow\n88\n74\n0\n16\n84.1\n0.0\n18.2\n\n\nsmall\nhigh\n100\n68\n100\n100\n68.0\n100.0\n100.0\n\n\nintermediate\n80\n51\n80\n0\n63.7\n100.0\n0.0\n\n\nlow\n9\n8\n0\n3\n88.9\n0.0\n33.3\n\n\n상설+정기\nlarge\nhigh\n53\n51\n53\n53\n96.2\n100.0\n100.0\n\n\nintermediate\n10\n10\n10\n0\n100.0\n100.0\n0.0\n\n\nlow\n3\n3\n0\n0\n100.0\n0.0\n0.0\n\n\nmedium\nhigh\n99\n92\n99\n99\n92.9\n100.0\n100.0\n\n\nintermediate\n39\n33\n39\n0\n84.6\n100.0\n0.0\n\n\nlow\n7\n7\n0\n2\n100.0\n0.0\n28.6\n\n\nsmall\nhigh\n40\n28\n40\n40\n70.0\n100.0\n100.0\n\n\nintermediate\n8\n5\n8\n0\n62.5\n100.0\n0.0\n\n\n정기\nlarge\nhigh\n13\n12\n13\n13\n92.3\n100.0\n100.0\n\n\nintermediate\n2\n2\n2\n0\n100.0\n100.0\n0.0\n\n\nmedium\nhigh\n36\n28\n36\n36\n77.8\n100.0\n100.0\n\n\nintermediate\n10\n4\n10\n0\n40.0\n100.0\n0.0\n\n\nsmall\nhigh\n83\n34\n83\n83\n41.0\n100.0\n100.0\n\n\nintermediate\n32\n8\n32\n0\n25.0\n100.0\n0.0\n\n\nlow\n2\n0\n0\n1\n0.0\n0.0\n50.0\n\n\n\n\n\n\n\n비율만 뽑아서 봐보기\n\ngroup_df.iloc[:,[0,4,5,6]]\n\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_pct\npublic_toilet_pct\nparking_lot_pct\n\n\ntype\nmarket_scale\nlevel\n\n\n\n\n\n\n\n\n상설\nlarge\nhigh\n175\n90.9\n100.0\n100.0\n\n\nintermediate\n84\n90.5\n100.0\n0.0\n\n\nlow\n22\n95.5\n0.0\n31.8\n\n\nmedium\nhigh\n231\n88.7\n100.0\n100.0\n\n\nintermediate\n213\n84.5\n100.0\n0.0\n\n\nlow\n88\n84.1\n0.0\n18.2\n\n\nsmall\nhigh\n100\n68.0\n100.0\n100.0\n\n\nintermediate\n80\n63.7\n100.0\n0.0\n\n\nlow\n9\n88.9\n0.0\n33.3\n\n\n상설+정기\nlarge\nhigh\n53\n96.2\n100.0\n100.0\n\n\nintermediate\n10\n100.0\n100.0\n0.0\n\n\nlow\n3\n100.0\n0.0\n0.0\n\n\nmedium\nhigh\n99\n92.9\n100.0\n100.0\n\n\nintermediate\n39\n84.6\n100.0\n0.0\n\n\nlow\n7\n100.0\n0.0\n28.6\n\n\nsmall\nhigh\n40\n70.0\n100.0\n100.0\n\n\nintermediate\n8\n62.5\n100.0\n0.0\n\n\n정기\nlarge\nhigh\n13\n92.3\n100.0\n100.0\n\n\nintermediate\n2\n100.0\n100.0\n0.0\n\n\nmedium\nhigh\n36\n77.8\n100.0\n100.0\n\n\nintermediate\n10\n40.0\n100.0\n0.0\n\n\nsmall\nhigh\n83\n41.0\n100.0\n100.0\n\n\nintermediate\n32\n25.0\n100.0\n0.0\n\n\nlow\n2\n0.0\n0.0\n50.0"
-  },
-  {
-    "objectID": "project1.html#section",
-    "href": "project1.html#section",
-    "title": "project1",
-    "section": "",
-    "text": "plt.clf()\ndf = market2.groupby([\"type\", \"market_scale\"], as_index = False) \\\n            .agg(market_count = (\"market_scale\", \"count\"))\ndf.sort_values('market_count', ascending = False)\nplt.show()\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n정기 시장은 활성화 안 하는 지역으로 봐도 될까?\n\nmarket2['type'].value_counts()\n\ntype\n상설       1002\n상설+정기     259\n정기        178\nName: count, dtype: int64\n\n\nY의 현황을 파악하기 위해서, N은 null값으로 만들기 N 갯수 알아보기\n\nmarket2['public_toilet'].value_counts()\n\npublic_toilet\nY    1308\nN     131\nName: count, dtype: int64\n\n\n\nmarket2['parking_lot'].value_counts()\n\nparking_lot\nY    859\nN    580\nName: count, dtype: int64\n\n\n\nmarket3 = market2.copy()\nimport numpy as np\nmarket3.loc[market3['public_toilet']=='N', 'public_toilet'] = np.nan\nmarket3['public_toilet'].isna().sum()\n\nmarket3.loc[market3['parking_lot']=='N', 'parking_lot'] = np.nan\nmarket3['parking_lot'].isna().sum()\n\n\npd.set_option('display.max_columns', None)\ngroup_df = market3.groupby(['type','market_scale']).agg(market_count= ('market_name','count')\n                                                       , certificate_count = ('certificate', 'count')\n                                                       , public_toilet_count = ('public_toilet', 'count')\n                                                       , parking_lot_count = ('parking_lot', 'count'))\ngroup_df\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_count\npublic_toilet_count\nparking_lot_count\n\n\ntype\nmarket_scale\n\n\n\n\n\n\n\n\n상설\nlarge\n281\n256\n259\n182\n\n\nmedium\n532\n459\n444\n247\n\n\nsmall\n189\n127\n180\n103\n\n\n상설+정기\nlarge\n66\n64\n63\n53\n\n\nmedium\n145\n132\n138\n101\n\n\nsmall\n48\n33\n48\n40\n\n\n정기\nlarge\n15\n14\n15\n13\n\n\nmedium\n46\n32\n46\n36\n\n\nsmall\n117\n42\n115\n84\n\n\n\n\n\n\n\n5일장 중에서 점포수가 많은 시장은 15곳 밖에 안 됨. 대부분 small에 해당함. 따라서 5일장만 열리는 곳은 소규모로 진행되는 시장임. 즉 외부 관광객이 간다기 보다는 지역 현지인들이 이용할 것으로 보임. 라고 생각을 했지, 5일장 블로그 봐보니까 관광지라면 관광객도 갈 법한 점포들도 있었음.\n\ngroup_df = market3.groupby(['type','market_scale','level']).agg(market_count= ('market_name','count')\n                                                       , certificate_count = ('certificate', 'count')\n                                                       , public_toilet_count = ('public_toilet', 'count')\n                                                       , parking_lot_count = ('parking_lot', 'count'))\ngroup_df['certificate_pct']= round(group_df['certificate_count']/group_df['market_count']*100,1)\ngroup_df['public_toilet_pct']=round(group_df['public_toilet_count']/group_df['market_count']*100,1)\ngroup_df['parking_lot_pct']=round(group_df['parking_lot_count']/group_df['market_count']*100,1)\ngroup_df\n\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_count\npublic_toilet_count\nparking_lot_count\ncertificate_pct\npublic_toilet_pct\nparking_lot_pct\n\n\ntype\nmarket_scale\nlevel\n\n\n\n\n\n\n\n\n\n\n\n상설\nlarge\nhigh\n175\n159\n175\n175\n90.9\n100.0\n100.0\n\n\nintermediate\n84\n76\n84\n0\n90.5\n100.0\n0.0\n\n\nlow\n22\n21\n0\n7\n95.5\n0.0\n31.8\n\n\nmedium\nhigh\n231\n205\n231\n231\n88.7\n100.0\n100.0\n\n\nintermediate\n213\n180\n213\n0\n84.5\n100.0\n0.0\n\n\nlow\n88\n74\n0\n16\n84.1\n0.0\n18.2\n\n\nsmall\nhigh\n100\n68\n100\n100\n68.0\n100.0\n100.0\n\n\nintermediate\n80\n51\n80\n0\n63.7\n100.0\n0.0\n\n\nlow\n9\n8\n0\n3\n88.9\n0.0\n33.3\n\n\n상설+정기\nlarge\nhigh\n53\n51\n53\n53\n96.2\n100.0\n100.0\n\n\nintermediate\n10\n10\n10\n0\n100.0\n100.0\n0.0\n\n\nlow\n3\n3\n0\n0\n100.0\n0.0\n0.0\n\n\nmedium\nhigh\n99\n92\n99\n99\n92.9\n100.0\n100.0\n\n\nintermediate\n39\n33\n39\n0\n84.6\n100.0\n0.0\n\n\nlow\n7\n7\n0\n2\n100.0\n0.0\n28.6\n\n\nsmall\nhigh\n40\n28\n40\n40\n70.0\n100.0\n100.0\n\n\nintermediate\n8\n5\n8\n0\n62.5\n100.0\n0.0\n\n\n정기\nlarge\nhigh\n13\n12\n13\n13\n92.3\n100.0\n100.0\n\n\nintermediate\n2\n2\n2\n0\n100.0\n100.0\n0.0\n\n\nmedium\nhigh\n36\n28\n36\n36\n77.8\n100.0\n100.0\n\n\nintermediate\n10\n4\n10\n0\n40.0\n100.0\n0.0\n\n\nsmall\nhigh\n83\n34\n83\n83\n41.0\n100.0\n100.0\n\n\nintermediate\n32\n8\n32\n0\n25.0\n100.0\n0.0\n\n\nlow\n2\n0\n0\n1\n0.0\n0.0\n50.0\n\n\n\n\n\n\n\n온누리 상품권은 사용안하는 곳은 null값이니까 그대로 count 쓰면 쓰는 곳만 세어짐 공중화장실, 주차장은 Y/N 이므로, Y만 세려면 Y만 세어줘야 함.\n비율만 뽑아서 봐보기\n\n#group_df.iloc[:,0]\ngroup_df.iloc[:,[0,4,5,6]]\n\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_pct\npublic_toilet_pct\nparking_lot_pct\n\n\ntype\nmarket_scale\nlevel\n\n\n\n\n\n\n\n\n상설\nlarge\nhigh\n175\n90.9\n100.0\n100.0\n\n\nintermediate\n84\n90.5\n100.0\n0.0\n\n\nlow\n22\n95.5\n0.0\n31.8\n\n\nmedium\nhigh\n231\n88.7\n100.0\n100.0\n\n\nintermediate\n213\n84.5\n100.0\n0.0\n\n\nlow\n88\n84.1\n0.0\n18.2\n\n\nsmall\nhigh\n100\n68.0\n100.0\n100.0\n\n\nintermediate\n80\n63.7\n100.0\n0.0\n\n\nlow\n9\n88.9\n0.0\n33.3\n\n\n상설+정기\nlarge\nhigh\n53\n96.2\n100.0\n100.0\n\n\nintermediate\n10\n100.0\n100.0\n0.0\n\n\nlow\n3\n100.0\n0.0\n0.0\n\n\nmedium\nhigh\n99\n92.9\n100.0\n100.0\n\n\nintermediate\n39\n84.6\n100.0\n0.0\n\n\nlow\n7\n100.0\n0.0\n28.6\n\n\nsmall\nhigh\n40\n70.0\n100.0\n100.0\n\n\nintermediate\n8\n62.5\n100.0\n0.0\n\n\n정기\nlarge\nhigh\n13\n92.3\n100.0\n100.0\n\n\nintermediate\n2\n100.0\n100.0\n0.0\n\n\nmedium\nhigh\n36\n77.8\n100.0\n100.0\n\n\nintermediate\n10\n40.0\n100.0\n0.0\n\n\nsmall\nhigh\n83\n41.0\n100.0\n100.0\n\n\nintermediate\n32\n25.0\n100.0\n0.0\n\n\nlow\n2\n0.0\n0.0\n50.0"
-  },
-  {
     "objectID": "blog.html",
     "href": "blog.html",
+    "title": "myblog",
+    "section": "",
+    "text": "hw6\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nRecent posts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
     "title": "Recent posts",
     "section": "",
-    "text": "\"\"\"\n---\ntitle: \"myblog\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: grid  # 여기다가 'grid'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.\n  categories: true\n---\n\"\"\"\n\n'\\n---\\ntitle: \"myblog\"\\nlisting:\\n  contents: posts\\n  sort: \"date desc\"\\n  type: grid  # 여기다가 \\'grid\\'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.\\n  categories: true\\n---\\n'\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nRecent posts\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhouse price columns\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/hw2/index.html",
-    "href": "posts/hw2/index.html",
-    "title": "hw2",
+    "objectID": "posts/숙제 Qmd/index.html",
+    "href": "posts/숙제 Qmd/index.html",
+    "title": "hw3",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
+    "text": "숙제 Qmd\n\n\n1. 정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2의 pdf를 그릴 것.\n\ndef norm(x, mu, sigma):\n    import numpy as np\n    a = 1/(sigma* np.sqrt(2*np.pi))\n    b = np.exp( -(x-mu)**2 / (2*sigma**2))\n    return a*b\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx=np.linspace(-20,20,1000)\ny= norm(x, mu=3, sigma=2)\n\nplt.clf()\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n—\n\n\n2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.\n\nX ~ N(2, 3^2)\n\n\n1) P(X&lt;3)\n\n\n2) P(2&lt;X&lt;5)\n\n\n3) P(X&lt;3 or X&gt;7)\n\nfrom scipy.stats import norm\n\nprint(\"1) P(X&lt;3) :\",norm.cdf(3, loc=2, scale=3))\nprint(\"2) P(2&lt;X&lt;5) :\", norm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3))\nprint(\"3) P(X&lt;3 or X&gt;7) :\", norm.cdf(3, loc=2, scale=3) + (1-norm.cdf(7,loc=2,scale=3)))\n\n1) P(X&lt;3) : 0.6305586598182363\n2) P(2&lt;X&lt;5) : 0.3413447460685429\n3) P(X&lt;3 or X&gt;7) : 0.678349012091051\n\n\n\n\n\n—\n\n\n3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다.\n\n\n상위 5%에 해당하는 학생의 점수는?\n\nprint(\"상위 5%에 해당하는 학생의 점수는? \",norm.ppf(0.95, loc=30, scale=2))\n\n상위 5%에 해당하는 학생의 점수는?  33.28970725390295"
   },
   {
-    "objectID": "posts/hw2/index.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
-    "href": "posts/hw2/index.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
-    "title": "hw2",
+    "objectID": "posts/graph/index.html",
+    "href": "posts/graph/index.html",
+    "title": "graph",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
   },
   {
-    "objectID": "posts/hw2/index.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
-    "href": "posts/hw2/index.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
-    "title": "hw2",
-    "section": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. ‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.",
-    "text": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. ‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer == 'audi' | manufacturer=='toyota'\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412\n\n\n\n\n\n\n\ntoyota 제조회사가 도시연비 평균이 더 높다.\n\n다른 방법\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer in ['audi','toyota']\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412"
+    "objectID": "posts/graph/index.html#그래프-그리기",
+    "href": "posts/graph/index.html#그래프-그리기",
+    "title": "graph",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
   },
   {
-    "objectID": "posts/hw2/index.html#chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.",
-    "href": "posts/hw2/index.html#chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.",
-    "title": "hw2",
-    "section": "‘chevrolet’, ‘ford’, ‘honda’ 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.",
-    "text": "‘chevrolet’, ‘ford’, ‘honda’ 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.\n\nprint(\"세 회사 데이터에 대한 hwy 전체 평균 :\",df.query(\"manufacturer in ['chevrolet','ford','honda']\")['hwy'].mean())\n\n세 회사 데이터에 대한 hwy 전체 평균 : 22.50943396226415"
+    "objectID": "posts/graph/index.html#sns의-countplot-사용한-막대-그래프",
+    "href": "posts/graph/index.html#sns의-countplot-사용한-막대-그래프",
+    "title": "graph",
+    "section": "sns의 countplot 사용한 막대 그래프",
+    "text": "sns의 countplot 사용한 막대 그래프\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=mpg['drv'].value_counts().index)\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=['r','4','f'])\nplt.show()"
   },
   {
-    "objectID": "posts/hw2/index.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
-    "href": "posts/hw2/index.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
-    "title": "hw2",
-    "section": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. ’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.",
-    "text": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. ’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.\n\nprint(\"=\"*70, \"\\n 1. audi 중 hwy가 높은 순의 자동차 모델 \\n\")\ndf.query('manufacturer == \"audi\"').groupby('model').agg(hwy_mean = ('hwy' , 'mean'))\n\n====================================================================== \n 1. audi 중 hwy가 높은 순의 자동차 모델 \n\n\n\n\n\n\n\n\n\n\nhwy_mean\n\n\nmodel\n\n\n\n\n\na4\n28.285714\n\n\na4 quattro\n25.750000\n\n\na6 quattro\n24.000000\n\n\n\n\n\n\n\n\nprint(\"\\n\",\"=\"*70, \"\\n 2. audi 중 hwy가 1~5위인 자동차 데이터 \\n\")\ndf.query('manufacturer == \"audi\"').sort_values('hwy', ascending=False).head(5)\n\n\n ====================================================================== \n 2. audi 중 hwy가 1~5위인 자동차 데이터 \n\n\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n9\naudi\na4 quattro\n2.0\n2008\n4\nmanual(m6)\n4\n20\n28\np\ncompact"
+    "objectID": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프",
+    "href": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프",
+    "title": "graph",
+    "section": "sns의 lineplot() 사용한 선 그래프",
+    "text": "sns의 lineplot() 사용한 선 그래프\n\neconomics = pd.read_csv('../../economics.csv')\n\nplt.clf()\nsns.lineplot(data=economics , x='date', y='unemploy')\nplt.show()"
   },
   {
-    "objectID": "posts/hw2/index.html#mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.",
-    "href": "posts/hw2/index.html#mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.",
-    "title": "hw2",
-    "section": "mpg 데이터 복사본을 만들고, cty와 hwy를 더한 ’합산 연비 변수’를 추가하세요.",
-    "text": "mpg 데이터 복사본을 만들고, cty와 hwy를 더한 ’합산 연비 변수’를 추가하세요.\n\nmpg = df.copy()\nmpg= mpg.assign(sum_cty_hwy = mpg['cty']+mpg['hwy'])\nmpg.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n47\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n50\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n51\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n51\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n42"
+    "objectID": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프---x축-주의",
+    "href": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프---x축-주의",
+    "title": "graph",
+    "section": "sns의 lineplot() 사용한 선 그래프 - x축 주의",
+    "text": "sns의 lineplot() 사용한 선 그래프 - x축 주의\n\neconomics['date'] = pd.to_datetime(economics['date'])\neconomics['year'] = economics['date'].dt.year\nplt.clf()\nsns.lineplot(data=economics, x='year', y='unemploy')\nplt.show()"
   },
   {
-    "objectID": "posts/hw2/index.html#앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.",
-    "href": "posts/hw2/index.html#앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.",
-    "title": "hw2",
-    "section": "앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.",
-    "text": "앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.\n\nmpg = mpg.assign(avg_cty_hwy = mpg['sum_cty_hwy']/2)\nmpg.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n47\n23.5\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n50\n25.0\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n51\n25.5\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n51\n25.5\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n42\n21.0"
-  },
-  {
-    "objectID": "posts/hw2/index.html#평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.",
-    "href": "posts/hw2/index.html#평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.",
-    "title": "hw2",
-    "section": "’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.",
-    "text": "’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.\n\nmpg.sort_values('avg_cty_hwy', ascending=False).head(3)\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n221\nvolkswagen\nnew beetle\n1.9\n1999\n4\nmanual(m5)\nf\n35\n44\nd\nsubcompact\n79\n39.5\n\n\n212\nvolkswagen\njetta\n1.9\n1999\n4\nmanual(m5)\nf\n33\n44\nd\ncompact\n77\n38.5\n\n\n222\nvolkswagen\nnew beetle\n1.9\n1999\n4\nauto(l4)\nf\n29\n41\nd\nsubcompact\n70\n35.0"
-  },
-  {
-    "objectID": "posts/hw2/index.html#번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.",
-    "href": "posts/hw2/index.html#번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.",
-    "title": "hw2",
-    "section": "1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.",
-    "text": "1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.\n\ndf.assign(sum_cty_hwy = df['cty']+df['hwy']\n          , avg_cty_hwy = lambda x: x['sum_cty_hwy']/2) \\\n    .sort_values('avg_cty_hwy', ascending=False) \\\n    .head(3)\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n221\nvolkswagen\nnew beetle\n1.9\n1999\n4\nmanual(m5)\nf\n35\n44\nd\nsubcompact\n79\n39.5\n\n\n212\nvolkswagen\njetta\n1.9\n1999\n4\nmanual(m5)\nf\n33\n44\nd\ncompact\n77\n38.5\n\n\n222\nvolkswagen\nnew beetle\n1.9\n1999\n4\nauto(l4)\nf\n29\n41\nd\nsubcompact\n70\n35.0"
+    "objectID": "posts/graph/index.html#sns의-boxplot-사용한-상자-그림",
+    "href": "posts/graph/index.html#sns의-boxplot-사용한-상자-그림",
+    "title": "graph",
+    "section": "sns의 boxplot() 사용한 상자 그림",
+    "text": "sns의 boxplot() 사용한 상자 그림\n\nplt.clf()\nsns.boxplot(data= mpg, x='drv', y='hwy', hue='drv')\nplt.show()"
   },
   {
     "objectID": "posts/hw1/index.html",
@@ -469,95 +147,221 @@
     "text": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\nplt.clf()\nmidwest['size'].value_counts().plot.bar(rot=0)\nplt.show()"
   },
   {
-    "objectID": "project1.html#점포수-요약-정보-알아보기",
-    "href": "project1.html#점포수-요약-정보-알아보기",
-    "title": "project1",
-    "section": "점포수 요약 정보 알아보기",
-    "text": "점포수 요약 정보 알아보기\n\nmarket2[['store_count']].describe()\n\n\n\n\n\n\n\n\nstore_count\n\n\n\n\ncount\n1439.000000\n\n\nmean\n143.907575\n\n\nstd\n298.989963\n\n\nmin\n0.000000\n\n\n25%\n50.000000\n\n\n50%\n80.000000\n\n\n75%\n134.000000\n\n\nmax\n5852.000000\n\n\n\n\n\n\n\n점포수 위주로 봤을 때, 25%, 75% 기준으로 점포 사이즈를 나누는 것이 합리적으로 보인다. samll : 50개 미만 medium : 50개 이상 134개 미만 large : 134개 이상 3가지의 범주로 나누고자 한다."
+    "objectID": "posts/hw2/index.html",
+    "href": "posts/hw2/index.html",
+    "title": "hw2",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
   },
   {
-    "objectID": "project1.html#지역도-변수-만들기",
-    "href": "project1.html#지역도-변수-만들기",
+    "objectID": "posts/hw2/index.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
+    "href": "posts/hw2/index.html#자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.",
+    "title": "hw2",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\ndf = pd.read_csv('../../mpg.csv')\npd.set_option('display.max_columns', None)\n\ndf.assign(type = np.where(df['displ']&lt;=4, '4이하', np.where(df['displ']&gt;=5, '5이상', '기타'))).groupby('type').agg(type_mean = ('hwy','mean'))\n\n\n\n\n\n\n\n\ntype_mean\n\n\ntype\n\n\n\n\n\n4이하\n25.963190\n\n\n5이상\n18.078947\n\n\n기타\n17.151515\n\n\n\n\n\n\n\n4이하 가 5이상보다 평균이 높다는 것을 알 수 있다.\n\n\n\nprint(\"4이하인 경우 평균 :\",df.query('displ &lt;= 4')['hwy'].mean())\nprint(\"5이상인 경우 평균 :\",df.query('displ &gt;=5')['hwy'].mean())\n\n4이하인 경우 평균 : 25.96319018404908\n5이상인 경우 평균 : 18.07894736842105"
+  },
+  {
+    "objectID": "posts/hw2/index.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
+    "href": "posts/hw2/index.html#자동차-제조-회사에-따라-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시연비-평균이-더-높은지-알아보세요.",
+    "title": "hw2",
+    "section": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. ‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.",
+    "text": "자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보려고 합니다. ‘audi’와 ’toyota’ 중 어느 manufacturer(자동차 제조 회사)의 cty(도시연비) 평균이 더 높은지 알아보세요.\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer == 'audi' | manufacturer=='toyota'\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412\n\n\n\n\n\n\n\ntoyota 제조회사가 도시연비 평균이 더 높다.\n\n다른 방법\n\ndf.groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).query(\"manufacturer in ['audi','toyota']\")\n\n\n\n\n\n\n\n\nmanufacturer\ncty_mean\n\n\n\n\n0\naudi\n17.611111\n\n\n13\ntoyota\n18.529412"
+  },
+  {
+    "objectID": "posts/hw2/index.html#chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.",
+    "href": "posts/hw2/index.html#chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.",
+    "title": "hw2",
+    "section": "‘chevrolet’, ‘ford’, ‘honda’ 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.",
+    "text": "‘chevrolet’, ‘ford’, ‘honda’ 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 hwy 전체 평균을 구해 보세요.\n\nprint(\"세 회사 데이터에 대한 hwy 전체 평균 :\",df.query(\"manufacturer in ['chevrolet','ford','honda']\")['hwy'].mean())\n\n세 회사 데이터에 대한 hwy 전체 평균 : 22.50943396226415"
+  },
+  {
+    "objectID": "posts/hw2/index.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
+    "href": "posts/hw2/index.html#audi에서-생산한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.",
+    "title": "hw2",
+    "section": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. ’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.",
+    "text": "’audi’에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 높은지 알아보려고 합니다. ’audi’에서 생산한 자동차 중 hwy가 1~5위에 해당하는 자동차의 데이터를 출력하세요.\n\nprint(\"=\"*70, \"\\n 1. audi 중 hwy가 높은 순의 자동차 모델 \\n\")\ndf.query('manufacturer == \"audi\"').groupby('model').agg(hwy_mean = ('hwy' , 'mean'))\n\n====================================================================== \n 1. audi 중 hwy가 높은 순의 자동차 모델 \n\n\n\n\n\n\n\n\n\n\nhwy_mean\n\n\nmodel\n\n\n\n\n\na4\n28.285714\n\n\na4 quattro\n25.750000\n\n\na6 quattro\n24.000000\n\n\n\n\n\n\n\n\nprint(\"\\n\",\"=\"*70, \"\\n 2. audi 중 hwy가 1~5위인 자동차 데이터 \\n\")\ndf.query('manufacturer == \"audi\"').sort_values('hwy', ascending=False).head(5)\n\n\n ====================================================================== \n 2. audi 중 hwy가 1~5위인 자동차 데이터 \n\n\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n9\naudi\na4 quattro\n2.0\n2008\n4\nmanual(m6)\n4\n20\n28\np\ncompact"
+  },
+  {
+    "objectID": "posts/hw2/index.html#mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.",
+    "href": "posts/hw2/index.html#mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.",
+    "title": "hw2",
+    "section": "mpg 데이터 복사본을 만들고, cty와 hwy를 더한 ’합산 연비 변수’를 추가하세요.",
+    "text": "mpg 데이터 복사본을 만들고, cty와 hwy를 더한 ’합산 연비 변수’를 추가하세요.\n\nmpg = df.copy()\nmpg= mpg.assign(sum_cty_hwy = mpg['cty']+mpg['hwy'])\nmpg.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n47\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n50\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n51\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n51\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n42"
+  },
+  {
+    "objectID": "posts/hw2/index.html#앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.",
+    "href": "posts/hw2/index.html#앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.",
+    "title": "hw2",
+    "section": "앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.",
+    "text": "앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.\n\nmpg = mpg.assign(avg_cty_hwy = mpg['sum_cty_hwy']/2)\nmpg.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n47\n23.5\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n50\n25.0\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n51\n25.5\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n51\n25.5\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n42\n21.0"
+  },
+  {
+    "objectID": "posts/hw2/index.html#평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.",
+    "href": "posts/hw2/index.html#평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.",
+    "title": "hw2",
+    "section": "’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.",
+    "text": "’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.\n\nmpg.sort_values('avg_cty_hwy', ascending=False).head(3)\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n221\nvolkswagen\nnew beetle\n1.9\n1999\n4\nmanual(m5)\nf\n35\n44\nd\nsubcompact\n79\n39.5\n\n\n212\nvolkswagen\njetta\n1.9\n1999\n4\nmanual(m5)\nf\n33\n44\nd\ncompact\n77\n38.5\n\n\n222\nvolkswagen\nnew beetle\n1.9\n1999\n4\nauto(l4)\nf\n29\n41\nd\nsubcompact\n70\n35.0"
+  },
+  {
+    "objectID": "posts/hw2/index.html#번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.",
+    "href": "posts/hw2/index.html#번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.",
+    "title": "hw2",
+    "section": "1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.",
+    "text": "1~3번 문제를 해결할 수 있는 하나로 연결된 pandas 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 mpg 원본을 이용하세요.\n\ndf.assign(sum_cty_hwy = df['cty']+df['hwy']\n          , avg_cty_hwy = lambda x: x['sum_cty_hwy']/2) \\\n    .sort_values('avg_cty_hwy', ascending=False) \\\n    .head(3)\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\nsum_cty_hwy\navg_cty_hwy\n\n\n\n\n221\nvolkswagen\nnew beetle\n1.9\n1999\n4\nmanual(m5)\nf\n35\n44\nd\nsubcompact\n79\n39.5\n\n\n212\nvolkswagen\njetta\n1.9\n1999\n4\nmanual(m5)\nf\n33\n44\nd\ncompact\n77\n38.5\n\n\n222\nvolkswagen\nnew beetle\n1.9\n1999\n4\nauto(l4)\nf\n29\n41\nd\nsubcompact\n70\n35.0"
+  },
+  {
+    "objectID": "posts/hw3/index.html",
+    "href": "posts/hw3/index.html",
+    "title": "hw3",
+    "section": "",
+    "text": "import pandas as pd\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw3/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
+    "href": "posts/hw3/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
+    "title": "hw3",
+    "section": "",
+    "text": "import pandas as pd\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
+    "href": "posts/hw3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
+    "title": "hw3",
+    "section": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.",
+    "text": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv('../../midwest.csv')\n\nplt.clf()\nsns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
+    "href": "posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
+    "title": "hw3",
+    "section": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
+    "text": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg_group = mpg.query(\"category == 'suv'\").groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).sort_values('cty_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group , x='manufacturer', y='cty_mean')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw3/index.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
+    "href": "posts/hw3/index.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
+    "title": "hw3",
+    "section": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.",
+    "text": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nmpg_group2 = mpg.groupby('category',as_index=False).agg(category_count = ('category', 'count') ).sort_values('category_count' , ascending = False)\nplt.clf()\nsns.barplot(data=mpg_group2, x='category', y='category_count')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/index.html",
+    "href": "posts/hw4/index.html",
+    "title": "hw4",
+    "section": "",
+    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.3586135202257754\ns_2_2 :  1.3586135202257754\ns_2_3 :  1.3586135202257754\nk_2_1 :  1.2906828442144866\nk_2_2 :  1.2906828442144866\nk_2_3 :  1.2906828442144866\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
+    "href": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
+    "title": "hw4",
+    "section": "",
+    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.3586135202257754\ns_2_2 :  1.3586135202257754\ns_2_3 :  1.3586135202257754\nk_2_1 :  1.2906828442144866\nk_2_2 :  1.2906828442144866\nk_2_3 :  1.2906828442144866\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw5/index.html",
+    "href": "posts/hw5/index.html",
+    "title": "hw5",
+    "section": "",
+    "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns\n\n\n\n\n\n\n\nimport numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0\n\n\n\n\n\n\n\n\n\n\n\nmale_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845\n\n\n\n\n\n\nsex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw5/index.html#데이터-불러오기",
+    "href": "posts/hw5/index.html#데이터-불러오기",
+    "title": "hw5",
+    "section": "",
+    "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns"
+  },
+  {
+    "objectID": "posts/hw5/index.html#필요한-데이터만-가져오기",
+    "href": "posts/hw5/index.html#필요한-데이터만-가져오기",
+    "title": "hw5",
+    "section": "",
+    "text": "import numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0"
+  },
+  {
+    "objectID": "posts/hw5/index.html#신뢰구간-구하기",
+    "href": "posts/hw5/index.html#신뢰구간-구하기",
+    "title": "hw5",
+    "section": "",
+    "text": "male_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845"
+  },
+  {
+    "objectID": "posts/hw5/index.html#groupby로-성별별-평균-income-데이터-만들기",
+    "href": "posts/hw5/index.html#groupby로-성별별-평균-income-데이터-만들기",
+    "title": "hw5",
+    "section": "",
+    "text": "sex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571"
+  },
+  {
+    "objectID": "posts/hw5/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
+    "href": "posts/hw5/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
+    "title": "hw5",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw6/index.html",
+    "href": "posts/hw6/index.html",
+    "title": "hw6",
+    "section": "",
+    "text": "슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22 년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여 한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다. 15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804\n표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지 판단해보시오. (유의수준 1%로 설정)"
+  },
+  {
+    "objectID": "posts/hw6/index.html#검정을-위한-가설을-명확하게-서술하시오.",
+    "href": "posts/hw6/index.html#검정을-위한-가설을-명확하게-서술하시오.",
+    "title": "hw6",
+    "section": "2. 검정을 위한 가설을 명확하게 서술하시오.",
+    "text": "2. 검정을 위한 가설을 명확하게 서술하시오.\n\n\nH0 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &gt;= 16.0 (mu0)\nH1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16.0 (mu0)"
+  },
+  {
+    "objectID": "posts/hw6/index.html#검정통계량-계산하시오.",
+    "href": "posts/hw6/index.html#검정통계량-계산하시오.",
+    "title": "hw6",
+    "section": "3. 검정통계량 계산하시오.",
+    "text": "3. 검정통계량 계산하시오.\n\nimport numpy as np\nx = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,\n15.382, 16.709, 16.804])\nx_bar = x.mean()\nsample_std = x.std(ddof=1)\n\nz = (x_bar - 16)/ (sample_std/np.sqrt(len(x)))\nprint(\"검정통계량 :\",z)\n\n검정통계량 : -1.8500447456376756"
+  },
+  {
+    "objectID": "posts/hw6/index.html#pvalue을-구하세요.",
+    "href": "posts/hw6/index.html#pvalue을-구하세요.",
+    "title": "hw6",
+    "section": "4. p‑value을 구하세요.",
+    "text": "4. p‑value을 구하세요.\n\nfrom scipy.stats import t\nprint(\"p-value :\",t.cdf(z, df=len(x) -1))\n\np-value : 0.042762417664207845"
+  },
+  {
+    "objectID": "posts/hw6/index.html#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.",
+    "href": "posts/hw6/index.html#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.",
+    "title": "hw6",
+    "section": "6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.",
+    "text": "6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.\n\nt0025 = t.ppf(0.975, df=15-1)\nprint(\"95% 신뢰구간 : (\",x_bar - t0025*sample_std/np.sqrt(len(x)) , \",\", x_bar + t0025*sample_std/np.sqrt(len(x)), \")\")\n\n95% 신뢰구간 : ( 14.988864240339733 , 16.074602426326933 )"
+  },
+  {
+    "objectID": "project1.html",
+    "href": "project1.html",
     "title": "project1",
     "section": "",
-    "text": "'''first_tokens = []\n\n# for loop을 사용하여 각 행의 첫 음절 추출\nfor address in market2['address_old']:\n    first_token = address.split()[0]+ address.split()[1] # 띄어쓰기를 기준으로 나눈 후 첫 번째 토큰을 추출\n    first_tokens.append(first_token)\n\n# 추출한 첫 음절을 새로운 컬럼으로 추가\nmarket2['town_city'] = first_tokens\nmarket2.head()\n\n# market2['address_old'].split()[0] + '''\n\n\"first_tokens = []\\n\\n# for loop을 사용하여 각 행의 첫 음절 추출\\nfor address in market2['address_old']:\\n    first_token = address.split()[0]+ address.split()[1] # 띄어쓰기를 기준으로 나눈 후 첫 번째 토큰을 추출\\n    first_tokens.append(first_token)\\n\\n# 추출한 첫 음절을 새로운 컬럼으로 추가\\nmarket2['town_city'] = first_tokens\\nmarket2.head()\\n\\n# market2['address_old'].split()[0] + \"\n\n\n\n# market2['town'].value_counts()"
+    "text": "예전에는 전통시장을 가면 편의시설이 부족해서 접근성이 떨어졌는데, 요즘에는 편의시설을 개선하려는 노력을 기울이고 있다.\n\n와이파이 설치 2. 건강한 식재료 (백년초 국수 등 + 지역 특색) 3. 공산품이 아니라 정성이 들어간 음식들 4. 저렴한 가격 + 온누리 상품권 사용가능 5. 쇼핑 후 차 한 잔의 여유를 위한 여가 공간 구비 (카페 등) 6. 1인 가구를 위한 음식\n\n상품권 가맹점포 정보 https://www.sbiz.or.kr/sijangtong/nation/onnuri/onnuriMktList.do?menu_type_a=A&menu_cms=&menu_id=070400#shopPopBtn\n데이터 출처 소상공인시장진흥공단_전국 전통시장 현황_2010 : https://www.data.go.kr/data/15102810/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20151231 : https://www.data.go.kr/data/15052836/fileData.do 소상공인시장진흥공단_시장 시설_20210928 : https://www.data.go.kr/data/15090651/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20230725 : https://www.data.go.kr/data/15012894/fileData.do 소상공인시장진흥공단_전국 전통시장 현황_20240719 : https://www.data.go.kr/data/15052837/fileData.do?recommendDataYn=Y\n소상공인시장진흥공단_시장 서비스 정보_20210928 : https://www.data.go.kr/data/15090612/fileData.do #"
   },
   {
-    "objectID": "project1.html#지역동읍-변수-만들기",
-    "href": "project1.html#지역동읍-변수-만들기",
+    "objectID": "project1.html#변수명-바꾸기",
+    "href": "project1.html#변수명-바꾸기",
     "title": "project1",
-    "section": "",
-    "text": "'''second_tokens = []\n\n# for loop을 사용하여 각 행의 첫 음절 추출\nfor address in market2['address_old']:\n    second_token = address.split()[1]  # 띄어쓰기를 기준으로 나눈 후 첫 번째 토큰을 추출\n    second_tokens.append(second_token)\n\n# 추출한 첫 음절을 새로운 컬럼으로 추가\nmarket2['city'] = second_tokens\nmarket2.head()'''\n\n\"second_tokens = []\\n\\n# for loop을 사용하여 각 행의 첫 음절 추출\\nfor address in market2['address_old']:\\n    second_token = address.split()[1]  # 띄어쓰기를 기준으로 나눈 후 첫 번째 토큰을 추출\\n    second_tokens.append(second_token)\\n\\n# 추출한 첫 음절을 새로운 컬럼으로 추가\\nmarket2['city'] = second_tokens\\nmarket2.head()\"\n\n\n\n# market2['city'].value_counts()"
+    "section": "변수명 바꾸기",
+    "text": "변수명 바꾸기\n\nmarket2 = market2.rename(columns={'시장명' : 'market_name',\n                              '시장유형' : 'type',\n                              '소재지도로명주소' : 'address_road',\n                              '시장개설주기' : 'open_period',\n                              '소재지지번주소' : 'address_old',\n                              '점포수' : 'store_count',\n                              '사용가능상품권' : 'certificate',\n                              '공중화장실 보유여부' : 'public_toilet',\n                              '주차장 보유여부' : 'parking_lot',\n                              '개설년도' : 'year' ,\n                              '데이터기준일자' : 'data_date'})\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_road\nopen_period\naddress_old\nstore_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\n\n\n\n\n\n\n\n잘 바뀐 것을 알 수 있다."
   },
   {
-    "objectID": "project1.html#상설정기-시장의-지역-봐보기",
-    "href": "project1.html#상설정기-시장의-지역-봐보기",
+    "objectID": "project1.html#데이터-정보-알아보기",
+    "href": "project1.html#데이터-정보-알아보기",
     "title": "project1",
-    "section": "상설+정기 시장의 지역 봐보기",
-    "text": "상설+정기 시장의 지역 봐보기\n\nmarket2.query('type == \"상설+정기\"').head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_road\nopen_period\naddress_old\nstore_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\n\n\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n\n\n7\n간성시장\n상설+정기\n강원도 고성군 간성시장 2길 11-1\n5일\n강원 고성군 간성읍 신안리 262번지\n89\n온누리상품권\nY\nY\n2003.0\n2015-12-31\nmedium\nhigh\n\n\n8\n거진시장\n상설+정기\n강원도 고성군 거진읍 거진시장길 15\n5일\n강원 고성군 거진읍 거진리 272번지\n51\n온누리상품권\nY\nY\n2010.0\n2015-12-31\nmedium\nhigh\n\n\n9\n북평민속시장\n상설+정기\n강원도 동해시 북평 오일장길 32\n5일\n강원 동해시 구미동 497-11번지 일원\n130\n온누리상품권\nY\nY\n2013.0\n2015-12-31\nmedium\nhigh\n\n\n15\n삼척중앙시장\n상설+정기\n강원도 삼척시 진주로 12-21\n5일\n강원 삼척시 남양동 55-4\n299\n온누리상품권\nY\nY\n2014.0\n2015-12-31\nlarge\nhigh"
+    "section": "데이터 정보 알아보기",
+    "text": "데이터 정보 알아보기\n\nmarket2.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1439 entries, 0 to 1438\nData columns (total 11 columns):\n #   Column         Non-Null Count  Dtype         \n---  ------         --------------  -----         \n 0   market_name    1439 non-null   object        \n 1   type           1439 non-null   object        \n 2   address_road   1439 non-null   object        \n 3   open_period    1439 non-null   object        \n 4   address_old    1439 non-null   object        \n 5   store_count    1439 non-null   int64         \n 6   certificate    1159 non-null   object        \n 7   public_toilet  1439 non-null   object        \n 8   parking_lot    1439 non-null   object        \n 9   year           1281 non-null   float64       \n 10  data_date      1439 non-null   datetime64[ns]\ndtypes: datetime64[ns](1), float64(1), int64(1), object(8)\nmemory usage: 123.8+ KB\n\n\n8개가 범주컬럼이고, 2개가 수치 컬럼, 1개가 날짜컬럼임을 알 수 있다. (수치컬럼중 1개는 연도컬럼이라서, 우리가 분석해 볼 수 있는 수치 컬럼은 1개뿐이다.) 그리고 사용가능상품권(certificate)와 개설연도(year)에만 null값이 있다는 것을 알 수 있다.\n각 컬럼의 범주 알아보기\n\nmarket2['market_name'].value_counts()\n\nmarket_name\n중앙시장      16\n동부시장       6\n역전시장       5\n현대시장       4\n강남시장       4\n          ..\n신광시장       1\n장성종합시장     1\n한라종합시장     1\n기계시장       1\n목행시장       1\nName: count, Length: 1367, dtype: int64\n\n\n이름이 동일한 서로 다른 시장이 존재함.\n\nmarket2['type'].value_counts()\n\ntype\n상설       1002\n상설+정기     259\n정기        178\nName: count, dtype: int64\n\n\n시장 유형은 3가지임.\n\nmarket2['address_road'].value_counts().head()\n\naddress_road\n대구광역시 북구 칠성시장로 5길 22    2\n경상북도 예천군 예천읍 시장로 109    2\n서울특별시 중구 청계천로 274       2\n인천광역시 서구 가정로 208        2\n대구광역시 남구 대명동 1157-10    2\nName: count, dtype: int64\n\n\n\nmarket2['address_old'].value_counts().head()\n\naddress_old\n서울 강서구 화곡 370        2\n서울 중구 을지로6가 17번지     2\n대구 수성구 수성동2가 39-4    2\n경기 김포시 양촌읍 414-3     2\n인천 동구 송림동 50         2\nName: count, dtype: int64\n\n\n주소가 동일한 시장이 있음\n\nmarket2['open_period'].value_counts()\n\nopen_period\n상설    1002\n5일     435\n2일       1\n6일       1\nName: count, dtype: int64\n\n\n정기 시장에 5일, 2일, 6일 있음.\n\nmarket2['certificate'].value_counts()\n\ncertificate\n온누리상품권    1159\nName: count, dtype: int64\n\n\n\nmarket2['public_toilet'].value_counts()\n\npublic_toilet\nY    1308\nN     131\nName: count, dtype: int64\n\n\n\nmarket2['parking_lot'].value_counts()\n\nparking_lot\nY    859\nN    580\nName: count, dtype: int64\n\n\n\nmarket2['year'].value_counts().head()\n\nyear\n2005.0    130\n2006.0    104\n2013.0     85\n2009.0     80\n2007.0     78\nName: count, dtype: int64\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nyear_group_count = market2.groupby('year').agg(year_count= ('year', 'count'))\n\nplt.clf()\nsns.lineplot(data=year_group_count, x='year', y='year_count')\nplt.show()\n\n\n\n\n\n\n\n\n\nmarket2['data_date'].value_counts()\n\ndata_date\n2015-12-31    1439\nName: count, dtype: int64"
   },
   {
-    "objectID": "project1.html#시도-변수-만들기",
-    "href": "project1.html#시도-변수-만들기",
+    "objectID": "project1.html#점포수-요약-정보-알아보기-범주화",
+    "href": "project1.html#점포수-요약-정보-알아보기-범주화",
     "title": "project1",
-    "section": "",
-    "text": "first_tokens = []\ni=0\n\n# for loop을 사용하여 각 행의 첫 음절 추출\nfor address in market2['address_old']:\n    first_token = market2['address_old'][i].split()[0] +' ' + market2['address_old'][i].split()[1] # 띄어쓰기를 기준으로 나눈 후 첫 번째 토큰을 추출\n    first_tokens.append(first_token)\n    i += 1\n\n# 추출한 첫 음절을 새로운 컬럼으로 추가\nmarket2['town_city'] = first_tokens\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\ntown_city\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n강원 강릉시\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n강원 강릉시\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n강원 강릉시"
-  },
-  {
-    "objectID": "project1.html#지역별로-시장-수-알아보기",
-    "href": "project1.html#지역별로-시장-수-알아보기",
-    "title": "project1",
-    "section": "",
-    "text": "pd.set_option('display.max_rows', None)\nmarket2['town_city'].value_counts()\n\ntown_city\n경남 창원시     59\n경북 포항시     34\n부산 부산진구    26\n대구 달서구     23\n경기 성남시     22\n서울 중구      21\n대구 북구      20\n부산 수영구     19\n경기 수원시     19\n경기 부천시     19\n서울 동대문구    18\n제주 제주시     17\n대구 중구      16\n울산 중구      16\n경북 구미시     16\n부산 중구      15\n대구 동구      15\n경북 경주시     15\n부산 사하구     15\n전남 여수시     15\n부산 사상구     14\n경남 진주시     13\n대전 동구      13\n대구 남구      13\n충북 청주시     13\n서울 관악구     13\n부산 동래구     12\n충북 충주시     12\n경북 영주시     12\n부산 남구      11\n전북 익산시     11\n부산 해운대구    11\n서울 중랑구     11\n서울 영등포구    11\n서울 강북구     11\n서울 강서구     11\n서울 마포구     10\n경남 거제시     10\n대구 서구      10\n서울 강동구     10\n서울 광진구     10\n울산 남구       9\n인천 남구       9\n부산 서구       9\n서울 성북구      9\n서울 양천구      9\n서울 동작구      9\n경기 안양시      9\n경북 안동시      9\n서울 은평구      9\n대구 수성구      9\n경남 하동군      8\n광주 서구       8\n울산 울주군      8\n서울 종로구      8\n서울 서대문구     8\n부산 금정구      8\n전남 보성군      8\n충남 금산군      8\n부산 동구       8\n전북 군산시      8\n강원 춘천시      8\n제주 서귀포시     8\n인천 부평구      7\n인천 동구       7\n부산 연제구      7\n대전 중구       7\n서울 용산구      7\n경남 사천시      7\n강원 강릉시      7\n강원 원주시      7\n경북 의성군      7\n경남 양산시      7\n충북 제천시      7\n전남 목포시      7\n전남 순천시      7\n충남 천안시      7\n충남 예산군      7\n인천 서구       6\n전남 고흥군      6\n전남 나주시      6\n서울 송파구      6\n경기 파주시      6\n전남 해남군      6\n전남 광양시      6\n전북 고창군      6\n울산 동구       6\n부산 북구       6\n인천 남동구      6\n경북 예천군      6\n경북 울진군      6\n경남 김해시      6\n경북 상주시      6\n광주 북구       6\n광주 광산구      6\n경남 밀양시      6\n경북 청송군      5\n경기 평택시      5\n전남 장흥군      5\n전남 영암군      5\n서울 구로구      5\n전북 전주시      5\n충북 음성군      5\n충북 보은군      5\n충남 보령시      5\n충남 논산시      5\n전남 화순군      5\n경북 문경시      5\n경남 합천군      5\n경남 함양군      5\n경남 산청군      5\n서울 강남구      5\n경남 창녕군      5\n충북 괴산군      4\n대전 대덕구      4\n서울 성동구      4\n충남 홍성군      4\n충남 서산시      4\n전남 완도군      4\n전북 김제시      4\n강원 정선군      4\n경남 남해군      4\n경남 고성군      4\n경기 화성시      4\n충북 단양군      4\n전남 함평군      4\n전북 임실군      4\n전북 무주군      4\n서울 도봉구      4\n세종 세종시      4\n경남 함안군      4\n경북 군위군      4\n경북 영덕군      4\n경북 청도군      4\n광주 동구       4\n경기 동두천시     4\n경기 김포시      4\n강원 삼척시      4\n강원 철원군      4\n경기 시흥시      4\n강원 평창군      4\n경기 고양시      4\n강원 영월군      3\n경기 안성시      3\n경기 양평군      3\n강원 동해시      3\n전북 장수군      3\n경남 통영시      3\n경북 영천시      3\n경기 의정부시     3\n경북 경산시      3\n대구 달성군      3\n전남 진도군      3\n충남 태안군      3\n인천 강화군      3\n부산 진구       3\n부산 영도구      3\n서울 금천구      3\n인천 계양구      3\n인천 중구       3\n충남 공주시      3\n전북 순창군      3\n전남 영광군      3\n전북 정읍시      3\n충남 부여군      3\n충남 당진시      3\n전남 무안군      3\n전남 장성군      3\n전북 남원시      3\n전북 완주군      3\n전남 강진군      3\n전남 구례군      3\n전남 곡성군      3\n강원 고성군      2\n대전 서구       2\n인천 연수구      2\n서울 서초구      2\n경북 칠곡군      2\n경기 용인시      2\n경기 광명시      2\n경기 과천시      2\n경기 군포시      2\n강원 인제군      2\n강원 속초시      2\n강원 홍천군      2\n강원 태백시      2\n경기 포천시      2\n경기 하남시      2\n경남 의령군      2\n광주 남구       2\n경북 성주군      2\n경북 봉화군      2\n경북 김천시      2\n경기 이천시      2\n충북 진천군      2\n충남 아산시      2\n충북 영동군      2\n충남 청양군      2\n충북 청원군      2\n전북 부안군      2\n전남 담양군      2\n충남 서천군      2\n충북 옥천군      2\n서울 노원구      2\n강원 양구군      1\n강원 화천군      1\n경기 광주시      1\n경기 구리시      1\n경기 가평군      1\n강원 양양군      1\n경북 고령군      1\n경북 영양군      1\n경기 여주시      1\n경남 거창군      1\n경기 오산시      1\n경기 연천군      1\n경기 의왕시      1\n경기 안산시      1\n강원 횡성군      1\n부산 강서구      1\n대전 유성구      1\n부산 기장군      1\n울산 북구       1\n전남 신안군      1\n전북 진안군      1\n충북 증평군      1\nName: count, dtype: int64"
-  },
-  {
-    "objectID": "project1.html#관광형-상설정기-시장이-있는-지역-알아보기",
-    "href": "project1.html#관광형-상설정기-시장이-있는-지역-알아보기",
-    "title": "project1",
-    "section": "",
-    "text": "market4 = market2.query('type == \"상설+정기\"')\nmarket4['town_city'].value_counts()\n\ntown_city\n경북 경주시     7\n경북 울진군     6\n경남 창원시     5\n전북 익산시     5\n충북 보은군     5\n충북 음성군     5\n경남 하동군     4\n경기 파주시     4\n경기 평택시     4\n경북 안동시     4\n강원 철원군     4\n세종 세종시     4\n울산 울주군     4\n경북 포항시     4\n충남 금산군     4\n충남 천안시     4\n충북 괴산군     4\n충남 보령시     4\n충남 논산시     4\n강원 평창군     4\n경기 화성시     4\n전남 고흥군     4\n경북 영덕군     3\n경북 경산시     3\n경북 구미시     3\n경기 안성시     3\n강원 정선군     3\n경북 영천시     3\n경북 예천군     3\n경북 청송군     3\n경남 합천군     3\n충남 당진시     3\n충북 제천시     3\n충북 충주시     3\n전북 무주군     3\n충남 홍성군     3\n충북 단양군     3\n전북 정읍시     2\n충남 공주시     2\n전남 무안군     2\n전북 김제시     2\n전남 장흥군     2\n전북 완주군     2\n경남 의령군     2\n경남 사천시     2\n경북 군위군     2\n경북 문경시     2\n경남 창녕군     2\n경남 밀양시     2\n경남 양산시     2\n경남 김해시     2\n경남 남해군     2\n강원 인제군     2\n강원 원주시     2\n강원 고성군     2\n강원 홍천군     2\n경북 김천시     2\n경북 봉화군     2\n경북 상주시     2\n충남 청양군     2\n충북 영동군     2\n충북 청원군     2\n충남 예산군     2\n충남 서천군     2\n대구 달성군     2\n대구 북구      2\n전북 남원시     2\n울산 중구      2\n경기 성남시     1\n경기 안산시     1\n경기 양평군     1\n경기 하남시     1\n경남 고성군     1\n경남 산청군     1\n경남 진주시     1\n강원 춘천시     1\n강원 삼척시     1\n강원 양구군     1\n강원 화천군     1\n경기 가평군     1\n경기 고양시     1\n경기 광주시     1\n강원 횡성군     1\n경기 동두천시    1\n경기 오산시     1\n경기 용인시     1\n경기 이천시     1\n경기 여주시     1\n강원 양양군     1\n강원 동해시     1\n강원 강릉시     1\n경북 영양군     1\n경북 성주군     1\n경남 함양군     1\n경남 함안군     1\n경남 거창군     1\n울산 북구      1\n전남 나주시     1\n경북 영주시     1\n광주 북구      1\n경북 칠곡군     1\n대구 동구      1\n대구 중구      1\n대전 대덕구     1\n부산 북구      1\n부산 사하구     1\n서울 은평구     1\n전북 고창군     1\n전남 순천시     1\n전남 여수시     1\n전남 영광군     1\n전남 강진군     1\n전북 임실군     1\n전북 장수군     1\n전북 진안군     1\n충남 아산시     1\n충남 서산시     1\n충남 부여군     1\n충남 태안군     1\n충북 증평군     1\n충북 옥천군     1\n충북 진천군     1\n충북 청주시     1\nName: count, dtype: int64\n\n\nhttps://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=359f0000-4129-11ec-a107-3b8bd6a15b10 관심있는 지역"
-  },
-  {
-    "objectID": "project1.html#인구-데이터-groupby",
-    "href": "project1.html#인구-데이터-groupby",
-    "title": "project1",
-    "section": "",
-    "text": "import pandas as pd\npop = pd.read_excel('market_pop.xlsx')\npop.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\nadress_road\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\nregion\nage_under_20\nage_2050\nage_over_60\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n강원도\n18.996236\n57.71184\n23.291924\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n강원도\n18.996236\n57.71184\n23.291924\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n강원도\n18.996236\n57.71184\n23.291924\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n강원도\n18.996236\n57.71184\n23.291924\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n강원도\n18.996236\n57.71184\n23.291924"
-  },
-  {
-    "objectID": "project1.html#지역별-연령-범주별-해당-인구-수지역-인구-수100-값",
-    "href": "project1.html#지역별-연령-범주별-해당-인구-수지역-인구-수100-값",
-    "title": "project1",
-    "section": "",
-    "text": "pop_group = pop.groupby('region', as_index = False).agg(age_under_20 = ('age_under_20','min')\n                         , age_2050 = ('age_2050', 'min')\n                         , age_over_60 = ('age_over_60', 'min'))\npop_group\n\n\n\n\n\n\n\n\nregion\nage_under_20\nage_2050\nage_over_60\n\n\n\n\n0\n강원도\n18.996236\n57.711840\n23.291924\n\n\n1\n경기도\n21.808344\n62.918054\n15.273602\n\n\n2\n경상남도\n20.868237\n59.572973\n19.558790\n\n\n3\n경상북도\n18.525832\n57.134052\n24.340117\n\n\n4\n광주광역시\n23.142591\n60.802718\n16.054691\n\n\n5\n대구광역시\n20.005595\n61.407557\n18.586848\n\n\n6\n대전광역시\n21.728893\n62.230482\n16.040625\n\n\n7\n부산광역시\n17.437931\n60.857391\n21.704678\n\n\n8\n서울특별시\n17.651737\n63.912396\n18.435867\n\n\n9\n세종특별시\n25.238046\n59.895488\n14.866467\n\n\n10\n울산광역시\n21.831408\n64.150336\n14.018256\n\n\n11\n인천광역시\n20.380236\n63.853490\n15.766274\n\n\n12\n전라남도\n19.282335\n54.060092\n26.657573\n\n\n13\n전라북도\n20.197613\n55.962285\n23.840101\n\n\n14\n제주도\n22.501141\n58.640284\n18.858575\n\n\n15\n충청남도\n20.525604\n57.425821\n22.048575\n\n\n16\n충청북도\n20.325553\n59.036953\n20.637494"
-  },
-  {
-    "objectID": "project1.html#address_new에서-시도-값-분리해서-city-변수-만들기",
-    "href": "project1.html#address_new에서-시도-값-분리해서-city-변수-만들기",
-    "title": "project1",
-    "section": "",
-    "text": "first_tokens=[]\n\nfor address in market2['address_new']:\n    first_token = address.split()[0]\n    first_tokens.append(first_token)\n    \nmarket2['region'] = first_tokens\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\ntown_city\nregion\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n강원 강릉시\n강원도\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n강원 강릉시\n강원도\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n강원 강릉시\n강원도"
-  },
-  {
-    "objectID": "project1.html#두-데이터셋-조인",
-    "href": "project1.html#두-데이터셋-조인",
-    "title": "project1",
-    "section": "",
-    "text": "market_pop = pd.merge(market2, pop_group, how='left', on='region')\nmarket_pop.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\ntown_city\nregion\nage_under_20\nage_2050\nage_over_60\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n\n\n\n\n\n\n\n\n#market_pop.to_excel(excel_writer='market_join.xlsx')"
-  },
-  {
-    "objectID": "project1.html#address_new에서-시도-값-분리해서-region-변수-만들기",
-    "href": "project1.html#address_new에서-시도-값-분리해서-region-변수-만들기",
-    "title": "project1",
-    "section": "",
-    "text": "first_tokens=[]\n\nfor address in market2['address_new']:\n    first_token = address.split()[0]\n    first_tokens.append(first_token)\n    \nmarket2['region'] = first_tokens\nmarket2.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\ntown_city\nregion\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n강원 강릉시\n강원도\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n강원 강릉시\n강원도\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n강원 강릉시\n강원도"
-  },
-  {
-    "objectID": "project1.html#노인-인구가-많으면-시장-갯수가-많이-형성되었을-것이다.",
-    "href": "project1.html#노인-인구가-많으면-시장-갯수가-많이-형성되었을-것이다.",
-    "title": "project1",
-    "section": "",
-    "text": "import numpy as np\nmarket_pop['old_up'] = np.where(market_pop['age_over_60'] &gt;= market_pop['age_over_60'].mean(), 1 ,0)\nmarket_pop['old_down'] = np.where(market_pop['age_over_60'] &lt; market_pop['age_over_60'].mean(), 1 ,0)\nmarket_pop.head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_new\nopen_period\naddress_old\nmarket_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\ntown_city\nregion\nage_under_20\nage_2050\nage_over_60\nold_up\nold_down\n\n\n\n\n0\n중앙시장\n상설\n강원도 강릉시 금성로 21\n상설\n강원 강릉시 성남동 50번지\n229\n온누리상품권\nY\nY\n1980.0\n2015-12-31\nlarge\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n1\n0\n\n\n1\n강릉동부시장\n상설\n강원도 강릉시 옥천로 48\n상설\n강원 강릉시 옥천동 223번지\n91\nNaN\nY\nN\n2014.0\n2015-12-31\nmedium\nintermediate\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n1\n0\n\n\n2\n강릉서부시장\n상설\n강원도 강릉시 임영로 155번길 6\n상설\n강원 강릉시 용강동 29번지\n109\n온누리상품권\nY\nY\n1977.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n1\n0\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n1\n0\n\n\n4\n주문진수산시장\n상설\n강원도 강릉시 주문진읍 시장1길 4-1\n상설\n강원 강릉시 주문진읍 주문리 312-91번지\n42\n온누리상품권\nY\nY\n2007.0\n2015-12-31\nsmall\nhigh\n강원 강릉시\n강원도\n18.996236\n57.71184\n23.291924\n1\n0\n\n\n\n\n\n\n\n\nmarket_pop.groupby('level',as_index=False).agg(market_up_count = ('old_up', 'sum')\n                               , market_down_count = ('old_down','sum'))\n\n\n\n\n\n\n\n\nlevel\nmarket_up_count\nmarket_down_count\n\n\n\n\n0\nhigh\n435\n395\n\n\n1\nintermediate\n178\n300\n\n\n2\nlow\n48\n83\n\n\n\n\n\n\n\n\nmarket_pop.groupby('market_scale',as_index=False).agg(market_up_count = ('old_up', 'sum')\n                               , market_down_count = ('old_down','sum'))\n\n\n\n\n\n\n\n\nmarket_scale\nmarket_up_count\nmarket_down_count\n\n\n\n\n0\nlarge\n145\n217\n\n\n1\nmedium\n323\n400\n\n\n2\nsmall\n193\n161\n\n\n\n\n\n\n\n편의시설이 YY 인데 인구 많은데야? 인구 많으면 편의시설 좋아?"
+    "section": "점포수 요약 정보 알아보기 (범주화)",
+    "text": "점포수 요약 정보 알아보기 (범주화)\n\nmarket2[['store_count']].describe()\n\n\n\n\n\n\n\n\nstore_count\n\n\n\n\ncount\n1439.000000\n\n\nmean\n143.907575\n\n\nstd\n298.989963\n\n\nmin\n0.000000\n\n\n25%\n50.000000\n\n\n50%\n80.000000\n\n\n75%\n134.000000\n\n\nmax\n5852.000000\n\n\n\n\n\n\n\n점포수 위주로 봤을 때, 25%, 75% 기준으로 점포 사이즈를 나누는 것이 합리적으로 보인다. samll : 50개 미만 medium : 50개 이상 134개 미만 large : 134개 이상 3가지의 범주로 나누고자 한다."
   },
   {
     "objectID": "project1.html#범주화-1-점포수로-범주화하기",
@@ -586,6 +390,13 @@
     "title": "project1",
     "section": "범주별 데이텨 현황 알아보기",
     "text": "범주별 데이텨 현황 알아보기\n\ngroup_df = market3.groupby(['type','market_scale','level']).agg(market_count= ('market_name','count')\n                                                       , certificate_count = ('certificate', 'count')\n                                                       , public_toilet_count = ('public_toilet', 'count')\n                                                       , parking_lot_count = ('parking_lot', 'count'))\ngroup_df['certificate_pct']= round(group_df['certificate_count']/group_df['market_count']*100,1)\ngroup_df['public_toilet_pct']=round(group_df['public_toilet_count']/group_df['market_count']*100,1)\ngroup_df['parking_lot_pct']=round(group_df['parking_lot_count']/group_df['market_count']*100,1)\ngroup_df\n\n\n\n\n\n\n\n\n\n\nmarket_count\ncertificate_count\npublic_toilet_count\nparking_lot_count\ncertificate_pct\npublic_toilet_pct\nparking_lot_pct\n\n\ntype\nmarket_scale\nlevel\n\n\n\n\n\n\n\n\n\n\n\n상설\nlarge\nhigh\n175\n159\n175\n175\n90.9\n100.0\n100.0\n\n\nintermediate\n84\n76\n84\n0\n90.5\n100.0\n0.0\n\n\nlow\n22\n21\n0\n7\n95.5\n0.0\n31.8\n\n\nmedium\nhigh\n231\n205\n231\n231\n88.7\n100.0\n100.0\n\n\nintermediate\n213\n180\n213\n0\n84.5\n100.0\n0.0\n\n\nlow\n88\n74\n0\n16\n84.1\n0.0\n18.2\n\n\nsmall\nhigh\n100\n68\n100\n100\n68.0\n100.0\n100.0\n\n\nintermediate\n80\n51\n80\n0\n63.7\n100.0\n0.0\n\n\nlow\n9\n8\n0\n3\n88.9\n0.0\n33.3\n\n\n상설+정기\nlarge\nhigh\n53\n51\n53\n53\n96.2\n100.0\n100.0\n\n\nintermediate\n10\n10\n10\n0\n100.0\n100.0\n0.0\n\n\nlow\n3\n3\n0\n0\n100.0\n0.0\n0.0\n\n\nmedium\nhigh\n99\n92\n99\n99\n92.9\n100.0\n100.0\n\n\nintermediate\n39\n33\n39\n0\n84.6\n100.0\n0.0\n\n\nlow\n7\n7\n0\n2\n100.0\n0.0\n28.6\n\n\nsmall\nhigh\n40\n28\n40\n40\n70.0\n100.0\n100.0\n\n\nintermediate\n8\n5\n8\n0\n62.5\n100.0\n0.0\n\n\n정기\nlarge\nhigh\n13\n12\n13\n13\n92.3\n100.0\n100.0\n\n\nintermediate\n2\n2\n2\n0\n100.0\n100.0\n0.0\n\n\nmedium\nhigh\n36\n28\n36\n36\n77.8\n100.0\n100.0\n\n\nintermediate\n10\n4\n10\n0\n40.0\n100.0\n0.0\n\n\nsmall\nhigh\n83\n34\n83\n83\n41.0\n100.0\n100.0\n\n\nintermediate\n32\n8\n32\n0\n25.0\n100.0\n0.0\n\n\nlow\n2\n0\n0\n1\n0.0\n0.0\n50.0"
+  },
+  {
+    "objectID": "project1.html#상설정기-시장의-지역-봐보기",
+    "href": "project1.html#상설정기-시장의-지역-봐보기",
+    "title": "project1",
+    "section": "상설+정기 시장의 지역 봐보기",
+    "text": "상설+정기 시장의 지역 봐보기\n\nmarket2.query('type == \"상설+정기\"').head()\n\n\n\n\n\n\n\n\nmarket_name\ntype\naddress_road\nopen_period\naddress_old\nstore_count\ncertificate\npublic_toilet\nparking_lot\nyear\ndata_date\nmarket_scale\nlevel\n\n\n\n\n3\n주문진종합시장\n상설+정기\n강원도 강릉시 주문진읍 구 시장길\n5일\n강원 강릉시 주문진읍 주문리 321-52번지\n77\n온누리상품권\nY\nY\n2006.0\n2015-12-31\nmedium\nhigh\n\n\n7\n간성시장\n상설+정기\n강원도 고성군 간성시장 2길 11-1\n5일\n강원 고성군 간성읍 신안리 262번지\n89\n온누리상품권\nY\nY\n2003.0\n2015-12-31\nmedium\nhigh\n\n\n8\n거진시장\n상설+정기\n강원도 고성군 거진읍 거진시장길 15\n5일\n강원 고성군 거진읍 거진리 272번지\n51\n온누리상품권\nY\nY\n2010.0\n2015-12-31\nmedium\nhigh\n\n\n9\n북평민속시장\n상설+정기\n강원도 동해시 북평 오일장길 32\n5일\n강원 동해시 구미동 497-11번지 일원\n130\n온누리상품권\nY\nY\n2013.0\n2015-12-31\nmedium\nhigh\n\n\n15\n삼척중앙시장\n상설+정기\n강원도 삼척시 진주로 12-21\n5일\n강원 삼척시 남양동 55-4\n299\n온누리상품권\nY\nY\n2014.0\n2015-12-31\nlarge\nhigh"
   },
   {
     "objectID": "project1.html#지역별로-시장-수-알아보기-삭제할지-보기",
@@ -672,319 +483,11 @@
     "text": "편의시설이 high 인데 인구 많은데야? 인구 많으면 편의시설 좋아?\n\nmarket_pop.query('level == \"high\"').groupby('region', as_index=False).agg(market_count=('market_name', 'count'),pop = ('total_pop', 'min')).sort_values('pop',ascending=False)\n\n\n\n\n\n\n\n\nregion\nmarket_count\npop\n\n\n\n\n1\n경기도\n74\n12522606\n\n\n8\n서울특별시\n83\n10022181\n\n\n7\n부산광역시\n68\n3513777\n\n\n2\n경상남도\n110\n3364702\n\n\n11\n인천광역시\n21\n2925815\n\n\n3\n경상북도\n100\n2702826\n\n\n5\n대구광역시\n36\n2487829\n\n\n15\n충청남도\n44\n2077649\n\n\n12\n전라남도\n93\n1908996\n\n\n13\n전라북도\n53\n1869711\n\n\n16\n충청북도\n31\n1583952\n\n\n0\n강원도\n46\n1549507\n\n\n6\n대전광역시\n12\n1518775\n\n\n4\n광주광역시\n20\n1472199\n\n\n10\n울산광역시\n15\n1173534\n\n\n14\n제주도\n20\n624395\n\n\n9\n세종특별시\n4\n210884\n\n\n\n\n\n\n\n편의시설이 잘 되어있는 시장이 많은 주변으로 인구 수가 많이 형성되어있다고 보기 어려움."
   },
   {
-    "objectID": "docs/posts/hw3/index.html",
-    "href": "docs/posts/hw3/index.html",
-    "title": "hw3",
+    "objectID": "project2.html",
+    "href": "project2.html",
+    "title": "project2_house price",
     "section": "",
-    "text": "import pandas as pd\n\nmpg = pd.read_csv('../../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
-  },
-  {
-    "objectID": "docs/posts/hw3/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
-    "href": "docs/posts/hw3/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
-    "title": "hw3",
-    "section": "",
-    "text": "import pandas as pd\n\nmpg = pd.read_csv('../../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
-  },
-  {
-    "objectID": "docs/posts/hw3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
-    "href": "docs/posts/hw3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
-    "title": "hw3",
-    "section": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.",
-    "text": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv('../../../midwest.csv')\n\nplt.clf()\nsns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])\nplt.show()"
-  },
-  {
-    "objectID": "docs/posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
-    "href": "docs/posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
-    "title": "hw3",
-    "section": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
-    "text": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg_group = mpg.query(\"category == 'suv'\").groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).sort_values('cty_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group , x='manufacturer', y='cty_mean')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/gragh.html",
-    "href": "posts/graph/gragh.html",
-    "title": "gragh",
-    "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/gragh.html#그래프-그리기",
-    "href": "posts/graph/gragh.html#그래프-그리기",
-    "title": "gragh",
-    "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/gragh.html#sns의-countplot-사용한-막대-그래프",
-    "href": "posts/graph/gragh.html#sns의-countplot-사용한-막대-그래프",
-    "title": "gragh",
-    "section": "sns의 countplot 사용한 막대 그래프",
-    "text": "sns의 countplot 사용한 막대 그래프\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=mpg['drv'].value_counts().index)\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=['r','4','f'])\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/gragh.html#sns의-lineplot-사용한-선-그래프",
-    "href": "posts/graph/gragh.html#sns의-lineplot-사용한-선-그래프",
-    "title": "gragh",
-    "section": "sns의 lineplot() 사용한 선 그래프",
-    "text": "sns의 lineplot() 사용한 선 그래프\n\neconomics = pd.read_csv('../../economics.csv')\n\nplt.clf()\nsns.lineplot(data=economics , x='date', y='unemploy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/gragh.html#sns의-lineplot-사용한-선-그래프---x축-주의",
-    "href": "posts/graph/gragh.html#sns의-lineplot-사용한-선-그래프---x축-주의",
-    "title": "gragh",
-    "section": "sns의 lineplot() 사용한 선 그래프 - x축 주의",
-    "text": "sns의 lineplot() 사용한 선 그래프 - x축 주의\n\neconomics['date'] = pd.to_datetime(economics['date'])\neconomics['year'] = economics['date'].dt.year\nplt.clf()\nsns.lineplot(data=economics, x='year', y='unemploy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/gragh.html#sns의-boxplot-사용한-상자-그림",
-    "href": "posts/graph/gragh.html#sns의-boxplot-사용한-상자-그림",
-    "title": "gragh",
-    "section": "sns의 boxplot() 사용한 상자 그림",
-    "text": "sns의 boxplot() 사용한 상자 그림\n\nplt.clf()\nsns.boxplot(data= mpg, x='drv', y='hwy', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw3/index.html",
-    "href": "posts/hw3/index.html",
-    "title": "hw3",
-    "section": "",
-    "text": "import pandas as pd\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw3/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
-    "href": "posts/hw3/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
-    "title": "hw3",
-    "section": "",
-    "text": "import pandas as pd\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
-    "href": "posts/hw3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
-    "title": "hw3",
-    "section": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.",
-    "text": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv('../../midwest.csv')\n\nplt.clf()\nsns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
-    "href": "posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
-    "title": "hw3",
-    "section": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
-    "text": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg_group = mpg.query(\"category == 'suv'\").groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).sort_values('cty_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group , x='manufacturer', y='cty_mean')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw3/index.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
-    "href": "posts/hw3/index.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
-    "title": "hw3",
-    "section": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.",
-    "text": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nmpg_group2 = mpg.groupby('category',as_index=False).agg(category_count = ('category', 'count') ).sort_values('category_count' , ascending = False)\nplt.clf()\nsns.barplot(data=mpg_group2, x='category', y='category_count')\nplt.show()"
-  },
-  {
-    "objectID": "project1.html#점포수-요약-정보-알아보기-범주화",
-    "href": "project1.html#점포수-요약-정보-알아보기-범주화",
-    "title": "project1",
-    "section": "점포수 요약 정보 알아보기 (범주화)",
-    "text": "점포수 요약 정보 알아보기 (범주화)\n\nmarket2[['store_count']].describe()\n\n\n\n\n\n\n\n\nstore_count\n\n\n\n\ncount\n1439.000000\n\n\nmean\n143.907575\n\n\nstd\n298.989963\n\n\nmin\n0.000000\n\n\n25%\n50.000000\n\n\n50%\n80.000000\n\n\n75%\n134.000000\n\n\nmax\n5852.000000\n\n\n\n\n\n\n\n점포수 위주로 봤을 때, 25%, 75% 기준으로 점포 사이즈를 나누는 것이 합리적으로 보인다. samll : 50개 미만 medium : 50개 이상 134개 미만 large : 134개 이상 3가지의 범주로 나누고자 한다."
-  },
-  {
-    "objectID": "team_play_combination.html",
-    "href": "team_play_combination.html",
-    "title": "KB데이터",
-    "section": "",
-    "text": "라이브러리 불러오기\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\n\n\n데이터 불러오기\n\nmarket_raw = pd.read_excel(\"traditionalmarket.xlsx\")\nmarket = market_raw.copy()\npop_raw = pd.read_excel('pop_2015.xlsx', thousands = ',') #쉼표 없애주고 숫자로 바꿔줌.\npop = pop_raw.copy()\n\n\n\n데이터 전처리 1\n\npop = pop.iloc[1:18,[0,1,3,4,5,6,7,8,9,10,11,12,13]]\npop = pop.reset_index().iloc[:,1:]\n\n\n\n변수명 변경\n\nmarket = market.rename(columns={'시장명' : 'market_name',\n                              '시장유형' : 'type',\n                              '소재지도로명주소' : 'address_road',\n                              '시장개설주기' : 'open_period',\n                              '소재지지번주소' : 'address_old',\n                              '점포수' : 'store_count',\n                              '사용가능상품권' : 'certificate',\n                              '공중화장실 보유여부' : 'public_toilet',\n                              '주차장 보유여부' : 'parking_lot',\n                              '개설년도' : 'year' ,\n                              '데이터기준일자' : 'data_date'})\n\npop = pop.rename(columns={'행정기관' : 'region',\n                          '총 인구수' : 'total_pop',\n                          '0~9세' : '0~9',\n                          '10~19세' : '10~19',\n                          '20~29세' : '20~29',\n                          '30~39세' : '30~39',\n                          '40~49세' : '40~49',\n                          '50~59세' : '50~59',\n                          '60~69세' : '60~69',\n                          '70~79세' : '70~79',\n                          '80~89세' : '80~89',\n                          '90~99세' : '90~99',\n                          '100세 이상' : '100_over',\n                          })\n\n#이쯤에서 데이터 프레임 보여주면 좋을듯_정은서\n\n\n데이터 전처리 2\n\nregion = pop['region'] #행정기관 빼내기\npop = pop.iloc[:,1:].astype(int) #행정기관 빼고 나머지 열을 정수로 바꿈.\npop = pd.concat([region, pop], axis = 1) #빼낸 행정기관을 다시 합침\npop.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 17 entries, 0 to 16\nData columns (total 13 columns):\n #   Column     Non-Null Count  Dtype \n---  ------     --------------  ----- \n 0   region     17 non-null     object\n 1   total_pop  17 non-null     int64 \n 2   0~9        17 non-null     int64 \n 3   10~19      17 non-null     int64 \n 4   20~29      17 non-null     int64 \n 5   30~39      17 non-null     int64 \n 6   40~49      17 non-null     int64 \n 7   50~59      17 non-null     int64 \n 8   60~69      17 non-null     int64 \n 9   70~79      17 non-null     int64 \n 10  80~89      17 non-null     int64 \n 11  90~99      17 non-null     int64 \n 12  100_over   17 non-null     int64 \ndtypes: int64(12), object(1)\nmemory usage: 1.9+ KB\n\n\n\n\n행정명 똑같이 수정 후 띄어쓰기 지우기.\n\npop['region'] = pop['region'].str.replace('세종특별자치시','세종특별시') \npop['region'] = pop['region'].str.replace('제주특별자치도','제주도')\npop['region'] = pop['region'].str.replace('  ','')\n\n\n\nmarket 데이터에서 지역 명 열(변수) 추가하기\n\nmarket['region'] = market[\"address_road\"].str.split(' ').str[0]\n\n\n\n인구 연령 범주 인구수 열(변수) 추가하기\n\npop['under20'] = pop['0~9'] + pop['10~19']\npop['2050'] = pop['20~29'] + pop['30~39'] + pop['40~49'] + pop['50~59']\npop['over60'] = pop['60~69'] + pop['70~79'] + pop['80~89'] + pop['90~99'] + pop['100_over']\n\n\n\n지역별 데이터 프레임 만들기\n\nmarket_region = market.groupby('region', as_index = False)\\\n      .agg(market_count = ('market_name', 'count'),\n           store_sum = ('store_count', 'sum'), certificate_count = ('certificate', 'count'))\n\npop_region = pop[['region', 'total_pop', 'under20', '2050', 'over60']]\n\nmarket_pop = pd.merge(market_region, pop_region, how='left', on='region')\nmarket_pop.head()\n\n\n\n\n\n\n\n\nregion\nmarket_count\nstore_sum\ncertificate_count\ntotal_pop\nunder20\n2050\nover60\n\n\n\n\n0\n강원도\n58\n6811\n54\n1549507\n294348\n894249\n360910\n\n\n1\n경기도\n130\n18977\n121\n12522606\n2730973\n7878980\n1912653\n\n\n2\n경상남도\n155\n18156\n102\n3364702\n702154\n2004453\n658095\n\n\n3\n경상북도\n149\n16582\n106\n2702826\n500721\n1544234\n657871\n\n\n4\n광주광역시\n26\n3411\n25\n1472199\n340705\n895137\n236357\n\n\n\n\n\n\n\n\n\n있는 값들로 계산할 수 있는 열(변수) 추가\n\nmarket_pop['pct_under20'] = round(market_pop['under20'] / market_pop['total_pop'] * 100, 2) #미성년자 비율 추가 + 소숫점 정리\nmarket_pop['pct_2050'] = round(market_pop['2050'] / market_pop['total_pop'] * 100, 2)\nmarket_pop['pct_over60'] = round(market_pop['over60'] / market_pop['total_pop'] * 100, 2)\n\n\n\n60대 이상 박스플롯\n\npx.box(data_frame = market_pop, y = 'pct_over60')\n\n                                                \n\n\n\nmarket_pop['pct_over60_mean'] = np.where(market_pop['pct_over60'] &gt;= market_pop['pct_over60'].mean(),\n                              'UP', 'DOWN') # 60대 이상 비율의 평균을 구한 뒤 그것보다 높거나 낮다는것 표시.\n\nmarket_pop['pop_per_market'] = round(market_pop['total_pop'] / market_pop['market_count'], 1) #인구 수 / 시장 수, 소숫점 정리.\nmarket_pop['pop_per_store'] = round(market_pop['total_pop'] / market_pop['store_sum'], 1)\nmarket_pop['old_per_market'] = round(market_pop['over60'] / market_pop['market_count'], 1)\nmarket_pop['old_per_store'] = round(market_pop['over60'] / market_pop['store_sum'], 1)\n\n온누리 상품권 활성화 정도 파생변수 추가\n\nmarket_pop['pct_certificate'] = round(market_pop['certificate_count'] / market_pop['market_count'] *100, 1)\n\n\n\n기타 등등 코드\n\n\n엑셀로 빼보기\n\n# market_pop.to_excel(excel_writer = 'market_pop.xlsx', index=False)\n\n\n\n데이터 프레임 출력 제한 설정\n\n#pd.set_option('display.max_rows', None)\n#pd.set_option('display.max_columns', None)\n#market_pop\n\n\n\n출력 제한 다시 되돌리기\n\n#pd.reset_option('display.max_rows')\n# pd.reset_option('display.max_columns')\n\n지역별 총 인구 수 막대 그래프\n\npx.bar(data_frame = market_pop,  x = 'total_pop', y = 'region', orientation='h', color = 'region') \\\n  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n                                                \n\n\n지역별 20세 미만 인구 막대 그래프\n\n# px.bar(data_frame = market_pop, x = 'region', y = 'under20') \n\n지역별 20세 이상 60세 미만 인구 막대 그래프\n\n# px.bar(data_frame = market_pop, x = 'region', y = '2050') \n\n지역별 60세 이상 막대 그래프\n\npx.bar(data_frame = market_pop, x = 'over60', y = 'region',  orientation='h', color = 'region') \\\n  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n                                                \n\n\n지역별 인구 비율 누적 그래프\n\ndf = market_pop[['region', 'pct_under20', 'pct_2050', 'pct_over60']] \\\n               .sort_values('pct_over60', ascending = False)\n\n\n# 노년층 비율이 높은 순으로 정렬\ndf = df.sort_values('pct_over60', ascending=False)\n\n# 데이터프레임을 길게 변환\ndf_melted = df.melt(id_vars='region', var_name='ageg', value_name='pct')\n\n# 색상 지정\ncolors = {\n    'pct_under20': 'skyblue',\n    'pct_2050': 'lightyellow',\n    'pct_over60': 'salmon'\n}\n\n# Plotly Express를 사용하여 누적 가로 막대 그래프 생성\nfig = px.bar(df_melted, x='pct', y='region', color='ageg', \n             orientation='h', color_discrete_map=colors,\n             category_orders={'ageg': ['pct_under20', 'pct_2050', 'pct_over60']})\n\n# 그래프 설정\nfig.update_layout(\n    barmode='stack',\n    title='연령대별 인구 비율 비교',\n    xaxis_title='pct',\n    yaxis_title='region'\n)\n\nfig.show()\n\n                                                \n\n\n지역별 시장 수 막대그래프\n\npx.bar(data_frame = market_pop,  x = 'market_count', y = 'region', orientation='h', color = 'region') \\\n  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n                                                \n\n\n지역 별 점포 수 막대 그래프\n\npx.bar(data_frame = market_pop,  x = 'store_sum', y = 'region', orientation='h', color = 'region') \\\n  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n                                                \n\n\n지역별 총 인구 / 시장 수\n\n#px.bar(data_frame = market_pop, x = 'pop_per_market', y = 'region', orientation='h', color = 'region') \\\n#  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n지역별 총 인구 / 점포 수\n\n# px.bar(data_frame = market_pop, x = 'pop_per_store', y = 'region', orientation = 'h', color = 'region') \\\n#  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n지역별 60대 인구 / 시장 수\n\npx.bar(data_frame = market_pop, x = 'old_per_market', y = 'region', orientation ='h', color = 'region') \\\n .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n                                                \n\n\n지역별 60대 인구 / 점포 수\n\npx.bar(data_frame = market_pop, x = 'old_per_store', y = 'region', orientation = 'h', color = 'region') \\\n  .update_layout(yaxis = {\"categoryorder\":\"total ascending\"}).show()\n\n                                                \n\n\n경기도 온누리 상품권 여부\n\nmarket_pop.query('region == \"경기도\"')[\"pct_certificate\"]\n\n1    93.1\nName: pct_certificate, dtype: float64"
-  },
-  {
-    "objectID": "presentation.html#연령-구간별-인구-비율-계산",
-    "href": "presentation.html#연령-구간별-인구-비율-계산",
-    "title": "KB데이터",
-    "section": "(연령 구간별 인구 비율 계산)",
-    "text": "(연령 구간별 인구 비율 계산)\n\nmarket_pop['pct_under20'] = round(market_pop['under20'] / market_pop['total_pop'] * 100, 1) #미성년자 비율 추가 + 소숫점 정리\nmarket_pop['pct_2050'] = round(market_pop['2050'] / market_pop['total_pop'] * 100, 1)\nmarket_pop['pct_over60'] = round(market_pop['over60'] / market_pop['total_pop'] * 100, 1)"
-  },
-  {
-    "objectID": "presentation.html#시장.점포-1개-당-60대-이상-인구-비율-계산",
-    "href": "presentation.html#시장.점포-1개-당-60대-이상-인구-비율-계산",
-    "title": "KB데이터",
-    "section": "(시장.점포 1개 당 60대 이상 인구 비율 계산)",
-    "text": "(시장.점포 1개 당 60대 이상 인구 비율 계산)\n\nmarket_pop['old_per_market'] = round(market_pop['over60'] / market_pop['market_count'], 1)\nmarket_pop['old_per_store'] = round(market_pop['over60'] / market_pop['store_sum'], 1)"
-  },
-  {
-    "objectID": "presentation.html#대-이상-인구-비율이-평균보다-큰-지역-작은-지역-구분",
-    "href": "presentation.html#대-이상-인구-비율이-평균보다-큰-지역-작은-지역-구분",
-    "title": "KB데이터",
-    "section": "(60대 이상 인구 비율이 평균보다 큰 지역, 작은 지역 구분)",
-    "text": "(60대 이상 인구 비율이 평균보다 큰 지역, 작은 지역 구분)\n\n# 60대 이상 비율의 평균을 구한 뒤 그것보다 높거나 낮다는것 표시.\nmarket_pop['over60_mean_updown'] = \\\n  np.where(market_pop['pct_over60'] &gt;= market_pop['pct_over60'].mean(), 'UP', 'DOWN')"
-  },
-  {
-    "objectID": "presentation.html#온누리-상품권을-사용하는-시장-수",
-    "href": "presentation.html#온누리-상품권을-사용하는-시장-수",
-    "title": "KB데이터",
-    "section": "(온누리 상품권을 사용하는 시장 수)",
-    "text": "(온누리 상품권을 사용하는 시장 수)\n\nmarket_pop['pct_certificate'] = \\\n round(market_pop['certificate_count'] / market_pop['market_count'] *100, 1)\n\n\nmarket_pop.head()\n\n\n\n\n\n\n\n\nregion\nmarket_count\nstore_sum\ncertificate_count\ntotal_pop\nunder20\n2050\nover60\npct_under20\npct_2050\npct_over60\nold_per_market\nold_per_store\nover60_mean_updown\npct_certificate\n\n\n\n\n0\n강원도\n58\n6811\n54\n1549507\n294348\n894249\n360910\n19.0\n57.7\n23.3\n6222.6\n53.0\nUP\n93.1\n\n\n1\n경기도\n130\n18977\n121\n12522606\n2730973\n7878980\n1912653\n21.8\n62.9\n15.3\n14712.7\n100.8\nDOWN\n93.1\n\n\n2\n경상남도\n155\n18156\n102\n3364702\n702154\n2004453\n658095\n20.9\n59.6\n19.6\n4245.8\n36.2\nUP\n65.8\n\n\n3\n경상북도\n149\n16582\n106\n2702826\n500721\n1544234\n657871\n18.5\n57.1\n24.3\n4415.2\n39.7\nUP\n71.1\n\n\n4\n광주광역시\n26\n3411\n25\n1472199\n340705\n895137\n236357\n23.1\n60.8\n16.1\n9090.7\n69.3\nDOWN\n96.2"
-  },
-  {
-    "objectID": "presentation.html#평균-기준-근거-60대-이상-박스플롯",
-    "href": "presentation.html#평균-기준-근거-60대-이상-박스플롯",
-    "title": "KB데이터",
-    "section": "평균 기준 근거 : 60대 이상 박스플롯",
-    "text": "평균 기준 근거 : 60대 이상 박스플롯\n\npx.box(data_frame = market_pop, y = 'pct_over60')"
-  },
-  {
-    "objectID": "presentation.html#평균-기준으로-한-근거-60대-이상-박스플롯",
-    "href": "presentation.html#평균-기준으로-한-근거-60대-이상-박스플롯",
-    "title": "KB데이터",
-    "section": "평균 기준으로 한 근거 : 60대 이상 박스플롯",
-    "text": "평균 기준으로 한 근거 : 60대 이상 박스플롯\n\npx.box(data_frame = market_pop, y = 'pct_over60')"
-  },
-  {
-    "objectID": "presentation.html",
-    "href": "presentation.html",
-    "title": "KB데이터",
-    "section": "",
-    "text": "60대 이상 소비자를 타켓으로 어느 지역을 활성화하는게 효과적일까?"
-  },
-  {
-    "objectID": "posts/숙제 Qmd/index.html",
-    "href": "posts/숙제 Qmd/index.html",
-    "title": "hw3",
-    "section": "",
-    "text": "숙제 Qmd\n\n\n1. 정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2의 pdf를 그릴 것.\n\ndef norm(x, mu, sigma):\n    import numpy as np\n    a = 1/(sigma* np.sqrt(2*np.pi))\n    b = np.exp( -(x-mu)**2 / (2*sigma**2))\n    return a*b\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx=np.linspace(-20,20,1000)\ny= norm(x, mu=3, sigma=2)\n\nplt.clf()\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n—\n\n\n2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.\n\nX ~ N(2, 3^2)\n\n\n1) P(X&lt;3)\n\n\n2) P(2&lt;X&lt;5)\n\n\n3) P(X&lt;3 or X&gt;7)\n\nfrom scipy.stats import norm\n\nprint(\"1) P(X&lt;3) :\",norm.cdf(3, loc=2, scale=3))\nprint(\"2) P(2&lt;X&lt;5) :\", norm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3))\nprint(\"3) P(X&lt;3 or X&gt;7) :\", norm.cdf(3, loc=2, scale=3) + (1-norm.cdf(7,loc=2,scale=3)))\n\n1) P(X&lt;3) : 0.6305586598182363\n2) P(2&lt;X&lt;5) : 0.3413447460685429\n3) P(X&lt;3 or X&gt;7) : 0.678349012091051\n\n\n\n\n\n—\n\n\n3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다.\n\n\n상위 5%에 해당하는 학생의 점수는?\n\nprint(\"상위 5%에 해당하는 학생의 점수는? \",norm.ppf(0.95, loc=30, scale=2))\n\n상위 5%에 해당하는 학생의 점수는?  33.28970725390295"
-  },
-  {
-    "objectID": "posts/graph/graph.html",
-    "href": "posts/graph/graph.html",
-    "title": "graph",
-    "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/graph.html#그래프-그리기",
-    "href": "posts/graph/graph.html#그래프-그리기",
-    "title": "graph",
-    "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/graph.html#sns의-countplot-사용한-막대-그래프",
-    "href": "posts/graph/graph.html#sns의-countplot-사용한-막대-그래프",
-    "title": "graph",
-    "section": "sns의 countplot 사용한 막대 그래프",
-    "text": "sns의 countplot 사용한 막대 그래프\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=mpg['drv'].value_counts().index)\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=['r','4','f'])\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/graph.html#sns의-lineplot-사용한-선-그래프",
-    "href": "posts/graph/graph.html#sns의-lineplot-사용한-선-그래프",
-    "title": "graph",
-    "section": "sns의 lineplot() 사용한 선 그래프",
-    "text": "sns의 lineplot() 사용한 선 그래프\n\neconomics = pd.read_csv('../../economics.csv')\n\nplt.clf()\nsns.lineplot(data=economics , x='date', y='unemploy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/graph.html#sns의-lineplot-사용한-선-그래프---x축-주의",
-    "href": "posts/graph/graph.html#sns의-lineplot-사용한-선-그래프---x축-주의",
-    "title": "graph",
-    "section": "sns의 lineplot() 사용한 선 그래프 - x축 주의",
-    "text": "sns의 lineplot() 사용한 선 그래프 - x축 주의\n\neconomics['date'] = pd.to_datetime(economics['date'])\neconomics['year'] = economics['date'].dt.year\nplt.clf()\nsns.lineplot(data=economics, x='year', y='unemploy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/graph.html#sns의-boxplot-사용한-상자-그림",
-    "href": "posts/graph/graph.html#sns의-boxplot-사용한-상자-그림",
-    "title": "graph",
-    "section": "sns의 boxplot() 사용한 상자 그림",
-    "text": "sns의 boxplot() 사용한 상자 그림\n\nplt.clf()\nsns.boxplot(data= mpg, x='drv', y='hwy', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw4/index.html",
-    "href": "posts/hw4/index.html",
-    "title": "hw4",
-    "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.387283634014292\ns_2_2 :  1.3872836340142918\ns_2_3 :  1.3872836340142918\nk_2_1 :  1.3179194523135773\nk_2_2 :  1.317919452313577\nk_2_3 :  1.317919452313577\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
-    "href": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
-    "title": "hw4",
-    "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2 = sum((x-x_bar)**2)/(len(x)-1)\nprint(\"s_2 : \",s_2)\n\nk_2 = sum((x-x_bar)**2)/len(x)\nprint(\"k_2 : \",k_2)\n\ns_2 :  1.641466623473874\nk_2 :  1.5593932923001803\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\na=x.var()\n\nimport matplotlib.pyplot as plt\nplt.clf()\nplt.hist(s_2)\nplt.axvline(x=a, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\ny = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\nk_2 = y.var(axis=1, ddof=0)\nb=y.var()\n\nplt.clf()\nplt.hist(k_2)\nplt.axvline(x=b, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다."
-  },
-  {
-    "objectID": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
-    "href": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
-    "title": "hw4",
-    "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.387283634014292\ns_2_2 :  1.3872836340142918\ns_2_3 :  1.3872836340142918\nk_2_1 :  1.3179194523135773\nk_2_2 :  1.317919452313577\nk_2_3 :  1.317919452313577\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw5/index.html",
-    "href": "posts/hw5/index.html",
-    "title": "hw5",
-    "section": "",
-    "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns\n\n\n\n\n\n\n\nimport numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0\n\n\n\n\n\n\n\n\n\n\n\nmale_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845\n\n\n\n\n\n\nsex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw5/index.html#데이터-불러오기",
-    "href": "posts/hw5/index.html#데이터-불러오기",
-    "title": "hw5",
-    "section": "",
-    "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns"
-  },
-  {
-    "objectID": "posts/hw5/index.html#필요한-데이터만-가져오기",
-    "href": "posts/hw5/index.html#필요한-데이터만-가져오기",
-    "title": "hw5",
-    "section": "",
-    "text": "import numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0"
-  },
-  {
-    "objectID": "posts/hw5/index.html#신뢰구간-구하기",
-    "href": "posts/hw5/index.html#신뢰구간-구하기",
-    "title": "hw5",
-    "section": "",
-    "text": "male_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845"
-  },
-  {
-    "objectID": "posts/hw5/index.html#groupby로-성별별-평균-income-데이터-만들기",
-    "href": "posts/hw5/index.html#groupby로-성별별-평균-income-데이터-만들기",
-    "title": "hw5",
-    "section": "",
-    "text": "sex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571"
-  },
-  {
-    "objectID": "posts/hw5/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
-    "href": "posts/hw5/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
-    "title": "hw5",
-    "section": "",
-    "text": "import matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
-  },
-  {
-    "objectID": "posts/hw6/index.html",
-    "href": "posts/hw6/index.html",
-    "title": "hw6",
-    "section": "",
-    "text": "슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22 년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여 한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다. 15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804\n표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지 판단해보시오. (유의수준 1%로 설정)"
-  },
-  {
-    "objectID": "posts/hw6/index.html#검정을-위한-가설을-명확하게-서술하시오.",
-    "href": "posts/hw6/index.html#검정을-위한-가설을-명확하게-서술하시오.",
-    "title": "hw6",
-    "section": "2. 검정을 위한 가설을 명확하게 서술하시오.",
-    "text": "2. 검정을 위한 가설을 명확하게 서술하시오.\n\n\nH0 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &gt;= 16.0 (mu0)\nH1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16.0 (mu0)"
-  },
-  {
-    "objectID": "posts/hw6/index.html#검정통계량-계산하시오.",
-    "href": "posts/hw6/index.html#검정통계량-계산하시오.",
-    "title": "hw6",
-    "section": "3. 검정통계량 계산하시오.",
-    "text": "3. 검정통계량 계산하시오.\n\nimport numpy as np\nx = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,\n15.382, 16.709, 16.804])\nx_bar = x.mean()\nsample_std = x.std(ddof=1)\n\nz = (x_bar - 16)/ (sample_std/np.sqrt(len(x)))\nprint(\"검정통계량 :\",z)\n\n검정통계량 : -1.8500447456376756"
-  },
-  {
-    "objectID": "posts/hw6/index.html#pvalue을-구하세요.",
-    "href": "posts/hw6/index.html#pvalue을-구하세요.",
-    "title": "hw6",
-    "section": "4. p‑value을 구하세요.",
-    "text": "4. p‑value을 구하세요.\n\nfrom scipy.stats import t\nprint(\"p-value :\",t.cdf(z, df=len(x) -1))\n\np-value : 0.042762417664207845"
-  },
-  {
-    "objectID": "posts/hw6/index.html#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.",
-    "href": "posts/hw6/index.html#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.",
-    "title": "hw6",
-    "section": "6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.",
-    "text": "6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.\n\nt0025 = t.ppf(0.975, df=15-1)\nprint(\"95% 신뢰구간 : (\",x_bar - t0025*sample_std/np.sqrt(len(x)) , \",\", x_bar + t0025*sample_std/np.sqrt(len(x)), \")\")\n\n95% 신뢰구간 : ( 14.988864240339733 , 16.074602426326933 )"
+    "text": "house price columns\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project2/columns/columns.html",
@@ -1001,11 +504,11 @@
     "text": "import pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# 데이터 불러오기\ntrain_df = pd.read_csv('../../../lsbigdata-project1/house price/train.csv')\ntest_df = pd.read_csv('../../../lsbigdata-project1/house price/test.csv')\nsubmission = pd.read_csv('../../../lsbigdata-project1/house price/sample_submission.csv')"
   },
   {
-    "objectID": "project2/columns/columns.html#모든-변수-결측치-확인",
-    "href": "project2/columns/columns.html#모든-변수-결측치-확인",
+    "objectID": "project2/columns/columns.html#모든-변수-결측치와-정보-확인",
+    "href": "project2/columns/columns.html#모든-변수-결측치와-정보-확인",
     "title": "house price columns",
-    "section": "0. 모든 변수 결측치 확인",
-    "text": "0. 모든 변수 결측치 확인\n\npd.set_option('display.max_rows',None)\nnan_df = train_df.isna().sum()\nnan_df[nan_df&gt;0]\npd.reset_option('display.max_rows')\n\n\ntrain_df.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1460 entries, 0 to 1459\nData columns (total 81 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   Id             1460 non-null   int64  \n 1   MSSubClass     1460 non-null   int64  \n 2   MSZoning       1460 non-null   object \n 3   LotFrontage    1201 non-null   float64\n 4   LotArea        1460 non-null   int64  \n 5   Street         1460 non-null   object \n 6   Alley          91 non-null     object \n 7   LotShape       1460 non-null   object \n 8   LandContour    1460 non-null   object \n 9   Utilities      1460 non-null   object \n 10  LotConfig      1460 non-null   object \n 11  LandSlope      1460 non-null   object \n 12  Neighborhood   1460 non-null   object \n 13  Condition1     1460 non-null   object \n 14  Condition2     1460 non-null   object \n 15  BldgType       1460 non-null   object \n 16  HouseStyle     1460 non-null   object \n 17  OverallQual    1460 non-null   int64  \n 18  OverallCond    1460 non-null   int64  \n 19  YearBuilt      1460 non-null   int64  \n 20  YearRemodAdd   1460 non-null   int64  \n 21  RoofStyle      1460 non-null   object \n 22  RoofMatl       1460 non-null   object \n 23  Exterior1st    1460 non-null   object \n 24  Exterior2nd    1460 non-null   object \n 25  MasVnrType     588 non-null    object \n 26  MasVnrArea     1452 non-null   float64\n 27  ExterQual      1460 non-null   object \n 28  ExterCond      1460 non-null   object \n 29  Foundation     1460 non-null   object \n 30  BsmtQual       1423 non-null   object \n 31  BsmtCond       1423 non-null   object \n 32  BsmtExposure   1422 non-null   object \n 33  BsmtFinType1   1423 non-null   object \n 34  BsmtFinSF1     1460 non-null   int64  \n 35  BsmtFinType2   1422 non-null   object \n 36  BsmtFinSF2     1460 non-null   int64  \n 37  BsmtUnfSF      1460 non-null   int64  \n 38  TotalBsmtSF    1460 non-null   int64  \n 39  Heating        1460 non-null   object \n 40  HeatingQC      1460 non-null   object \n 41  CentralAir     1460 non-null   object \n 42  Electrical     1459 non-null   object \n 43  1stFlrSF       1460 non-null   int64  \n 44  2ndFlrSF       1460 non-null   int64  \n 45  LowQualFinSF   1460 non-null   int64  \n 46  GrLivArea      1460 non-null   int64  \n 47  BsmtFullBath   1460 non-null   int64  \n 48  BsmtHalfBath   1460 non-null   int64  \n 49  FullBath       1460 non-null   int64  \n 50  HalfBath       1460 non-null   int64  \n 51  BedroomAbvGr   1460 non-null   int64  \n 52  KitchenAbvGr   1460 non-null   int64  \n 53  KitchenQual    1460 non-null   object \n 54  TotRmsAbvGrd   1460 non-null   int64  \n 55  Functional     1460 non-null   object \n 56  Fireplaces     1460 non-null   int64  \n 57  FireplaceQu    770 non-null    object \n 58  GarageType     1379 non-null   object \n 59  GarageYrBlt    1379 non-null   float64\n 60  GarageFinish   1379 non-null   object \n 61  GarageCars     1460 non-null   int64  \n 62  GarageArea     1460 non-null   int64  \n 63  GarageQual     1379 non-null   object \n 64  GarageCond     1379 non-null   object \n 65  PavedDrive     1460 non-null   object \n 66  WoodDeckSF     1460 non-null   int64  \n 67  OpenPorchSF    1460 non-null   int64  \n 68  EnclosedPorch  1460 non-null   int64  \n 69  3SsnPorch      1460 non-null   int64  \n 70  ScreenPorch    1460 non-null   int64  \n 71  PoolArea       1460 non-null   int64  \n 72  PoolQC         7 non-null      object \n 73  Fence          281 non-null    object \n 74  MiscFeature    54 non-null     object \n 75  MiscVal        1460 non-null   int64  \n 76  MoSold         1460 non-null   int64  \n 77  YrSold         1460 non-null   int64  \n 78  SaleType       1460 non-null   object \n 79  SaleCondition  1460 non-null   object \n 80  SalePrice      1460 non-null   int64  \ndtypes: float64(3), int64(35), object(43)\nmemory usage: 924.0+ KB\n\n\n‘Id’ : 수치컬럼에서 제외해야 함. ‘MSSubClass’ : 수치컬럼으로 되어있는데, 범주컬럼임. ‘LotFrontage’ : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기. ‘Alley’ : 1369개 결측치는 골목길이 없다는 것임."
+    "section": "0. 모든 변수 결측치와 정보 확인",
+    "text": "0. 모든 변수 결측치와 정보 확인\n\npd.set_option('display.max_rows',None)\nnan_df = train_df.isna().sum()\nnan_df[nan_df&gt;0]\npd.reset_option('display.max_rows')\n\n\ntrain_df.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1460 entries, 0 to 1459\nData columns (total 81 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   Id             1460 non-null   int64  \n 1   MSSubClass     1460 non-null   int64  \n 2   MSZoning       1460 non-null   object \n 3   LotFrontage    1201 non-null   float64\n 4   LotArea        1460 non-null   int64  \n 5   Street         1460 non-null   object \n 6   Alley          91 non-null     object \n 7   LotShape       1460 non-null   object \n 8   LandContour    1460 non-null   object \n 9   Utilities      1460 non-null   object \n 10  LotConfig      1460 non-null   object \n 11  LandSlope      1460 non-null   object \n 12  Neighborhood   1460 non-null   object \n 13  Condition1     1460 non-null   object \n 14  Condition2     1460 non-null   object \n 15  BldgType       1460 non-null   object \n 16  HouseStyle     1460 non-null   object \n 17  OverallQual    1460 non-null   int64  \n 18  OverallCond    1460 non-null   int64  \n 19  YearBuilt      1460 non-null   int64  \n 20  YearRemodAdd   1460 non-null   int64  \n 21  RoofStyle      1460 non-null   object \n 22  RoofMatl       1460 non-null   object \n 23  Exterior1st    1460 non-null   object \n 24  Exterior2nd    1460 non-null   object \n 25  MasVnrType     588 non-null    object \n 26  MasVnrArea     1452 non-null   float64\n 27  ExterQual      1460 non-null   object \n 28  ExterCond      1460 non-null   object \n 29  Foundation     1460 non-null   object \n 30  BsmtQual       1423 non-null   object \n 31  BsmtCond       1423 non-null   object \n 32  BsmtExposure   1422 non-null   object \n 33  BsmtFinType1   1423 non-null   object \n 34  BsmtFinSF1     1460 non-null   int64  \n 35  BsmtFinType2   1422 non-null   object \n 36  BsmtFinSF2     1460 non-null   int64  \n 37  BsmtUnfSF      1460 non-null   int64  \n 38  TotalBsmtSF    1460 non-null   int64  \n 39  Heating        1460 non-null   object \n 40  HeatingQC      1460 non-null   object \n 41  CentralAir     1460 non-null   object \n 42  Electrical     1459 non-null   object \n 43  1stFlrSF       1460 non-null   int64  \n 44  2ndFlrSF       1460 non-null   int64  \n 45  LowQualFinSF   1460 non-null   int64  \n 46  GrLivArea      1460 non-null   int64  \n 47  BsmtFullBath   1460 non-null   int64  \n 48  BsmtHalfBath   1460 non-null   int64  \n 49  FullBath       1460 non-null   int64  \n 50  HalfBath       1460 non-null   int64  \n 51  BedroomAbvGr   1460 non-null   int64  \n 52  KitchenAbvGr   1460 non-null   int64  \n 53  KitchenQual    1460 non-null   object \n 54  TotRmsAbvGrd   1460 non-null   int64  \n 55  Functional     1460 non-null   object \n 56  Fireplaces     1460 non-null   int64  \n 57  FireplaceQu    770 non-null    object \n 58  GarageType     1379 non-null   object \n 59  GarageYrBlt    1379 non-null   float64\n 60  GarageFinish   1379 non-null   object \n 61  GarageCars     1460 non-null   int64  \n 62  GarageArea     1460 non-null   int64  \n 63  GarageQual     1379 non-null   object \n 64  GarageCond     1379 non-null   object \n 65  PavedDrive     1460 non-null   object \n 66  WoodDeckSF     1460 non-null   int64  \n 67  OpenPorchSF    1460 non-null   int64  \n 68  EnclosedPorch  1460 non-null   int64  \n 69  3SsnPorch      1460 non-null   int64  \n 70  ScreenPorch    1460 non-null   int64  \n 71  PoolArea       1460 non-null   int64  \n 72  PoolQC         7 non-null      object \n 73  Fence          281 non-null    object \n 74  MiscFeature    54 non-null     object \n 75  MiscVal        1460 non-null   int64  \n 76  MoSold         1460 non-null   int64  \n 77  YrSold         1460 non-null   int64  \n 78  SaleType       1460 non-null   object \n 79  SaleCondition  1460 non-null   object \n 80  SalePrice      1460 non-null   int64  \ndtypes: float64(3), int64(35), object(43)\nmemory usage: 924.0+ KB\n\n\n‘Id’ : 수치컬럼에서 제외해야 함.\n‘MSSubClass’ : 수치컬럼으로 되어있는데, 범주컬럼임.\n‘LotFrontage’ : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기.\n‘Alley’ : 1369개 결측치는 골목길이 없다는 것임."
   },
   {
     "objectID": "project2/columns/columns.html#saleprice-판매-가격",
@@ -1071,32 +574,11 @@
     "text": "9. ‘LandContour’ : 집의 평탄 정도\n\ntrain_cat_count('LandContour')\ntrain_cat_hist('LandContour')\n\n\nprint(train_df['LandContour'].value_counts())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLandContour\nLvl    1311\nBnk      63\nHLS      50\nLow      36\nName: count, dtype: int64\n\n\n   Lvl  평평한 것에 가까움  \n   Bnk  기움 - Quick and significant rise from street grade to building\n   HLS  비탈 - Significant slope from side to side\n   Low 움푹한 곳\n평평한 것에 가까운게 많음. 범주별 분포 차이가 없어 보임. 파란색 분포에 이상치가 있어보임."
   },
   {
-    "objectID": "project2.html",
-    "href": "project2.html",
-    "title": "project2_house price",
-    "section": "",
-    "text": "house price columns\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project2/columns/columns.html#모든-변수-결측치와-정보-확인",
-    "href": "project2/columns/columns.html#모든-변수-결측치와-정보-확인",
-    "title": "house price columns",
-    "section": "0. 모든 변수 결측치와 정보 확인",
-    "text": "0. 모든 변수 결측치와 정보 확인\n\npd.set_option('display.max_rows',None)\nnan_df = train_df.isna().sum()\nnan_df[nan_df&gt;0]\npd.reset_option('display.max_rows')\n\n\ntrain_df.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1460 entries, 0 to 1459\nData columns (total 81 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   Id             1460 non-null   int64  \n 1   MSSubClass     1460 non-null   int64  \n 2   MSZoning       1460 non-null   object \n 3   LotFrontage    1201 non-null   float64\n 4   LotArea        1460 non-null   int64  \n 5   Street         1460 non-null   object \n 6   Alley          91 non-null     object \n 7   LotShape       1460 non-null   object \n 8   LandContour    1460 non-null   object \n 9   Utilities      1460 non-null   object \n 10  LotConfig      1460 non-null   object \n 11  LandSlope      1460 non-null   object \n 12  Neighborhood   1460 non-null   object \n 13  Condition1     1460 non-null   object \n 14  Condition2     1460 non-null   object \n 15  BldgType       1460 non-null   object \n 16  HouseStyle     1460 non-null   object \n 17  OverallQual    1460 non-null   int64  \n 18  OverallCond    1460 non-null   int64  \n 19  YearBuilt      1460 non-null   int64  \n 20  YearRemodAdd   1460 non-null   int64  \n 21  RoofStyle      1460 non-null   object \n 22  RoofMatl       1460 non-null   object \n 23  Exterior1st    1460 non-null   object \n 24  Exterior2nd    1460 non-null   object \n 25  MasVnrType     588 non-null    object \n 26  MasVnrArea     1452 non-null   float64\n 27  ExterQual      1460 non-null   object \n 28  ExterCond      1460 non-null   object \n 29  Foundation     1460 non-null   object \n 30  BsmtQual       1423 non-null   object \n 31  BsmtCond       1423 non-null   object \n 32  BsmtExposure   1422 non-null   object \n 33  BsmtFinType1   1423 non-null   object \n 34  BsmtFinSF1     1460 non-null   int64  \n 35  BsmtFinType2   1422 non-null   object \n 36  BsmtFinSF2     1460 non-null   int64  \n 37  BsmtUnfSF      1460 non-null   int64  \n 38  TotalBsmtSF    1460 non-null   int64  \n 39  Heating        1460 non-null   object \n 40  HeatingQC      1460 non-null   object \n 41  CentralAir     1460 non-null   object \n 42  Electrical     1459 non-null   object \n 43  1stFlrSF       1460 non-null   int64  \n 44  2ndFlrSF       1460 non-null   int64  \n 45  LowQualFinSF   1460 non-null   int64  \n 46  GrLivArea      1460 non-null   int64  \n 47  BsmtFullBath   1460 non-null   int64  \n 48  BsmtHalfBath   1460 non-null   int64  \n 49  FullBath       1460 non-null   int64  \n 50  HalfBath       1460 non-null   int64  \n 51  BedroomAbvGr   1460 non-null   int64  \n 52  KitchenAbvGr   1460 non-null   int64  \n 53  KitchenQual    1460 non-null   object \n 54  TotRmsAbvGrd   1460 non-null   int64  \n 55  Functional     1460 non-null   object \n 56  Fireplaces     1460 non-null   int64  \n 57  FireplaceQu    770 non-null    object \n 58  GarageType     1379 non-null   object \n 59  GarageYrBlt    1379 non-null   float64\n 60  GarageFinish   1379 non-null   object \n 61  GarageCars     1460 non-null   int64  \n 62  GarageArea     1460 non-null   int64  \n 63  GarageQual     1379 non-null   object \n 64  GarageCond     1379 non-null   object \n 65  PavedDrive     1460 non-null   object \n 66  WoodDeckSF     1460 non-null   int64  \n 67  OpenPorchSF    1460 non-null   int64  \n 68  EnclosedPorch  1460 non-null   int64  \n 69  3SsnPorch      1460 non-null   int64  \n 70  ScreenPorch    1460 non-null   int64  \n 71  PoolArea       1460 non-null   int64  \n 72  PoolQC         7 non-null      object \n 73  Fence          281 non-null    object \n 74  MiscFeature    54 non-null     object \n 75  MiscVal        1460 non-null   int64  \n 76  MoSold         1460 non-null   int64  \n 77  YrSold         1460 non-null   int64  \n 78  SaleType       1460 non-null   object \n 79  SaleCondition  1460 non-null   object \n 80  SalePrice      1460 non-null   int64  \ndtypes: float64(3), int64(35), object(43)\nmemory usage: 924.0+ KB\n\n\n‘Id’ : 수치컬럼에서 제외해야 함.\n‘MSSubClass’ : 수치컬럼으로 되어있는데, 범주컬럼임.\n‘LotFrontage’ : 259개 결측치는 집에 연결된 거리가 없어서 결측치인걸까? 그렇다면 0값으로 처리해주기.\n‘Alley’ : 1369개 결측치는 골목길이 없다는 것임."
-  },
-  {
     "objectID": "project2/columns/columns.html#utilities-전기-가스-수도-하수도-사용-가능-여부",
     "href": "project2/columns/columns.html#utilities-전기-가스-수도-하수도-사용-가능-여부",
     "title": "house price columns",
     "section": "10. ‘Utilities’ : 전기, 가스, 수도, 하수도 사용 가능 여부",
     "text": "10. ‘Utilities’ : 전기, 가스, 수도, 하수도 사용 가능 여부\n\ntrain_cat_count('Utilities')\n\nplt.clf()\nsns.histplot(train_df[train_df['Utilities']=='AllPub']['SalePrice'], stat='density')\n#sns.histplot(train_df[train_df['Utilities']=='NoSewr']['SalePrice'], stat='density')\n#sns.histplot(train_df[train_df['Utilities']=='NoSeWa']['SalePrice'], stat='density')\n#sns.histplot(train_df[train_df['Utilities']=='ELO']['SalePrice'], stat='density')\nplt.title('Utilities 범주별, SalePrice 분포')\nplt.tight_layout()\nplt.show()\n\nprint(train_df['Utilities'].value_counts())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUtilities\nAllPub    1459\nNoSeWa       1\nName: count, dtype: int64\n\n\n   AllPub   전기, 가스, 물, 하수도  \n   NoSewr   전기, 가스, 물 (정화조)\n   NoSeWa   전기, 가스\n   ELO      전기\n전기, 가스만 사용가능한 집이 1개만 있고, 그 외에는 모두 사용 가능한 집임. 이상치 존재해 보임."
-  },
-  {
-    "objectID": "project2/columns/columns.html#lotconfig",
-    "href": "project2/columns/columns.html#lotconfig",
-    "title": "house price columns",
-    "section": "11. ‘LotConfig’ :",
-    "text": "11. ‘LotConfig’ :\n\nplt.clf()\nsns.countplot(data=train_df, x='LotConfig')\nplt.show()\n\nplt.clf()\nsns.histplot(train_df[train_df['LotConfig']=='Inside']['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['LotConfig']=='Corner']['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['LotConfig']=='CulDSac']['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['LotConfig']=='FR2']['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['LotConfig']=='FR3']['SalePrice'], stat='density')\nplt.title('LotConfig 범주별, SalePrice 분포')\nplt.show()\n\nprint(train_df['LotConfig'].value_counts())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLotConfig\nInside     1052\nCorner      263\nCulDSac      94\nFR2          47\nFR3           4\nName: count, dtype: int64\n\n\n   Inside   안쪽 부지\n   Corner   코너 부지\n   CulDSac  출입하는 길이 하나인 곳\n   FR2      도로.강을 향한 면이 2곳\n   FR3      도로.강을 향한 면이 3곳"
   },
   {
     "objectID": "project2/columns/columns.html#lotconfig-부지-배열-부지-위치가-안쪽인지-코너인지-도로가-몇-개인지-등",
@@ -1118,54 +600,5 @@
     "title": "house price columns",
     "section": "13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)",
     "text": "13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)\n\ntrain_cat_count('Neighborhood')\ntrain_cat_hist('Neighborhood')\nplt.clf()\nsns.countplot(data=train_df, x='Neighborhood')\nplt.xticks(rotation = 50)\nplt.show()\n\n\nb = train_df['Neighborhood'].unique()\n\nplt.clf()\nsns.histplot(train_df[train_df['Neighborhood']==b[0]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[1]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[2]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[3]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[4]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[5]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[6]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[7]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[8]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[9]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[11]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[12]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[13]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[14]]['SalePrice'], stat='density')\nplt.title('Neighborhood 범주별, SalePrice 분포')\nplt.show()\n\nprint(train_df['Neighborhood'].value_counts().sort_index())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeighborhood\nBlmngtn     17\nBlueste      2\nBrDale      16\nBrkSide     58\nClearCr     28\nCollgCr    150\nCrawfor     51\nEdwards    100\nGilbert     79\nIDOTRR      37\nMeadowV     17\nMitchel     49\nNAmes      225\nNPkVill      9\nNWAmes      73\nNoRidge     41\nNridgHt     77\nOldTown    113\nSWISU       25\nSawyer      74\nSawyerW     59\nSomerst     86\nStoneBr     25\nTimber      38\nVeenker     11\nName: count, dtype: int64\n\n\n   Blmngtn  Bloomington Heights\n   Blueste  Bluestem\n   BrDale   Briardale\n   BrkSide  Brookside\n   ClearCr  Clear Creek\n   CollgCr  College Creek\n   Crawfor  Crawford\n   Edwards  Edwards\n   Gilbert  Gilbert\n   IDOTRR   Iowa DOT and Rail Road\n   MeadowV  Meadow Village\n   Mitchel  Mitchell\n   Names    North Ames\n   NoRidge  Northridge\n   NPkVill  Northpark Villa\n   NridgHt  Northridge Heights\n   NWAmes   Northwest Ames\n   OldTown  Old Town\n   SWISU    South & West of Iowa State University\n   Sawyer   Sawyer\n   SawyerW  Sawyer West\n   Somerst  Somerset\n   StoneBr  Stone Brook\n   Timber   Timberland\n   Veenker  Veenker\n분포 차이가 있는 지역이 있는 것 같음. &lt;- 특정 지역은 집값의 차이가 있다고 볼 수 있음. 집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.\n빨간색, 파란색 분포에서 이상치가 있어보임.\n보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.\n집 데이터가 가장 많은 지역은 NridgHt임. 그 다음이 CollgCr임.\n\nplt.clf()\nsns.histplot(train_df[train_df['Neighborhood']==b[0]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='density')\nplt.title('Neighborhood 범주별, SalePrice 분포')\nplt.show()\n\n\n\n\n\n\n\n\n집 데이터가 가장 많은 두 지역을 보면 집값 차이가 큼"
-  },
-  {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Recent posts",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/graph/index.html",
-    "href": "posts/graph/index.html",
-    "title": "graph",
-    "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/index.html#그래프-그리기",
-    "href": "posts/graph/index.html#그래프-그리기",
-    "title": "graph",
-    "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/index.html#sns의-countplot-사용한-막대-그래프",
-    "href": "posts/graph/index.html#sns의-countplot-사용한-막대-그래프",
-    "title": "graph",
-    "section": "sns의 countplot 사용한 막대 그래프",
-    "text": "sns의 countplot 사용한 막대 그래프\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=mpg['drv'].value_counts().index)\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=['r','4','f'])\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프",
-    "href": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프",
-    "title": "graph",
-    "section": "sns의 lineplot() 사용한 선 그래프",
-    "text": "sns의 lineplot() 사용한 선 그래프\n\neconomics = pd.read_csv('../../economics.csv')\n\nplt.clf()\nsns.lineplot(data=economics , x='date', y='unemploy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프---x축-주의",
-    "href": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프---x축-주의",
-    "title": "graph",
-    "section": "sns의 lineplot() 사용한 선 그래프 - x축 주의",
-    "text": "sns의 lineplot() 사용한 선 그래프 - x축 주의\n\neconomics['date'] = pd.to_datetime(economics['date'])\neconomics['year'] = economics['date'].dt.year\nplt.clf()\nsns.lineplot(data=economics, x='year', y='unemploy')\nplt.show()"
-  },
-  {
-    "objectID": "posts/graph/index.html#sns의-boxplot-사용한-상자-그림",
-    "href": "posts/graph/index.html#sns의-boxplot-사용한-상자-그림",
-    "title": "graph",
-    "section": "sns의 boxplot() 사용한 상자 그림",
-    "text": "sns의 boxplot() 사용한 상자 그림\n\nplt.clf()\nsns.boxplot(data= mpg, x='drv', y='hwy', hue='drv')\nplt.show()"
   }
 ]
