@@ -6,5 +6,3 @@ listing:
   type: grid  # 여기다가 'grid'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.
   categories: true
 ---
-
-

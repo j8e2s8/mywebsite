@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1></h1>
 <section id="검정을-위한-가설을-명확하게-서술하시오." class="level2">
 <h2 class="anchored" data-anchor-id="검정을-위한-가설을-명확하게-서술하시오.">2. 검정을 위한 가설을 명확하게 서술하시오.</h2>
-<div id="72f236a3" class="cell" data-execution_count="1">
+<div id="6fdf1c43" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
 <pre><code>H0 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &gt;= 16.0 (mu0)
 H1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16.0 (mu0)</code></pre>
@@ -224,7 +224,7 @@ H1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16
 <h1></h1>
 <section id="검정통계량-계산하시오." class="level2">
 <h2 class="anchored" data-anchor-id="검정통계량-계산하시오.">3. 검정통계량 계산하시오.</h2>
-<div id="109e563c" class="cell" data-execution_count="2">
+<div id="5bbbae17" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="fl">15.078</span>, <span class="fl">15.752</span>, <span class="fl">15.549</span>, <span class="fl">15.56</span>, <span class="fl">16.098</span>, <span class="fl">13.277</span>, <span class="fl">15.462</span>, <span class="fl">16.116</span>, <span class="fl">15.214</span>, <span class="fl">16.93</span>, <span class="fl">14.118</span>, <span class="fl">14.927</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fl">15.382</span>, <span class="fl">16.709</span>, <span class="fl">16.804</span>])</span>
@@ -243,7 +243,7 @@ H1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16
 <h1></h1>
 <section id="pvalue을-구하세요." class="level2">
 <h2 class="anchored" data-anchor-id="pvalue을-구하세요.">4. p‑value을 구하세요.</h2>
-<div id="010aa993" class="cell" data-execution_count="3">
+<div id="6312b040" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"p-value :"</span>,t.cdf(z, df<span class="op">=</span><span class="bu">len</span>(x) <span class="op">-</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -256,7 +256,7 @@ H1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16
 <h1></h1>
 <section id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." class="level2">
 <h2 class="anchored" data-anchor-id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.">6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.</h2>
-<div id="16102126" class="cell" data-execution_count="4">
+<div id="66803737" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t0025 <span class="op">=</span> t.ppf(<span class="fl">0.975</span>, df<span class="op">=</span><span class="dv">15</span><span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"95% 신뢰구간 : ("</span>,x_bar <span class="op">-</span> t0025<span class="op">*</span>sample_std<span class="op">/</span>np.sqrt(<span class="bu">len</span>(x)) , <span class="st">","</span>, x_bar <span class="op">+</span> t0025<span class="op">*</span>sample_std<span class="op">/</span>np.sqrt(<span class="bu">len</span>(x)), <span class="st">")"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
