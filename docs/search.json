@@ -324,9 +324,9 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "myblog",
+    "title": "Recent posts",
     "section": "",
-    "text": "hw6\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nRecent posts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nbigdata\n\n\n\n\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "\"\"\"\n---\ntitle: \"myblog\"\nlisting:\n  contents: posts\n  sort: \"date desc\"\n  type: grid  # 여기다가 'grid'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.\n  categories: true\n---\n\"\"\"\n\n'\\n---\\ntitle: \"myblog\"\\nlisting:\\n  contents: posts\\n  sort: \"date desc\"\\n  type: grid  # 여기다가 \\'grid\\'posts 파일에 넣는 파일들을 바둑모양으로 띄워줘라, 원래는 default 값으로 되어있었음.\\n  categories: true\\n---\\n'\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nRecent posts\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhouse price columns\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html",
