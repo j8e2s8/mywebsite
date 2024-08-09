@@ -101,8 +101,8 @@ def train_cat_hist(col):
     plt.show()
 ```
 
-
 #### 범주컬럼의 범주별로 x컬럼과 y컬럼의 관계 확인 함수
+
 ```{python}
 WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid']
                               
@@ -123,9 +123,6 @@ def train_cat_rel_xy(col1, col2):  # col1 : 수치, col2:범주
         plt.show()
 ```
 
-
-
-
 ```{python}
 n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)
 n.tolist()
@@ -137,12 +134,6 @@ plt.clf()
 sns.scatterplot(data=train_df, x='LotArea', y='SalePrice', color=WxColourDB[12])  # 색 달라져야함
 plt.show()
 ```
-
-
-
-
-
-
 
 # 
 
@@ -253,7 +244,6 @@ LotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice
 train_cat_rel_xy('LotFrontage', 'MSZoning') # 범주별로 y값과의 관계를 알아봄.
 ```
 
-
 ```{python}
 plt.clf()
 sns.scatterplot(data=train_df, x = 'LotFrontage', y='SalePrice', hue='MSZoning')
@@ -261,19 +251,18 @@ plt.show()
 
 ```
 
-
 ```{python}
 plt.clf()
 sns.scatterplot(data=train_df, x = 'LotFrontage', y='LotArea', size='SalePrice')
 plt.show()
 ```
+
 ```{python}
 train_df['MSSubClass'] = train_df['MSSubClass'].astype(str)
 plt.clf()
 sns.scatterplot(data=train_df, x = 'MSSubClass', y='Neighborhood', size='SalePrice')
 plt.show()
 ```
-
 
 # 
 
@@ -287,12 +276,9 @@ train_rel_xy('LotArea')
 
 LotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.
 
-
 ```{python}
 train_cat_rel_xy('LotArea', 'MSZoning') # 범주별로 y값과의 관계를 알아봄.
 ```
-
-
 
 # 
 
@@ -508,9 +494,9 @@ print(train_df['Neighborhood'].value_counts().sort_index())
    Veenker  Veenker
 ```
 
-분포 차이가 있는 지역이 있는 것 같음. \<- 특정 지역은 집값의 차이가 있다고 볼 수 있음. 집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.  
-빨간색, 파란색 분포에서 이상치가 있어보임.  
-보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.  
+분포 차이가 있는 지역이 있는 것 같음. \<- 특정 지역은 집값의 차이가 있다고 볼 수 있음. 집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.\
+빨간색, 파란색 분포에서 이상치가 있어보임.\
+보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.\
 집 데이터가 가장 많은 지역은 NridgHt임. 그 다음이 CollgCr임.
 
 ```{python}

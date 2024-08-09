@@ -893,7 +893,7 @@
     "href": "posts/hw4/index.html",
     "title": "hw4",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.641466623473874\ns_2_2 :  1.641466623473874\ns_2_3 :  1.641466623473874\nk_2_1 :  1.5593932923001803\nk_2_2 :  1.55939329230018\nk_2_3 :  1.55939329230018\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.387283634014292\ns_2_2 :  1.3872836340142918\ns_2_3 :  1.3872836340142918\nk_2_1 :  1.3179194523135773\nk_2_2 :  1.317919452313577\nk_2_3 :  1.317919452313577\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
   },
   {
     "objectID": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
@@ -907,7 +907,7 @@
     "href": "posts/hw4/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
     "title": "hw4",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.641466623473874\ns_2_2 :  1.641466623473874\ns_2_3 :  1.641466623473874\nk_2_1 :  1.5593932923001803\nk_2_2 :  1.55939329230018\nk_2_3 :  1.55939329230018\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.387283634014292\ns_2_2 :  1.3872836340142918\ns_2_3 :  1.3872836340142918\nk_2_1 :  1.3179194523135773\nk_2_2 :  1.317919452313577\nk_2_3 :  1.317919452313577\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
   },
   {
     "objectID": "posts/hw5/index.html",
@@ -1033,14 +1033,14 @@
     "href": "project2/columns/columns.html#lotfrontage-집과-연결된-거리의-직선-길이-feet",
     "title": "house price columns",
     "section": "4. ‘LotFrontage’ : 집과 연결된 거리의 직선 길이 (feet)",
-    "text": "4. ‘LotFrontage’ : 집과 연결된 거리의 직선 길이 (feet)\n\ntrain_numeric_hist('LotFrontage')\n\ntrain_rel_xy('LotFrontage')\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n결측치 259개 있음. &lt;- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.\nLotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함."
+    "text": "4. ‘LotFrontage’ : 집과 연결된 거리의 직선 길이 (feet)\n\ntrain_numeric_hist('LotFrontage')\n\ntrain_rel_xy('LotFrontage')\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n결측치 259개 있음. &lt;- 집에 연결된 거리가 없어서 결측치인걸 수도 있음. 그렇다면 0값으로 처리해주기.\nLotFrontage의 분포를 보면 이상치 있어보임. LotFrontage과 SalePrice의 관계를 보면 많이 퍼져있기는한데 이상치를 제외하면 양의 관계가 있는 것 같기도 함.\n\ntrain_cat_rel_xy('LotFrontage', 'MSZoning') # 범주별로 y값과의 관계를 알아봄.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=train_df, x = 'LotFrontage', y='SalePrice', hue='MSZoning')\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=train_df, x = 'LotFrontage', y='LotArea', size='SalePrice')\nplt.show()\n\n\n\n\n\n\n\n\n\ntrain_df['MSSubClass'] = train_df['MSSubClass'].astype(str)\nplt.clf()\nsns.scatterplot(data=train_df, x = 'MSSubClass', y='Neighborhood', size='SalePrice')\nplt.show()"
   },
   {
     "objectID": "project2/columns/columns.html#lotarea-부지-크기-square-feet",
     "href": "project2/columns/columns.html#lotarea-부지-크기-square-feet",
     "title": "house price columns",
     "section": "5. ‘LotArea’ : 부지 크기 (square feet)",
-    "text": "5. ‘LotArea’ : 부지 크기 (square feet)\n\ntrain_numeric_hist('LotArea')\n\ntrain_rel_xy('LotArea')\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임."
+    "text": "5. ‘LotArea’ : 부지 크기 (square feet)\n\ntrain_numeric_hist('LotArea')\n\ntrain_rel_xy('LotArea')\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLotArea의 분포를 보면 이상치 있어보임. LotArea과 SalePrice의 관계를 보면 일부의 집 때문에 굉장히 퍼지는 관계임.\n\ntrain_cat_rel_xy('LotArea', 'MSZoning') # 범주별로 y값과의 관계를 알아봄."
   },
   {
     "objectID": "project2/columns/columns.html#street-집에-접근-도로-유형-자갈길인지-포장길인지",
@@ -1125,5 +1125,47 @@
     "title": "Recent posts",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/graph/index.html",
+    "href": "posts/graph/index.html",
+    "title": "graph",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
+  },
+  {
+    "objectID": "posts/graph/index.html#그래프-그리기",
+    "href": "posts/graph/index.html#그래프-그리기",
+    "title": "graph",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\n\n\nplt.clf()\nsns.scatterplot(data=mpg, x='displ', y='hwy', hue='drv').set(xlim=[3,6], ylim=[10,30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\npx.scatter(data_frame = mpg, x = \"displ\" , y=\"hwy\", color = \"drv\")\n\n                                                \n\n\n\n\n\n\nmpg_group = mpg.groupby('drv', as_index=False).agg(hwy_mean = ('hwy', 'mean')).sort_values('hwy_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group, x='drv', y='hwy_mean', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nmpg_group3 = mpg.groupby('drv').agg(drv_count = ('drv','count')).sort_values('drv_count', ascending=False)\nplt.clf()\nsns.barplot(data= mpg_group3, x='drv', y='drv_count', hue='drv')\nplt.show()"
+  },
+  {
+    "objectID": "posts/graph/index.html#sns의-countplot-사용한-막대-그래프",
+    "href": "posts/graph/index.html#sns의-countplot-사용한-막대-그래프",
+    "title": "graph",
+    "section": "sns의 countplot 사용한 막대 그래프",
+    "text": "sns의 countplot 사용한 막대 그래프\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv')\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=mpg['drv'].value_counts().index)\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.clf()\nsns.countplot(data=mpg, x='drv', hue='drv', order=['r','4','f'])\nplt.show()"
+  },
+  {
+    "objectID": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프",
+    "href": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프",
+    "title": "graph",
+    "section": "sns의 lineplot() 사용한 선 그래프",
+    "text": "sns의 lineplot() 사용한 선 그래프\n\neconomics = pd.read_csv('../../economics.csv')\n\nplt.clf()\nsns.lineplot(data=economics , x='date', y='unemploy')\nplt.show()"
+  },
+  {
+    "objectID": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프---x축-주의",
+    "href": "posts/graph/index.html#sns의-lineplot-사용한-선-그래프---x축-주의",
+    "title": "graph",
+    "section": "sns의 lineplot() 사용한 선 그래프 - x축 주의",
+    "text": "sns의 lineplot() 사용한 선 그래프 - x축 주의\n\neconomics['date'] = pd.to_datetime(economics['date'])\neconomics['year'] = economics['date'].dt.year\nplt.clf()\nsns.lineplot(data=economics, x='year', y='unemploy')\nplt.show()"
+  },
+  {
+    "objectID": "posts/graph/index.html#sns의-boxplot-사용한-상자-그림",
+    "href": "posts/graph/index.html#sns의-boxplot-사용한-상자-그림",
+    "title": "graph",
+    "section": "sns의 boxplot() 사용한 상자 그림",
+    "text": "sns의 boxplot() 사용한 상자 그림\n\nplt.clf()\nsns.boxplot(data= mpg, x='drv', y='hwy', hue='drv')\nplt.show()"
   }
 ]
