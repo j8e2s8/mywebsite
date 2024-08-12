@@ -1,8 +1,9 @@
 ---
-title: "hw5"
+title: "hw6"
+subtitle: "모평균에 대한 신뢰구간"
 author: "정은서"
 date: "2024-07-30"
-categories: [bigdata]
+categories: [statistics]
 editor: visual
 jupyter: python3
 ---

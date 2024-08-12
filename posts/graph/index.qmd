@@ -1,8 +1,9 @@
 ---
 title: "graph"
+subtitle: "그래프 종류와 코드"
 author: "정은서"
 date: "2024-07-22"
-categories: [bigdata]
+categories: [graph]
 editor: visual
 jupyter: python3
 ---

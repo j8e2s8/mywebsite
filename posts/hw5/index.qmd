@@ -1,8 +1,9 @@
 ---
-title: "hw4"
+title: "hw5"
+subtitle: "표본분산 - n, n-1 비교"
 author: "정은서"
 date: "2024-07-29 "
-categories: [bigdata]
+categories: [statistics]
 editor: visual
 jupyter: python3
 ---

@@ -18,7 +18,7 @@
     "href": "posts/index.html",
     "title": "Recent posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw3\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\nt검정 연습문제\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\nt검정 연습문제\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n정은서\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n정은서\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw3\n\n\n분포와 확률\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw7\n\n\nt검정 연습문제\n\n\n\n정은서\n\n\nAug 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\n모평균에 대한 신뢰구간\n\n\n\n정은서\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n표본분산 - n, n-1 비교\n\n\n\n정은서\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n그래프 종류와 코드\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n산점도와 막대그래프로 자료 표현\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n데이터 파악하기\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n데이터 파악하기\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/숙제 Qmd/index.html",
@@ -247,7 +247,7 @@
   {
     "objectID": "posts/hw4/index.html",
     "href": "posts/hw4/index.html",
-    "title": "hw3",
+    "title": "hw4",
     "section": "",
     "text": "import pandas as pd\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
   },
@@ -261,9 +261,9 @@
   {
     "objectID": "posts/hw5/index.html",
     "href": "posts/hw5/index.html",
-    "title": "hw4",
+    "title": "hw5",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.2815850339277062\ns_2_2 :  1.2815850339277062\ns_2_3 :  1.2815850339277062\nk_2_1 :  1.2175057822313209\nk_2_2 :  1.2175057822313209\nk_2_3 :  1.2175057822313209\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.7915174136823286\ns_2_2 :  1.7915174136823286\ns_2_3 :  1.7915174136823286\nk_2_1 :  1.701941542998212\nk_2_2 :  1.701941542998212\nk_2_3 :  1.701941542998212\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
   },
   {
     "objectID": "posts/hw5/index.html#데이터-불러오기",
@@ -303,7 +303,7 @@
   {
     "objectID": "posts/hw6/index.html",
     "href": "posts/hw6/index.html",
-    "title": "hw5",
+    "title": "hw6",
     "section": "",
     "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns\n\n\n\n\n\n\n\nimport numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0\n\n\n\n\n\n\n\n\n\n\n\nmale_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845\n\n\n\n\n\n\nsex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
   },
@@ -723,105 +723,105 @@
   {
     "objectID": "posts/hw7/index.html",
     "href": "posts/hw7/index.html",
-    "title": "hw6",
+    "title": "hw7",
     "section": "",
     "text": "슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22 년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여 한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다. 15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804\n표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지 판단해보시오. (유의수준 1%로 설정)"
   },
   {
     "objectID": "posts/hw7/index.html#검정을-위한-가설을-명확하게-서술하시오.",
     "href": "posts/hw7/index.html#검정을-위한-가설을-명확하게-서술하시오.",
-    "title": "hw6",
+    "title": "hw7",
     "section": "2. 검정을 위한 가설을 명확하게 서술하시오.",
     "text": "2. 검정을 위한 가설을 명확하게 서술하시오.\n\n\nH0 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &gt;= 16.0 (mu0)\nH1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16.0 (mu0)"
   },
   {
     "objectID": "posts/hw7/index.html#검정통계량-계산하시오.",
     "href": "posts/hw7/index.html#검정통계량-계산하시오.",
-    "title": "hw6",
+    "title": "hw7",
     "section": "3. 검정통계량 계산하시오.",
     "text": "3. 검정통계량 계산하시오.\n\nimport numpy as np\nx = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,\n15.382, 16.709, 16.804])\nx_bar = x.mean()\nsample_std = x.std(ddof=1)\n\nz = (x_bar - 16)/ (sample_std/np.sqrt(len(x)))\nprint(\"검정통계량 :\",z)\n\n검정통계량 : -1.8500447456376756"
   },
   {
     "objectID": "posts/hw7/index.html#pvalue을-구하세요.",
     "href": "posts/hw7/index.html#pvalue을-구하세요.",
-    "title": "hw6",
+    "title": "hw7",
     "section": "4. p‑value을 구하세요.",
     "text": "4. p‑value을 구하세요.\n\nfrom scipy.stats import t\nprint(\"p-value :\",t.cdf(z, df=len(x) -1))\n\np-value : 0.042762417664207845"
   },
   {
     "objectID": "posts/hw7/index.html#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.",
     "href": "posts/hw7/index.html#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.",
-    "title": "hw6",
+    "title": "hw7",
     "section": "6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.",
     "text": "6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.\n\nt0025 = t.ppf(0.975, df=15-1)\nprint(\"95% 신뢰구간 : (\",x_bar - t0025*sample_std/np.sqrt(len(x)) , \",\", x_bar + t0025*sample_std/np.sqrt(len(x)), \")\")\n\n95% 신뢰구간 : ( 14.988864240339733 , 16.074602426326933 )"
   },
   {
     "objectID": "posts/hw6/index.html#데이터-불러오기",
     "href": "posts/hw6/index.html#데이터-불러오기",
-    "title": "hw5",
+    "title": "hw6",
     "section": "",
     "text": "import pandas as pd\nwelfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')\nwelfare.head()\n\n\n\n\n\n\n\n\nh14_id\nh14_ind\nh14_sn\nh14_merkey\nh_new\nh14_cobf\np14_wsc\np14_wsl\np14_wgc\np14_wgl\n...\nwc14_64\nwc14_65\nwc14_5aq4\nwc14_5aq5\nwc14_5aq6\nh14_pers_income1\nh14_pers_income2\nh14_pers_income3\nh14_pers_income4\nh14_pers_income5\n\n\n\n\n0\n2.0\n1.0\n1.0\n20101.0\n0.0\nNaN\n0.291589\n0.291589\n1307.764781\n1307.764781\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n1\n3.0\n1.0\n1.0\n30101.0\n0.0\nNaN\n0.419753\n0.419753\n1882.570960\n1882.570960\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n2\n4.0\n1.0\n1.0\n40101.0\n0.0\nNaN\n0.265263\n0.265980\n1189.691668\n1192.908537\n...\nNaN\n\nNaN\nNaN\nNaN\nNaN\n1284.0\nNaN\n0.0\nNaN\n\n\n3\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n0.494906\n0.495941\n2219.630833\n2224.273816\n...\n1.0\n.\n2.0\n4.0\n4.0\n2304.0\nNaN\n1800.0\n0.0\nNaN\n\n\n4\n6.0\n1.0\n1.0\n60101.0\n0.0\nNaN\n1.017935\n1.017935\n4565.389177\n4565.389177\n...\n1.0\n.\n1.0\n5.0\n2.0\nNaN\nNaN\nNaN\n0.0\nNaN\n\n\n\n\n5 rows × 830 columns"
   },
   {
     "objectID": "posts/hw6/index.html#필요한-데이터만-가져오기",
     "href": "posts/hw6/index.html#필요한-데이터만-가져오기",
-    "title": "hw5",
+    "title": "hw6",
     "section": "",
     "text": "import numpy as np\ndf = welfare[['h14_g3','p1402_8aq1']]\ndf = df.rename(columns = {'h14_g3' : 'sex',\n                           'p1402_8aq1' : 'income' })\ndf = df.dropna(subset='income')\ndf['sex'] = np.where(df['sex'] == 1, 'male', 'female')\ndf.head()\n\n\n\n\n\n\n\n\nsex\nincome\n\n\n\n\n2\nmale\n107.0\n\n\n3\nmale\n192.0\n\n\n7\nfemale\n27.0\n\n\n8\nfemale\n27.0\n\n\n14\nmale\n338.0"
   },
   {
     "objectID": "posts/hw6/index.html#신뢰구간-구하기",
     "href": "posts/hw6/index.html#신뢰구간-구하기",
-    "title": "hw5",
+    "title": "hw6",
     "section": "",
     "text": "male_income = df.loc[df['sex']=='male', 'income']\nfemale_income = df.loc[df['sex'] == 'female', 'income']\nmale_bar = male_income.mean()\nfemale_bar = female_income.mean()\nmale_scale = np.sqrt(male_income.var(ddof=1))\nfemale_scale = np.sqrt(female_income.var(ddof=1))\nmale_n = len(male_income)\nfemale_n = len(female_income)\n\nfrom scipy.stats import norm\n\nz0025 = norm.ppf(0.975, loc=0 , scale=1)\nmale_a = male_bar + z0025*male_scale/np.sqrt(male_n)\nmale_b = male_bar - z0025*male_scale/np.sqrt(male_n)\nprint(\"male의 오른쪽 신뢰구간 위치 :\", male_a)\nprint(\"male의 왼쪽 신뢰구간 위치 :\", male_b)\n\nfemale_a = female_bar + z0025*female_scale/np.sqrt(female_n)\nfemale_b = female_bar - z0025*female_scale/np.sqrt(female_n)\nprint(\"female의 오른쪽 신뢰구간 위치 :\", female_a)\nprint(\"female의 왼쪽 신뢰구간 위치 :\", female_b)\n\nmale의 오른쪽 신뢰구간 위치 : 357.96254968365116\nmale의 왼쪽 신뢰구간 위치 : 340.11259229974775\nfemale의 오른쪽 신뢰구간 위치 : 191.7557368532799\nfemale의 왼쪽 신뢰구간 위치 : 180.83045468346845"
   },
   {
     "objectID": "posts/hw6/index.html#groupby로-성별별-평균-income-데이터-만들기",
     "href": "posts/hw6/index.html#groupby로-성별별-평균-income-데이터-만들기",
-    "title": "hw5",
+    "title": "hw6",
     "section": "",
     "text": "sex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\n\n\n\n\n0\nfemale\n186.293096\n\n\n1\nmale\n349.037571"
   },
   {
     "objectID": "posts/hw6/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
     "href": "posts/hw6/index.html#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기",
-    "title": "hw5",
+    "title": "hw6",
     "section": "",
     "text": "import matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.barplot(data=sex_income , x='sex', y='mean_income')\nplt.plot([0,0], [female_a,female_b], color='red')\nplt.plot([1,1], [male_a, male_b], color='red')\nplt.show()"
   },
   {
     "objectID": "posts/hw5/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
     "href": "posts/hw5/index.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법",
-    "title": "hw4",
+    "title": "hw5",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.2815850339277062\ns_2_2 :  1.2815850339277062\ns_2_3 :  1.2815850339277062\nk_2_1 :  1.2175057822313209\nk_2_2 :  1.2175057822313209\nk_2_3 :  1.2175057822313209\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
+    "text": "from scipy.stats import uniform\nimport numpy as np\nx = uniform.rvs(loc=3, scale=4, size=20)\nx_bar = np.mean(x)\ns_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1\ns_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2\ns_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3\n\nprint(\"s_2_1 : \",s_2_1)\nprint(\"s_2_2 : \",s_2_2)\nprint(\"s_2_3 : \",s_2_3)\n\nk_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1\nk_2_2 = x.var()  # n로 표본 분산 구하는 방법2\nk_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3\n\nprint(\"k_2_1 : \",k_2_1)\nprint(\"k_2_2 : \",k_2_2)\nprint(\"k_2_3 : \",k_2_3)\n\ns_2_1 :  1.7915174136823286\ns_2_2 :  1.7915174136823286\ns_2_3 :  1.7915174136823286\nk_2_1 :  1.701941542998212\nk_2_2 :  1.701941542998212\nk_2_3 :  1.701941542998212\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = x.var(axis=1, ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nnp.random.seed(20240729)\nx = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)\ns_2 = np.var(x, axis=1 ,ddof=1)\npopulation_variance = uniform.var(loc=3, scale=4)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nplt.clf()\nsns.histplot(s_2, stat='density')\nplt.axvline(x=population_variance, color='red')\nplt.show()"
   },
   {
     "objectID": "posts/hw4/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
     "href": "posts/hw4/index.html#mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.",
-    "title": "hw3",
+    "title": "hw4",
     "section": "",
     "text": "import pandas as pd\n\nmpg = pd.read_csv('../../mpg.csv')\nmpg.shape\n\n(234, 11)\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nplt.clf()\nsns.scatterplot(data = mpg, x='cty', y='hwy')\nplt.show()"
   },
   {
     "objectID": "posts/hw4/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
     "href": "posts/hw4/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
-    "title": "hw3",
+    "title": "hw4",
     "section": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.",
     "text": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv('../../midwest.csv')\n\nplt.clf()\nsns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])\nplt.show()"
   },
   {
     "objectID": "posts/hw4/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
     "href": "posts/hw4/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
-    "title": "hw3",
+    "title": "hw4",
     "section": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
     "text": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg_group = mpg.query(\"category == 'suv'\").groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).sort_values('cty_mean', ascending=False)\nplt.clf()\nsns.barplot(data=mpg_group , x='manufacturer', y='cty_mean')\nplt.show()"
   },
   {
     "objectID": "posts/hw4/index.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
     "href": "posts/hw4/index.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
-    "title": "hw3",
+    "title": "hw4",
     "section": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.",
     "text": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nmpg_group2 = mpg.groupby('category',as_index=False).agg(category_count = ('category', 'count') ).sort_values('category_count' , ascending = False)\nplt.clf()\nsns.barplot(data=mpg_group2, x='category', y='category_count')\nplt.show()"
   }

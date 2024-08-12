@@ -1,7 +1,9 @@
 ---
-title: "hw6"
+title: "hw7"
 subtitle: "t검정 연습문제"
 author: "정은서"
+date: "2024-08-05"
+categories: [statistics]
 editor: visual
 jupyter: python3
 ---

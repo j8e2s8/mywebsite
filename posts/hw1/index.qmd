@@ -1,5 +1,6 @@
 ---
 title: "hw1"
+subtitle: "데이터 파악하기"
 author: "정은서"
 date: "2024-07-15"
 categories: [bigdata]
