@@ -18,7 +18,7 @@
     "href": "posts/index.html",
     "title": "Recent posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw6\n\n\nt검정 연습문제\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n정은서\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n정은서\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\ngraph\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n정은서\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nhw2\n\n\n\n정은서\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/숙제 Qmd/index.html",
@@ -600,5 +600,124 @@
     "title": "house price columns",
     "section": "13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)",
     "text": "13. ‘Neighborhood’ : Physical locations within Ames city limits (집 위치)\n\ntrain_cat_count('Neighborhood')\ntrain_cat_hist('Neighborhood')\nplt.clf()\nsns.countplot(data=train_df, x='Neighborhood')\nplt.xticks(rotation = 50)\nplt.show()\n\n\nb = train_df['Neighborhood'].unique()\n\nplt.clf()\nsns.histplot(train_df[train_df['Neighborhood']==b[0]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[1]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[2]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[3]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[4]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[5]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[6]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[7]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[8]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[9]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[11]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[12]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[13]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[14]]['SalePrice'], stat='density')\nplt.title('Neighborhood 범주별, SalePrice 분포')\nplt.show()\n\nprint(train_df['Neighborhood'].value_counts().sort_index())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeighborhood\nBlmngtn     17\nBlueste      2\nBrDale      16\nBrkSide     58\nClearCr     28\nCollgCr    150\nCrawfor     51\nEdwards    100\nGilbert     79\nIDOTRR      37\nMeadowV     17\nMitchel     49\nNAmes      225\nNPkVill      9\nNWAmes      73\nNoRidge     41\nNridgHt     77\nOldTown    113\nSWISU       25\nSawyer      74\nSawyerW     59\nSomerst     86\nStoneBr     25\nTimber      38\nVeenker     11\nName: count, dtype: int64\n\n\n   Blmngtn  Bloomington Heights\n   Blueste  Bluestem\n   BrDale   Briardale\n   BrkSide  Brookside\n   ClearCr  Clear Creek\n   CollgCr  College Creek\n   Crawfor  Crawford\n   Edwards  Edwards\n   Gilbert  Gilbert\n   IDOTRR   Iowa DOT and Rail Road\n   MeadowV  Meadow Village\n   Mitchel  Mitchell\n   Names    North Ames\n   NoRidge  Northridge\n   NPkVill  Northpark Villa\n   NridgHt  Northridge Heights\n   NWAmes   Northwest Ames\n   OldTown  Old Town\n   SWISU    South & West of Iowa State University\n   Sawyer   Sawyer\n   SawyerW  Sawyer West\n   Somerst  Somerset\n   StoneBr  Stone Brook\n   Timber   Timberland\n   Veenker  Veenker\n분포 차이가 있는 지역이 있는 것 같음. &lt;- 특정 지역은 집값의 차이가 있다고 볼 수 있음. 집값이 비슷한 지역끼리 묶어서 분석해볼 수도 있을 것 같음.\n빨간색, 파란색 분포에서 이상치가 있어보임.\n보라색, 하늘색, 주황색, 회색, 분홍색 지역은 특정 집값에 몰려있는 것 같음.\n집 데이터가 가장 많은 지역은 NridgHt임. 그 다음이 CollgCr임.\n\nplt.clf()\nsns.histplot(train_df[train_df['Neighborhood']==b[0]]['SalePrice'], stat='density')\nsns.histplot(train_df[train_df['Neighborhood']==b[10]]['SalePrice'], stat='density')\nplt.title('Neighborhood 범주별, SalePrice 분포')\nplt.show()\n\n\n\n\n\n\n\n\n집 데이터가 가장 많은 두 지역을 보면 집값 차이가 큼"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "hw1",
+    "section": "",
+    "text": "import pandas as pd\n\ndf = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],\n                   '가격' : [1800, 1500, 3000],\n                   '판매량' : [24,38,13]})\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
+  },
+  {
+    "objectID": "about.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
+    "href": "about.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
+    "title": "hw1",
+    "section": "",
+    "text": "import pandas as pd\n\ndf = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],\n                   '가격' : [1800, 1500, 3000],\n                   '판매량' : [24,38,13]})\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
+  },
+  {
+    "objectID": "about.html#앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.",
+    "href": "about.html#앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.",
+    "title": "hw1",
+    "section": "앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.",
+    "text": "앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.\n\nimport numpy as np\n\n# 가격 평균\nprint(\"가격 평균 : \",np.mean(df['가격']))\n\n#판매량 평균\nprint(\"판매량 평균 : \",np.mean(df['판매량']))\n\n가격 평균 :  2100.0\n판매량 평균 :  25.0"
+  },
+  {
+    "objectID": "about.html#mpg-데이터를-불러와-복사본을-만드세요.",
+    "href": "about.html#mpg-데이터를-불러와-복사본을-만드세요.",
+    "title": "hw1",
+    "section": "mpg 데이터를 불러와 복사본을 만드세요.",
+    "text": "mpg 데이터를 불러와 복사본을 만드세요.\n\nimport pandas as pd\n\ndf = pd.read_csv('mpg.csv')\n\ndf_copy = df.copy()\ndf_copy\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
+  },
+  {
+    "objectID": "about.html#복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
+    "href": "about.html#복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
+    "title": "hw1",
+    "section": "복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.",
+    "text": "복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.\n\ndf_copy=df_copy.rename(columns={'cty' : 'city', 'hwy' : 'highway'})\ndf_copy\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncity\nhighway\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
+  },
+  {
+    "objectID": "about.html#데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.-다음과-같은-결과물이-출력되어야-합니다.",
+    "href": "about.html#데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.-다음과-같은-결과물이-출력되어야-합니다.",
+    "title": "hw1",
+    "section": "데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.",
+    "text": "데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.\n\ndf_copy.head()\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncity\nhighway\nfl\ncategory\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact"
+  },
+  {
+    "objectID": "about.html#midwest.csv를-불러와-데이터의-특징을-파악하세요.",
+    "href": "about.html#midwest.csv를-불러와-데이터의-특징을-파악하세요.",
+    "title": "hw1",
+    "section": "midwest.csv를 불러와 데이터의 특징을 파악하세요.",
+    "text": "midwest.csv를 불러와 데이터의 특징을 파악하세요.\n\nimport pandas as pd\n\nmidwest = pd.read_csv('midwest.csv')\nmidwest.head()\n\n#pd.set_option('display.max_columns', None)\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\npoptotal\npopdensity\npopwhite\npopblack\npopamerindian\npopasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n\n\n5 rows × 28 columns\n\n\n\n\nmidwest.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 437 entries, 0 to 436\nData columns (total 28 columns):\n #   Column                Non-Null Count  Dtype  \n---  ------                --------------  -----  \n 0   PID                   437 non-null    int64  \n 1   county                437 non-null    object \n 2   state                 437 non-null    object \n 3   area                  437 non-null    float64\n 4   poptotal              437 non-null    int64  \n 5   popdensity            437 non-null    float64\n 6   popwhite              437 non-null    int64  \n 7   popblack              437 non-null    int64  \n 8   popamerindian         437 non-null    int64  \n 9   popasian              437 non-null    int64  \n 10  popother              437 non-null    int64  \n 11  percwhite             437 non-null    float64\n 12  percblack             437 non-null    float64\n 13  percamerindan         437 non-null    float64\n 14  percasian             437 non-null    float64\n 15  percother             437 non-null    float64\n 16  popadults             437 non-null    int64  \n 17  perchsd               437 non-null    float64\n 18  percollege            437 non-null    float64\n 19  percprof              437 non-null    float64\n 20  poppovertyknown       437 non-null    int64  \n 21  percpovertyknown      437 non-null    float64\n 22  percbelowpoverty      437 non-null    float64\n 23  percchildbelowpovert  437 non-null    float64\n 24  percadultpoverty      437 non-null    float64\n 25  percelderlypoverty    437 non-null    float64\n 26  inmetro               437 non-null    int64  \n 27  category              437 non-null    object \ndtypes: float64(15), int64(10), object(3)\nmemory usage: 95.7+ KB\n\n\n결측치가 하나도 없는 데이터이다. 범주 컬럼은 3개이고, 그 외에는 다 수치컬럼이다."
+  },
+  {
+    "objectID": "about.html#poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정",
+    "href": "about.html#poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정",
+    "title": "hw1",
+    "section": "poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정",
+    "text": "poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정\n\nmidwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n\n\n5 rows × 28 columns"
+  },
+  {
+    "objectID": "about.html#total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.",
+    "href": "about.html#total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.",
+    "title": "hw1",
+    "section": "total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.",
+    "text": "total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.\n\nmidwest['pct'] = (midwest['asian']/midwest['total'])*100\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\npct\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.376759\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.451722\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.106731\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.486918\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.085675\n\n\n\n\n5 rows × 29 columns\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.clf()\nmidwest['pct'].plot.hist()\nplt.show()"
+  },
+  {
+    "objectID": "about.html#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
+    "href": "about.html#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
+    "title": "hw1",
+    "section": "아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.",
+    "text": "아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.\n\nimport numpy as np\n\nprint( \"아시아 인구 백분율 전체 평균 :\",np.mean(midwest['pct']) )\n\n아시아 인구 백분율 전체 평균 : 0.4872461834357345\n\n\n\nmidwest['size'] = np.where(midwest['pct'] &gt; np.mean(midwest['pct']) , 'large', 'small')\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\npct\nsize\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.376759\nsmall\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.451722\nsmall\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.106731\nsmall\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.486918\nsmall\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.085675\nsmall\n\n\n\n\n5 rows × 30 columns"
+  },
+  {
+    "objectID": "about.html#large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
+    "href": "about.html#large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
+    "title": "hw1",
+    "section": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.",
+    "text": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\nplt.clf()\nmidwest['size'].value_counts().plot.bar(rot=0)\nplt.show()"
+  },
+  {
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "KB데이터",
+    "section": "",
+    "text": "60대 이상 소비자를 타켓으로 어느 지역을 활성화하는게 효과적일까?"
+  },
+  {
+    "objectID": "presentation.html#연령-구간별-인구-비율-계산",
+    "href": "presentation.html#연령-구간별-인구-비율-계산",
+    "title": "KB데이터",
+    "section": "(연령 구간별 인구 비율 계산)",
+    "text": "(연령 구간별 인구 비율 계산)\n\nmarket_pop['pct_under20'] = round(market_pop['under20'] / market_pop['total_pop'] * 100, 1) #미성년자 비율 추가 + 소숫점 정리\nmarket_pop['pct_2050'] = round(market_pop['2050'] / market_pop['total_pop'] * 100, 1)\nmarket_pop['pct_over60'] = round(market_pop['over60'] / market_pop['total_pop'] * 100, 1)"
+  },
+  {
+    "objectID": "presentation.html#시장.점포-1개-당-60대-이상-인구-비율-계산",
+    "href": "presentation.html#시장.점포-1개-당-60대-이상-인구-비율-계산",
+    "title": "KB데이터",
+    "section": "(시장.점포 1개 당 60대 이상 인구 비율 계산)",
+    "text": "(시장.점포 1개 당 60대 이상 인구 비율 계산)\n\nmarket_pop['old_per_market'] = round(market_pop['over60'] / market_pop['market_count'], 1)\nmarket_pop['old_per_store'] = round(market_pop['over60'] / market_pop['store_sum'], 1)"
+  },
+  {
+    "objectID": "presentation.html#대-이상-인구-비율이-평균보다-큰-지역-작은-지역-구분",
+    "href": "presentation.html#대-이상-인구-비율이-평균보다-큰-지역-작은-지역-구분",
+    "title": "KB데이터",
+    "section": "(60대 이상 인구 비율이 평균보다 큰 지역, 작은 지역 구분)",
+    "text": "(60대 이상 인구 비율이 평균보다 큰 지역, 작은 지역 구분)\n\n# 60대 이상 비율의 평균을 구한 뒤 그것보다 높거나 낮다는것 표시.\nmarket_pop['over60_mean_updown'] = \\\n  np.where(market_pop['pct_over60'] &gt;= market_pop['pct_over60'].mean(), 'UP', 'DOWN')"
+  },
+  {
+    "objectID": "presentation.html#평균-기준으로-한-근거-60대-이상-박스플롯",
+    "href": "presentation.html#평균-기준으로-한-근거-60대-이상-박스플롯",
+    "title": "KB데이터",
+    "section": "평균 기준으로 한 근거 : 60대 이상 박스플롯",
+    "text": "평균 기준으로 한 근거 : 60대 이상 박스플롯\n\npx.box(data_frame = market_pop, y = 'pct_over60')"
+  },
+  {
+    "objectID": "presentation.html#온누리-상품권을-사용하는-시장-수",
+    "href": "presentation.html#온누리-상품권을-사용하는-시장-수",
+    "title": "KB데이터",
+    "section": "(온누리 상품권을 사용하는 시장 수)",
+    "text": "(온누리 상품권을 사용하는 시장 수)\n\nmarket_pop['pct_certificate'] = \\\n round(market_pop['certificate_count'] / market_pop['market_count'] *100, 1)\n\n\nmarket_pop.head()\n\n\n\n\n\n\n\n\nregion\nmarket_count\nstore_sum\ncertificate_count\ntotal_pop\nunder20\n2050\nover60\npct_under20\npct_2050\npct_over60\nold_per_market\nold_per_store\nover60_mean_updown\npct_certificate\n\n\n\n\n0\n강원도\n58\n6811\n54\n1549507\n294348\n894249\n360910\n19.0\n57.7\n23.3\n6222.6\n53.0\nUP\n93.1\n\n\n1\n경기도\n130\n18977\n121\n12522606\n2730973\n7878980\n1912653\n21.8\n62.9\n15.3\n14712.7\n100.8\nDOWN\n93.1\n\n\n2\n경상남도\n155\n18156\n102\n3364702\n702154\n2004453\n658095\n20.9\n59.6\n19.6\n4245.8\n36.2\nUP\n65.8\n\n\n3\n경상북도\n149\n16582\n106\n2702826\n500721\n1544234\n657871\n18.5\n57.1\n24.3\n4415.2\n39.7\nUP\n71.1\n\n\n4\n광주광역시\n26\n3411\n25\n1472199\n340705\n895137\n236357\n23.1\n60.8\n16.1\n9090.7\n69.3\nDOWN\n96.2"
   }
 ]

@@ -1,5 +1,6 @@
 ---
 title: "hw6"
+subtitle: "t검정 연습문제"
 author: "정은서"
 editor: visual
 jupyter: python3
