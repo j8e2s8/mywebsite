@@ -5,7 +5,7 @@ listing:
     - "**/*/**.qmd"  # qmd 파일을 post 해라
     - "**/*/**.ipynb"  # ipynb 파일을 post 해라
     type: grid  # 행으로 list형태로 나오는 와중에 열으로 바둑모양으로 파일을 올려줘라
-    fields: [image, date, title, subtitle]
+    fields: [image, date, title, subtitle, author]
     sort: "date desc"
     categories: cloud
     sort-ui: true
