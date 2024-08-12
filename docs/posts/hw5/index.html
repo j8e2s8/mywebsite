@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="정은서">
-<meta name="dcterms.date" content="2024-07-30">
+<meta name="dcterms.date" content="2024-07-29">
 
-<title>은서 만두만두 - hw5</title>
+<title>hw4 – 은서 만두만두</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,9 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -121,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -144,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -153,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">hw5</h1>
+      <h1 class="title">hw4</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">bigdata</div>
               </div>
@@ -173,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 30, 2024</p>
+        <p class="date">July 29, 2024</p>
       </div>
     </div>
     
@@ -189,13 +186,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#숙제-챕터-9-2-설문조사-그래프에서-각-성별-95-신뢰구간-계산후-그리기.-norm.ppf-사용해서-그릴-것.-모분산은-표본-분산을-사용해서-추정" id="toc-숙제-챕터-9-2-설문조사-그래프에서-각-성별-95-신뢰구간-계산후-그리기.-norm.ppf-사용해서-그릴-것.-모분산은-표본-분산을-사용해서-추정" class="nav-link active" data-scroll-target="#숙제-챕터-9-2-설문조사-그래프에서-각-성별-95-신뢰구간-계산후-그리기.-norm.ppf-사용해서-그릴-것.-모분산은-표본-분산을-사용해서-추정">숙제 : 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기. norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정</a>
+  <li><a href="#표본-분산-계산-시-왜-n-1로-나누는지-알아보도록-하겠습니다." id="toc-표본-분산-계산-시-왜-n-1로-나누는지-알아보도록-하겠습니다." class="nav-link active" data-scroll-target="#표본-분산-계산-시-왜-n-1로-나누는지-알아보도록-하겠습니다.">표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.</a>
   <ul class="collapse">
-  <li><a href="#데이터-불러오기" id="toc-데이터-불러오기" class="nav-link" data-scroll-target="#데이터-불러오기">1. 데이터 불러오기</a></li>
-  <li><a href="#필요한-데이터만-가져오기" id="toc-필요한-데이터만-가져오기" class="nav-link" data-scroll-target="#필요한-데이터만-가져오기">2. 필요한 데이터만 가져오기</a></li>
-  <li><a href="#신뢰구간-구하기" id="toc-신뢰구간-구하기" class="nav-link" data-scroll-target="#신뢰구간-구하기">3. 신뢰구간 구하기</a></li>
-  <li><a href="#groupby로-성별별-평균-income-데이터-만들기" id="toc-groupby로-성별별-평균-income-데이터-만들기" class="nav-link" data-scroll-target="#groupby로-성별별-평균-income-데이터-만들기">4. groupby로 성별별 평균 income 데이터 만들기</a></li>
-  <li><a href="#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기" id="toc-성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기" class="nav-link" data-scroll-target="#성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기">5. 성별별 평균 income 데이터로 막대그래프 그리고, 신뢰구간 그리기</a></li>
+  <li><a href="#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법" id="toc-균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법" class="nav-link" data-scroll-target="#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법">균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요. (n으로 구하는 방법, n-1로 구하는 방법)</a>
+  <ul class="collapse">
+  <li><a href="#참고-분산을-구하는-함수-3가지" id="toc-참고-분산을-구하는-함수-3가지" class="nav-link" data-scroll-target="#참고-분산을-구하는-함수-3가지">참고 : 분산을 구하는 함수 3가지</a></li>
+  <li><a href="#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용" id="toc-n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용" class="nav-link" data-scroll-target="#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용">1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)</a></li>
+  <li><a href="#각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요." id="toc-각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요." class="nav-link" data-scroll-target="#각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.">2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a>
+  <ul class="collapse">
+  <li><a href="#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요" id="toc-결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요" class="nav-link" data-scroll-target="#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요">3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -207,314 +212,202 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="숙제-챕터-9-2-설문조사-그래프에서-각-성별-95-신뢰구간-계산후-그리기.-norm.ppf-사용해서-그릴-것.-모분산은-표본-분산을-사용해서-추정" class="level1">
-<h1>숙제 : 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기. norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정</h1>
-<section id="데이터-불러오기" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-불러오기">1. 데이터 불러오기</h2>
-<div id="e38b5bdb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>welfare <span class="op">=</span> pd.read_spss(<span class="st">'../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>welfare.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">h14_id</th>
-<th data-quarto-table-cell-role="th">h14_ind</th>
-<th data-quarto-table-cell-role="th">h14_sn</th>
-<th data-quarto-table-cell-role="th">h14_merkey</th>
-<th data-quarto-table-cell-role="th">h_new</th>
-<th data-quarto-table-cell-role="th">h14_cobf</th>
-<th data-quarto-table-cell-role="th">p14_wsc</th>
-<th data-quarto-table-cell-role="th">p14_wsl</th>
-<th data-quarto-table-cell-role="th">p14_wgc</th>
-<th data-quarto-table-cell-role="th">p14_wgl</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">wc14_64</th>
-<th data-quarto-table-cell-role="th">wc14_65</th>
-<th data-quarto-table-cell-role="th">wc14_5aq4</th>
-<th data-quarto-table-cell-role="th">wc14_5aq5</th>
-<th data-quarto-table-cell-role="th">wc14_5aq6</th>
-<th data-quarto-table-cell-role="th">h14_pers_income1</th>
-<th data-quarto-table-cell-role="th">h14_pers_income2</th>
-<th data-quarto-table-cell-role="th">h14_pers_income3</th>
-<th data-quarto-table-cell-role="th">h14_pers_income4</th>
-<th data-quarto-table-cell-role="th">h14_pers_income5</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>20101.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0.291589</td>
-<td>0.291589</td>
-<td>1307.764781</td>
-<td>1307.764781</td>
-<td>...</td>
-<td>NaN</td>
-<td></td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>30101.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0.419753</td>
-<td>0.419753</td>
-<td>1882.570960</td>
-<td>1882.570960</td>
-<td>...</td>
-<td>NaN</td>
-<td></td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>4.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>40101.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0.265263</td>
-<td>0.265980</td>
-<td>1189.691668</td>
-<td>1192.908537</td>
-<td>...</td>
-<td>NaN</td>
-<td></td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1284.0</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>6.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>60101.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0.494906</td>
-<td>0.495941</td>
-<td>2219.630833</td>
-<td>2224.273816</td>
-<td>...</td>
-<td>1.0</td>
-<td>.</td>
-<td>2.0</td>
-<td>4.0</td>
-<td>4.0</td>
-<td>2304.0</td>
-<td>NaN</td>
-<td>1800.0</td>
-<td>0.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>6.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>60101.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>1.017935</td>
-<td>1.017935</td>
-<td>4565.389177</td>
-<td>4565.389177</td>
-<td>...</td>
-<td>1.0</td>
-<td>.</td>
-<td>1.0</td>
-<td>5.0</td>
-<td>2.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-<p>5 rows × 830 columns</p>
-</div>
-</div>
-</div>
-</section>
-<section id="필요한-데이터만-가져오기" class="level2">
-<h2 class="anchored" data-anchor-id="필요한-데이터만-가져오기">2. 필요한 데이터만 가져오기</h2>
-<div id="b4c8d5e4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> welfare[[<span class="st">'h14_g3'</span>,<span class="st">'p1402_8aq1'</span>]]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> {<span class="st">'h14_g3'</span> : <span class="st">'sex'</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">'p1402_8aq1'</span> : <span class="st">'income'</span> })</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span><span class="st">'income'</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'sex'</span>] <span class="op">=</span> np.where(df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'male'</span>, <span class="st">'female'</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">sex</th>
-<th data-quarto-table-cell-role="th">income</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>male</td>
-<td>107.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>male</td>
-<td>192.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">7</td>
-<td>female</td>
-<td>27.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">8</td>
-<td>female</td>
-<td>27.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">14</td>
-<td>male</td>
-<td>338.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="신뢰구간-구하기" class="level2">
-<h2 class="anchored" data-anchor-id="신뢰구간-구하기">3. 신뢰구간 구하기</h2>
-<div id="d75e265d" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>male_income <span class="op">=</span> df.loc[df[<span class="st">'sex'</span>]<span class="op">==</span><span class="st">'male'</span>, <span class="st">'income'</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>female_income <span class="op">=</span> df.loc[df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="st">'female'</span>, <span class="st">'income'</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>male_bar <span class="op">=</span> male_income.mean()</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>female_bar <span class="op">=</span> female_income.mean()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>male_scale <span class="op">=</span> np.sqrt(male_income.var(ddof<span class="op">=</span><span class="dv">1</span>))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>female_scale <span class="op">=</span> np.sqrt(female_income.var(ddof<span class="op">=</span><span class="dv">1</span>))</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>male_n <span class="op">=</span> <span class="bu">len</span>(male_income)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>female_n <span class="op">=</span> <span class="bu">len</span>(female_income)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>z0025 <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>, loc<span class="op">=</span><span class="dv">0</span> , scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>male_a <span class="op">=</span> male_bar <span class="op">+</span> z0025<span class="op">*</span>male_scale<span class="op">/</span>np.sqrt(male_n)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>male_b <span class="op">=</span> male_bar <span class="op">-</span> z0025<span class="op">*</span>male_scale<span class="op">/</span>np.sqrt(male_n)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"male의 오른쪽 신뢰구간 위치 :"</span>, male_a)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"male의 왼쪽 신뢰구간 위치 :"</span>, male_b)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>female_a <span class="op">=</span> female_bar <span class="op">+</span> z0025<span class="op">*</span>female_scale<span class="op">/</span>np.sqrt(female_n)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>female_b <span class="op">=</span> female_bar <span class="op">-</span> z0025<span class="op">*</span>female_scale<span class="op">/</span>np.sqrt(female_n)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"female의 오른쪽 신뢰구간 위치 :"</span>, female_a)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"female의 왼쪽 신뢰구간 위치 :"</span>, female_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="표본-분산-계산-시-왜-n-1로-나누는지-알아보도록-하겠습니다." class="level1">
+<h1>표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.</h1>
+<section id="균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법" class="level2">
+<h2 class="anchored" data-anchor-id="균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법">균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요. (n으로 구하는 방법, n-1로 구하는 방법)</h2>
+<section id="참고-분산을-구하는-함수-3가지" class="level3">
+<h3 class="anchored" data-anchor-id="참고-분산을-구하는-함수-3가지">참고 : 분산을 구하는 함수 3가지</h3>
+<div id="052ab8d9" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> uniform</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">=</span> np.mean(x)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s_2_1 <span class="op">=</span> <span class="bu">sum</span>((x<span class="op">-</span>x_bar)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>)  <span class="co"># n-1로 표본 분산 구하는 방법1</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>s_2_2 <span class="op">=</span> x.var(ddof<span class="op">=</span><span class="dv">1</span>)  <span class="co"># n-1로 표본 분산 구하는 방법2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>s_2_3 <span class="op">=</span> np.var(x, ddof<span class="op">=</span><span class="dv">1</span>)  <span class="co"># n-1로 표본 분산 구하는 방법3</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"s_2_1 : "</span>,s_2_1)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"s_2_2 : "</span>,s_2_2)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"s_2_3 : "</span>,s_2_3)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>k_2_1 <span class="op">=</span> <span class="bu">sum</span>((x<span class="op">-</span>x_bar)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="bu">len</span>(x)  <span class="co"># n로 표본 분산 구하는 방법1</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>k_2_2 <span class="op">=</span> x.var()  <span class="co"># n로 표본 분산 구하는 방법2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>k_2_3 <span class="op">=</span> np.var(x)  <span class="co"># n로 표본 분산 구하는 방법3</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"k_2_1 : "</span>,k_2_1)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"k_2_2 : "</span>,k_2_2)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"k_2_3 : "</span>,k_2_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>male의 오른쪽 신뢰구간 위치 : 357.96254968365116
-male의 왼쪽 신뢰구간 위치 : 340.11259229974775
-female의 오른쪽 신뢰구간 위치 : 191.7557368532799
-female의 왼쪽 신뢰구간 위치 : 180.83045468346845</code></pre>
+<pre><code>s_2_1 :  1.2815850339277062
+s_2_2 :  1.2815850339277062
+s_2_3 :  1.2815850339277062
+k_2_1 :  1.2175057822313209
+k_2_2 :  1.2175057822313209
+k_2_3 :  1.2175057822313209</code></pre>
 </div>
 </div>
 </section>
-<section id="groupby로-성별별-평균-income-데이터-만들기" class="level2">
-<h2 class="anchored" data-anchor-id="groupby로-성별별-평균-income-데이터-만들기">4. groupby로 성별별 평균 income 데이터 만들기</h2>
-<div id="5a83d694" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sex_income <span class="op">=</span> df.groupby(<span class="st">'sex'</span>, as_index<span class="op">=</span><span class="va">False</span>).agg(mean_income <span class="op">=</span> (<span class="st">'income'</span>,<span class="st">'mean'</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sex_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">sex</th>
-<th data-quarto-table-cell-role="th">mean_income</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>female</td>
-<td>186.293096</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>male</td>
-<td>349.037571</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
+<section id="n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용" class="level3">
+<h3 class="anchored" data-anchor-id="n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용">1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)</h3>
 </section>
-<section id="성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기" class="level2">
-<h2 class="anchored" data-anchor-id="성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기">5. 성별별 평균 income 데이터로 막대그래프 그리고, 신뢰구간 그리기</h2>
-<div id="af511452" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>sex_income , x<span class="op">=</span><span class="st">'sex'</span>, y<span class="op">=</span><span class="st">'mean_income'</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,<span class="dv">0</span>], [female_a,female_b], color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">1</span>], [male_a, male_b], color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요." class="level3">
+<h3 class="anchored" data-anchor-id="각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.">2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.</h3>
+<section id="n-1로-표본-분산-구하는-방법1" class="level4">
+<h4 class="anchored" data-anchor-id="n-1로-표본-분산-구하는-방법1">n-1로 표본 분산 구하는 방법1</h4>
+<div id="2eaa76b2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> ((x<span class="op">-</span> np.repeat(x.mean(axis<span class="op">=</span><span class="dv">1</span>) ,<span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>) )<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)<span class="op">/</span>(<span class="dv">20</span> <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>population_variance <span class="op">=</span> uniform.var(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(s_2, stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>population_variance, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-6-output-1.png" width="593" height="429" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="589" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="n-1로-표본-분산-구하는-방법2" class="level4">
+<h4 class="anchored" data-anchor-id="n-1로-표본-분산-구하는-방법2">n-1로 표본 분산 구하는 방법2</h4>
+<div id="ced172b8" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>population_variance <span class="op">=</span> uniform.var(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(s_2, stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>population_variance, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="589" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="n-1로-표본-분산-구하는-방법3" class="level4">
+<h4 class="anchored" data-anchor-id="n-1로-표본-분산-구하는-방법3">n-1로 표본 분산 구하는 방법3</h4>
+<div id="435f85b5" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> np.var(x, axis<span class="op">=</span><span class="dv">1</span> ,ddof<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>population_variance <span class="op">=</span> uniform.var(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(s_2, stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>population_variance, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" width="589" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+</section>
+<section id="section-1" class="level1">
+<h1></h1>
+<section id="n으로-표본-분산-구하는-방법1" class="level4">
+<h4 class="anchored" data-anchor-id="n으로-표본-분산-구하는-방법1">n으로 표본 분산 구하는 방법1</h4>
+<div id="4d749bd6" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>k_2 <span class="op">=</span> ((x<span class="op">-</span> np.repeat(x.mean(axis<span class="op">=</span><span class="dv">1</span>) ,<span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>))<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">20</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>population_variance <span class="op">=</span> uniform.var(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(k_2, stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>population_variance, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" width="589" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="n으로-표본-분산-구하는-방법2" class="level4">
+<h4 class="anchored" data-anchor-id="n으로-표본-분산-구하는-방법2">n으로 표본 분산 구하는 방법2</h4>
+<div id="06762231" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>k_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>population_variance <span class="op">=</span> uniform.var(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(k_2, stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>population_variance, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="589" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="n으로-표본-분산-구하는-방법3" class="level4">
+<h4 class="anchored" data-anchor-id="n으로-표본-분산-구하는-방법3">n으로 표본 분산 구하는 방법3</h4>
+<div id="88edbbf5" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> np.var(x, axis<span class="op">=</span><span class="dv">1</span> ,ddof<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>population_variance <span class="op">=</span> uniform.var(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(s_2, stat<span class="op">=</span><span class="st">'density'</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>population_variance, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="589" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level1">
+<h1></h1>
+</section>
+<section id="section-3" class="level1">
+<h1></h1>
+<section id="결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요" class="level3">
+<h3 class="anchored" data-anchor-id="결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요">3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!</h3>
+<p>분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.</p>
 
 
 </section>
@@ -556,18 +449,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -599,7 +481,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -607,7 +511,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

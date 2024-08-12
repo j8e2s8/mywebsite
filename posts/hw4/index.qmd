@@ -1,148 +1,54 @@
 ---
-title: "hw4"
+title: "hw3"
 author: "정은서"
-date: "2024-07-29 "
+date: "2024-07-22"
 categories: [bigdata]
 editor: visual
 jupyter: python3
 ---
 
-# 표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.
-
-## 균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요. (n으로 구하는 방법, n-1로 구하는 방법)
-
-### 참고 : 분산을 구하는 함수 3가지
+## mpg 데이터의 cty(도시연비)와 hwy(고속도로 연비) 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어보세요.
 
 ```{python}
-from scipy.stats import uniform
-import numpy as np
-x = uniform.rvs(loc=3, scale=4, size=20)
-x_bar = np.mean(x)
-s_2_1 = sum((x-x_bar)**2)/(len(x)-1)  # n-1로 표본 분산 구하는 방법1
-s_2_2 = x.var(ddof=1)  # n-1로 표본 분산 구하는 방법2
-s_2_3 = np.var(x, ddof=1)  # n-1로 표본 분산 구하는 방법3
+import pandas as pd
 
-print("s_2_1 : ",s_2_1)
-print("s_2_2 : ",s_2_2)
-print("s_2_3 : ",s_2_3)
-
-k_2_1 = sum((x-x_bar)**2)/len(x)  # n로 표본 분산 구하는 방법1
-k_2_2 = x.var()  # n로 표본 분산 구하는 방법2
-k_2_3 = np.var(x)  # n로 표본 분산 구하는 방법3
-
-print("k_2_1 : ",k_2_1)
-print("k_2_2 : ",k_2_2)
-print("k_2_3 : ",k_2_3)
+mpg = pd.read_csv('../../mpg.csv')
+mpg.shape
 ```
 
-### 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)
-
-### 2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.
-
-#### n-1로 표본 분산 구하는 방법1
-
 ```{python}
-np.random.seed(20240729)
-x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-s_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20) )**2).sum(axis=1)/(20 -1)
-population_variance = uniform.var(loc=3, scale=4)
-
-import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.pyplot as plt
+
 plt.clf()
-sns.histplot(s_2, stat='density')
-plt.axvline(x=population_variance, color='red')
+sns.scatterplot(data = mpg, x='cty', y='hwy')
 plt.show()
 ```
 
-#### n-1로 표본 분산 구하는 방법2
+## 미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.
 
 ```{python}
-np.random.seed(20240729)
-x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-s_2 = x.var(axis=1, ddof=1)
-population_variance = uniform.var(loc=3, scale=4)
+midwest = pd.read_csv('../../midwest.csv')
 
-import matplotlib.pyplot as plt
-import seaborn as sns
 plt.clf()
-sns.histplot(s_2, stat='density')
-plt.axvline(x=population_variance, color='red')
+sns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])
 plt.show()
 ```
 
-#### n-1로 표본 분산 구하는 방법3
+## 어떤 회사에서 생산한 'suv' 차종의 도시 연비가 높은지 알아보려고 합니다. 'suv' 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.
 
 ```{python}
-np.random.seed(20240729)
-x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-s_2 = np.var(x, axis=1 ,ddof=1)
-population_variance = uniform.var(loc=3, scale=4)
-
-import matplotlib.pyplot as plt
-import seaborn as sns
+mpg_group = mpg.query("category == 'suv'").groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).sort_values('cty_mean', ascending=False)
 plt.clf()
-sns.histplot(s_2, stat='density')
-plt.axvline(x=population_variance, color='red')
+sns.barplot(data=mpg_group , x='manufacturer', y='cty_mean')
 plt.show()
 ```
 
-# 
-
-# 
-
-#### n으로 표본 분산 구하는 방법1
+## 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.
 
 ```{python}
-np.random.seed(20240729)
-x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-k_2 = ((x- np.repeat(x.mean(axis=1) ,20).reshape(-1,20))**2).sum(axis=1)/20
-population_variance = uniform.var(loc=3, scale=4)
-
-import matplotlib.pyplot as plt
-import seaborn as sns
+mpg_group2 = mpg.groupby('category',as_index=False).agg(category_count = ('category', 'count') ).sort_values('category_count' , ascending = False)
 plt.clf()
-sns.histplot(k_2, stat='density')
-plt.axvline(x=population_variance, color='red')
+sns.barplot(data=mpg_group2, x='category', y='category_count')
 plt.show()
 ```
-
-#### n으로 표본 분산 구하는 방법2
-
-```{python}
-np.random.seed(20240729)
-x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-k_2 = x.var(axis=1, ddof=0)
-population_variance = uniform.var(loc=3, scale=4)
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-plt.clf()
-sns.histplot(k_2, stat='density')
-plt.axvline(x=population_variance, color='red')
-plt.show()
-```
-
-#### n으로 표본 분산 구하는 방법3
-
-```{python}
-np.random.seed(20240729)
-x = uniform.rvs(loc=3, scale=4, size=10000*20).reshape(-1,20)
-s_2 = np.var(x, axis=1 ,ddof=0)
-population_variance = uniform.var(loc=3, scale=4)
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-plt.clf()
-sns.histplot(s_2, stat='density')
-plt.axvline(x=population_variance, color='red')
-plt.show()
-```
-
-# 
-
-# 
-
-### 3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!
-
-분포를 보면, n-1로 나눈 분포에서 모분산을 나타낸 선이 더 가운데(무게 중심)에 있다는 것을 알 수 있다. 그래서 n-1로 나눈 것이 분산을 추정하는 지표로 사용되는게 타당하다.

@@ -1,54 +1,57 @@
 ---
 title: "hw3"
 author: "정은서"
-date: "2024-07-22"
-categories: [bigdata]
 editor: visual
 jupyter: python3
 ---
 
-## mpg 데이터의 cty(도시연비)와 hwy(고속도로 연비) 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어보세요.
+# 1. 정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2의 pdf를 그릴 것.
 
 ```{python}
-import pandas as pd
+def norm(x, mu, sigma):
+    import numpy as np
+    a = 1/(sigma* np.sqrt(2*np.pi))
+    b = np.exp( -(x-mu)**2 / (2*sigma**2))
+    return a*b
 
-mpg = pd.read_csv('../../mpg.csv')
-mpg.shape
-```
 
-```{python}
-import seaborn as sns
+import numpy as np
 import matplotlib.pyplot as plt
 
+x=np.linspace(-20,20,1000)
+y= norm(x, mu=3, sigma=2)
+
 plt.clf()
-sns.scatterplot(data = mpg, x='cty', y='hwy')
+plt.plot(x, y)
 plt.show()
 ```
 
-## 미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.
+# ---
+
+# 2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.
+
+#### X \~ N(2, 3\^2)
+
+#### 1) P(X\<3)
+
+#### 2) P(2\<X\<5)
+
+#### 3) P(X\<3 or X\>7)
 
 ```{python}
-midwest = pd.read_csv('../../midwest.csv')
+from scipy.stats import norm
 
-plt.clf()
-sns.scatterplot(data=midwest , x= 'poptotal' , y='popasian').set(xlim = [0,500000], ylim=[0,10000])
-plt.show()
+print("1) P(X<3) :",norm.cdf(3, loc=2, scale=3))
+print("2) P(2<X<5) :", norm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3))
+print("3) P(X<3 or X>7) :", norm.cdf(3, loc=2, scale=3) + (1-norm.cdf(7,loc=2,scale=3)))
 ```
 
-## 어떤 회사에서 생산한 'suv' 차종의 도시 연비가 높은지 알아보려고 합니다. 'suv' 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.
+# ---
+
+# 3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다.
+
+# 상위 5%에 해당하는 학생의 점수는?
 
 ```{python}
-mpg_group = mpg.query("category == 'suv'").groupby('manufacturer', as_index=False).agg(cty_mean = ('cty', 'mean')).sort_values('cty_mean', ascending=False)
-plt.clf()
-sns.barplot(data=mpg_group , x='manufacturer', y='cty_mean')
-plt.show()
-```
-
-## 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.
-
-```{python}
-mpg_group2 = mpg.groupby('category',as_index=False).agg(category_count = ('category', 'count') ).sort_values('category_count' , ascending = False)
-plt.clf()
-sns.barplot(data=mpg_group2, x='category', y='category_count')
-plt.show()
+print("상위 5%에 해당하는 학생의 점수는? ",norm.ppf(0.95, loc=30, scale=2))
 ```

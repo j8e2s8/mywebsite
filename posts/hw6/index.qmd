@@ -1,56 +1,75 @@
 ---
-title: "hw6"
-subtitle: "t검정 연습문제"
+title: "hw5"
 author: "정은서"
+date: "2024-07-30"
+categories: [bigdata]
 editor: visual
 jupyter: python3
 ---
 
-# 신형 자동차의 에너지 소비효율 등급
+# 숙제 : 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기. norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정
 
-슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22 년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여 한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다. 15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804
-
-표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지 판단해보시오. (유의수준 1%로 설정)
-
-# 
-
-## 2. 검정을 위한 가설을 명확하게 서술하시오.
+## 1. 데이터 불러오기
 
 ```{python}
-#| echo: false
-print("H0 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) >= 16.0 (mu0)")
-print("H1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) < 16.0 (mu0)")
+import pandas as pd
+welfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')
+welfare.head()
 ```
 
-# 
-
-## 3. 검정통계량 계산하시오.
+## 2. 필요한 데이터만 가져오기
 
 ```{python}
 import numpy as np
-x = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,
-15.382, 16.709, 16.804])
-x_bar = x.mean()
-sample_std = x.std(ddof=1)
-
-z = (x_bar - 16)/ (sample_std/np.sqrt(len(x)))
-print("검정통계량 :",z)
+df = welfare[['h14_g3','p1402_8aq1']]
+df = df.rename(columns = {'h14_g3' : 'sex',
+                           'p1402_8aq1' : 'income' })
+df = df.dropna(subset='income')
+df['sex'] = np.where(df['sex'] == 1, 'male', 'female')
+df.head()
 ```
 
-# 
-
-## 4. p‑value을 구하세요.
+## 3. 신뢰구간 구하기
 
 ```{python}
-from scipy.stats import t
-print("p-value :",t.cdf(z, df=len(x) -1))
+male_income = df.loc[df['sex']=='male', 'income']
+female_income = df.loc[df['sex'] == 'female', 'income']
+male_bar = male_income.mean()
+female_bar = female_income.mean()
+male_scale = np.sqrt(male_income.var(ddof=1))
+female_scale = np.sqrt(female_income.var(ddof=1))
+male_n = len(male_income)
+female_n = len(female_income)
+
+from scipy.stats import norm
+
+z0025 = norm.ppf(0.975, loc=0 , scale=1)
+male_a = male_bar + z0025*male_scale/np.sqrt(male_n)
+male_b = male_bar - z0025*male_scale/np.sqrt(male_n)
+print("male의 오른쪽 신뢰구간 위치 :", male_a)
+print("male의 왼쪽 신뢰구간 위치 :", male_b)
+
+female_a = female_bar + z0025*female_scale/np.sqrt(female_n)
+female_b = female_bar - z0025*female_scale/np.sqrt(female_n)
+print("female의 오른쪽 신뢰구간 위치 :", female_a)
+print("female의 왼쪽 신뢰구간 위치 :", female_b)
 ```
 
-# 
-
-## 6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.
+## 4. groupby로 성별별 평균 income 데이터 만들기
 
 ```{python}
-t0025 = t.ppf(0.975, df=15-1)
-print("95% 신뢰구간 : (",x_bar - t0025*sample_std/np.sqrt(len(x)) , ",", x_bar + t0025*sample_std/np.sqrt(len(x)), ")")
+sex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))
+sex_income
+```
+
+## 5. 성별별 평균 income 데이터로 막대그래프 그리고, 신뢰구간 그리기
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.clf()
+sns.barplot(data=sex_income , x='sex', y='mean_income')
+plt.plot([0,0], [female_a,female_b], color='red')
+plt.plot([1,1], [male_a, male_b], color='red')
+plt.show()
 ```
