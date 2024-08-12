@@ -509,10 +509,7 @@ plt.show()
 
 집 데이터가 가장 많은 두 지역을 보면 집값 차이가 큼
 
-
-
 ```{python}
 # train_df.columns
-train_df.groupby('Neighborhood','MSZoning').agg(type_count=('Id','count'))
+#train_df.groupby('Neighborhood','MSZoning').agg(type_count=('Id','count'))
 ```
-
