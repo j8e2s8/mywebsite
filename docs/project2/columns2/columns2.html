@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="정은서">
-<meta name="dcterms.date" content="2024-08-05">
 
-<title>hw7 – 은서 만두만두</title>
+<title>columns2 – 은서 만두만두</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,12 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">hw7</h1>
-            <p class="subtitle lead">t검정 연습문제</p>
-                                <div class="quarto-categories">
-                <div class="quarto-category">statistics</div>
-              </div>
-                  </div>
+      <h1 class="title">columns2</h1>
+                      </div>
   </div>
     
   
@@ -168,12 +163,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </div>
     </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">August 5, 2024</p>
-      </div>
-    </div>
     
       
     </div>
@@ -182,30 +171,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#신형-자동차의-에너지-소비효율-등급" id="toc-신형-자동차의-에너지-소비효율-등급" class="nav-link active" data-scroll-target="#신형-자동차의-에너지-소비효율-등급">신형 자동차의 에너지 소비효율 등급</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a>
-  <ul class="collapse">
-  <li><a href="#검정을-위한-가설을-명확하게-서술하시오." id="toc-검정을-위한-가설을-명확하게-서술하시오." class="nav-link" data-scroll-target="#검정을-위한-가설을-명확하게-서술하시오.">2. 검정을 위한 가설을 명확하게 서술하시오.</a></li>
-  </ul></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a>
-  <ul class="collapse">
-  <li><a href="#검정통계량-계산하시오." id="toc-검정통계량-계산하시오." class="nav-link" data-scroll-target="#검정통계량-계산하시오.">3. 검정통계량 계산하시오.</a></li>
-  </ul></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a>
-  <ul class="collapse">
-  <li><a href="#pvalue을-구하세요." id="toc-pvalue을-구하세요." class="nav-link" data-scroll-target="#pvalue을-구하세요.">4. p‑value을 구하세요.</a></li>
-  </ul></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a>
-  <ul class="collapse">
-  <li><a href="#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." id="toc-현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." class="nav-link" data-scroll-target="#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.">6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -214,70 +181,414 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="신형-자동차의-에너지-소비효율-등급" class="level1">
-<h1>신형 자동차의 에너지 소비효율 등급</h1>
-<p>슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22 년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여 한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다. 15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804</p>
-<p>표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지 판단해보시오. (유의수준 1%로 설정)</p>
-</section>
-<section id="section" class="level1">
-<h1></h1>
-<section id="검정을-위한-가설을-명확하게-서술하시오." class="level2">
-<h2 class="anchored" data-anchor-id="검정을-위한-가설을-명확하게-서술하시오.">2. 검정을 위한 가설을 명확하게 서술하시오.</h2>
-<div id="7a0eda55" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-stdout">
-<pre><code>H0 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &gt;= 16.0 (mu0)
-H1 : mu(신형 자동차의 평균 복합 에너지 소비효율 평균) &lt; 16.0 (mu0)</code></pre>
+<div id="1847a8bc" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 불러오기</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>train_df <span class="op">=</span> pd.read_csv(<span class="st">'../../../lsbigdata-project1/house price/train.csv'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> pd.read_csv(<span class="st">'../../../lsbigdata-project1/house price/test.csv'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>submission <span class="op">=</span> pd.read_csv(<span class="st">'../../../lsbigdata-project1/house price/sample_submission.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>함수</p>
+<div id="2d8bcd2b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>WxColourDB <span class="op">=</span> [<span class="st">'black'</span>, <span class="st">'red'</span>, <span class="st">'chocolate'</span>,<span class="st">'darkorange'</span>,<span class="st">'darkgoldenrod'</span>,<span class="st">'olive'</span>,<span class="st">'plum'</span>,<span class="st">'lightslategrey'</span>,<span class="st">'forestgreen'</span>,<span class="st">'gold'</span>,<span class="st">'lightseagreen'</span>,<span class="st">'fuchsia'</span>,<span class="st">'deepskyblue'</span>,<span class="st">'slateblue'</span>,<span class="st">'mediumorchid'</span>,<span class="st">'navy'</span>,<span class="st">'hotpink'</span>,<span class="st">'plum'</span>,<span class="st">'lightsteelblue'</span>,<span class="st">'blue'</span>,<span class="st">'darkturquoise'</span>,<span class="st">'cyan'</span>,<span class="st">'green'</span>,<span class="st">'yellow'</span>,<span class="st">'darkkhaki'</span>,<span class="st">'orange'</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                              </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_rel_cxy(col1, col2):  <span class="co"># col1 : 범주, col2:범주</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    plt.clf()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> col1 <span class="op">+</span> <span class="st">"의"</span> <span class="op">+</span> col2 <span class="op">+</span> <span class="st">"범주별 SalePrice와의 관계 비교"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    plt.title(a)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    cats <span class="op">=</span> train_df[col2].value_counts().sort_values(ascending<span class="op">=</span><span class="va">False</span>).index</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(cats)):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> train_df[train_df[col2]<span class="op">==</span>cats[i]][[col1,<span class="st">'SalePrice'</span>]]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> np.random.choice(np.arange(<span class="bu">len</span>(WxColourDB)),<span class="bu">len</span>(WxColourDB),replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> n.tolist()[i]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        sns.scatterplot(data<span class="op">=</span>a, x<span class="op">=</span>col1, y<span class="op">=</span><span class="st">'SalePrice'</span>, color<span class="op">=</span>WxColourDB[n])  <span class="co"># 색 달라져야함</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>각 지역별 확인</p>
+<div id="a2156a0a" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>WxColourDB <span class="op">=</span> [<span class="st">'black'</span>, <span class="st">'red'</span>, <span class="st">'chocolate'</span>,<span class="st">'darkorange'</span>,<span class="st">'darkgoldenrod'</span>,<span class="st">'olive'</span>,<span class="st">'plum'</span>,<span class="st">'lightslategrey'</span>,<span class="st">'forestgreen'</span>,<span class="st">'gold'</span>,<span class="st">'lightseagreen'</span>,<span class="st">'fuchsia'</span>,<span class="st">'deepskyblue'</span>,<span class="st">'slateblue'</span>,<span class="st">'mediumorchid'</span>,<span class="st">'navy'</span>,<span class="st">'hotpink'</span>,<span class="st">'plum'</span>,<span class="st">'lightsteelblue'</span>,<span class="st">'blue'</span>,<span class="st">'darkturquoise'</span>,<span class="st">'cyan'</span>,<span class="st">'green'</span>,<span class="st">'yellow'</span>,<span class="st">'darkkhaki'</span>,<span class="st">'orange'</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cats <span class="op">=</span> train_df[<span class="st">'Neighborhood'</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">False</span>).index</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(cats)):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        plt.clf()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Malgun Gothic'</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> <span class="st">"Neighborhood '"</span> <span class="op">+</span> cats[i] <span class="op">+</span><span class="st">"' 지역의 MSSubClass과 SalePrice 관계"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        plt.title(a)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        plt.ylim([<span class="dv">0</span>,<span class="dv">800000</span>])</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        plt.xlim([<span class="dv">15</span>,<span class="dv">195</span>])</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        plt.tight_layout()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> train_df[train_df[<span class="st">'Neighborhood'</span>]<span class="op">==</span>cats[i]][[<span class="st">'MSSubClass'</span>,<span class="st">'SalePrice'</span>]]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> np.random.choice(np.arange(<span class="bu">len</span>(WxColourDB)),<span class="bu">len</span>(WxColourDB),replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> n.tolist()[i]</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        sns.scatterplot(data<span class="op">=</span>a, x<span class="op">=</span><span class="st">'MSSubClass'</span>, y<span class="op">=</span><span class="st">'SalePrice'</span>, color<span class="op">=</span>WxColourDB[n])  <span class="co"># 색 달라져야함</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-1.png" width="680" height="488" class="figure-img"></p>
+</figure>
 </div>
 </div>
-</section>
-</section>
-<section id="section-1" class="level1">
-<h1></h1>
-<section id="검정통계량-계산하시오." class="level2">
-<h2 class="anchored" data-anchor-id="검정통계량-계산하시오.">3. 검정통계량 계산하시오.</h2>
-<div id="22e80e54" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="fl">15.078</span>, <span class="fl">15.752</span>, <span class="fl">15.549</span>, <span class="fl">15.56</span>, <span class="fl">16.098</span>, <span class="fl">13.277</span>, <span class="fl">15.462</span>, <span class="fl">16.116</span>, <span class="fl">15.214</span>, <span class="fl">16.93</span>, <span class="fl">14.118</span>, <span class="fl">14.927</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fl">15.382</span>, <span class="fl">16.709</span>, <span class="fl">16.804</span>])</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">=</span> x.mean()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sample_std <span class="op">=</span> x.std(ddof<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (x_bar <span class="op">-</span> <span class="dv">16</span>)<span class="op">/</span> (sample_std<span class="op">/</span>np.sqrt(<span class="bu">len</span>(x)))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"검정통계량 :"</span>,z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>검정통계량 : -1.8500447456376756</code></pre>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-2.png" width="680" height="488" class="figure-img"></p>
+</figure>
 </div>
 </div>
-</section>
-</section>
-<section id="section-2" class="level1">
-<h1></h1>
-<section id="pvalue을-구하세요." class="level2">
-<h2 class="anchored" data-anchor-id="pvalue을-구하세요.">4. p‑value을 구하세요.</h2>
-<div id="ebace7b0" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"p-value :"</span>,t.cdf(z, df<span class="op">=</span><span class="bu">len</span>(x) <span class="op">-</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>p-value : 0.042762417664207845</code></pre>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-3.png" width="680" height="488" class="figure-img"></p>
+</figure>
 </div>
 </div>
-</section>
-</section>
-<section id="section-3" class="level1">
-<h1></h1>
-<section id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." class="level2">
-<h2 class="anchored" data-anchor-id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.">6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.</h2>
-<div id="37ba56ad" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t0025 <span class="op">=</span> t.ppf(<span class="fl">0.975</span>, df<span class="op">=</span><span class="dv">15</span><span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"95% 신뢰구간 : ("</span>,x_bar <span class="op">-</span> t0025<span class="op">*</span>sample_std<span class="op">/</span>np.sqrt(<span class="bu">len</span>(x)) , <span class="st">","</span>, x_bar <span class="op">+</span> t0025<span class="op">*</span>sample_std<span class="op">/</span>np.sqrt(<span class="bu">len</span>(x)), <span class="st">")"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>95% 신뢰구간 : ( 14.988864240339733 , 16.074602426326933 )</code></pre>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-4.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-5.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-6.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-7.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-8.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-9.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-10.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-11.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-12.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-13.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-14.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-15.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-16.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-17.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-18.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-19.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-20.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-21.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-22.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-23.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-24.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-4-output-25.png" width="680" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>누적으로 확인</p>
+<div id="7c602b94" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>train_cat_rel_cxy(<span class="st">'MSSubClass'</span>, <span class="st">'Neighborhood'</span>)  <span class="co"># col1 : 범주, col2:범주</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-1.png" width="698" height="488" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-2.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-3.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-4.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-5.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-6.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-7.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-8.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-9.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-10.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-11.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-12.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-13.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-14.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-15.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-16.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-17.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-18.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-19.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-20.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-21.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-22.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-23.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-24.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="columns2_files/figure-html/cell-5-output-25.png" width="612" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

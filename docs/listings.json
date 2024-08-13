@@ -15,6 +15,15 @@
   {
     "listing": "/project2.html",
     "items": [
+      "/project2/columns/columns.html",
+      "/project2/columns2/columns2.html",
+      "/project2/index.html"
+    ]
+  },
+  {
+    "listing": "/project2/index.html",
+    "items": [
+      "/project2/columns2/columns2.html",
       "/project2/columns/columns.html"
     ]
   }

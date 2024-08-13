@@ -319,7 +319,7 @@
     "href": "project2.html",
     "title": "project2_house price",
     "section": "",
-    "text": "house price columns\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\nNo matching items"
+    "text": "house price columns\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\ncolumns2\n\n\n\n\n\n\n\n\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nRecent posts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project2/columns/columns.html",
@@ -586,5 +586,19 @@
     "title": "만두만두",
     "section": "",
     "text": "안녕하세요, 데이터 분석 만두만두입니다."
+  },
+  {
+    "objectID": "project2/index.html",
+    "href": "project2/index.html",
+    "title": "Recent posts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\ncolumns2\n\n\n\n정은서\n\n\n\n\n\n\n\n\n\n\n\n\nhouse price columns\n\n\n\n정은서\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project2/columns2/columns2.html",
+    "href": "project2/columns2/columns2.html",
+    "title": "columns2",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# 데이터 불러오기\ntrain_df = pd.read_csv('../../../lsbigdata-project1/house price/train.csv')\ntest_df = pd.read_csv('../../../lsbigdata-project1/house price/test.csv')\nsubmission = pd.read_csv('../../../lsbigdata-project1/house price/sample_submission.csv')\n\n함수\n\nWxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid','navy','hotpink','plum','lightsteelblue','blue','darkturquoise','cyan','green','yellow','darkkhaki','orange']\n                              \ndef train_cat_rel_cxy(col1, col2):  # col1 : 범주, col2:범주\n    plt.clf()\n    plt.rcParams['font.family'] = 'Malgun Gothic'\n    plt.rcParams['axes.unicode_minus'] = False\n    a = col1 + \"의\" + col2 + \"범주별 SalePrice와의 관계 비교\"\n    plt.title(a)\n    plt.tight_layout()\n    cats = train_df[col2].value_counts().sort_values(ascending=False).index\n    \n    for i in range(len(cats)):\n        a = train_df[train_df[col2]==cats[i]][[col1,'SalePrice']]\n        n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)\n        n = n.tolist()[i]\n        sns.scatterplot(data=a, x=col1, y='SalePrice', color=WxColourDB[n])  # 색 달라져야함\n        plt.show()\n\n각 지역별 확인\n\nWxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid','navy','hotpink','plum','lightsteelblue','blue','darkturquoise','cyan','green','yellow','darkkhaki','orange']\n\ncats = train_df['Neighborhood'].value_counts().sort_values(ascending=False).index\nfor i in range(len(cats)):\n        plt.clf()\n        plt.rcParams['font.family'] = 'Malgun Gothic'\n        plt.rcParams['axes.unicode_minus'] = False\n        a = \"Neighborhood '\" + cats[i] +\"' 지역의 MSSubClass과 SalePrice 관계\"\n        plt.title(a)\n        plt.ylim([0,800000])\n        plt.xlim([15,195])\n        plt.tight_layout()\n        a = train_df[train_df['Neighborhood']==cats[i]][['MSSubClass','SalePrice']]\n        n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)\n        n = n.tolist()[i]\n        sns.scatterplot(data=a, x='MSSubClass', y='SalePrice', color=WxColourDB[n])  # 색 달라져야함\n        plt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n누적으로 확인\n\ntrain_cat_rel_cxy('MSSubClass', 'Neighborhood')  # col1 : 범주, col2:범주"
   }
 ]
