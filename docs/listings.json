@@ -1,15 +1,9 @@
 [
   {
-    "listing": "/posts/index.html",
+    "listing": "/project2/index.html",
     "items": [
-      "/posts/hw3/index.html",
-      "/posts/hw7/index.html",
-      "/posts/hw6/index.html",
-      "/posts/hw5/index.html",
-      "/posts/graph/index.html",
-      "/posts/hw4/index.html",
-      "/posts/hw1/index.html",
-      "/posts/hw2/index.html"
+      "/project2/columns2/columns2.html",
+      "/project2/columns/columns.html"
     ]
   },
   {
@@ -18,13 +12,6 @@
       "/project2/columns/columns.html",
       "/project2/columns2/columns2.html",
       "/project2/index.html"
-    ]
-  },
-  {
-    "listing": "/project2/index.html",
-    "items": [
-      "/project2/columns2/columns2.html",
-      "/project2/columns/columns.html"
     ]
   }
 ]
