@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="1847a8bc" class="cell" data-execution_count="1">
+<div id="8a95d3f6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>submission <span class="op">=</span> pd.read_csv(<span class="st">'../../../lsbigdata-project1/house price/sample_submission.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>함수</p>
-<div id="2d8bcd2b" class="cell" data-execution_count="2">
+<div id="f31a8c51" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>WxColourDB <span class="op">=</span> [<span class="st">'black'</span>, <span class="st">'red'</span>, <span class="st">'chocolate'</span>,<span class="st">'darkorange'</span>,<span class="st">'darkgoldenrod'</span>,<span class="st">'olive'</span>,<span class="st">'plum'</span>,<span class="st">'lightslategrey'</span>,<span class="st">'forestgreen'</span>,<span class="st">'gold'</span>,<span class="st">'lightseagreen'</span>,<span class="st">'fuchsia'</span>,<span class="st">'deepskyblue'</span>,<span class="st">'slateblue'</span>,<span class="st">'mediumorchid'</span>,<span class="st">'navy'</span>,<span class="st">'hotpink'</span>,<span class="st">'plum'</span>,<span class="st">'lightsteelblue'</span>,<span class="st">'blue'</span>,<span class="st">'darkturquoise'</span>,<span class="st">'cyan'</span>,<span class="st">'green'</span>,<span class="st">'yellow'</span>,<span class="st">'darkkhaki'</span>,<span class="st">'orange'</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                              </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_cat_rel_cxy(col1, col2):  <span class="co"># col1 : 범주, col2:범주</span></span>
@@ -214,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>각 지역별 확인</p>
-<div id="a2156a0a" class="cell" data-execution_count="3">
+<div id="010d77aa" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>WxColourDB <span class="op">=</span> [<span class="st">'black'</span>, <span class="st">'red'</span>, <span class="st">'chocolate'</span>,<span class="st">'darkorange'</span>,<span class="st">'darkgoldenrod'</span>,<span class="st">'olive'</span>,<span class="st">'plum'</span>,<span class="st">'lightslategrey'</span>,<span class="st">'forestgreen'</span>,<span class="st">'gold'</span>,<span class="st">'lightseagreen'</span>,<span class="st">'fuchsia'</span>,<span class="st">'deepskyblue'</span>,<span class="st">'slateblue'</span>,<span class="st">'mediumorchid'</span>,<span class="st">'navy'</span>,<span class="st">'hotpink'</span>,<span class="st">'plum'</span>,<span class="st">'lightsteelblue'</span>,<span class="st">'blue'</span>,<span class="st">'darkturquoise'</span>,<span class="st">'cyan'</span>,<span class="st">'green'</span>,<span class="st">'yellow'</span>,<span class="st">'darkkhaki'</span>,<span class="st">'orange'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cats <span class="op">=</span> train_df[<span class="st">'Neighborhood'</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">False</span>).index</span>
@@ -409,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>누적으로 확인</p>
-<div id="7c602b94" class="cell" data-execution_count="4">
+<div id="4e2573dd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>train_cat_rel_cxy(<span class="st">'MSSubClass'</span>, <span class="st">'Neighborhood'</span>)  <span class="co"># col1 : 범주, col2:범주</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>

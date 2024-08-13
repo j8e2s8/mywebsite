@@ -147,29 +147,6 @@ def train_cat_rel_cxy(col1, col2):  # col1 : 범주, col2:범주
 
 
 
-```{python}
-train_cat_rel_cxy('MSSubClass', 'Neighborhood')  # col1 : 범주, col2:범주
-```
-
-```{python}
-WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid']
-
-cats = train_df['Neighborhood'].value_counts().sort_values(ascending=False).index
-for i in range(len(cats)):
-        plt.clf()
-        plt.rcParams['font.family'] = 'Malgun Gothic'
-        plt.rcParams['axes.unicode_minus'] = False
-        a = "Neighborhood '" + cats[i] +"' 지역의 MSSubClass과 SalePrice 관계"
-        plt.title(a)
-        plt.ylim([0,800000])
-        plt.xlim([15,195])
-        plt.tight_layout()
-        a = train_df[train_df['Neighborhood']==cats[i]][['MSSubClass','SalePrice']]
-        n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)
-        n = n.tolist()[i]
-        sns.scatterplot(data=a, x='MSSubClass', y='SalePrice', color=WxColourDB[n])  # 색 달라져야함
-        plt.show()
-```
 
 
 
