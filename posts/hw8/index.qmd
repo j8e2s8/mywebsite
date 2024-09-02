@@ -1,8 +1,9 @@
 ---
 title: "hw7"
-subtile: "ADP 표본점수, 카이제곱분포와 표본분산"
+subtitle: "ADP 표본점수, covid 19, 카이제곱분포와 표본분산"
 author: "정은서"
-date: "2024/09/02"
+date: "2024-09-02"
+categories: [statistics]
 editor: visual
 jupyter: python3
 ---
