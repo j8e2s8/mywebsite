@@ -1,5 +1,5 @@
 ---
-title: "hw7"
+title: "hw8"
 subtitle: "ADP 표본점수, covid 19, 카이제곱분포와 표본분산"
 author: "정은서"
 date: "2024-09-02"

@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요." class="level2">
 <h2 class="anchored" data-anchor-id="mpg-데이터의-cty도시연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어보세요.">mpg 데이터의 cty(도시연비)와 hwy(고속도로 연비) 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어보세요.</h2>
-<div id="c76625e2" class="cell" data-execution_count="1">
+<div id="8b0fe8c4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">'../../mpg.csv'</span>)</span>
@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>(234, 11)</code></pre>
 </div>
 </div>
-<div id="8d42a548" class="cell" data-execution_count="2">
+<div id="e1d4ebdb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요." class="level2">
 <h2 class="anchored" data-anchor-id="미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.">미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.</h2>
-<div id="c1be288f" class="cell" data-execution_count="3">
+<div id="748ccb90" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> pd.read_csv(<span class="st">'../../midwest.csv'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" width="635" height="434" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="636" height="434" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요." class="level2">
 <h2 class="anchored" data-anchor-id="어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.">어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.</h2>
-<div id="d3c81bef" class="cell" data-execution_count="4">
+<div id="d703223b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mpg_group <span class="op">=</span> mpg.query(<span class="st">"category == 'suv'"</span>).groupby(<span class="st">'manufacturer'</span>, as_index<span class="op">=</span><span class="va">False</span>).agg(cty_mean <span class="op">=</span> (<span class="st">'cty'</span>, <span class="st">'mean'</span>)).sort_values(<span class="st">'cty_mean'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>mpg_group , x<span class="op">=</span><span class="st">'manufacturer'</span>, y<span class="op">=</span><span class="st">'cty_mean'</span>)</span>
@@ -263,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요." class="level2">
 <h2 class="anchored" data-anchor-id="자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.">자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.</h2>
-<div id="dd13f29d" class="cell" data-execution_count="5">
+<div id="b5826d91" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mpg_group2 <span class="op">=</span> mpg.groupby(<span class="st">'category'</span>,as_index<span class="op">=</span><span class="va">False</span>).agg(category_count <span class="op">=</span> (<span class="st">'category'</span>, <span class="st">'count'</span>) ).sort_values(<span class="st">'category_count'</span> , ascending <span class="op">=</span> <span class="va">False</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>mpg_group2, x<span class="op">=</span><span class="st">'category'</span>, y<span class="op">=</span><span class="st">'category_count'</span>)</span>
