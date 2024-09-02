@@ -212,11 +212,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>숙제 : 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기. norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정</h1>
 <section id="데이터-불러오기" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-불러오기">1. 데이터 불러오기</h2>
-<div id="dfd5b50b" class="cell" data-execution_count="1">
+<div id="214346b6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>welfare <span class="op">=</span> pd.read_spss(<span class="st">'../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>welfare.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -378,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="필요한-데이터만-가져오기" class="level2">
 <h2 class="anchored" data-anchor-id="필요한-데이터만-가져오기">2. 필요한 데이터만 가져오기</h2>
-<div id="e7fbdb53" class="cell" data-execution_count="2">
+<div id="8cbc6c44" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> welfare[[<span class="st">'h14_g3'</span>,<span class="st">'p1402_8aq1'</span>]]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> {<span class="st">'h14_g3'</span> : <span class="st">'sex'</span>,</span>
@@ -386,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span><span class="st">'income'</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'sex'</span>] <span class="op">=</span> np.where(df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'male'</span>, <span class="st">'female'</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -433,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="신뢰구간-구하기" class="level2">
 <h2 class="anchored" data-anchor-id="신뢰구간-구하기">3. 신뢰구간 구하기</h2>
-<div id="735fe9e6" class="cell" data-execution_count="3">
+<div id="f1df01fc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>male_income <span class="op">=</span> df.loc[df[<span class="st">'sex'</span>]<span class="op">==</span><span class="st">'male'</span>, <span class="st">'income'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>female_income <span class="op">=</span> df.loc[df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="st">'female'</span>, <span class="st">'income'</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>male_bar <span class="op">=</span> male_income.mean()</span>
@@ -465,10 +465,10 @@ female의 왼쪽 신뢰구간 위치 : 180.83045468346842</code></pre>
 </section>
 <section id="groupby로-성별별-평균-income-데이터-만들기" class="level2">
 <h2 class="anchored" data-anchor-id="groupby로-성별별-평균-income-데이터-만들기">4. groupby로 성별별 평균 income 데이터 만들기</h2>
-<div id="a446b8ca" class="cell" data-execution_count="4">
+<div id="ea57e544" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sex_income <span class="op">=</span> df.groupby(<span class="st">'sex'</span>, as_index<span class="op">=</span><span class="va">False</span>).agg(mean_income <span class="op">=</span> (<span class="st">'income'</span>,<span class="st">'mean'</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sex_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -500,7 +500,7 @@ female의 왼쪽 신뢰구간 위치 : 180.83045468346842</code></pre>
 </section>
 <section id="성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기" class="level2">
 <h2 class="anchored" data-anchor-id="성별별-평균-income-데이터로-막대그래프-그리고-신뢰구간-그리기">5. 성별별 평균 income 데이터로 막대그래프 그리고, 신뢰구간 그리기</h2>
-<div id="f04836c5" class="cell" data-execution_count="5">
+<div id="904e1207" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>

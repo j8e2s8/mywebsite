@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.-n으로-구하는-방법-n-1로-구하는-방법">균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요. (n으로 구하는 방법, n-1로 구하는 방법)</h2>
 <section id="참고-분산을-구하는-함수-3가지" class="level3">
 <h3 class="anchored" data-anchor-id="참고-분산을-구하는-함수-3가지">참고 : 분산을 구하는 함수 3가지</h3>
-<div id="087f1e98" class="cell" data-execution_count="1">
+<div id="96489809" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> uniform</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
@@ -240,12 +240,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"k_2_2 : "</span>,k_2_2)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"k_2_3 : "</span>,k_2_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>s_2_1 :  0.9986684809080706
-s_2_2 :  0.9986684809080706
-s_2_3 :  0.9986684809080706
-k_2_1 :  0.948735056862667
-k_2_2 :  0.948735056862667
-k_2_3 :  0.948735056862667</code></pre>
+<pre><code>s_2_1 :  1.7560159332438467
+s_2_2 :  1.7560159332438467
+s_2_3 :  1.7560159332438467
+k_2_1 :  1.6682151365816544
+k_2_2 :  1.6682151365816544
+k_2_3 :  1.6682151365816544</code></pre>
 </div>
 </div>
 </section>
@@ -256,7 +256,7 @@ k_2_3 :  0.948735056862667</code></pre>
 <h3 class="anchored" data-anchor-id="각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.">2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.</h3>
 <section id="n-1로-표본-분산-구하는-방법1" class="level4">
 <h4 class="anchored" data-anchor-id="n-1로-표본-분산-구하는-방법1">n-1로 표본 분산 구하는 방법1</h4>
-<div id="f41c6281" class="cell" data-execution_count="2">
+<div id="c8d0ebba" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> ((x<span class="op">-</span> np.repeat(x.mean(axis<span class="op">=</span><span class="dv">1</span>) ,<span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>) )<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)<span class="op">/</span>(<span class="dv">20</span> <span class="op">-</span><span class="dv">1</span>)</span>
@@ -279,7 +279,7 @@ k_2_3 :  0.948735056862667</code></pre>
 </section>
 <section id="n-1로-표본-분산-구하는-방법2" class="level4">
 <h4 class="anchored" data-anchor-id="n-1로-표본-분산-구하는-방법2">n-1로 표본 분산 구하는 방법2</h4>
-<div id="65a6265b" class="cell" data-execution_count="3">
+<div id="488d4274" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">1</span>)</span>
@@ -302,7 +302,7 @@ k_2_3 :  0.948735056862667</code></pre>
 </section>
 <section id="n-1로-표본-분산-구하는-방법3" class="level4">
 <h4 class="anchored" data-anchor-id="n-1로-표본-분산-구하는-방법3">n-1로 표본 분산 구하는 방법3</h4>
-<div id="35262018" class="cell" data-execution_count="4">
+<div id="b4d04ae8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> np.var(x, axis<span class="op">=</span><span class="dv">1</span> ,ddof<span class="op">=</span><span class="dv">1</span>)</span>
@@ -333,7 +333,7 @@ k_2_3 :  0.948735056862667</code></pre>
 <h1></h1>
 <section id="n으로-표본-분산-구하는-방법1" class="level4">
 <h4 class="anchored" data-anchor-id="n으로-표본-분산-구하는-방법1">n으로 표본 분산 구하는 방법1</h4>
-<div id="8363f864" class="cell" data-execution_count="5">
+<div id="8847c8b3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>k_2 <span class="op">=</span> ((x<span class="op">-</span> np.repeat(x.mean(axis<span class="op">=</span><span class="dv">1</span>) ,<span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>))<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">20</span></span>
@@ -356,7 +356,7 @@ k_2_3 :  0.948735056862667</code></pre>
 </section>
 <section id="n으로-표본-분산-구하는-방법2" class="level4">
 <h4 class="anchored" data-anchor-id="n으로-표본-분산-구하는-방법2">n으로 표본 분산 구하는 방법2</h4>
-<div id="0ae1b550" class="cell" data-execution_count="6">
+<div id="a43109a6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>k_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">0</span>)</span>
@@ -379,7 +379,7 @@ k_2_3 :  0.948735056862667</code></pre>
 </section>
 <section id="n으로-표본-분산-구하는-방법3" class="level4">
 <h4 class="anchored" data-anchor-id="n으로-표본-분산-구하는-방법3">n으로 표본 분산 구하는 방법3</h4>
-<div id="56b61667" class="cell" data-execution_count="7">
+<div id="6ebcc28d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">10000</span><span class="op">*</span><span class="dv">20</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> np.var(x, axis<span class="op">=</span><span class="dv">1</span> ,ddof<span class="op">=</span><span class="dv">0</span>)</span>
