@@ -1,13 +1,17 @@
 ---
-title: "columns2"
+title: "house price columns"
 author: "정은서"
+format: html
 editor: visual
 jupyter: python3
 ---
+
+
+
 ```{python}
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import LinearRegression
+#from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -20,6 +24,8 @@ submission = pd.read_csv('../../../lsbigdata-project1/house price/sample_submiss
 함수
 ```{python}
 WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid','navy','hotpink','plum','lightsteelblue','blue','darkturquoise','cyan','green','yellow','darkkhaki','orange']
+
+# scatter 하려면 범주를 수치화하기
                               
 def train_cat_rel_cxy(col1, col2):  # col1 : 범주, col2:범주
     plt.clf()

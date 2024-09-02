@@ -1,0 +1,851 @@
+---
+title: "North_Ames"
+editor: visual
+jupyter: python3
+---
+## 데이터 불러오기
+
+
+
+```{python}
+import pandas as pd
+import numpy as np
+import math
+#from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+# 데이터 불러오기
+train_df = pd.read_csv('../../../lsbigdata-project1/house price/houseprice-with-lonlat.csv')
+train_df = train_df.rename(columns = {'Unnamed: 0' : 'Id'})
+train_df['Id'] = train_df['Id']-1
+
+loc = train_df.copy()
+# Overall_Cond을 수치화한 Overall_Score 만들기
+# 품질 순위 : 'Very_Poor','Poor','Fair','Below_Average','Average','Above_Average','Good','Very_Good','Excellent','Very_Excellent'
+rank=['Very_Poor','Poor','Fair','Below_Average','Average','Above_Average','Good','Very_Good','Excellent','Very_Excellent']
+for i in range(len(rank)):
+    loc.loc[loc['Overall_Cond']==rank[i],'Overall_Score']=math.floor((i+1)*2)
+
+# Bedroom_AbvGr을 수치화한 Bedroom_Score 만들기   (오류 메시지가 뜨긴 하지만, 문제 없음)
+room=loc['Bedroom_AbvGr'].unique()
+for i in range(len(room)):
+    if room[i] == 8:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=20
+    elif room[i] == 7:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=18
+    elif room[i] == 6:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=16
+    elif room[i] == 5:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=14
+    elif room[i] == 4:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=12
+    elif room[i] == 3:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=10
+    elif room[i] == 2:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=7
+    elif room[i] == 1:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=4
+    else:
+        loc.loc[loc['Bedroom_AbvGr']==room[i],'Bedroom_Score']=1
+
+# Gr_Liv_Area를 수치화한 Live_Score 만들기
+bins=[0, round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0)]
+bins = list(map(int,bins))
+loc = loc.sort_values('Gr_Liv_Area').reset_index(drop=True)
+for i in range(len(bins)):
+    if i != 19:
+        loc.loc[bins[i]:bins[i+1]-1 , 'Live_Score'] = i+1
+    if i == 19 :
+        loc.loc[bins[i]: , 'Live_Score'] = i+1
+
+loc = loc.sort_values('Id').reset_index(drop=True)
+
+
+# Total_Bsmt_SF를 수치화한 Base_Score 만들기
+loc = loc.sort_values('Total_Bsmt_SF').reset_index(drop=True)
+for i in range(len(bins)):
+    if i != 19:
+        loc.loc[bins[i]:bins[i+1]-1 , 'Base_Score'] = i+1
+    if i == 19 :
+        loc.loc[bins[i]: , 'Base_Score'] = i+1
+loc = loc.sort_values('Id').reset_index(drop=True)
+
+        
+# Garage_Area를 수치화한 Garage_Score 만들기
+loc = loc.sort_values('Garage_Area').reset_index(drop=True)
+for i in range(len(bins)):
+    if i != 19:
+        loc.loc[bins[i]:bins[i+1]-1 , 'Garage_Score'] = i+1
+    if i == 19 :
+        loc.loc[bins[i]: , 'Garage_Score'] = i+1
+
+loc = loc.sort_values('Id').reset_index(drop=True)
+
+
+# 타입 int로 바꾸기
+loc['Overall_Score'] = loc['Overall_Score'].astype(int)
+loc['Bedroom_Score'] = loc['Bedroom_Score'].astype(int)
+loc['Live_Score'] = loc['Live_Score'].astype(int)
+loc['Base_Score'] = loc['Base_Score'].astype(int)
+loc['Garage_Score'] = loc['Garage_Score'].astype(int)
+
+# 총합 Total_Sum 변수 만들기
+loc['Total_Sum'] = loc['Overall_Score']+loc['Bedroom_Score']+loc['Live_Score']+loc['Base_Score']+loc['Garage_Score']
+
+# 지역1 : Northpark_Villa에 해당하는 데이터만 뽑아와서 loc1 데이터프레임 만들기 
+loc1 = loc[loc['Neighborhood']=='Northpark_Villa']
+# 지역2 : North_Ames에 해당하는 데이터만 뽑아와서 loc2 데이터프레임 만들기
+loc2 = loc[loc['Neighborhood']=='North_Ames']
+# 지역3 : Briardale에 해당하는 데이터만 뽑아와서 loc2 데이터프레임 만들기
+loc3 = loc[loc['Neighborhood']=='Briardale']
+# 지역4 : Edwards에 해당하는 데이터만 뽑아와서 loc2 데이터프레임 만들기
+loc4 = loc[loc['Neighborhood']=='Edwards']
+# 지역5 : College_Creek에 해당하는 데이터만 뽑아와서 loc2 데이터프레임 만들기
+loc5 = loc[loc['Neighborhood']=='College_Creek']
+```
+
+```{python}
+loc.iloc[:,-6:]
+len(loc[loc['Live_Score']==3])
+len(loc)
+len(loc1)
+train_df['Neighborhood'].value_counts()
+```
+
+
+
+
+```{python}
+print("생활면적 데이터 개수 :",len(train_df[['Gr_Liv_Area']]))
+
+print("최소 생활면적 :",train_df['Gr_Liv_Area'].min())
+print("최소 생활면적 :",train_df['Gr_Liv_Area'].max())
+(5642-334)/20
+start = [334 , 334+265.4 , 334+265.4*2, 334+265.4*3, 334+265.4*4, 334+265.4*5, 334+265.4*6, 334+265.4*7, 334+265.4*8, 334+265.4*9, 334+265.4*10, 334+265.4*11, 334+265.4*12, 334+265.4*13, 334+265.4*14, 334+265.4*15, 334+265.4*16, 334+265.4*17, 334+265.4*18, 334+265.4*19]
+print("시작점 :",start)
+
+print("지하실면적 데이터 개수 :",len(train_df['Total_Bsmt_SF']))
+print("최소 지하실면적 :",train_df['Total_Bsmt_SF'].min())
+print("최소 지하실면적 :",train_df['Total_Bsmt_SF'].max())
+(6110-0)/20
+start = [0 , 305.5 , 305.5*2, 305.5*3, 305.5*4, 305.5*5, 305.5*6, 305.5*7, 305.5*8, 305.5*9, 305.5*10, 305.5*11, 305.5*12, 305.5*13, 305.5*14, 305.5*15, 305.5*16, 305.5*17, 305.5*18, 305.5*19]
+print("시작점 :",start)
+
+print("차고면적 데이터 개수 :",len(train_df['Garage_Area']))
+print("최소 차고면적 :",train_df['Garage_Area'].min())
+print("최소 차고면적 :",train_df['Garage_Area'].max())
+(1488-0)/20
+start = [0 , 74.4 , 74.4*2, 74.4*3, 74.4*4, 74.4*5, 74.4*6, 74.4*7, 74.4*8, 74.4*9, 74.4*10, 74.4*11, 74.4*12, 74.4*13, 74.4*14, 74.4*15, 74.4*16, 74.4*17, 74.4*18, 74.4*19]
+print("시작점 :",start)
+
+
+2930/20
+bins=[0, 146.5, 146.5*2, 146.5*3, 146.5*4, 146.5*5, 146.5*6, 146.5*7, 146.5*8, 146.5*9, 146.5*10, 146.5*11, 146.5*12, 146.5*13, 146.5*14, 146.5*15, 146.5*16, 146.5*17, 146.5*18, 146.5*19]
+```
+
+
+#### 함수
+
+```{python}
+# 1. 수치컬럼의 분포 확인 함수
+def hist(df, numeric_col):
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = numeric_col + "의 분포"
+    plt.title(a)
+    sns.histplot(df[numeric_col], stat='density')
+    plt.tight_layout()
+    plt.show()
+    
+# 2. 수치컬럼과 y컬럼의 관계 확인 함수
+def rel_nx_ny(df, numeric_col, y):
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	plt.rcParams['axes.unicode_minus'] = False
+	a = numeric_col + "과 "+ y+"컬럼의 관계"
+	plt.title(a)
+	sns.scatterplot(data=df, x=numeric_col, y=y)
+	plt.tight_layout()
+	plt.show()
+	
+# 3. 범주컬럼의 빈도 확인 함수 ( 수치변수 넣으면 이상하게 나옴, 범주변수로 변환한 뒤 넣어주기)
+def cat_count(df, category_col, order):
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	a = category_col + "의 범주별 빈도"	
+	plt.title(a)
+	fig, ax = plt.subplots()
+	if order == 'value':
+	    sns.countplot(df[category_col], order=df[category_col].value_counts().sort_values().index)
+	elif order == 'index':
+	    sns.countplot(df[category_col], order=df[category_col].value_counts().sort_index().index)
+	for p in ax.patches:
+	    plt.text(p.get_width(), p.get_y()+p.get_height()/2, int(p.get_width()))
+	plt.tight_layout()
+	#plt.figure(figsize=(5,5))
+	plt.show()
+	
+def cat_count_x(df, category_col, order):
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	a = category_col + "의 범주별 빈도"	
+	plt.title(a)
+	fig, ax = plt.subplots()
+	if order == 'value':
+	    sns.countplot(x=df[category_col], order=df[category_col].value_counts().sort_values().index)
+	elif order == 'index':
+	    sns.countplot(x=df[category_col], order=df[category_col].value_counts().sort_index().index)
+	for p in ax.patches:
+	    plt.text(p.get_x() + p.get_width()/2, p.get_height(), int(p.get_height()), ha='center', va='bottom')
+	plt.tight_layout()
+	#plt.figure(figsize=(5,5))
+	plt.show()
+	
+# 4. 코호트별 범주 컬럼의 빈도 확인 함수
+def cats_count(df, category_col2 , category_col1):  # category_col1 : x축, category_col2 : 코호트
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	a = category_col1 + "의 범주별 " + category_col2 +"별 빈도"	
+	plt.title(a)
+	fig, ax = plt.subplots()
+	sns.countplot(data=df, y=category_col1, hue=category_col2, order=df[category_col1].value_counts().sort_values().index)
+	for p in ax.patches:
+	    plt.text(p.get_width()+10, p.get_y()+p.get_height()/2, int(p.get_width()), size=7)
+	plt.tight_layout()
+	plt.show()
+	
+# 5. 범주컬럼과 y컬럼 관계 비교 함수
+def rel_cx_ny(df, category_col, y):  # 여기서 category_col은 새로운 범주컬럼2 임.
+	cats = df[category_col].value_counts().sort_values(ascending=False).index
+	df2 = df.copy()
+	for i in range(len(cats)):
+		df2.loc[df2[category_col] == cats[i], 'category_col2'] = i
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	a = category_col + "과 y컬럼의 관계"
+	plt.title(a)
+	plt.xticks(np.arange(len(cats)) , cats, rotation=90)
+	plt.xlabel(category_col)
+	sns.scatterplot(data=df2, x='category_col2', y=y)
+	plt.tight_layout()
+	#plt.figure(figsize=(100,3))
+	plt.show()
+	
+# 6. 코호트별로 범주컬럼과 y컬럼 관계 비교 함수
+def rel_cat_cx_ny(df, category_col1, category_col2, y):  # category_col1 : 코호트, category_col2 : x축 범주
+	cats = df[category_col2].value_counts().sort_values(ascending=False).index
+	df2 = df.copy()
+	for i in range(len(cats)):
+		df2.loc[df2[category_col2] == cats[i], 'category_col2'] = i
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	a =  category_col1 + "별로 " + category_col2 + "과 y컬럼의 관계"
+	plt.title(a)
+	plt.xticks(np.arange(len(cats)) , cats, rotation=90)
+	plt.xlabel(category_col2)
+	sns.scatterplot(data=df2, x='category_col2', y=y, hue= category_col1)
+	plt.tight_layout()
+	#plt.figure(figsize=(100,3))
+	plt.show()
+	
+# 7. 범주컬럼의 범주별 y컬럼 분포 비교 함수
+def cat_hist(df, category_col, y):
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    a = category_col + "의 범주별 분포 비교"
+    plt.title(a)
+    b = df[category_col].value_counts().sort_values()
+    cats = b[b>1].index
+    for i in range(len(cats)):
+        sns.histplot(df[df[category_col]==cats[i]][y], stat='density', label=cats[i])
+        plt.legend()
+    plt.tight_layout()
+    plt.show()
+    
+# 8. 코호트별로 x컬럼과 y컬럼의 관계 확인 함수 (겹치기)  
+def rel_cat_nx_ny1(df, category_col, numeric_col, y):  
+    WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid','navy','hotpink','plum','lightsteelblue','blue','darkturquoise','cyan','green','yellow','darkkhaki','orange']
+    plt.clf()
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = category_col + " 범주별로 " + numeric_col + "와 Sale_Price 관계 비교"
+    plt.title(a)
+    cats = df[category_col].value_counts().sort_values(ascending=False).index
+    for i in range(len(cats)):
+        a = df[df[category_col]==cats[i]][[numeric_col,y]]
+        n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)
+        n = n.tolist()[i]
+        sns.scatterplot(data=a, x=numeric_col, y=y, color=WxColourDB[n], label=cats[i])  # 색 달라져야함
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    
+# 9. 코호트별로 x컬럼과 y컬럼의 관계 확인 함수 (각자)
+def rel_cat_nx_ny2(df, category_col, numeric_col, y):  
+    WxColourDB = ['black', 'red', 'chocolate','darkorange','darkgoldenrod','olive','plum','lightslategrey','forestgreen','gold','lightseagreen','fuchsia','deepskyblue','slateblue','mediumorchid','navy','hotpink','plum','lightsteelblue','blue','darkturquoise','cyan','green','khaki','darkkhaki','orange']
+    plt.clf()
+    plt.figure(figsize=(4,12))
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    plt.rcParams['axes.unicode_minus'] = False
+    a = category_col + " 범주별로 " + numeric_col + "와 Sale_Price 관계 비교"
+    plt.title(a, pad=20)
+    plt.axis('off')
+    cats = df[category_col].value_counts().sort_values(ascending=False).index
+    ax=[]
+    
+    for i in range(len(cats)):
+        a = df[df[category_col]==cats[i]][[numeric_col,y]]
+        n = np.random.choice(np.arange(len(WxColourDB)),len(WxColourDB),replace=False)
+        n = n.tolist()[i]
+        ax.append(plt.subplot(int(round(len(cats)/2,0)), 2, i+1))
+        plt.xticks(visible=False)
+        plt.yticks(visible=False)
+        plt.subplot(int(round(len(cats)/2,0)), 2, i+1, sharex=ax[0], sharey=ax[0])
+        plt.scatter(a[numeric_col], a[y], color=WxColourDB[n], label=cats[i], s=2)  # 색 달라져야함
+        #plt.legend()
+        plt.subplots_adjust(hspace=1, wspace=0.5)
+        plt.title(cats[i])
+    
+    plt.ylabel(y)
+    plt.xlabel(numeric_col)
+    #plt.tight_layout()
+    plt.show()
+    
+```
+
+
+
+
+# 품질
+```{python}
+import plotly.graph_objects as go
+
+# 먼저 등급에 순서를 주기 위해 Categorical 데이터 타입을 사용
+rank_order = ['Very_Poor', 'Poor', 'Fair', 'Below_Average', 'Average', 'Above_Average', 'Good', 'Very_Good', 'Excellent', 'Very_Excellent']
+loc['Overall_Cond'] = pd.Categorical(loc['Overall_Cond'], categories=rank_order, ordered=True)
+
+# 이제 정렬된 순서대로 value_counts를 계산
+loc_sub = loc['Overall_Cond'].value_counts().sort_index()
+
+fig = go.Figure()
+
+fig.add_trace(
+    go.Bar(
+        x=loc_sub.index , y=loc_sub.values, 
+        marker = {'color':'pink',# 막대 색상 또는 리스트를 이용하여 각 막대 색상 변경가능
+                  'line':{'color':'pink', 'width':3} # 막대 테두리 설정 
+                  })
+                  )
+                  
+fig.update_layout(title = dict(text = '침실 개수 빈도', x=0.5),
+                hoverlabel_font_color="white"
+                    )
+                    
+bins2=[0,1,2,3,4,5,6,7,8,9]
+h = [1600]*20
+for i in range((len(bins2))):
+    fig.add_annotation(
+            x= bins2[i], y= h[i],
+            font_color = 'chocolate',
+            showarrow=False,
+            font_size = 20,
+            text= f"{(i+1)*2}점")
+
+fig.update_xaxes(title_text = '품질')
+fig.update_yaxes(title_text = '빈도')
+
+fig.show()
+
+
+```
+
+
+
+
+
+
+
+
+
+
+# 침실 개수
+```{python}
+train_df1 = train_df[['Bedroom_AbvGr']].astype(str)
+cat_count_x(train_df1, 'Bedroom_AbvGr', 'index')
+cat_count(train_df1, 'Bedroom_AbvGr', 'index')
+```
+
+
+
+```{python}
+import plotly.graph_objects as go
+
+loc_sub = loc['Bedroom_AbvGr'].value_counts().sort_index()
+
+fig = go.Figure()
+
+fig.add_trace(
+    go.Bar(
+        x=loc_sub.index , y=loc_sub.values, 
+        marker = {'color':'pink',# 막대 색상 또는 리스트를 이용하여 각 막대 색상 변경가능
+                  'line':{'color':'pink', 'width':3} # 막대 테두리 설정 
+                  })
+                  )
+                  
+fig.update_layout(title = dict(text = '침실 개수 빈도', x=0.5),
+                    hoverlabel_font_color="white"
+                    )
+                    
+bins2=[0,1,2,3,4,5,6,7,8]
+h = [1550]*20
+score = [1,4,7,10,12,14,16,18,20]
+for i in range((len(bins2))):
+    fig.add_annotation(
+            x= bins2[i], y= h[i],
+            font_color = 'chocolate',
+            showarrow=False,
+            font_size = 20,
+            text= f"{score[i]}점")
+                    
+fig.update_xaxes(title_text = '침실 개수')
+fig.update_yaxes(title_text = '빈도')
+
+fig.show()
+```
+
+
+
+
+# 생활 면적
+
+```{python}
+train_df1 = train_df[['Id','Gr_Liv_Area' ]].sort_values('Gr_Liv_Area')
+train_df1['Id'] = train_df1['Id'].astype(str)
+#rel_cx_ny(train_df1,'Id','Gr_Liv_Area')
+
+
+
+plt.clf()
+plt.rcParams['font.family'] = 'Malgun Gothic'
+
+a = "생활면적 확인"	
+plt.title(a)
+plt.xticks(visible=False)
+sns.barplot(data=train_df1 ,x='Id', y ='Gr_Liv_Area' )
+plt.tight_layout()
+#plt.figure(figsize=(5,5))
+plt.show()
+```
+
+```{python}
+import plotly.graph_objects as go
+
+loc_sub = loc[['Gr_Liv_Area' ]].sort_values('Gr_Liv_Area')
+loc_sub['Id'] = np.arange(len(loc['Gr_Liv_Area']))
+loc_sub['Id'] = loc_sub['Id'].astype(str)
+
+
+fig = go.Figure()
+
+fig.add_trace(
+    go.Bar(
+        x=loc_sub['Id'] , y=loc_sub['Gr_Liv_Area'], 
+        marker = {'color':'pink',# 막대 색상 또는 리스트를 이용하여 각 막대 색상 변경가능
+                  'line':{'color':'pink', 'width':3} # 막대 테두리 설정 
+                  })
+                  )
+                  
+fig.update_layout(title = dict(text = '각 집들의 생활 면적 오름차순', x=0.5),
+                     hoverlabel_font_color="white"
+                    )
+                    
+bins=[0, round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0)]  
+for i in range(len(bins)):
+    fig.add_vline(x = bins[i],
+    line_width= 1, 
+    line_dash='dash', 
+    line_color = 'chocolate')
+
+bins2=np.array([round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0), round(146.5*20,0)])
+bins2 = bins2 - 73
+h = [6000]*20
+for i in range((len(bins2))):
+    fig.add_annotation(
+            x= bins2[i], y= h[i],
+            font_color = 'chocolate',
+            showarrow=False,
+            font_size = 20,
+            text= f"{i+1}점")
+                    
+fig.update_xaxes(title_text = 'Id')
+fig.update_yaxes(title_text = '생활 면적')
+
+fig.show()
+```
+
+# 지하실 면적
+```{python}
+import plotly.graph_objects as go
+
+loc_sub = loc[['Total_Bsmt_SF' ]].sort_values('Total_Bsmt_SF')
+loc_sub['Id'] = np.arange(len(loc['Total_Bsmt_SF']))
+loc_sub['Id'] = loc_sub['Id'].astype(str)
+
+
+fig = go.Figure()
+
+fig.add_trace(
+    go.Bar(
+        x=loc_sub['Id'] , y=loc_sub['Total_Bsmt_SF'], 
+        marker = {'color':'pink',# 막대 색상 또는 리스트를 이용하여 각 막대 색상 변경가능
+                  'line':{'color':'pink', 'width':3} # 막대 테두리 설정 
+                  })
+                  )
+                  
+fig.update_layout(title = dict(text = '각 집들의 지하실 면적 오름차순', x=0.5),
+                hoverlabel_font_color="white"
+                    )
+                    
+bins=[0, round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0)]  
+for i in range(len(bins)):
+    fig.add_vline(x = bins[i],
+    line_width= 1, 
+    line_dash='dash', 
+    line_color = 'chocolate')
+
+bins2=np.array([round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0), round(146.5*20,0)])
+bins2 = bins2 - 73
+h = [6000]*20
+for i in range((len(bins2))):
+    fig.add_annotation(
+            x= bins2[i], y= h[i],
+            font_color = 'chocolate',
+            showarrow=False,
+            font_size = 20,
+            text= f"{i+1}점")
+                    
+fig.update_xaxes(title_text = 'Id')
+fig.update_yaxes(title_text = '자하실 면적')
+
+fig.show()
+```
+
+
+
+
+
+# 차고 면적
+```{python}
+import plotly.graph_objects as go
+
+loc_sub = loc[['Garage_Area' ]].sort_values('Garage_Area')
+loc_sub['Id'] = np.arange(len(loc['Garage_Area']))
+loc_sub['Id'] = loc_sub['Id'].astype(str)
+
+fig = go.Figure()
+
+fig.add_trace(
+    go.Bar(
+        x=loc_sub['Id'] , y=loc_sub['Garage_Area'], 
+        marker = {'color':'pink',# 막대 색상 또는 리스트를 이용하여 각 막대 색상 변경가능
+                  'line':{'color':'pink', 'width':3} # 막대 테두리 설정 
+                  })
+                  )
+                  
+fig.update_layout(title = dict(text = '각 집들의 차고 면적 오름차순', x=0.5),
+                hoverlabel_font_color="white"
+                    )
+                    
+bins=[0, round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0)]  
+for i in range(len(bins)):
+    fig.add_vline(x = bins[i],
+    line_width= 1, 
+    line_dash='dash', 
+    line_color = 'chocolate')
+
+bins2=np.array([round(146.5,0), round(146.5*2,0), round(146.5*3,0), round(146.5*4,0),round(146.5*5,0),round(146.5*6,0),round(146.5*7,0),round(146.5*8,0),round(146.5*9,0),round(146.5*10,0),round(146.5*11,0),round(146.5*12,0),round(146.5*13,0),round(146.5*14,0),round(146.5*15,0),round(146.5*16,0),round(146.5*17,0),round(146.5*18,0),round(146.5*19,0), round(146.5*20,0)])
+bins2 = bins2 - 73
+h = [1400]*20
+for i in range((len(bins2))):
+    fig.add_annotation(
+            x= bins2[i], y= h[i],
+            font_color = 'chocolate',
+            showarrow=False,
+            font_size = 20,
+            text= f"{i+1}점")
+                    
+fig.update_xaxes(title_text = 'Id')
+fig.update_yaxes(title_text = '차고 면적')
+
+fig.show()
+```
+fig.update_layout(
+        hoverlabel_bgcolor="배경색",
+        hoverlabel_font_size="텍스트 사이즈",
+        hoverlabel_font_color="텍스트 색",
+        hoverlabel_font_family="텍스트 서체")
+
+
+수직선 그리기
+fig.add_vline(x= 선의 x 위치,
+            line_width= 선 두깨, 
+            line_dash=선 스타일, 
+            line_color=선 색,
+            annotation_text= 주석 입력, 
+            annotation_position= 주석 위치,
+            annotation_font_size= 주석 폰트 사이즈,
+            annotation_font_color=주석 폰트 색,
+            annotation_font_family=주석 폰트 서체)
+
+
+
+주석 텍스트
+fig.add_annotation(
+            x= x 좌표, y= y 좌표,
+            text= 주석 텍스트,
+            textangle= 텍스트 각도,
+            font_color = 텍스트 색,
+            font_family = 텍스트 서체,
+            font_size = 텍스트 사이즈,
+            arrowhead = 화살표 스타일,
+            arrowcolor= 화살표 색,
+            arrowside= 화살표 방향,
+            arrowsize= 화살표 크기,
+            arrowwidth = 화살표 두깨,
+            bgcolor=텍스트 백그라운드색,
+            bordercolor= 테두리 색,
+            borderwidth = 테두리 두깨,
+            opacity = 투명도,
+            xshift = x축 방향 평행이동,
+            yshift = y축 방향 평행이동)
+
+
+
+
+
+## loc1 : 지역1 North_Ames 
+
+### Sale_Price
+```{python}
+hist(loc1, 'Sale_Price')
+```
+
+### Bedroom_AbvGr
+```{python}
+rel_nx_ny(loc1, 'Bedroom_AbvGr', 'Gr_Liv_Area')
+rel_nx_ny(loc1, 'Bedroom_AbvGr', 'Total_Bsmt_SF')
+rel_nx_ny(loc1, 'Bedroom_AbvGr', 'First_Flr_SF')
+rel_nx_ny(loc1, 'Bedroom_AbvGr', 'Garage_Area')
+rel_cx_ny(loc1, 'Overall_Cond', 'Bedroom_AbvGr')
+```
+방 갯수에 따라 생활면적이 넓어지는 경향이 있음 (근데 편차가 큰 듯)
+방 갯수에 따라 지하실 면적은 상관 없어 보임
+방 갯수에 따라 1층 면적은 상관 없어 보임
+방 갯수에 따라 차고 면적은 상관 없어 보임
+방 갯수에 따라 품질 관계를 보면, 방 3개인 집이 데이터가 압도적으로 많기 때문에 품질도 다양하게 나오는 듯.
+
+
+```{python}
+loc1.columns
+```
+
+
+
+
+
+
+### Gr_Liv_Area
+```{python}
+rel_nx_ny(loc1,'Gr_Liv_Area' ,'Sale_Price')
+```
+Gr_Liv_Area 와 Sale_Price가 관계가 있어보임.
+
+```{python}
+plt.clf()
+plt.tight_layout()
+plt.figure(figsize=(5,5))
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.title('North_Ames지역에서 집 품질과 집 가격 관계')
+sns.scatterplot(data=loc1, x='Overall_Score',y='Sale_Price' )
+plt.show()
+
+plt.clf()
+plt.tight_layout()
+plt.figure(figsize=(5,5))
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.title('North_Ames지역에서 침실 개수와 집 가격 관계')
+sns.scatterplot(data=loc1, x='Bedroom_AbvGr',y='Sale_Price' )
+plt.show()
+
+
+plt.clf()
+plt.tight_layout()
+plt.figure(figsize=(5,5))
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.title('North_Ames지역에서 방 개수와 집 가격 관계')
+sns.scatterplot(data=loc1, x='TotRms_AbvGrd', y='Sale_Price')
+plt.show()
+
+plt.clf()
+plt.tight_layout()
+plt.figure(figsize=(5,5))
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.title('North_Ames지역에서 1층 넓이와 집 가격 관계')
+sns.scatterplot(data=loc1, x='First_Flr_SF', y='Sale_Price')
+plt.show()
+
+plt.clf()
+plt.tight_layout()
+plt.figure(figsize=(5,5))
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.title('North_Ames지역에서 생활 면적와 집 가격 관계')
+sns.scatterplot(data=loc1, x='Gr_Liv_Area', y='Sale_Price')
+plt.show()
+
+
+plt.clf()
+plt.tight_layout()
+plt.figure(figsize=(5,5))
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.title('North_Ames지역에서 지하실 면적와 집 가격 관계')
+sns.scatterplot(data=loc1, x='Total_Bsmt_SF', y='Sale_Price')
+plt.show()
+
+
+```
+
+
+```{python}
+# 지역 : Northpark_Villa, North_Ames, Briardale, Edwards, College_Creek
+local = ['Northpark_Villa', 'North_Ames', 'Briardale', 'Edwards', 'College_Creek']
+
+for i in range(5):
+    nan_df1 = loc1.isna().sum()
+    print("\n " ,  local[i] ,"지역의 nan 갯수 \n",nan_df1[nan_df1>0])
+```
+
+```{python}
+len(loc[loc['Neighborhood'] == 'Northpark_Villa'])
+```
+
+
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+# Northpark_Villa 지역
+train_x = loc1[['Overall_Score','Bedroom_AbvGr','Gr_Liv_Area','Total_Bsmt_SF','Garage_Area']]
+train_y = loc1[['Sale_Price']]
+
+model = LinearRegression()
+model.fit(train_x, train_y)
+train_y_pred = model.predict(train_x)
+train_y_pred
+
+   
+
+from statsmodels.formula.api import ols
+
+model = ols(formula = 'Sale_Price ~ Overall_Score + Bedroom_AbvGr + Gr_Liv_Area + Total_Bsmt_SF + Garage_Area',data = loc1).fit()
+print(model.summary())
+
+```
+Sale_Price = 0.0003202 + 4795.2742 * Overall_Score -9068.1515 * Bedroom_AbvGr + 34.8051 * Gr_Liv_Area -15.7520 * Total_Bsmt_SF + 117.2695 * Garage_Area
+
+p-value를 보면 절편, Bedroom_AbvGr, Total_Bsmt_SF 이 귀무가설 0을 기각하지 못함. 0이라고 볼 수도 있다.
+
+```{python}
+model = ols(formula = 'Sale_Price ~ Overall_Score + Bedroom_AbvGr + Gr_Liv_Area + Garage_Area',data = loc1).fit()
+print(model.summary())
+```
+
+```{python}
+model = ols(formula = 'Sale_Price ~ Overall_Score + Bedroom_AbvGr + Gr_Liv_Area + Garage_Area',data = loc1).fit()
+print(model.summary())
+```
+
+```{python}
+loc.columns
+```
+
+
+```{python}
+# (-93.610649,42.041240) , (-93.625986,42.050680) , (-93.628119,42.052338) , ( -93.660664,42.028191) , (-93.686980,42.027368)
+
+a = loc.loc[(loc['Longitude']==-93.610649) & (loc['Latitude']==42.041240), :]
+b = loc.loc[(loc['Longitude']==-93.625986) & (loc['Latitude']==42.050680), :]
+c = loc.loc[(loc['Longitude']==-93.628119) & (loc['Latitude']==42.052338), :]
+d = loc.loc[(loc['Longitude']==-93.660664) & (loc['Latitude']==42.028191), :]
+e = loc.loc[(loc['Longitude']==-93.686980) & (loc['Latitude']==42.027368), :]
+
+f = pd.concat([a,b,c,d,e], axis=0)
+f.to_csv('../goodhouse.csv', index=False)
+```
+
+
+```{python}
+f.columns
+```
+
+
+```{python}
+f['MS_SubClass'].value_counts()
+```
+```{python}
+f['MS_Zoning'].value_counts()
+```
+
+
+```{python}
+f['Lot_Frontage'].value_counts()
+```
+
+```{python}
+hist(loc, 'Lot_Frontage')
+```
+
+
+
+
+
+
+```{python}
+f['Sale_Price'].value_counts()
+```
+```{python}
+plt.clf()
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
+a = 'Sale_Price' + "의 분포"
+plt.title(a)
+sns.histplot(loc['Sale_Price'], stat='density')
+
+plt.axvline(x=200000, color='red')
+plt.axvline(x=143000, color='red')
+plt.axvline(x=125000, color='red')
+plt.axvline(x=415000, color='red')
+plt.axvline(x=475000, color='red')
+plt.tight_layout()
+plt.show()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

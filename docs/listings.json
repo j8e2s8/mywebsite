@@ -2,15 +2,17 @@
   {
     "listing": "/project2/index.html",
     "items": [
-      "/project2/columns2/columns2.html",
-      "/project2/columns/columns.html"
+      "/project2/columns2/index.html",
+      "/project2/columns3/index.html",
+      "/project2/columns/index.html"
     ]
   },
   {
     "listing": "/project2.html",
     "items": [
-      "/project2/columns/columns.html",
-      "/project2/columns2/columns2.html",
+      "/project2/columns/index.html",
+      "/project2/columns2/index.html",
+      "/project2/columns3/index.html",
       "/project2/index.html"
     ]
   },
@@ -18,6 +20,7 @@
     "listing": "/posts/index.html",
     "items": [
       "/posts/hw3/index.html",
+      "/posts/hw8/index.html",
       "/posts/hw7/index.html",
       "/posts/hw6/index.html",
       "/posts/hw5/index.html",
