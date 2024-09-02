@@ -2,6 +2,7 @@
 title: "hw3"
 subtitle: "분포와 확률"
 author: "정은서"
+date: "2024-07-18"
 categories: "statistics"
 editor: visual
 jupyter: python3
