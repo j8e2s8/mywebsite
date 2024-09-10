@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="문제1-데이터를-로드하고-로지스틱-회귀모델을-적합하고-회귀-표를-작성하세요." class="level1">
 <h1>문제1 : 데이터를 로드하고, 로지스틱 회귀모델을 적합하고, 회귀 표를 작성하세요.</h1>
-<div id="ed456b36" class="cell" data-execution_count="1">
+<div id="f3d87635" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -221,7 +221,7 @@ Dep. Variable:                 REMISS   No. Observations:                   27
 Model:                          Logit   Df Residuals:                       20
 Method:                           MLE   Df Model:                            6
 Date:                Tue, 10 Sep 2024   Pseudo R-squ.:                  0.3718
-Time:                        10:25:12   Log-Likelihood:                -10.797
+Time:                        10:40:00   Log-Likelihood:                -10.797
 converged:                       True   LL-Null:                       -17.186
 Covariance Type:            nonrobust   LLR p-value:                   0.04670
 ==============================================================================
@@ -241,7 +241,7 @@ perfectly predicted. This might indicate that there is complete
 quasi-separation. In this case some parameters will not be identified.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_21028\1794366257.py:7: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_2844\1794366257.py:7: FutureWarning:
 
 The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
 </code></pre>
@@ -253,7 +253,7 @@ The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed 
 </section>
 <section id="문제2-해당-모델은-통계적으로-유의한가요-그-이유를-검정통계량를-사용해서-설명하시오" class="level1">
 <h1>문제2 : 해당 모델은 통계적으로 유의한가요? 그 이유를 검정통계량를 사용해서 설명하시오</h1>
-<div id="4a712582" class="cell" data-execution_count="2">
+<div id="bed270cd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 검정통계량 : −2(ℓ(𝛽)̂ (0) − ℓ(𝛽)̂ )  =  -2*(-17.186+10.797)  = 12.779</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">-</span> chi2.cdf(<span class="fl">12.779</span>, df<span class="op">=</span><span class="dv">6</span>)  <span class="co"># 0.0467</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -267,7 +267,7 @@ The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed 
 </section>
 <section id="문제3-유의수준이-0.2를-기준으로-통계적으로-유의한-변수는-몇개이며-어느-변수-인가요" class="level1">
 <h1>문제3 : 유의수준이 0.2를 기준으로 통계적으로 유의한 변수는 몇개이며, 어느 변수 인가요?</h1>
-<div id="24a57fb3" class="cell" data-execution_count="3">
+<div id="bbe08387" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                           Logit Regression Results                           
@@ -276,7 +276,7 @@ Dep. Variable:                 REMISS   No. Observations:                   27
 Model:                          Logit   Df Residuals:                       20
 Method:                           MLE   Df Model:                            6
 Date:                Tue, 10 Sep 2024   Pseudo R-squ.:                  0.3718
-Time:                        10:25:12   Log-Likelihood:                -10.797
+Time:                        10:40:00   Log-Likelihood:                -10.797
 converged:                       True   LL-Null:                       -17.186
 Covariance Type:            nonrobust   LLR p-value:                   0.04670
 ==============================================================================
@@ -305,7 +305,7 @@ quasi-separation. In this case some parameters will not be identified.</code></p
 <h1>문제4 : 다음 환자에 대한 오즈는 얼마인가요?</h1>
 <section id="cell-골수의-세포성-65-smear-골수편의-백혈구-비율-45-infil-골수의-백혈병-세포-침투-비율-55-li-골수-백혈병-세포의-라벨링-인덱스-1.2-blast-말초혈액의-백혈병-세포-수-1.1세포μl-temp-치료-시작-전-최고-체온-0.9" class="level4">
 <h4 class="anchored" data-anchor-id="cell-골수의-세포성-65-smear-골수편의-백혈구-비율-45-infil-골수의-백혈병-세포-침투-비율-55-li-골수-백혈병-세포의-라벨링-인덱스-1.2-blast-말초혈액의-백혈병-세포-수-1.1세포μl-temp-치료-시작-전-최고-체온-0.9">CELL (골수의 세포성): 65% , SMEAR (골수편의 백혈구 비율): 45% , INFIL (골수의 백혈병 세포 침투 비율): 55% , LI (골수 백혈병 세포의 라벨링 인덱스): 1.2 , BLAST (말초혈액의 백혈병 세포 수): 1.1세포/μL , TEMP (치료 시작 전 최고 체온): 0.9</h4>
-<div id="cc8e2aa2" class="cell" data-execution_count="4">
+<div id="f4b58f1c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>odds <span class="op">=</span> np.exp( <span class="fl">64.2581</span> <span class="op">+</span> <span class="fl">30.8301</span><span class="op">*</span><span class="fl">0.65</span> <span class="op">+</span> <span class="fl">24.6863</span> <span class="op">*</span> <span class="fl">0.45</span>  <span class="op">-</span> <span class="fl">24.9745</span> <span class="op">*</span> <span class="fl">0.55</span> <span class="op">+</span> <span class="fl">4.3605</span> <span class="op">*</span> <span class="fl">1.2</span> <span class="op">-</span> <span class="fl">0.0115</span><span class="op">*</span><span class="fl">1.1</span> <span class="op">-</span> <span class="fl">100.1734</span> <span class="op">*</span> <span class="fl">0.9</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(odds) <span class="co"># 오즈 : 0.03817459641135519</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -319,7 +319,7 @@ quasi-separation. In this case some parameters will not be identified.</code></p
 </section>
 <section id="문제5-위-환자의-혈액에서-백혈병-세포가-관측되지-않은-확률은-얼마인가요" class="level1">
 <h1>문제5 : 위 환자의 혈액에서 백혈병 세포가 관측되지 않은 확률은 얼마인가요?</h1>
-<div id="4efb9a22" class="cell" data-execution_count="5">
+<div id="35c5b996" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>odds <span class="op">/</span> (<span class="dv">1</span><span class="op">+</span>odds)  <span class="co"># 0.03677088280074742</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>0.03677088280074742</code></pre>
@@ -337,7 +337,7 @@ quasi-separation. In this case some parameters will not be identified.</code></p
 <section id="문제-7-cell-변수의-99-오즈비에-대한-신뢰구간을-구하시오." class="level1">
 <h1>문제 7 : CELL 변수의 99% 오즈비에 대한 신뢰구간을 구하시오.</h1>
 <p>CELL 변수의 베타에 대한 99% 신뢰구간 : (베타_hat - z(0.005)<em>SE , 베타_hat + z(0.005)</em>SE) CELL 변수의 오즈비에 대한 99% 신뢰구간 : (exp(베타_hat - z(0.005)<em>SE) , exp(베타_hat + z(0.005)</em>SE))</p>
-<div id="ca789656" class="cell" data-execution_count="6">
+<div id="6f6862e0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>z0005 <span class="op">=</span> norm.ppf(<span class="fl">0.995</span>, loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)  <span class="co"># 2.5758293035489004</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># CELL 변수의 베타에 대한 99% 신뢰구간 : (-103.4607607405219, 165.12096074052192</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fl">30.8301</span> <span class="op">-</span> <span class="fl">52.135</span><span class="op">*</span>z0005 , <span class="fl">30.8301</span> <span class="op">+</span> <span class="fl">52.135</span><span class="op">*</span>z0005 </span>
@@ -354,7 +354,7 @@ quasi-separation. In this case some parameters will not be identified.</code></p
 </section>
 <section id="문제-8-주어진-데이터에-대하여-로지스틱-회귀-모델의-예측-확률을-구한-후-50-이상인-경우-1로-처리하여-혼동-행렬를-구하시오." class="level1">
 <h1>문제 8 : 주어진 데이터에 대하여 로지스틱 회귀 모델의 예측 확률을 구한 후, 50% 이상인 경우 1로 처리하여, 혼동 행렬를 구하시오.</h1>
-<div id="93001796" class="cell" data-execution_count="7">
+<div id="4a4d4997" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, ConfusionMatrixDisplay</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(train)</span>
@@ -379,7 +379,7 @@ quasi-separation. In this case some parameters will not be identified.</code></p
 </section>
 <section id="문제-9-해당-모델의-accuracy는-얼마인가요" class="level1">
 <h1>문제 9 : 해당 모델의 Accuracy는 얼마인가요?</h1>
-<div id="f2b166c9" class="cell" data-execution_count="8">
+<div id="7f78f971" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 방법1 </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">5</span><span class="op">+</span><span class="dv">15</span>)<span class="op">/</span>(<span class="dv">5</span><span class="op">+</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span><span class="op">+</span><span class="dv">15</span>))  <span class="co"># 0.7407407407407407</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -397,7 +397,7 @@ quasi-separation. In this case some parameters will not be identified.</code></p
 </section>
 <section id="문제10-해당-모델의-f1-score를-구하세요." class="level1">
 <h1>문제10 : 해당 모델의 F1 Score를 구하세요.</h1>
-<div id="455fb065" class="cell" data-execution_count="9">
+<div id="3022c7d3" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 방법1</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> <span class="dv">5</span><span class="op">/</span>(<span class="dv">5</span><span class="op">+</span><span class="dv">3</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>recall <span class="op">=</span> <span class="dv">5</span><span class="op">/</span>(<span class="dv">5</span><span class="op">+</span><span class="dv">4</span>)</span>
