@@ -1,0 +1,64 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"linear regression 파악\"\n",
+        "format: html\n",
+        "---\n",
+        "\n",
+        "\n",
+        "## 데이터 불러오기\n"
+      ],
+      "id": "f84793ac"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import os\n",
+        "\n",
+        "train_df = pd.read_csv('./project3/train.csv')\n",
+        "test_df = pd.read_csv('./project3/test.csv')\n",
+        "submission = pd.read_csv('./project3/sample_submission.csv')"
+      ],
+      "id": "42bdef5e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "<br>\n",
+        "\n",
+        "## 데이터 확인\n"
+      ],
+      "id": "742d24a6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "train_df.head()"
+      ],
+      "id": "c2cfdfbe",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "lsbigdata-project1",
+      "language": "python",
+      "display_name": "lsbigdata-project1",
+      "path": "C:\\Users\\USER\\AppData\\Roaming\\jupyter\\kernels\\lsbigdata-project1"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

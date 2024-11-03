@@ -1,0 +1,52 @@
+---
+title: "EDA"
+author: "정은서"
+format: html
+editor: visual
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split
+
+import os
+os.getcwd()
+```
+
+
+
+# 데이터 불러오기
+
+```{python}
+df = pd.read_csv('1주_실습데이터.csv')
+df.info()
+```
+
+
+# 시각화 함수
+
+```{python}
+def hist(df, numeric_col):
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	plt.rcParams['axes.unicode_minus'] = False
+	a = numeric_col + "의 분포"
+	plt.title(a)
+	sns.histplot(df[numeric_col], stat='density')
+	plt.tight_layout()
+	plt.show()
+```
+
+	
+ 
+# X1
+
+```{python}
+hist(df, 'X1')
+```
+

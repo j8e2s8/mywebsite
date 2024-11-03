@@ -1,0 +1,115 @@
+---
+title: "hw1"
+subtitle: "데이터 파악하기"
+author: "정은서"
+date: "2024-07-15"
+categories: [bigdata]
+jupyter: python3
+---
+
+
+
+## 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],
+                   '가격' : [1800, 1500, 3000],
+                   '판매량' : [24,38,13]})
+df
+```
+
+## 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.
+```{python}
+import numpy as np
+
+# 가격 평균
+print("가격 평균 : ",np.mean(df['가격']))
+
+#판매량 평균
+print("판매량 평균 : ",np.mean(df['판매량']))
+
+```
+
+## mpg 데이터를 불러와 복사본을 만드세요.
+```{python}
+import pandas as pd
+
+df = pd.read_csv('../../mpg.csv')
+
+df_copy = df.copy()
+df_copy
+```
+
+## 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
+
+```{python}
+df_copy=df_copy.rename(columns={'cty' : 'city', 'hwy' : 'highway'})
+df_copy
+```
+
+
+## 데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 다음과 같은 결과물이 출력되어야 합니다.
+```{python}
+df_copy.head()
+```
+
+## midwest.csv를 불러와 데이터의 특징을 파악하세요.
+```{python}
+import pandas as pd
+
+midwest = pd.read_csv('../../midwest.csv')
+midwest.head()
+
+#pd.set_option('display.max_columns', None)
+```
+
+
+
+```{python}
+midwest.info()
+```
+결측치가 하나도 없는 데이터이다. 범주 컬럼은 3개이고, 그 외에는 다 수치컬럼이다.
+
+
+## poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정
+```{python}
+midwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})
+midwest.head()
+```
+
+## total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.
+```{python}
+midwest['pct'] = (midwest['asian']/midwest['total'])*100
+midwest.head()
+```
+
+
+```{python}
+import matplotlib.pyplot as plt
+
+plt.clf()
+midwest['pct'].plot.hist()
+plt.show()
+```
+
+
+## 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 'large', 그 외에는 'small'을 부여한 파생변수를 만들어 보세요.
+```{python}
+import numpy as np
+
+print( "아시아 인구 백분율 전체 평균 :",np.mean(midwest['pct']) )
+```
+```{python}
+midwest['size'] = np.where(midwest['pct'] > np.mean(midwest['pct']) , 'large', 'small')
+midwest.head()
+```
+
+## 'large'와 'small'에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.
+```{python}
+plt.clf()
+midwest['size'].value_counts().plot.bar(rot=0)
+plt.show()
+```
+

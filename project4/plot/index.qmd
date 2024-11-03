@@ -1,0 +1,204 @@
+---
+title: "EDA"
+author: "정은서"
+format: html
+editor: visual
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import rc 
+import seaborn as sns
+from scipy import stats
+from sklearn.preprocessing import PowerTransformer, MinMaxScaler, StandardScaler, PolynomialFeatures
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report, confusion_matrix, make_scorer
+from imblearn.over_sampling import SMOTE
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier, plot_importance
+import lightgbm as lgb
+
+file_path = input("데이터 파일의 절대 경로를 입력하세요 :")
+```
+
+c:\\Users\\USER\\Documents\\LS 빅데이터 스쿨\\mywebsite\\project4\\1주_실습데이터.csv
+
+
+# 데이터 불러오고 데이터 정보 확인
+### 컬럼과 값 확인
+```{python}
+df = pd.read_csv(file_path)
+df.head()
+```
+
+20개의 설명변수와 Y 종속변수
+
+### 데이터 결측치와 자료형 확인 
+```{python}
+df.info()
+```
+
+결측치 없음. 모두 수치 컬럼임.
+
+### 컬럼별로 unique 개수 확인
+```{python}
+for i in df.columns:
+	print(f'{i}컬럼의 unique 개수 :',len(df[i].unique()))
+```
+
+X4 , X13은 unique가 1개밖에 없음 => 제거 필요.
+Y은 unique가 2개 밖에 없음 => 값 확인하기
+X9, X14는 값이 고르게 분포되어있지 않고 특정 값 위주로만 존재함. (unique 개수가 적음)
+
+### unique 개수가 적은 컬럼만 unique 확인
+범주 컬럼인 걸까?
+```{python}
+cols = ['X4','X9','X13','X14','Y']
+for i in cols:
+	print(f'{i}컬럼의 unique :', df[i].unique())
+```
+
+X4 , X13은 unique가 1개밖에 없음 => 제거 필요.
+Y는 0 or 1 로 1이면 불량품, 0이면 양품의 상황임 => 분류 문제
+
+
+```{python}
+df.groupby('X9').agg(count_X9 = ('X9', 'count'))
+```
+
+```{python}
+#| echo: false
+def hist(df):
+	numeric_cols = df.select_dtypes(include=['number']).columns
+	n = int(np.ceil(len(numeric_cols)/4))
+	plt.clf()
+	plt.figure(figsize=(5*4, 4*n))
+	for index, col in enumerate(numeric_cols, 1):
+		plt.rcParams['font.family'] = 'Malgun Gothic'
+		plt.rcParams['axes.unicode_minus'] = False
+		plt.subplot(n, 4, index)
+		sns.histplot(df[col], stat='density')
+		plt.title(f'{col}의 히스토그램 분포', fontsize=20)
+	plt.tight_layout()  #  plt.show() 전에 있어야 적용됨.
+	plt.show()  # for문 안에 있으면 그래프 1개씩 보여줌
+
+
+def kde(df, palette='dark', alpha=0.5):
+	numeric_cols = df.select_dtypes(include=['number']).columns
+	n = int(np.ceil(len(numeric_cols)/4))
+	plt.clf()
+	plt.figure(figsize=(5*4, 4*n))
+	for index, col in enumerate(numeric_cols, 1):
+		plt.rcParams['font.family'] = 'Malgun Gothic'
+		plt.rcParams['axes.unicode_minus'] = False
+		plt.subplot(n, 4, index)
+		sns.kdeplot(data=df, x=col, fill=True , palette=palette, alpha=alpha)
+		plt.title(f'{col}의 확률밀도', fontsize=20)
+	plt.tight_layout()  #  plt.show() 전에 있어야 적용됨.
+	plt.show()  # for문 안에 있으면 그래프 1개씩 보여줌
+	
+	
+
+	
+
+def cat_kde(df, num, cat, palette='dark', alpha=0.5):
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	plt.rcParams['axes.unicode_minus'] = False
+	plt.title(f'{num}의 {cat}범주별 확률밀도')
+	sns.kdeplot(data=df, x=num, hue=cat ,fill=True , palette=palette, alpha=alpha)
+	plt.tight_layout()
+	plt.show()
+```
+
+
+```{python}
+kde(df, 'X9')
+```
+
+
+```{python}
+numeric_cols = df.select_dtypes(include=['number']).columns
+n = int(np.ceil(len(numeric_cols)/4))
+
+plt.figure(figsize=(5*4, 4*n))
+
+for i, column in enumerate(numeric_cols, 1):
+    plt.subplot(n, 4, i) 
+    sns.histplot(df[column], bins=100, kde=True)  # 히스토그램과 커널 밀도 추정
+    plt.title(f'Distribution of {column}', fontsize=20)
+
+plt.tight_layout()
+```
+
+
+
+
+
+```{python}
+hist(df, 'X9')
+```
+
+```{python}
+sns.histplot(data=df, x='X1', stat='density', kde=True)
+```
+
+X9, X14
+
+```{python}
+sns.kdeplot(data=df, x="X3", hue="Y", fill=False, palette="coolwarm", alpha=0.5)
+```
+
+```{python}
+# sns.set_palette('magma')
+sns.kdeplot(data=df, x="X3", hue="Y", fill=True, alpha=0.5, palette=sns.color_palette("dark", 2))
+```
+
+
+```{python}
+# husl_palette = sns.color_palette("husl", 2)
+print(sns.color_palette("dark", 2))
+sns.set_palette(sns.color_palette("dark", 2))
+sns.kdeplot(data=df, x="X3", hue="Y", fill=True, alpha=0.5)
+```
+
+```{python}
+columns_to_plot = [col for col in df.columns]
+```
+enumerate notion에 정리
+
+```{python}
+
+```
+
+
+
+
+
+# 시각화 함수
+
+```{python}
+def hist(df, numeric_col):
+	plt.clf()
+	plt.rcParams['font.family'] = 'Malgun Gothic'
+	plt.rcParams['axes.unicode_minus'] = False
+	a = numeric_col + "의 분포"
+	plt.title(a)
+	sns.histplot(df[numeric_col], stat='density')
+	plt.tight_layout()
+	plt.show()
+```
+
+	
+ 
+# X1
+
+```{python}
+hist(df, 'X1')
+```
+

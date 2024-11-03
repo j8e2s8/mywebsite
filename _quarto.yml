@@ -8,12 +8,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: ./posts/index.qmd   # blog.qmd 
+      - href: ./concept/index.qmd   # blog.qmd 
         text: homework
       - href: project1.qmd
         text: project1
       - href: ./project2/index.qmd
         text: project2
+      - href: ./project3/index.qmd
+        text: project3
+      - href: ./project4/index.qmd
+        text: project4
 
 format:
   html:

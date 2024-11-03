@@ -1,0 +1,76 @@
+---
+title: "hw6"
+subtitle: "모평균에 대한 신뢰구간"
+author: "정은서"
+date: "2024-07-30"
+categories: [statistics]
+editor: visual
+jupyter: python3
+---
+
+# 숙제 : 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기. norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정
+
+## 1. 데이터 불러오기
+
+```{python}
+import pandas as pd
+welfare = pd.read_spss('../../../Doit_Python/Data/Koweps_hpwc14_2019_beta2.sav')
+welfare.head()
+```
+
+## 2. 필요한 데이터만 가져오기
+
+```{python}
+import numpy as np
+df = welfare[['h14_g3','p1402_8aq1']]
+df = df.rename(columns = {'h14_g3' : 'sex',
+                           'p1402_8aq1' : 'income' })
+df = df.dropna(subset='income')
+df['sex'] = np.where(df['sex'] == 1, 'male', 'female')
+df.head()
+```
+
+## 3. 신뢰구간 구하기
+
+```{python}
+male_income = df.loc[df['sex']=='male', 'income']
+female_income = df.loc[df['sex'] == 'female', 'income']
+male_bar = male_income.mean()
+female_bar = female_income.mean()
+male_scale = np.sqrt(male_income.var(ddof=1))
+female_scale = np.sqrt(female_income.var(ddof=1))
+male_n = len(male_income)
+female_n = len(female_income)
+
+from scipy.stats import norm
+
+z0025 = norm.ppf(0.975, loc=0 , scale=1)
+male_a = male_bar + z0025*male_scale/np.sqrt(male_n)
+male_b = male_bar - z0025*male_scale/np.sqrt(male_n)
+print("male의 오른쪽 신뢰구간 위치 :", male_a)
+print("male의 왼쪽 신뢰구간 위치 :", male_b)
+
+female_a = female_bar + z0025*female_scale/np.sqrt(female_n)
+female_b = female_bar - z0025*female_scale/np.sqrt(female_n)
+print("female의 오른쪽 신뢰구간 위치 :", female_a)
+print("female의 왼쪽 신뢰구간 위치 :", female_b)
+```
+
+## 4. groupby로 성별별 평균 income 데이터 만들기
+
+```{python}
+sex_income = df.groupby('sex', as_index=False).agg(mean_income = ('income','mean'))
+sex_income
+```
+
+## 5. 성별별 평균 income 데이터로 막대그래프 그리고, 신뢰구간 그리기
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.clf()
+sns.barplot(data=sex_income , x='sex', y='mean_income')
+plt.plot([0,0], [female_a,female_b], color='red')
+plt.plot([1,1], [male_a, male_b], color='red')
+plt.show()
+```
